@@ -1,0 +1,16 @@
+Revitar 2 itself is licensed under the Mozilla Public License 2.0.
+A copy of this license can be found here: http://www.mozilla.org/MPL/2.0/
+
+The source code for Revitar 2 should be available in the same place as the built package.
+
+This package is built with (or is configured to be built with) statically linked libraries from glibc and libstdc++.
+glibc is available here: http://ftp.gnu.org/gnu/glibc/
+It is licensed under the GNU Lesser General Public License version 2.1, available here: http://www.gnu.org/software/libc/manual/html_node/Copying.html
+libstdc++ is available here: http://gcc.gnu.org/libstdc++/
+It is licensed under a modified version of the GNU General Public License version 3, available here: http://gcc.gnu.org/onlinedocs/libstdc++/manual/license.html
+
+This package was built using the VST SDK 2.4.2, avaliable here: http://www.steinberg.net/en/company/developer.html
+VST Plugin Interface Technology is by Steinberg Soft- und Hardware GmbH.
+
+Revitar was originally created by C. Lawrence Zitnick, III.
+This fork is maintained by SwooshyCueb.
