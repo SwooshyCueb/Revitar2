@@ -1,0 +1,151 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+ABOUT_0                 BITMAP                  "res\\About0-new.bmp"
+IDB_BITMAP38            BITMAP                  "res\\roundSwitch0.bmp"
+IDB_BITMAP39            BITMAP                  "res\\squareSwitch0.bmp"
+BACKGROUND_0            BITMAP                  "res\\background0-new.bmp"
+PICK_1                  BITMAP                  "res\\pickPosition1.bmp"
+PICK_UP_1               BITMAP                  "res\\pickup1.bmp"
+VU_METER_0              BITMAP                  "res\\vuMeterCircle0.bmp"
+PALM_SLIDER_BACKGROUND_0 BITMAP                  "res\\PalmSliderBackground0.bmp"
+PALM_SLIDER_HANDLE_1    BITMAP                  "res\\PalmSliderHandle1.bmp"
+CHORD_DIRECTION_1       BITMAP                  "res\\chordDirection1.bmp"
+KNOB_SHADOW_1           BITMAP                  "res\\chromeKnob3Shadow-1.bmp"
+TUNE_KNOB_0             BITMAP                  "res\\tuneKnob0-new.bmp"
+PICK_TYPE_3             BITMAP                  "res\\pickType3.bmp"
+STOP_SWITCH_0           BITMAP                  "res\\stopSwitch.bmp"
+REGISTER_0              BITMAP                  "res\\registerButton1.bmp"
+CHORD_ON_0              BITMAP                  "res\\chordOn0.bmp"
+KNOB_SLIDE_0            BITMAP                  "res\\chromeKnob3Shadow-Slide0.bmp"
+ROCKER_SWITCH_4         BITMAP                  "res\\rockerSwitch4.bmp"
+//WELCOME_0               BITMAP                  "res\\welcome0.bmp"
+BODY_SELECTOR0          BITMAP                  "res\\bodySelector1.bmp"
+BODIES_2                BITMAP                  "res\\bodies4-new.bmp"
+GUITAR_BOTTOM_1         BITMAP                  "res\\guitarBottom3-new.bmp"
+GUITAR_TOP_1            BITMAP                  "res\\guitarTop3-new.bmp"
+BACKGROUND_BETA_8_3     BITMAP                  "res\\All8Beta4-new.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,1,1,2
+ PRODUCTVERSION 2,1,1,2
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "Upgraded from 2.0 with VST SDK 2.4.2 by Hermann Seib, additional modifications by SwooshyCueb"
+            VALUE "CompanyName", " "
+            VALUE "FileDescription", "Revitar 2 - Swooshy's Fork Beta 2.1.1.2"
+            VALUE "FileVersion", "2, 1, 1, 2"
+            VALUE "InternalName", "Revitar 2.1.1.2"
+            VALUE "LegalCopyright", "Copyright © 2000-2010 Larry Zitnick"
+            VALUE "OriginalFilename", "Revitar2.dll"
+            VALUE "ProductName", "Revitar 2"
+            VALUE "ProductVersion", "2, 1, 1, 2"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// FXB
+//
+
+IDR_PRESETBANK          FXB                     "res\\preset.fxb"
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// VSTXML
+//
+
+RC_VSTXML             VSTXML                "res\\librevitar.vstxml"
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

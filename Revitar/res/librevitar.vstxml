@@ -1,0 +1,329 @@
+<VSTParametersStructure>
+	<Param id="0" name="Gain" label="Gain"/>
+	<Param id="1" name="Body Gain" label="Body Gain"/>
+	<Param id="2" name="Pick Volume" label="Pick Volume"/>
+	<Param id="3" name="Tune" label="Tune"/>
+	<Param id="4" name="Bridge Damp" label="Bridge Damp"/>
+	<Param id="5" name="String Damp" label="String Damp"/>
+	<Param id="6" name="Vibrato Amp" label="Vibrato Amp"/>
+	<Param id="7" name="Vibrato Rate" label="Vibrato Rate"/>
+	<Param id="8" name="Sympathetic" label="Sympathetic"/>
+	<Param id="9" name="Slap" label="Slap"/>
+	<Param id="10" name="Pick Speed" label="Pick Speed"/>
+	<Param id="11" name="Chord Rate" label="Chord Rate"/>
+	<Param id="12" name="String Type" label="String Type"/>
+	<Param id="13" name="Palm Damp" label="Palm Damp"/>
+	<Param id="14" name="Slide Rate" label="Slide Rate"/>
+	<Param id="15" name="Chord Play On/Off" label="Chord Play On/Off"/>
+	<Param id="16" name="Sustain" label="Sustain"/>
+	<Param id="17" name="Mono" label="Mono/Poly"/>
+	<Param id="18" name="Chord Type" label="Chord Type"/>
+	<Param id="19" name="Chord Type" label="Chord Type"/>
+	<Param id="20" name="Strum Direction" label="Strum Direction"/>
+	<Param id="21" name="Body Type" label="Body Type"/>
+	<Param id="22" name="Pluck Noise" label="Pluck Noise Full/Reduced"/>
+	<Param id="23" name="#23" label=""/>
+	<Param id="24" name="Chord Note 0" label="Note"/>
+	<Param id="25" name="Chord Note 1" label="Note"/>
+	<Param id="26" name="Chord Note 2" label="Note"/>
+	<Param id="27" name="Chord Note 3" label="Note"/>
+	<Param id="28" name="Chord Note 4" label="Note"/>
+	<Param id="29" name="Chord Note 5" label="Note"/>
+	<Param id="30" name="Pick Position" label="Pick Position"/>
+	<Param id="31" name="Pick Up Position" label="Pick Up Position"/>
+	<Param id="32" name="Pick Width" label="Pick Width"/>
+	<Param id="33" name="Pick Stiffness" label="Pick Stiffness"/>
+	<Param id="34" name="#34" label=""/>
+	<Param id="35" name="#35" label=""/>
+	<Param id="36" name="Palm Position" label="Palm Position"/>
+	<Param id="37" name="Absolute/Relative Position" label="Absolute/Relative Position"/>
+	<Param id="38" name="Stop Strings" label="Stop Strings"/>
+	<Param id="39" name="Chord 0 Note 0" label="Fret#"/>
+	<Param id="40" name="Chord 0 Note 1" label="Fret#"/>
+	<Param id="41" name="Chord 0 Note 2" label="Fret#"/>
+	<Param id="42" name="Chord 0 Note 3" label="Fret#"/>
+	<Param id="43" name="Chord 0 Note 4" label="Fret#"/>
+	<Param id="44" name="Chord 0 Note 5" label="Fret#"/>
+	<Param id="45" name="Chord 1 Note 0" label="Fret#"/>
+	<Param id="46" name="Chord 1 Note 1" label="Fret#"/>
+	<Param id="47" name="Chord 1 Note 2" label="Fret#"/>
+	<Param id="48" name="Chord 1 Note 3" label="Fret#"/>
+	<Param id="49" name="Chord 1 Note 4" label="Fret#"/>
+	<Param id="50" name="Chord 1 Note 5" label="Fret#"/>
+	<Param id="51" name="Chord 2 Note 0" label="Fret#"/>
+	<Param id="52" name="Chord 2 Note 1" label="Fret#"/>
+	<Param id="53" name="Chord 2 Note 2" label="Fret#"/>
+	<Param id="54" name="Chord 2 Note 3" label="Fret#"/>
+	<Param id="55" name="Chord 2 Note 4" label="Fret#"/>
+	<Param id="56" name="Chord 2 Note 5" label="Fret#"/>
+	<Param id="57" name="Chord 3 Note 0" label="Fret#"/>
+	<Param id="58" name="Chord 3 Note 1" label="Fret#"/>
+	<Param id="59" name="Chord 3 Note 2" label="Fret#"/>
+	<Param id="60" name="Chord 3 Note 3" label="Fret#"/>
+	<Param id="61" name="Chord 3 Note 4" label="Fret#"/>
+	<Param id="62" name="Chord 3 Note 5" label="Fret#"/>
+	<Param id="63" name="Chord 4 Note 0" label="Fret#"/>
+	<Param id="64" name="Chord 4 Note 1" label="Fret#"/>
+	<Param id="65" name="Chord 4 Note 2" label="Fret#"/>
+	<Param id="66" name="Chord 4 Note 3" label="Fret#"/>
+	<Param id="67" name="Chord 4 Note 4" label="Fret#"/>
+	<Param id="68" name="Chord 4 Note 5" label="Fret#"/>
+	<Param id="69" name="Chord 5 Note 0" label="Fret#"/>
+	<Param id="70" name="Chord 5 Note 1" label="Fret#"/>
+	<Param id="71" name="Chord 5 Note 2" label="Fret#"/>
+	<Param id="72" name="Chord 5 Note 3" label="Fret#"/>
+	<Param id="73" name="Chord 5 Note 4" label="Fret#"/>
+	<Param id="74" name="Chord 5 Note 5" label="Fret#"/>
+	<Param id="75" name="Chord 6 Note 0" label="Fret#"/>
+	<Param id="76" name="Chord 6 Note 1" label="Fret#"/>
+	<Param id="77" name="Chord 6 Note 2" label="Fret#"/>
+	<Param id="78" name="Chord 6 Note 3" label="Fret#"/>
+	<Param id="79" name="Chord 6 Note 4" label="Fret#"/>
+	<Param id="80" name="Chord 6 Note 5" label="Fret#"/>
+	<Param id="81" name="Chord 7 Note 0" label="Fret#"/>
+	<Param id="82" name="Chord 7 Note 1" label="Fret#"/>
+	<Param id="83" name="Chord 7 Note 2" label="Fret#"/>
+	<Param id="84" name="Chord 7 Note 3" label="Fret#"/>
+	<Param id="85" name="Chord 7 Note 4" label="Fret#"/>
+	<Param id="86" name="Chord 7 Note 5" label="Fret#"/>
+	<Param id="87" name="Chord 8 Note 0" label="Fret#"/>
+	<Param id="88" name="Chord 8 Note 1" label="Fret#"/>
+	<Param id="89" name="Chord 8 Note 2" label="Fret#"/>
+	<Param id="90" name="Chord 8 Note 3" label="Fret#"/>
+	<Param id="91" name="Chord 8 Note 4" label="Fret#"/>
+	<Param id="92" name="Chord 8 Note 5" label="Fret#"/>
+	<Param id="93" name="Chord 9 Note 0" label="Fret#"/>
+	<Param id="94" name="Chord 9 Note 1" label="Fret#"/>
+	<Param id="95" name="Chord 9 Note 2" label="Fret#"/>
+	<Param id="96" name="Chord 9 Note 3" label="Fret#"/>
+	<Param id="97" name="Chord 9 Note 4" label="Fret#"/>
+	<Param id="98" name="Chord 9 Note 5" label="Fret#"/>
+	<Param id="99" name="Chord 10 Note 0" label="Fret#"/>
+	<Param id="100" name="Chord 10 Note 1" label="Fret#"/>
+	<Param id="101" name="Chord 10 Note 2" label="Fret#"/>
+	<Param id="102" name="Chord 10 Note 3" label="Fret#"/>
+	<Param id="103" name="Chord 10 Note 4" label="Fret#"/>
+	<Param id="104" name="Chord 10 Note 5" label="Fret#"/>
+	<Param id="105" name="Chord 11 Note 0" label="Fret#"/>
+	<Param id="106" name="Chord 11 Note 1" label="Fret#"/>
+	<Param id="107" name="Chord 11 Note 2" label="Fret#"/>
+	<Param id="108" name="Chord 11 Note 3" label="Fret#"/>
+	<Param id="109" name="Chord 11 Note 4" label="Fret#"/>
+	<Param id="110" name="Chord 11 Note 5" label="Fret#"/>
+	<Param id="111" name="Chord 12 Note 0" label="Fret#"/>
+	<Param id="112" name="Chord 12 Note 1" label="Fret#"/>
+	<Param id="113" name="Chord 12 Note 2" label="Fret#"/>
+	<Param id="114" name="Chord 12 Note 3" label="Fret#"/>
+	<Param id="115" name="Chord 12 Note 4" label="Fret#"/>
+	<Param id="116" name="Chord 12 Note 5" label="Fret#"/>
+	<Param id="117" name="Chord 13 Note 0" label="Fret#"/>
+	<Param id="118" name="Chord 13 Note 1" label="Fret#"/>
+	<Param id="119" name="Chord 13 Note 2" label="Fret#"/>
+	<Param id="120" name="Chord 13 Note 3" label="Fret#"/>
+	<Param id="121" name="Chord 13 Note 4" label="Fret#"/>
+	<Param id="122" name="Chord 13 Note 5" label="Fret#"/>
+	<Param id="123" name="Chord 14 Note 0" label="Fret#"/>
+	<Param id="124" name="Chord 14 Note 1" label="Fret#"/>
+	<Param id="125" name="Chord 14 Note 2" label="Fret#"/>
+	<Param id="126" name="Chord 14 Note 3" label="Fret#"/>
+	<Param id="127" name="Chord 14 Note 4" label="Fret#"/>
+	<Param id="128" name="Chord 14 Note 5" label="Fret#"/>
+	<Param id="129" name="Chord 15 Note 0" label="Fret#"/>
+	<Param id="130" name="Chord 15 Note 1" label="Fret#"/>
+	<Param id="131" name="Chord 15 Note 2" label="Fret#"/>
+	<Param id="132" name="Chord 15 Note 3" label="Fret#"/>
+	<Param id="133" name="Chord 15 Note 4" label="Fret#"/>
+	<Param id="134" name="Chord 15 Note 5" label="Fret#"/>
+	<Param id="135" name="Chord 16 Note 0" label="Fret#"/>
+	<Param id="136" name="Chord 16 Note 1" label="Fret#"/>
+	<Param id="137" name="Chord 16 Note 2" label="Fret#"/>
+	<Param id="138" name="Chord 16 Note 3" label="Fret#"/>
+	<Param id="139" name="Chord 16 Note 4" label="Fret#"/>
+	<Param id="140" name="Chord 16 Note 5" label="Fret#"/>
+	<Param id="141" name="Chord 17 Note 0" label="Fret#"/>
+	<Param id="142" name="Chord 17 Note 1" label="Fret#"/>
+	<Param id="143" name="Chord 17 Note 2" label="Fret#"/>
+	<Param id="144" name="Chord 17 Note 3" label="Fret#"/>
+	<Param id="145" name="Chord 17 Note 4" label="Fret#"/>
+	<Param id="146" name="Chord 17 Note 5" label="Fret#"/>
+	<Param id="147" name="Chord 18 Note 0" label="Fret#"/>
+	<Param id="148" name="Chord 18 Note 1" label="Fret#"/>
+	<Param id="149" name="Chord 18 Note 2" label="Fret#"/>
+	<Param id="150" name="Chord 18 Note 3" label="Fret#"/>
+	<Param id="151" name="Chord 18 Note 4" label="Fret#"/>
+	<Param id="152" name="Chord 18 Note 5" label="Fret#"/>
+	<Param id="153" name="Chord 19 Note 0" label="Fret#"/>
+	<Param id="154" name="Chord 19 Note 1" label="Fret#"/>
+	<Param id="155" name="Chord 19 Note 2" label="Fret#"/>
+	<Param id="156" name="Chord 19 Note 3" label="Fret#"/>
+	<Param id="157" name="Chord 19 Note 4" label="Fret#"/>
+	<Param id="158" name="Chord 19 Note 5" label="Fret#"/>
+	<Param id="159" name="Chord 20 Note 0" label="Fret#"/>
+	<Param id="160" name="Chord 20 Note 1" label="Fret#"/>
+	<Param id="161" name="Chord 20 Note 2" label="Fret#"/>
+	<Param id="162" name="Chord 20 Note 3" label="Fret#"/>
+	<Param id="163" name="Chord 20 Note 4" label="Fret#"/>
+	<Param id="164" name="Chord 20 Note 5" label="Fret#"/>
+	<Param id="165" name="Chord 21 Note 0" label="Fret#"/>
+	<Param id="166" name="Chord 21 Note 1" label="Fret#"/>
+	<Param id="167" name="Chord 21 Note 2" label="Fret#"/>
+	<Param id="168" name="Chord 21 Note 3" label="Fret#"/>
+	<Param id="169" name="Chord 21 Note 4" label="Fret#"/>
+	<Param id="170" name="Chord 21 Note 5" label="Fret#"/>
+	<Param id="171" name="Chord 22 Note 0" label="Fret#"/>
+	<Param id="172" name="Chord 22 Note 1" label="Fret#"/>
+	<Param id="173" name="Chord 22 Note 2" label="Fret#"/>
+	<Param id="174" name="Chord 22 Note 3" label="Fret#"/>
+	<Param id="175" name="Chord 22 Note 4" label="Fret#"/>
+	<Param id="176" name="Chord 22 Note 5" label="Fret#"/>
+	<Param id="177" name="Chord 23 Note 0" label="Fret#"/>
+	<Param id="178" name="Chord 23 Note 1" label="Fret#"/>
+	<Param id="179" name="Chord 23 Note 2" label="Fret#"/>
+	<Param id="180" name="Chord 23 Note 3" label="Fret#"/>
+	<Param id="181" name="Chord 23 Note 4" label="Fret#"/>
+	<Param id="182" name="Chord 23 Note 5" label="Fret#"/>
+	<Param id="183" name="Abs Chord 0 Note 0" label="Note"/>
+	<Param id="184" name="Abs Chord 0 Note 1" label="Note"/>
+	<Param id="185" name="Abs Chord 0 Note 2" label="Note"/>
+	<Param id="186" name="Abs Chord 0 Note 3" label="Note"/>
+	<Param id="187" name="Abs Chord 0 Note 4" label="Note"/>
+	<Param id="188" name="Abs Chord 0 Note 5" label="Note"/>
+	<Param id="189" name="Abs Chord 1 Note 0" label="Note"/>
+	<Param id="190" name="Abs Chord 1 Note 1" label="Note"/>
+	<Param id="191" name="Abs Chord 1 Note 2" label="Note"/>
+	<Param id="192" name="Abs Chord 1 Note 3" label="Note"/>
+	<Param id="193" name="Abs Chord 1 Note 4" label="Note"/>
+	<Param id="194" name="Abs Chord 1 Note 5" label="Note"/>
+	<Param id="195" name="Abs Chord 2 Note 0" label="Note"/>
+	<Param id="196" name="Abs Chord 2 Note 1" label="Note"/>
+	<Param id="197" name="Abs Chord 2 Note 2" label="Note"/>
+	<Param id="198" name="Abs Chord 2 Note 3" label="Note"/>
+	<Param id="199" name="Abs Chord 2 Note 4" label="Note"/>
+	<Param id="200" name="Abs Chord 2 Note 5" label="Note"/>
+	<Param id="201" name="Abs Chord 3 Note 0" label="Note"/>
+	<Param id="202" name="Abs Chord 3 Note 1" label="Note"/>
+	<Param id="203" name="Abs Chord 3 Note 2" label="Note"/>
+	<Param id="204" name="Abs Chord 3 Note 3" label="Note"/>
+	<Param id="205" name="Abs Chord 3 Note 4" label="Note"/>
+	<Param id="206" name="Abs Chord 3 Note 5" label="Note"/>
+	<Param id="207" name="Abs Chord 4 Note 0" label="Note"/>
+	<Param id="208" name="Abs Chord 4 Note 1" label="Note"/>
+	<Param id="209" name="Abs Chord 4 Note 2" label="Note"/>
+	<Param id="210" name="Abs Chord 4 Note 3" label="Note"/>
+	<Param id="211" name="Abs Chord 4 Note 4" label="Note"/>
+	<Param id="212" name="Abs Chord 4 Note 5" label="Note"/>
+	<Param id="213" name="Abs Chord 5 Note 0" label="Note"/>
+	<Param id="214" name="Abs Chord 5 Note 1" label="Note"/>
+	<Param id="215" name="Abs Chord 5 Note 2" label="Note"/>
+	<Param id="216" name="Abs Chord 5 Note 3" label="Note"/>
+	<Param id="217" name="Abs Chord 5 Note 4" label="Note"/>
+	<Param id="218" name="Abs Chord 5 Note 5" label="Note"/>
+	<Param id="219" name="Abs Chord 6 Note 0" label="Note"/>
+	<Param id="220" name="Abs Chord 6 Note 1" label="Note"/>
+	<Param id="221" name="Abs Chord 6 Note 2" label="Note"/>
+	<Param id="222" name="Abs Chord 6 Note 3" label="Note"/>
+	<Param id="223" name="Abs Chord 6 Note 4" label="Note"/>
+	<Param id="224" name="Abs Chord 6 Note 5" label="Note"/>
+	<Param id="225" name="Abs Chord 7 Note 0" label="Note"/>
+	<Param id="226" name="Abs Chord 7 Note 1" label="Note"/>
+	<Param id="227" name="Abs Chord 7 Note 2" label="Note"/>
+	<Param id="228" name="Abs Chord 7 Note 3" label="Note"/>
+	<Param id="229" name="Abs Chord 7 Note 4" label="Note"/>
+	<Param id="230" name="Abs Chord 7 Note 5" label="Note"/>
+	<Param id="231" name="Abs Chord 8 Note 0" label="Note"/>
+	<Param id="232" name="Abs Chord 8 Note 1" label="Note"/>
+	<Param id="233" name="Abs Chord 8 Note 2" label="Note"/>
+	<Param id="234" name="Abs Chord 8 Note 3" label="Note"/>
+	<Param id="235" name="Abs Chord 8 Note 4" label="Note"/>
+	<Param id="236" name="Abs Chord 8 Note 5" label="Note"/>
+	<Param id="237" name="Abs Chord 9 Note 0" label="Note"/>
+	<Param id="238" name="Abs Chord 9 Note 1" label="Note"/>
+	<Param id="239" name="Abs Chord 9 Note 2" label="Note"/>
+	<Param id="240" name="Abs Chord 9 Note 3" label="Note"/>
+	<Param id="241" name="Abs Chord 9 Note 4" label="Note"/>
+	<Param id="242" name="Abs Chord 9 Note 5" label="Note"/>
+	<Param id="243" name="Abs Chord 10 Note 0" label="Note"/>
+	<Param id="244" name="Abs Chord 10 Note 1" label="Note"/>
+	<Param id="245" name="Abs Chord 10 Note 2" label="Note"/>
+	<Param id="246" name="Abs Chord 10 Note 3" label="Note"/>
+	<Param id="247" name="Abs Chord 10 Note 4" label="Note"/>
+	<Param id="248" name="Abs Chord 10 Note 5" label="Note"/>
+	<Param id="249" name="Abs Chord 11 Note 0" label="Note"/>
+	<Param id="250" name="Abs Chord 11 Note 1" label="Note"/>
+	<Param id="251" name="Abs Chord 11 Note 2" label="Note"/>
+	<Param id="252" name="Abs Chord 11 Note 3" label="Note"/>
+	<Param id="253" name="Abs Chord 11 Note 4" label="Note"/>
+	<Param id="254" name="Abs Chord 11 Note 5" label="Note"/>
+	<Param id="255" name="Abs Chord 12 Note 0" label="Note"/>
+	<Param id="256" name="Abs Chord 12 Note 1" label="Note"/>
+	<Param id="257" name="Abs Chord 12 Note 2" label="Note"/>
+	<Param id="258" name="Abs Chord 12 Note 3" label="Note"/>
+	<Param id="259" name="Abs Chord 12 Note 4" label="Note"/>
+	<Param id="260" name="Abs Chord 12 Note 5" label="Note"/>
+	<Param id="261" name="Abs Chord 13 Note 0" label="Note"/>
+	<Param id="262" name="Abs Chord 13 Note 1" label="Note"/>
+	<Param id="263" name="Abs Chord 13 Note 2" label="Note"/>
+	<Param id="264" name="Abs Chord 13 Note 3" label="Note"/>
+	<Param id="265" name="Abs Chord 13 Note 4" label="Note"/>
+	<Param id="266" name="Abs Chord 13 Note 5" label="Note"/>
+	<Param id="267" name="Abs Chord 14 Note 0" label="Note"/>
+	<Param id="268" name="Abs Chord 14 Note 1" label="Note"/>
+	<Param id="269" name="Abs Chord 14 Note 2" label="Note"/>
+	<Param id="270" name="Abs Chord 14 Note 3" label="Note"/>
+	<Param id="271" name="Abs Chord 14 Note 4" label="Note"/>
+	<Param id="272" name="Abs Chord 14 Note 5" label="Note"/>
+	<Param id="273" name="Abs Chord 15 Note 0" label="Note"/>
+	<Param id="274" name="Abs Chord 15 Note 1" label="Note"/>
+	<Param id="275" name="Abs Chord 15 Note 2" label="Note"/>
+	<Param id="276" name="Abs Chord 15 Note 3" label="Note"/>
+	<Param id="277" name="Abs Chord 15 Note 4" label="Note"/>
+	<Param id="278" name="Abs Chord 15 Note 5" label="Note"/>
+	<Param id="279" name="Abs Chord 16 Note 0" label="Note"/>
+	<Param id="280" name="Abs Chord 16 Note 1" label="Note"/>
+	<Param id="281" name="Abs Chord 16 Note 2" label="Note"/>
+	<Param id="282" name="Abs Chord 16 Note 3" label="Note"/>
+	<Param id="283" name="Abs Chord 16 Note 4" label="Note"/>
+	<Param id="284" name="Abs Chord 16 Note 5" label="Note"/>
+	<Param id="285" name="Abs Chord 17 Note 0" label="Note"/>
+	<Param id="286" name="Abs Chord 17 Note 1" label="Note"/>
+	<Param id="287" name="Abs Chord 17 Note 2" label="Note"/>
+	<Param id="288" name="Abs Chord 17 Note 3" label="Note"/>
+	<Param id="289" name="Abs Chord 17 Note 4" label="Note"/>
+	<Param id="290" name="Abs Chord 17 Note 5" label="Note"/>
+	<Param id="291" name="Abs Chord 18 Note 0" label="Note"/>
+	<Param id="292" name="Abs Chord 18 Note 1" label="Note"/>
+	<Param id="293" name="Abs Chord 18 Note 2" label="Note"/>
+	<Param id="294" name="Abs Chord 18 Note 3" label="Note"/>
+	<Param id="295" name="Abs Chord 18 Note 4" label="Note"/>
+	<Param id="296" name="Abs Chord 18 Note 5" label="Note"/>
+	<Param id="297" name="Abs Chord 19 Note 0" label="Note"/>
+	<Param id="298" name="Abs Chord 19 Note 1" label="Note"/>
+	<Param id="299" name="Abs Chord 19 Note 2" label="Note"/>
+	<Param id="300" name="Abs Chord 19 Note 3" label="Note"/>
+	<Param id="301" name="Abs Chord 19 Note 4" label="Note"/>
+	<Param id="302" name="Abs Chord 19 Note 5" label="Note"/>
+	<Param id="303" name="Abs Chord 20 Note 0" label="Note"/>
+	<Param id="304" name="Abs Chord 20 Note 1" label="Note"/>
+	<Param id="305" name="Abs Chord 20 Note 2" label="Note"/>
+	<Param id="306" name="Abs Chord 20 Note 3" label="Note"/>
+	<Param id="307" name="Abs Chord 20 Note 4" label="Note"/>
+	<Param id="308" name="Abs Chord 20 Note 5" label="Note"/>
+	<Param id="309" name="Abs Chord 21 Note 0" label="Note"/>
+	<Param id="310" name="Abs Chord 21 Note 1" label="Note"/>
+	<Param id="311" name="Abs Chord 21 Note 2" label="Note"/>
+	<Param id="312" name="Abs Chord 21 Note 3" label="Note"/>
+	<Param id="313" name="Abs Chord 21 Note 4" label="Note"/>
+	<Param id="314" name="Abs Chord 21 Note 5" label="Note"/>
+	<Param id="315" name="Abs Chord 22 Note 0" label="Note"/>
+	<Param id="316" name="Abs Chord 22 Note 1" label="Note"/>
+	<Param id="317" name="Abs Chord 22 Note 2" label="Note"/>
+	<Param id="318" name="Abs Chord 22 Note 3" label="Note"/>
+	<Param id="319" name="Abs Chord 22 Note 4" label="Note"/>
+	<Param id="320" name="Abs Chord 22 Note 5" label="Note"/>
+	<Param id="321" name="Abs Chord 23 Note 0" label="Note"/>
+	<Param id="322" name="Abs Chord 23 Note 1" label="Note"/>
+	<Param id="323" name="Abs Chord 23 Note 2" label="Note"/>
+	<Param id="324" name="Abs Chord 23 Note 3" label="Note"/>
+	<Param id="325" name="Abs Chord 23 Note 4" label="Note"/>
+	<Param id="326" name="Abs Chord 23 Note 5" label="Note"/>
+</VSTParametersStructure>
