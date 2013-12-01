@@ -55,15 +55,15 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=../vstsdk2.4.2/dist/Release/MinGW-Windows/libvstsdk2.4.2.a ../vstgui/dist/Release/MinGW-Windows/libvstgui.a rcf.o -mwindows
+LDLIBSOPTIONS=../../../../vstsdk2.4.2/dist/Release/MinGW-Windows/libvstsdk2.4.2.a ../../../../vstgui/dist/Release/MinGW-Windows/libvstgui.a rcf.o -mwindows
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/Revitar2.${CND_DLIB_EXT}
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/Revitar2.${CND_DLIB_EXT}: ../vstsdk2.4.2/dist/Release/MinGW-Windows/libvstsdk2.4.2.a
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/Revitar2.${CND_DLIB_EXT}: ../../../../vstsdk2.4.2/dist/Release/MinGW-Windows/libvstsdk2.4.2.a
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/Revitar2.${CND_DLIB_EXT}: ../vstgui/dist/Release/MinGW-Windows/libvstgui.a
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/Revitar2.${CND_DLIB_EXT}: ../../../../vstgui/dist/Release/MinGW-Windows/libvstgui.a
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/Revitar2.${CND_DLIB_EXT}: rcf.o
 
@@ -93,8 +93,8 @@ ${OBJECTDIR}/presets.o: presets.cpp
 
 # Subprojects
 .build-subprojects:
-	cd ../vstsdk2.4.2 && ${MAKE}  -f Makefile CONF=Release
-	cd ../vstgui && ${MAKE}  -f Makefile CONF=Release
+	cd ../../../../vstsdk2.4.2 && ${MAKE}  -f Makefile CONF=Release
+	cd ../../../../vstgui && ${MAKE}  -f Makefile CONF=Release
 
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
@@ -103,8 +103,8 @@ ${OBJECTDIR}/presets.o: presets.cpp
 
 # Subprojects
 .clean-subprojects:
-	cd ../vstsdk2.4.2 && ${MAKE}  -f Makefile CONF=Release clean
-	cd ../vstgui && ${MAKE}  -f Makefile CONF=Release clean
+	cd ../../../../vstsdk2.4.2 && ${MAKE}  -f Makefile CONF=Release clean
+	cd ../../../../vstgui && ${MAKE}  -f Makefile CONF=Release clean
 
 # Enable dependency checking
 .dep.inc: .depcheck-impl

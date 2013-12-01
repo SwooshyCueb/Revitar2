@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=revitarfork
+PROJECTNAME=Revitar
 
 # Active Configuration
 DEFAULTCONF=Debug

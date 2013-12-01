@@ -11,16 +11,13 @@
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
-      <itemPath>res/About0.bmp</itemPath>
+      <itemPath>res/About0-new.bmp</itemPath>
       <itemPath>res/All8Beta4-new.bmp</itemPath>
-      <itemPath>res/All8Beta4.bmp</itemPath>
       <itemPath>res/ChordNote0.bmp</itemPath>
       <itemPath>res/PalmSliderBackground0.bmp</itemPath>
       <itemPath>res/PalmSliderHandle1.bmp</itemPath>
       <itemPath>res/background0-new.bmp</itemPath>
-      <itemPath>res/background0.bmp</itemPath>
       <itemPath>res/bodies4-new.bmp</itemPath>
-      <itemPath>res/bodies4.bmp</itemPath>
       <itemPath>res/bodySelector0.bmp</itemPath>
       <itemPath>res/bodySelector1.bmp</itemPath>
       <itemPath>res/chordDirection1.bmp</itemPath>
@@ -28,9 +25,7 @@
       <itemPath>res/chromeKnob3Shadow-1.bmp</itemPath>
       <itemPath>res/chromeKnob3Shadow-Slide0.bmp</itemPath>
       <itemPath>res/guitarBottom3-new.bmp</itemPath>
-      <itemPath>res/guitarBottom3.bmp</itemPath>
       <itemPath>res/guitarTop3-new.bmp</itemPath>
-      <itemPath>res/guitarTop3.bmp</itemPath>
       <itemPath>res/librevitar.vstxml</itemPath>
       <itemPath>res/pickPosition1.bmp</itemPath>
       <itemPath>res/pickType3.bmp</itemPath>
@@ -42,7 +37,6 @@
       <itemPath>res/squareSwitch0.bmp</itemPath>
       <itemPath>res/stopSwitch.bmp</itemPath>
       <itemPath>res/stringBackground-new.bmp</itemPath>
-      <itemPath>res/stringBackground.bmp</itemPath>
       <itemPath>res/tuneKnob0.bmp</itemPath>
       <itemPath>res/vuMeterCircle0.bmp</itemPath>
       <itemPath>res/welcome0.bmp</itemPath>
@@ -159,11 +153,9 @@
       </item>
       <item path="presets.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="res/About0.bmp" ex="false" tool="3" flavor2="0">
+      <item path="res/About0-new.bmp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="res/All8Beta4-new.bmp" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="res/All8Beta4.bmp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="res/ChordNote0.bmp" ex="false" tool="3" flavor2="0">
       </item>
@@ -173,11 +165,7 @@
       </item>
       <item path="res/background0-new.bmp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="res/background0.bmp" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="res/bodies4-new.bmp" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="res/bodies4.bmp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="res/bodySelector0.bmp" ex="false" tool="3" flavor2="0">
       </item>
@@ -193,11 +181,7 @@
       </item>
       <item path="res/guitarBottom3-new.bmp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="res/guitarBottom3.bmp" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="res/guitarTop3-new.bmp" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="res/guitarTop3.bmp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="res/librevitar.vstxml" ex="false" tool="3" flavor2="0">
       </item>
@@ -220,8 +204,6 @@
       <item path="res/stopSwitch.bmp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="res/stringBackground-new.bmp" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="res/stringBackground.bmp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="res/tuneKnob0.bmp" ex="false" tool="3" flavor2="0">
       </item>
@@ -269,24 +251,24 @@
           <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/Revitar2.${CND_DLIB_EXT}</output>
           <linkerLibItems>
             <linkerLibProjectItem>
-              <makeArtifact PL="../vstsdk2.4.2"
+              <makeArtifact PL="../../../../vstsdk2.4.2"
                             CT="3"
                             CN="Release"
                             AC="true"
                             BL="true"
-                            WD="../vstsdk2.4.2"
+                            WD="../../../../vstsdk2.4.2"
                             BC="${MAKE}  -f Makefile CONF=Release"
                             CC="${MAKE}  -f Makefile CONF=Release clean"
                             OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstsdk2.4.2.a">
               </makeArtifact>
             </linkerLibProjectItem>
             <linkerLibProjectItem>
-              <makeArtifact PL="../vstgui"
+              <makeArtifact PL="../../../../vstgui"
                             CT="3"
                             CN="Release"
                             AC="true"
                             BL="true"
-                            WD="../vstgui"
+                            WD="../../../../vstgui"
                             BC="${MAKE}  -f Makefile CONF=Release"
                             CC="${MAKE}  -f Makefile CONF=Release clean"
                             OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstgui.a">
@@ -314,11 +296,9 @@
       </item>
       <item path="presets.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="res/About0.bmp" ex="false" tool="3" flavor2="0">
+      <item path="res/About0-new.bmp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="res/All8Beta4-new.bmp" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="res/All8Beta4.bmp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="res/ChordNote0.bmp" ex="false" tool="3" flavor2="0">
       </item>
@@ -328,11 +308,7 @@
       </item>
       <item path="res/background0-new.bmp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="res/background0.bmp" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="res/bodies4-new.bmp" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="res/bodies4.bmp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="res/bodySelector0.bmp" ex="false" tool="3" flavor2="0">
       </item>
@@ -348,11 +324,7 @@
       </item>
       <item path="res/guitarBottom3-new.bmp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="res/guitarBottom3.bmp" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="res/guitarTop3-new.bmp" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="res/guitarTop3.bmp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="res/librevitar.vstxml" ex="false" tool="3" flavor2="0">
       </item>
@@ -375,8 +347,6 @@
       <item path="res/stopSwitch.bmp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="res/stringBackground-new.bmp" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="res/stringBackground.bmp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="res/tuneKnob0.bmp" ex="false" tool="3" flavor2="0">
       </item>

@@ -59,15 +59,15 @@ LDLIBSOPTIONS=../vstsdk2.4.2/dist/Release/MinGW-Windows/libvstsdk2.4.2.a ../vstg
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/librevitarfork.${CND_DLIB_EXT}
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libRevitar.${CND_DLIB_EXT}
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/librevitarfork.${CND_DLIB_EXT}: ../vstsdk2.4.2/dist/Release/MinGW-Windows/libvstsdk2.4.2.a
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libRevitar.${CND_DLIB_EXT}: ../vstsdk2.4.2/dist/Release/MinGW-Windows/libvstsdk2.4.2.a
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/librevitarfork.${CND_DLIB_EXT}: ../vstgui/dist/Release/MinGW-Windows/libvstgui.a
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libRevitar.${CND_DLIB_EXT}: ../vstgui/dist/Release/MinGW-Windows/libvstgui.a
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/librevitarfork.${CND_DLIB_EXT}: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libRevitar.${CND_DLIB_EXT}: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/librevitarfork.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -lole32 -lkernel32 -lgdi32 -luuid -luser32 --def Revitar.def -shared
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libRevitar.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -lole32 -lkernel32 -lgdi32 -luuid -luser32 --def Revitar.def -shared
 
 ${OBJECTDIR}/RevEditor.o: RevEditor.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -97,7 +97,7 @@ ${OBJECTDIR}/presets.o: presets.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/librevitarfork.${CND_DLIB_EXT}
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libRevitar.${CND_DLIB_EXT}
 
 # Subprojects
 .clean-subprojects:

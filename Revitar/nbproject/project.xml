@@ -9,8 +9,10 @@
             <header-extensions>h</header-extensions>
             <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects>
+                <make-dep-project>../../../../vstgui</make-dep-project>
                 <make-dep-project>../vstsdk2.4.2</make-dep-project>
                 <make-dep-project>../vstgui</make-dep-project>
+                <make-dep-project>../../../../vstsdk2.4.2</make-dep-project>
             </make-dep-projects>
             <sourceRootList>
                 <sourceRootElem>.</sourceRootElem>
