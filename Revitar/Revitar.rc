@@ -101,12 +101,11 @@ BEGIN
     BEGIN
         BLOCK "040904b0"
         BEGIN
-            VALUE "Comments", "Upgraded from 2.0 with VST SDK 2.4.2 by Hermann Seib, additional modifications by SwooshyCueb"
             VALUE "CompanyName", " "
             VALUE "FileDescription", "Revitar 2 - Swooshy's Fork Beta 2.1.1.2"
             VALUE "FileVersion", "2, 1, 1, 2"
             VALUE "InternalName", "Revitar 2.1.1.2"
-            VALUE "LegalCopyright", "Copyright © 2000-2010 Larry Zitnick"
+            VALUE "LegalCopyright", "Mozilla Public License v2.0. See included license file."
             VALUE "OriginalFilename", "Revitar2.dll"
             VALUE "ProductName", "Revitar 2"
             VALUE "ProductVersion", "2, 1, 1, 2"
