@@ -79,8 +79,8 @@
 #define TUNE_KNOB_0                     170
 #define PICK_TYPE_3                     171
 #define STOP_SWITCH_0                   172
-#define REGISTER_0                      173
-#define WELCOME_BETA_0                  174
+//#define REGISTER_0                      173
+//#define WELCOME_BETA_0                  174
 #define BACKGROUND_ALL_BETA_0           175
 #define BACKGROUND_BETA_7_0             176
 #define ROCKER_SWITCH_2                 177
