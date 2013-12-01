@@ -326,7 +326,7 @@ RevEditor::RevEditor (AudioEffect *effect)
     hKnob = 0;
     hTuneKnob = 0;
     hSlideKnob = 0;
-//    hRegButton = 0;
+    hRegButton = 0;
     hVuMeter = 0;
     hWelcome = 0;
     hChordSwitch = 0;
@@ -385,17 +385,17 @@ RevEditor::~RevEditor ()
         hRoundButton->forget ();
     hRoundButton = 0;
 
-//    if (hRegButton)
-//        hRegButton->forget ();
-//    hRegButton = 0;
+    if (hRegButton)
+        hRegButton->forget ();
+    hRegButton = 0;
 
     if (hVuMeter)
         hVuMeter->forget ();
     hVuMeter = 0;
 
-    //if (hWelcome)
-    //    hWelcome->forget ();
-    //hWelcome = 0;
+    if (hWelcome)
+        hWelcome->forget ();
+    hWelcome = 0;
 
     if (hChordSwitch)
         hChordSwitch->forget ();
@@ -610,8 +610,8 @@ if (!hSquareButton)
   hSquareButton = new CBitmap (IDB_BITMAP39);
 if (!hRoundButton)
   hRoundButton = new CBitmap (IDB_BITMAP38);
-//if (!hRegButton)
-//  hRegButton = new CBitmap (REGISTER_0);
+if (!hRegButton)
+  hRegButton = new CBitmap (REGISTER_0);
 if (!hAbout)
   hAbout = new CBitmap (ABOUT_0);
 if (!hVuMeter)

@@ -271,7 +271,7 @@ private:
         COnOffButton *picknoise;
 	COnOffButton *absRel;
 	CTextEdit *textReg;
-	//CSplashScreen *welcome;
+	CSplashScreen *welcome;
 	CSplashScreen *about;
 	CVuMeterCircle  *meter;
 	COptionMenu *chords;
@@ -294,9 +294,9 @@ private:
 	CBitmap *hSlideKnob;
 	CBitmap *hRoundButton;
 	CBitmap *hSquareButton;
-	//CBitmap *hRegButton;
+	CBitmap *hRegButton;
 	CBitmap *hVuMeter;
-	//CBitmap *hWelcome;
+	CBitmap *hWelcome;
 	CBitmap *hChordSwitch;
 	CBitmap *hAbout;
 	CBitmap *hDisplayBack;
