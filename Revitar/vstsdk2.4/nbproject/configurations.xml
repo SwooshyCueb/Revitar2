@@ -77,6 +77,9 @@
             <Elem>_DEBUG</Elem>
           </preprocessorList>
         </ccTool>
+        <asmTool>
+          <architecture>1</architecture>
+        </asmTool>
         <archiverTool>
         </archiverTool>
       </compileType>
@@ -179,6 +182,7 @@
         </fortranCompilerTool>
         <asmTool>
           <developmentMode>5</developmentMode>
+          <architecture>1</architecture>
         </asmTool>
         <archiverTool>
         </archiverTool>
@@ -272,6 +276,9 @@
             <Elem>_DEBUG</Elem>
           </preprocessorList>
         </ccTool>
+        <asmTool>
+          <architecture>2</architecture>
+        </asmTool>
         <archiverTool>
         </archiverTool>
       </compileType>
@@ -374,6 +381,7 @@
         </fortranCompilerTool>
         <asmTool>
           <developmentMode>5</developmentMode>
+          <architecture>2</architecture>
         </asmTool>
         <archiverTool>
         </archiverTool>

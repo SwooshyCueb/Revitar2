@@ -52,7 +52,7 @@ CXXFLAGS=-fpermissive
 FFLAGS=
 
 # Assembler Flags
-ASFLAGS=
+ASFLAGS=--32
 
 # Link Libraries and Options
 LDLIBSOPTIONS=vstsdk2.4/dist/Debug/MinGW+-Windows/libvstsdk2.4.a rcf.o -mwindows

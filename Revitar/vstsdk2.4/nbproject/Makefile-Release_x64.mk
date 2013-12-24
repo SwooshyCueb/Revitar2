@@ -57,7 +57,7 @@ CXXFLAGS=-m64
 FFLAGS=
 
 # Assembler Flags
-ASFLAGS=
+ASFLAGS=--64
 
 # Link Libraries and Options
 LDLIBSOPTIONS=

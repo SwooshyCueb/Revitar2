@@ -17,8 +17,8 @@ CND_PACKAGE_PATH_Debug=dist/Debug/MinGW+-Windows/package/libRevitar.dll.tar
 # Release configuration
 CND_PLATFORM_Release=MinGW+-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/MinGW+-Windows
-CND_ARTIFACT_NAME_Release=Revitar2.dll
-CND_ARTIFACT_PATH_Release=dist/Release/MinGW+-Windows/Revitar2.dll
+CND_ARTIFACT_NAME_Release=Revitar2_x86.dll
+CND_ARTIFACT_PATH_Release=dist/Release/MinGW+-Windows/Revitar2_x86.dll
 CND_PACKAGE_DIR_Release=dist/Release/MinGW+-Windows/package
 CND_PACKAGE_NAME_Release=libRevitar.dll.tar
 CND_PACKAGE_PATH_Release=dist/Release/MinGW+-Windows/package/libRevitar.dll.tar
@@ -33,8 +33,8 @@ CND_PACKAGE_PATH_Debug_x64=dist/Debug_x64/MinGW+w64-Windows/package/libRevitar.d
 # Release_x64 configuration
 CND_PLATFORM_Release_x64=MinGW+w64-Windows
 CND_ARTIFACT_DIR_Release_x64=dist/Release_x64/MinGW+w64-Windows
-CND_ARTIFACT_NAME_Release_x64=Revitar2.dll
-CND_ARTIFACT_PATH_Release_x64=dist/Release_x64/MinGW+w64-Windows/Revitar2.dll
+CND_ARTIFACT_NAME_Release_x64=Revitar2_x64.dll
+CND_ARTIFACT_PATH_Release_x64=dist/Release_x64/MinGW+w64-Windows/Revitar2_x64.dll
 CND_PACKAGE_DIR_Release_x64=dist/Release_x64/MinGW+w64-Windows/package
 CND_PACKAGE_NAME_Release_x64=libRevitar.dll.tar
 CND_PACKAGE_PATH_Release_x64=dist/Release_x64/MinGW+w64-Windows/package/libRevitar.dll.tar
