@@ -3,42 +3,29 @@
     <type>org.netbeans.modules.cnd.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>revitar</name>
+            <name>vst3sdk</name>
             <c-extensions/>
             <cpp-extensions>cpp</cpp-extensions>
             <header-extensions>h</header-extensions>
             <sourceEncoding>UTF-8</sourceEncoding>
-            <make-dep-projects>
-                <make-dep-project>vst3sdk</make-dep-project>
-                <make-dep-project>vstsdk2.4</make-dep-project>
-            </make-dep-projects>
-            <sourceRootList>
-                <sourceRootElem>.</sourceRootElem>
-            </sourceRootList>
+            <make-dep-projects/>
+            <sourceRootList/>
             <confList>
                 <confElem>
                     <name>Debug</name>
-                    <type>2</type>
+                    <type>3</type>
                 </confElem>
                 <confElem>
                     <name>Release</name>
-                    <type>2</type>
+                    <type>3</type>
                 </confElem>
                 <confElem>
                     <name>Debug_x64</name>
-                    <type>2</type>
+                    <type>3</type>
                 </confElem>
                 <confElem>
                     <name>Release_x64</name>
-                    <type>2</type>
-                </confElem>
-                <confElem>
-                    <name>Debug_VST3</name>
-                    <type>2</type>
-                </confElem>
-                <confElem>
-                    <name>Release_VST3</name>
-                    <type>2</type>
+                    <type>3</type>
                 </confElem>
             </confList>
         </data>

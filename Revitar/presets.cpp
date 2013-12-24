@@ -7,12 +7,18 @@
  */
 
 #include <stdio.h>
+#include <algorithm>
 #include <windows.h>
 
 #include "resource.h"
 #include "RevEditor.h"
 #include "Revitar.h"
-#include "vstsdk2.4.2\AEffEditor.h"
+
+#if VST2
+#include "vstsdk2.4/public.sdk/source/vst2.x/aeffeditor.h"
+#elif VST3
+#include "vst3sdk/public.sdk/source/vst/vsteditcontroller.h"
+#endif
 
 
 /*****************************************************************************/
@@ -171,6 +177,7 @@ Init();
 /* LoadBank : loads a bank of presets                                        */
 /*****************************************************************************/
 
+#if VST2
 bool Revitar::LoadBank(void *data, size_t lSize)
 {
 if (lSize < sizeof(struct fxBank))
@@ -245,10 +252,10 @@ for (i = 0; i < fxb->numPrograms; i++)
                                         /* now load the programs             */
 program = (fxProgram *)((char *)data +
                         (long)((fxBank *)0)->content.programs);
-int numPrograms = min((int)fxb->numPrograms, cEffect.numPrograms);
+int numPrograms = std::min((int)fxb->numPrograms, cEffect.numPrograms);
 for (i = 0; i < numPrograms; i++)
   {
-  int numParams = min((int)program->numParams, cEffect.numParams);
+  int numParams = std::min((int)program->numParams, cEffect.numParams);
                                         /* copy as many data as possible     */
   memcpy(programs[i].name, program->prgName, sizeof(program->prgName));
   programs[i].name[sizeof(program->prgName)] = '\0';
@@ -375,7 +382,7 @@ if (pBank)
   delete pBank;
 } //setPresets
 
-
+#endif
 /*===========================================================================*/
 /* RevitarProgram class members                                              */
 /*===========================================================================*/

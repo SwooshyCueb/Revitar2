@@ -8,13 +8,17 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <algorithm>
 #include <math.h>
 #include <stdlib.h>
 #include <float.h>
 #include <windows.h>
 #include <winreg.h>
 
-#include "vstsdk2.4.2\AEffEditor.h"
+#if VST2
+#include "vstsdk2.4/public.sdk/source/vst2.x/aeffeditor.h"
+#endif
+
 #include "RevEditor.h"
 #include "Revitar.h"
 
@@ -1567,8 +1571,8 @@ amountVol = fKnobLast[1];
 volAdd = 0.7f * prog.fKnob[kKnobGain];
 amountVolAdd = prog.fKnob[kKnobBodyGain];
 
-volAdd = (volAdd - vol) / (float) (max(1, sampleTemp));
-amountVolAdd = (amountVolAdd - amountVol) / (float) (max(1, sampleTemp));
+volAdd = (volAdd - vol) / (float) (std::max(1, sampleTemp));
+amountVolAdd = (amountVolAdd - amountVol) / (float) (std::max(1, sampleTemp));
 
 if (!prog.fKnob[kKnobSlap])
   m_Slap = -5.0f;
@@ -1782,7 +1786,7 @@ while (--sampleframes >= 0)
           {
           j = (int) ((float) CHORD_DISPLAY_HEIGHT * p1[i] / 4.0f);
           j += CHORD_DISPLAY_HEIGHT / 2;
-          j = min(CHORD_DISPLAY_HEIGHT - 1, max(0, j));
+          j = std::min(CHORD_DISPLAY_HEIGHT - 1, std::max(0, j));
           
           m_ChordDisplay[polyIdx][i][j]++;
           }
@@ -2082,7 +2086,7 @@ if(m_Pluck[polyIdx])
       m_PickNoise = 15.0f * (prog.fPickNoise > 0.5f);
       //m_PickNoise = 0.0;
       m_PickNoiseRate = (0.7f + 1.0f*m_Random[m_RandomCt]) * (prog.fPickNoise > 0.5f);
-      m_PickNoiseRate *= (0.2f + max(0.0f, 0.9f*(prog.fPickStiffness + 0.2f) - 0.5f*(1.0f - prog.fPickWidth))) * (prog.fPickNoise > 0.5f);
+      m_PickNoiseRate *= (0.2f + std::max(0.0f, 0.9f*(prog.fPickStiffness + 0.2f) - 0.5f*(1.0f - prog.fPickWidth))) * (prog.fPickNoise > 0.5f);
       //m_PickNoiseRate = 0.0;
       m_PickAmp = ((0.3f + 2.5f * m_Random[m_RandomCt] * m_Random[m_RandomCt]) *
                   prog.fKnob[kKnobPickVolume] *
@@ -2340,9 +2344,9 @@ for (i = 0; i < NUM_RESON; i++)
   }
 
 float resDrag = 0.0015f * resonDrag[m_BodyIdx];
-float delKnob1 = max(0.0f, prog.fKnob[kKnobBodyGain] - 0.6f);
+float delKnob1 = std::max(0.0f, prog.fKnob[kKnobBodyGain] - 0.6f);
 float maxIn = 0.8f - delKnob1;
-float acc = (max(-maxIn, min(maxIn, (resPickUp))) - resTotalPos);
+float acc = (std::max(-maxIn, std::min(maxIn, (resPickUp))) - resTotalPos);
 //  float acc = (resPickUp) - resTotalPos;
 //  float range = fabs(resTotalPos);
 //  range = min(1.0, max(0.0, range - 0.3));

@@ -24,14 +24,14 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Revitar
+PROJECTNAME=vstsdk2.4
 
 # Active Configuration
 DEFAULTCONF=Debug
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=Debug Release Debug_x64 Release_x64 Debug_VST3 Release_VST3 
+ALLCONFS=Debug Release Debug_x64 Release_x64 
 
 
 # build

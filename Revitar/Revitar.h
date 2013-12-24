@@ -9,16 +9,24 @@
 #ifndef __REVITAR_H__
 #define __REVITAR_H__
 
-#include "vstsdk2.4.2\audioeffectx.h"
-#include "vstsdk2.4.2\vstfxstore.h"
+#if VST2
+#include "vstsdk2.4/public.sdk/source/vst2.x/audioeffectx.h"
+#include "vstsdk2.4/pluginterfaces/vst2.x/vstfxstore.h"
+#elif VST3
+#include "vst3sdk/public.sdk/source/vst/vstaudioeffect.h"
+//#include "vst3sdk/public.sdk/source/vst/vstpresetfile.h"
+#endif
 
 #include <string.h>
 #include <windows.h>
 #include <stdio.h>
 #include <math.h>
 
-#include "vstsdk2.4.2\vstgui.h"
-
+#if VST2
+#include "vstsdk2.4/vstgui.sf/vstgui/vstgui.h"
+#elif VST3
+#include "vst3sdk/vstgui.sf/vstgui/vstgui.h"
+#endif
 //#define		TUNE_NOW
 
 enum
@@ -141,7 +149,11 @@ public:
 	virtual void getParameterName(VstInt32 index, char *text);
 	virtual bool canParameterBeAutomated (VstInt32 index);
 	virtual bool getParameterProperties (VstInt32 index, VstParameterProperties* p);
+#if VST2
 	virtual float DECLARE_VST_DEPRECATED (getVu) ();
+#elif VST3
+        virtual float (getVu) ();
+#endif
 	virtual void suspend();
 	virtual void resume();
 	virtual bool getEffectName (char* name);
@@ -151,7 +163,11 @@ public:
 	virtual VstInt32 canDo (char* text);
 	virtual bool getOutputProperties (VstInt32 index, VstPinProperties* properties);
 	virtual bool getProgramNameIndexed (VstInt32 category, VstInt32 index, char* text);
+#if VST2
 	virtual bool DECLARE_VST_DEPRECATED (copyProgram) (VstInt32 destination);
+#elif VST3
+        virtual bool (copyProgram) (VstInt32 destination);
+#endif
 	virtual void setSampleRate(float sampleRate);
 	virtual void setBlockSize(VstInt32 blockSize);
 

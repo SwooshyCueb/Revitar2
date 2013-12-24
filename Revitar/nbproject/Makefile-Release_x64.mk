@@ -21,9 +21,9 @@ FC=gfortran
 AS=as
 
 # Macros
-CND_PLATFORM=MinGW+-Windows
+CND_PLATFORM=MinGW+w64-Windows
 CND_DLIB_EXT=dll
-CND_CONF=Release
+CND_CONF=Release_x64
 CND_DISTDIR=dist
 CND_BUILDDIR=build
 
@@ -45,8 +45,8 @@ OBJECTFILES= \
 CFLAGS=
 
 # CC Compiler Flags
-CCFLAGS=-m32 -fpermissive
-CXXFLAGS=-m32 -fpermissive
+CCFLAGS=-m64 -fpermissive
+CXXFLAGS=-m64 -fpermissive
 
 # Fortran Compiler Flags
 FFLAGS=
@@ -55,13 +55,13 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=vstsdk2.4/dist/Release/MinGW+-Windows/libvstsdk2.4.a rcf.o -mwindows
+LDLIBSOPTIONS=vstsdk2.4/dist/Release_x64/MinGW+w64-Windows/libvstsdk2.4.a rcf.o -mwindows
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/Revitar2.${CND_DLIB_EXT}
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/Revitar2.${CND_DLIB_EXT}: vstsdk2.4/dist/Release/MinGW+-Windows/libvstsdk2.4.a
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/Revitar2.${CND_DLIB_EXT}: vstsdk2.4/dist/Release_x64/MinGW+w64-Windows/libvstsdk2.4.a
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/Revitar2.${CND_DLIB_EXT}: rcf.o
 
@@ -91,8 +91,8 @@ ${OBJECTDIR}/presets.o: presets.cpp
 
 # Subprojects
 .build-subprojects:
-	cd vstsdk2.4 && ${MAKE}  -f Makefile CONF=Release
-	cd vstsdk2.4 && ${MAKE}  -f Makefile CONF=Release
+	cd vstsdk2.4 && ${MAKE}  -f Makefile CONF=Release_x64
+	cd vstsdk2.4 && ${MAKE}  -f Makefile CONF=Release_x64
 
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
@@ -101,8 +101,8 @@ ${OBJECTDIR}/presets.o: presets.cpp
 
 # Subprojects
 .clean-subprojects:
-	cd vstsdk2.4 && ${MAKE}  -f Makefile CONF=Release clean
-	cd vstsdk2.4 && ${MAKE}  -f Makefile CONF=Release clean
+	cd vstsdk2.4 && ${MAKE}  -f Makefile CONF=Release_x64 clean
+	cd vstsdk2.4 && ${MAKE}  -f Makefile CONF=Release_x64 clean
 
 # Enable dependency checking
 .dep.inc: .depcheck-impl

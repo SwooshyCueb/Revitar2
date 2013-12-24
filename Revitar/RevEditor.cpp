@@ -69,7 +69,11 @@ void CAnimKnobZ::mouse (CDrawContext *pContext, CPoint &where, long button)
         value = getDefaultValue ();
 
         if (isDirty () && listener)
+#if VST2            
             listener->valueChanged (pContext, this);
+#elif VST3
+            listener->valueChanged (this);
+#endif        
 
         // end of edit parameter
         endEdit ();
@@ -238,7 +242,11 @@ void C2DSwitch::mouse (CDrawContext *pContext, CPoint &where, long button)
 
 
         if (isDirty () && listener)
+#if VST2            
             listener->valueChanged (pContext, this);
+#elif VST3
+            listener->valueChanged (this);
+#endif   
 
         getMouseLocation (pContext, where);
         doIdleStuff ();
@@ -291,7 +299,11 @@ void C2DSwitch::setVert(float v)
 //-----------------------------------------------------------------------------
 // RevEditor class implementation
 //-----------------------------------------------------------------------------
-RevEditor::RevEditor (AudioEffect *effect)
+#if VST2
+	RevEditor::RevEditor (AudioEffect *effect)
+#elif VST3
+        RevEditor::RevEditor (void *effect = 0)
+#endif
  : AEffGUIEditor (effect) 
 {
     int i;
@@ -1375,7 +1387,11 @@ void RevEditor::valueChanged (CDrawContext* context, CControl* control)
     case kStopSwitch:
 
         if(tag == kChord)
+#if VST2
             effect->setParameter(kChord, (float) chords->getCurrent(0));
+#elif VST3
+            effect->setParameter(kChord, (float) chords->getCurrentIndex(true));
+#endif
         else
             effect->setParameterAutomated (tag, control->getValue ());
 

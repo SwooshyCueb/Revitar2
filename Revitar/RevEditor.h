@@ -9,7 +9,12 @@
 #ifndef __REVEDITOR_H__
 #define __REVEDITOR_H__
 
-#include "vstsdk2.4.2\vstgui.h"
+#if VST2
+#include "vstsdk2.4/vstgui.sf/vstgui/vstgui.h"
+#elif VST3
+#include "vst3sdk/vstgui.sf/vstgui/vstgui.h"
+#include "vst3sdk/vstgui.sf/vstgui/aeffguieditor.h"
+#endif
 
 #ifndef WITH_REGISTRATION
 #define WITH_REGISTRATION 0
@@ -135,6 +140,29 @@ public:
 
 		m_BodyChanged = true;
 	}
+#if VST3
+        CDisplayScreen (const CDisplayScreen& c) : CControl (c)
+        , offset (c.offset)
+        , pHandle (c.pHandle) 
+        , pDisplay (c.pDisplay)
+        , m_fPickUp (c.m_fPickUp)
+        , m_fPickPosition (c.m_fPickPosition)
+	, m_iBodyType (c.m_iBodyType)
+	, m_BodyChanged (c.m_BodyChanged)
+	, m_PickUpPressed (c.m_PickUpPressed)
+	, m_PickPressed (c.m_PickPressed)
+	, m_ChordPressed (c.m_ChordPressed)
+	, m_FirstNote (c.m_FirstNote)
+	, m_ChordOn (c.m_ChordOn)
+	, m_pChordDisplayUpdate (c.m_pChordDisplayUpdate)
+        , m_ChordDisplay (c.m_ChordDisplay)
+        , m_ChordDisplayCurrent (c.m_ChordDisplayCurrent)
+	, m_BPP (c.m_BPP)
+	, kPickPosition (c.kPickPosition)
+	, kPickUp (c.kPickUp)
+        {
+        }
+#endif
 
 	virtual ~CDisplayScreen ();
 	virtual void draw (CDrawContext *pContext);
@@ -144,6 +172,10 @@ public:
 	void setBodyValue(float value);
 	void drawDisplay();
 	void updateBitmaps(CBitmap *background, CBitmap *pickup, CBitmap *pick, CBitmap *chordnote);
+        
+#if VST3        
+        CLASS_METHODS(CDisplayScreen, CControl);
+#endif
 
 };
 
@@ -246,7 +278,11 @@ public:
 class RevEditor : public AEffGUIEditor, public CControlListener
 {
 public:
+#if VST2
 	RevEditor (AudioEffect *effect = 0);
+#elif VST3
+        RevEditor (void *effect = 0);
+#endif
 	virtual ~RevEditor ();
 	void updateMIDICC(int tag);
 	void removeMIDICC(int tag);
@@ -314,6 +350,10 @@ private:
 	CBitmap *hPalmSliderHandle;
 	CBitmap *hStopSwitch;
 	CBitmap *hAbsRel;
+        
+#if VST3
+        //CLASS_METHODS(RevEditor, AEffGUIEditor);
+#endif
 
 };
 
