@@ -4,11 +4,103 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <logicalFolder name="f1" displayName="vstgui" projectFiles="true">
+      <logicalFolder name="f2" displayName="vst2" projectFiles="true">
+        <logicalFolder name="f2" displayName="pluginterfaces" projectFiles="true">
+          <itemPath>pluginterfaces/vst2.x/aeffect.h</itemPath>
+          <itemPath>pluginterfaces/vst2.x/aeffectx.h</itemPath>
+          <itemPath>pluginterfaces/vst2.x/vstfxstore.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f1" displayName="public" projectFiles="true">
+          <itemPath>public.sdk/source/vst2.x/aeffeditor.h</itemPath>
+          <itemPath>public.sdk/source/vst2.x/audioeffect.h</itemPath>
+          <itemPath>public.sdk/source/vst2.x/audioeffectx.h</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="f4" displayName="vst2wrapper" projectFiles="true">
+        <logicalFolder name="f3" displayName="base" projectFiles="true">
+          <itemPath>base/source/fatomic.h</itemPath>
+          <itemPath>base/source/fcleanup.h</itemPath>
+          <itemPath>base/source/fcriticalperformance.h</itemPath>
+          <itemPath>base/source/fdebug.h</itemPath>
+          <itemPath>base/source/fdynlib.h</itemPath>
+          <itemPath>base/source/fmemory.h</itemPath>
+          <itemPath>base/source/fobject.h</itemPath>
+          <itemPath>base/source/fstreamer.h</itemPath>
+          <itemPath>base/source/fstring.h</itemPath>
+          <itemPath>base/source/fthread.h</itemPath>
+          <itemPath>base/source/tarray.h</itemPath>
+          <itemPath>base/source/tcontainer.h</itemPath>
+          <itemPath>base/source/timer.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f2" displayName="hosting" projectFiles="true">
+          <itemPath>public.sdk/source/vst/hosting/eventlist.h</itemPath>
+          <itemPath>public.sdk/source/vst/hosting/hostclasses.h</itemPath>
+          <itemPath>public.sdk/source/vst/hosting/parameterchanges.h</itemPath>
+          <itemPath>public.sdk/source/vst/hosting/processdata.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f4" displayName="pluginterfaces" projectFiles="true">
+          <logicalFolder name="f1" displayName="gui" projectFiles="true">
+            <itemPath>pluginterfaces/gui/iplugview.h</itemPath>
+          </logicalFolder>
+          <itemPath>pluginterfaces/base/conststringtable.h</itemPath>
+          <itemPath>pluginterfaces/base/fplatform.h</itemPath>
+          <itemPath>pluginterfaces/base/fstrdefs.h</itemPath>
+          <itemPath>pluginterfaces/base/ftypes.h</itemPath>
+          <itemPath>pluginterfaces/base/funknown.h</itemPath>
+          <itemPath>pluginterfaces/base/futils.h</itemPath>
+          <itemPath>pluginterfaces/base/ibstream.h</itemPath>
+          <itemPath>pluginterfaces/base/ipersistent.h</itemPath>
+          <itemPath>pluginterfaces/base/ipluginbase.h</itemPath>
+          <itemPath>pluginterfaces/base/istringresult.h</itemPath>
+          <itemPath>pluginterfaces/base/iupdatehandler.h</itemPath>
+          <itemPath>pluginterfaces/base/keycodes.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f1" displayName="public" projectFiles="true">
+          <itemPath>public.sdk/source/common/memorystream.h</itemPath>
+          <itemPath>public.sdk/source/common/pluginview.h</itemPath>
+        </logicalFolder>
+        <itemPath>public.sdk/source/vst/vst2wrapper/vst2wrapper.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f1" displayName="vst3" projectFiles="true">
+        <logicalFolder name="f2" displayName="pluginterfaces" projectFiles="true">
+          <itemPath>pluginterfaces/vst/ivstattributes.h</itemPath>
+          <itemPath>pluginterfaces/vst/ivstaudioprocessor.h</itemPath>
+          <itemPath>pluginterfaces/vst/ivstcomponent.h</itemPath>
+          <itemPath>pluginterfaces/vst/ivstcontextmenu.h</itemPath>
+          <itemPath>pluginterfaces/vst/ivsteditcontroller.h</itemPath>
+          <itemPath>pluginterfaces/vst/ivstevents.h</itemPath>
+          <itemPath>pluginterfaces/vst/ivsthostapplication.h</itemPath>
+          <itemPath>pluginterfaces/vst/ivstinterappaudio.h</itemPath>
+          <itemPath>pluginterfaces/vst/ivstmessage.h</itemPath>
+          <itemPath>pluginterfaces/vst/ivstmidicontrollers.h</itemPath>
+          <itemPath>pluginterfaces/vst/ivstnoteexpression.h</itemPath>
+          <itemPath>pluginterfaces/vst/ivstparameterchanges.h</itemPath>
+          <itemPath>pluginterfaces/vst/ivstplugview.h</itemPath>
+          <itemPath>pluginterfaces/vst/ivstprocesscontext.h</itemPath>
+          <itemPath>pluginterfaces/vst/ivstrepresentation.h</itemPath>
+          <itemPath>pluginterfaces/vst/ivstunits.h</itemPath>
+          <itemPath>pluginterfaces/vst/vstpresetkeys.h</itemPath>
+          <itemPath>pluginterfaces/vst/vstpshpack4.h</itemPath>
+          <itemPath>pluginterfaces/vst/vsttypes.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f1" displayName="public" projectFiles="true">
+          <itemPath>public.sdk/source/vst/vstaudioeffect.h</itemPath>
+          <itemPath>public.sdk/source/vst/vstbus.h</itemPath>
+          <itemPath>public.sdk/source/vst/vstcomponent.h</itemPath>
+          <itemPath>public.sdk/source/vst/vstcomponentbase.h</itemPath>
+          <itemPath>public.sdk/source/vst/vsteditcontroller.h</itemPath>
+          <itemPath>public.sdk/source/vst/vstguieditor.h</itemPath>
+          <itemPath>public.sdk/source/vst/vstnoteexpressiontypes.h</itemPath>
+          <itemPath>public.sdk/source/vst/vstparameters.h</itemPath>
+          <itemPath>public.sdk/source/vst/vstpresetfile.h</itemPath>
+          <itemPath>public.sdk/source/vst/vstrepresentation.h</itemPath>
+          <itemPath>public.sdk/source/vst/vstsinglecomponenteffect.h</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="f3" displayName="vstgui" projectFiles="true">
         <itemPath>vstgui.sf/vstgui/aeffguieditor.h</itemPath>
         <itemPath>vstgui.sf/vstgui/cdatabrowser.h</itemPath>
         <itemPath>vstgui.sf/vstgui/cfileselector.h</itemPath>
-        <itemPath>vstgui.sf/vstgui/cocoasupport.h</itemPath>
         <itemPath>vstgui.sf/vstgui/cscrollview.h</itemPath>
         <itemPath>vstgui.sf/vstgui/ctabview.h</itemPath>
         <itemPath>vstgui.sf/vstgui/ctooltipsupport.h</itemPath>
@@ -19,17 +111,6 @@
         <itemPath>vstgui.sf/vstgui/vstguidebug.h</itemPath>
         <itemPath>vstgui.sf/vstgui/vstkeycode.h</itemPath>
       </logicalFolder>
-      <itemPath>public.sdk/source/vst/vstaudioeffect.h</itemPath>
-      <itemPath>public.sdk/source/vst/vstbus.h</itemPath>
-      <itemPath>public.sdk/source/vst/vstcomponent.h</itemPath>
-      <itemPath>public.sdk/source/vst/vstcomponentbase.h</itemPath>
-      <itemPath>public.sdk/source/vst/vsteditcontroller.h</itemPath>
-      <itemPath>public.sdk/source/vst/vstguieditor.h</itemPath>
-      <itemPath>public.sdk/source/vst/vstnoteexpressiontypes.h</itemPath>
-      <itemPath>public.sdk/source/vst/vstparameters.h</itemPath>
-      <itemPath>public.sdk/source/vst/vstpresetfile.h</itemPath>
-      <itemPath>public.sdk/source/vst/vstrepresentation.h</itemPath>
-      <itemPath>public.sdk/source/vst/vstsinglecomponenteffect.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -38,7 +119,59 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <logicalFolder name="f1" displayName="vstgui" projectFiles="true">
+      <logicalFolder name="f2" displayName="vst2" projectFiles="true">
+        <logicalFolder name="f1" displayName="public" projectFiles="true">
+          <itemPath>public.sdk/source/vst2.x/audioeffect.cpp</itemPath>
+          <itemPath>public.sdk/source/vst2.x/audioeffectx.cpp</itemPath>
+          <itemPath>public.sdk/source/vst2.x/vstplugmain.cpp</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="f4" displayName="vst2wrapper" projectFiles="true">
+        <logicalFolder name="f1" displayName="base" projectFiles="true">
+          <itemPath>base/source/fatomic.cpp</itemPath>
+          <itemPath>base/source/fcriticalperformance.cpp</itemPath>
+          <itemPath>base/source/fdebug.cpp</itemPath>
+          <itemPath>base/source/fdynlib.cpp</itemPath>
+          <itemPath>base/source/fmemory.cpp</itemPath>
+          <itemPath>base/source/fobject.cpp</itemPath>
+          <itemPath>base/source/fstreamer.cpp</itemPath>
+          <itemPath>base/source/fstring.cpp</itemPath>
+          <itemPath>base/source/fthread.cpp</itemPath>
+          <itemPath>base/source/timer.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f2" displayName="hosting" projectFiles="true">
+          <itemPath>public.sdk/source/vst/hosting/eventlist.cpp</itemPath>
+          <itemPath>public.sdk/source/vst/hosting/hostclasses.cpp</itemPath>
+          <itemPath>public.sdk/source/vst/hosting/parameterchanges.cpp</itemPath>
+          <itemPath>public.sdk/source/vst/hosting/processdata.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f4" displayName="pluginterfaces" projectFiles="true">
+          <itemPath>pluginterfaces/base/conststringtable.cpp</itemPath>
+          <itemPath>pluginterfaces/base/funknown.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f3" displayName="public" projectFiles="true">
+          <itemPath>public.sdk/source/common/memorystream.cpp</itemPath>
+          <itemPath>public.sdk/source/common/pluginview.cpp</itemPath>
+        </logicalFolder>
+        <itemPath>public.sdk/source/vst/vst2wrapper/vst2wrapper.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f1" displayName="vst3" projectFiles="true">
+        <logicalFolder name="f1" displayName="public" projectFiles="true">
+          <itemPath>public.sdk/source/vst/vstaudioeffect.cpp</itemPath>
+          <itemPath>public.sdk/source/vst/vstbus.cpp</itemPath>
+          <itemPath>public.sdk/source/vst/vstcomponent.cpp</itemPath>
+          <itemPath>public.sdk/source/vst/vstcomponentbase.cpp</itemPath>
+          <itemPath>public.sdk/source/vst/vsteditcontroller.cpp</itemPath>
+          <itemPath>public.sdk/source/vst/vstguieditor.cpp</itemPath>
+          <itemPath>public.sdk/source/vst/vstinitiids.cpp</itemPath>
+          <itemPath>public.sdk/source/vst/vstnoteexpressiontypes.cpp</itemPath>
+          <itemPath>public.sdk/source/vst/vstparameters.cpp</itemPath>
+          <itemPath>public.sdk/source/vst/vstpresetfile.cpp</itemPath>
+          <itemPath>public.sdk/source/vst/vstrepresentation.cpp</itemPath>
+          <itemPath>public.sdk/source/vst/vstsinglecomponenteffect.cpp</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="f3" displayName="vstgui" projectFiles="true">
         <itemPath>vstgui.sf/vstgui/aeffguieditor.cpp</itemPath>
         <itemPath>vstgui.sf/vstgui/cdatabrowser.cpp</itemPath>
         <itemPath>vstgui.sf/vstgui/cfileselector.cpp</itemPath>
@@ -52,18 +185,6 @@
         <itemPath>vstgui.sf/vstgui/vstguidebug.cpp</itemPath>
         <itemPath>vstgui.sf/vstgui/winfileselector.cpp</itemPath>
       </logicalFolder>
-      <itemPath>public.sdk/source/vst/vstaudioeffect.cpp</itemPath>
-      <itemPath>public.sdk/source/vst/vstbus.cpp</itemPath>
-      <itemPath>public.sdk/source/vst/vstcomponent.cpp</itemPath>
-      <itemPath>public.sdk/source/vst/vstcomponentbase.cpp</itemPath>
-      <itemPath>public.sdk/source/vst/vsteditcontroller.cpp</itemPath>
-      <itemPath>public.sdk/source/vst/vstguieditor.cpp</itemPath>
-      <itemPath>public.sdk/source/vst/vstinitiids.cpp</itemPath>
-      <itemPath>public.sdk/source/vst/vstnoteexpressiontypes.cpp</itemPath>
-      <itemPath>public.sdk/source/vst/vstparameters.cpp</itemPath>
-      <itemPath>public.sdk/source/vst/vstpresetfile.cpp</itemPath>
-      <itemPath>public.sdk/source/vst/vstrepresentation.cpp</itemPath>
-      <itemPath>public.sdk/source/vst/vstsinglecomponenteffect.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -79,7 +200,7 @@
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
-    <conf name="Debug" type="3">
+    <conf name="Debug_VST3_GUI3.6" type="3">
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>MinGW+|MinGW</compilerSet>
@@ -88,6 +209,7 @@
       </toolsSet>
       <compileType>
         <ccTool>
+          <architecture>1</architecture>
           <incDir>
             <pElem>.</pElem>
             <pElem>public.sdk/source/vst</pElem>
@@ -95,12 +217,87 @@
           </incDir>
           <preprocessorList>
             <Elem>DEVELOPMENT=1</Elem>
+            <Elem>VSTGUI_ENABLE_DEPRECATED_METHODS=1</Elem>
             <Elem>_DEBUG</Elem>
           </preprocessorList>
         </ccTool>
+        <asmTool>
+          <architecture>1</architecture>
+        </asmTool>
         <archiverTool>
         </archiverTool>
       </compileType>
+      <item path="pluginterfaces/vst/ivstattributes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstaudioprocessor.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstcomponent.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstcontextmenu.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivsteditcontroller.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstevents.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivsthostapplication.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstinterappaudio.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstmessage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstmidicontrollers.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstnoteexpression.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstparameterchanges.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstplugview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstprocesscontext.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstrepresentation.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstunits.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/vstpresetkeys.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/vstpshpack4.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/vsttypes.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="public.sdk/source/vst/vstaudioeffect.cpp"
             ex="false"
             tool="1"
@@ -210,19 +407,9 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="vstgui.sf/vstgui/aeffguieditor.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/aeffguieditor.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="vstgui.sf/vstgui/cdatabrowser.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="vstgui.sf/vstgui/cdatabrowser.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cfileselector.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cfileselector.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cocoasupport.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="vstgui.sf/vstgui/cscrollview.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -267,7 +454,7 @@
             flavor2="0">
       </item>
     </conf>
-    <conf name="Release" type="3">
+    <conf name="Release_VST3_GUI3.6" type="3">
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>MinGW+|MinGW</compilerSet>
@@ -280,6 +467,8 @@
         </cTool>
         <ccTool>
           <developmentMode>5</developmentMode>
+          <stripSymbols>true</stripSymbols>
+          <architecture>1</architecture>
           <incDir>
             <pElem>.</pElem>
             <pElem>public.sdk/source/vst</pElem>
@@ -288,6 +477,7 @@
           <preprocessorList>
             <Elem>NDEBUG</Elem>
             <Elem>RELEASE=1</Elem>
+            <Elem>VSTGUI_ENABLE_DEPRECATED_METHODS=1</Elem>
           </preprocessorList>
         </ccTool>
         <fortranCompilerTool>
@@ -295,10 +485,82 @@
         </fortranCompilerTool>
         <asmTool>
           <developmentMode>5</developmentMode>
+          <architecture>1</architecture>
         </asmTool>
         <archiverTool>
         </archiverTool>
       </compileType>
+      <item path="pluginterfaces/vst/ivstattributes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstaudioprocessor.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstcomponent.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstcontextmenu.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivsteditcontroller.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstevents.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivsthostapplication.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstinterappaudio.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstmessage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstmidicontrollers.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstnoteexpression.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstparameterchanges.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstplugview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstprocesscontext.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstrepresentation.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstunits.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/vstpresetkeys.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/vstpshpack4.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/vsttypes.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="public.sdk/source/vst/vstaudioeffect.cpp"
             ex="false"
             tool="1"
@@ -408,19 +670,9 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="vstgui.sf/vstgui/aeffguieditor.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/aeffguieditor.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="vstgui.sf/vstgui/cdatabrowser.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="vstgui.sf/vstgui/cdatabrowser.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cfileselector.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cfileselector.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cocoasupport.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="vstgui.sf/vstgui/cscrollview.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -465,7 +717,7 @@
             flavor2="0">
       </item>
     </conf>
-    <conf name="Debug_x64" type="3">
+    <conf name="Debug_x64_VST3_GUI3.6" type="3">
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>MinGW+w64|MinGW</compilerSet>
@@ -474,6 +726,7 @@
       </toolsSet>
       <compileType>
         <ccTool>
+          <architecture>2</architecture>
           <incDir>
             <pElem>.</pElem>
             <pElem>public.sdk/source/vst</pElem>
@@ -481,12 +734,87 @@
           </incDir>
           <preprocessorList>
             <Elem>DEVELOPMENT=1</Elem>
+            <Elem>VSTGUI_ENABLE_DEPRECATED_METHODS=1</Elem>
             <Elem>_DEBUG</Elem>
           </preprocessorList>
         </ccTool>
+        <asmTool>
+          <architecture>2</architecture>
+        </asmTool>
         <archiverTool>
         </archiverTool>
       </compileType>
+      <item path="pluginterfaces/vst/ivstattributes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstaudioprocessor.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstcomponent.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstcontextmenu.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivsteditcontroller.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstevents.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivsthostapplication.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstinterappaudio.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstmessage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstmidicontrollers.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstnoteexpression.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstparameterchanges.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstplugview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstprocesscontext.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstrepresentation.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstunits.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/vstpresetkeys.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/vstpshpack4.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/vsttypes.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="public.sdk/source/vst/vstaudioeffect.cpp"
             ex="false"
             tool="1"
@@ -596,19 +924,9 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="vstgui.sf/vstgui/aeffguieditor.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/aeffguieditor.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="vstgui.sf/vstgui/cdatabrowser.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="vstgui.sf/vstgui/cdatabrowser.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cfileselector.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cfileselector.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cocoasupport.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="vstgui.sf/vstgui/cscrollview.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -653,7 +971,7 @@
             flavor2="0">
       </item>
     </conf>
-    <conf name="Release_x64" type="3">
+    <conf name="Release_x64_VST3_GUI3.6" type="3">
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>MinGW+w64|MinGW</compilerSet>
@@ -666,6 +984,8 @@
         </cTool>
         <ccTool>
           <developmentMode>5</developmentMode>
+          <stripSymbols>true</stripSymbols>
+          <architecture>2</architecture>
           <incDir>
             <pElem>.</pElem>
             <pElem>public.sdk/source/vst</pElem>
@@ -674,6 +994,7 @@
           <preprocessorList>
             <Elem>NDEBUG</Elem>
             <Elem>RELEASE=1</Elem>
+            <Elem>VSTGUI_ENABLE_DEPRECATED_METHODS=1</Elem>
           </preprocessorList>
         </ccTool>
         <fortranCompilerTool>
@@ -681,10 +1002,82 @@
         </fortranCompilerTool>
         <asmTool>
           <developmentMode>5</developmentMode>
+          <architecture>2</architecture>
         </asmTool>
         <archiverTool>
         </archiverTool>
       </compileType>
+      <item path="pluginterfaces/vst/ivstattributes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstaudioprocessor.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstcomponent.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstcontextmenu.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivsteditcontroller.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstevents.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivsthostapplication.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstinterappaudio.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstmessage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstmidicontrollers.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstnoteexpression.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstparameterchanges.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstplugview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstprocesscontext.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstrepresentation.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstunits.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/vstpresetkeys.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/vstpshpack4.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/vsttypes.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="public.sdk/source/vst/vstaudioeffect.cpp"
             ex="false"
             tool="1"
@@ -794,6 +1187,116 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="vstgui.sf/vstgui/cdatabrowser.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cdatabrowser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cscrollview.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cscrollview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctabview.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctabview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctooltipsupport.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctooltipsupport.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cvstguitimer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cvstguitimer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/plugguieditor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/plugguieditor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstcontrols.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstcontrols.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstgui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstgui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstguidebug.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstguidebug.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstkeycode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/winfileselector.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+    </conf>
+    <conf name="Debug_VST2_GUI3.6" type="3">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>MinGW+|MinGW</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <architecture>1</architecture>
+          <incDir>
+            <pElem>.</pElem>
+            <pElem>public.sdk/source/vst2.x</pElem>
+            <pElem>vstgui.sf</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>DEVELOPMENT=1</Elem>
+            <Elem>VSTGUI_ENABLE_DEPRECATED_METHODS=0</Elem>
+            <Elem>_DEBUG</Elem>
+          </preprocessorList>
+        </ccTool>
+        <asmTool>
+          <architecture>1</architecture>
+        </asmTool>
+        <archiverTool>
+        </archiverTool>
+      </compileType>
+      <item path="pluginterfaces/vst2.x/aeffect.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst2.x/aeffectx.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst2.x/vstfxstore.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/aeffeditor.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffect.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffect.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffectx.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffectx.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/vstplugmain.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
       <item path="vstgui.sf/vstgui/aeffguieditor.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="vstgui.sf/vstgui/aeffguieditor.h" ex="false" tool="3" flavor2="0">
@@ -806,7 +1309,1775 @@
       </item>
       <item path="vstgui.sf/vstgui/cfileselector.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="vstgui.sf/vstgui/cocoasupport.h" ex="false" tool="3" flavor2="0">
+      <item path="vstgui.sf/vstgui/cscrollview.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cscrollview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctabview.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctabview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctooltipsupport.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctooltipsupport.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cvstguitimer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cvstguitimer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/plugguieditor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/plugguieditor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstcontrols.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstcontrols.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstgui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstgui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstguidebug.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstguidebug.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstkeycode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/winfileselector.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release_VST2_GUI3.6" type="3">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>MinGW+|MinGW</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+          <stripSymbols>true</stripSymbols>
+          <architecture>1</architecture>
+          <incDir>
+            <pElem>.</pElem>
+            <pElem>public.sdk/source/vst2.x</pElem>
+            <pElem>vstgui.sf</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>RELEASE=1</Elem>
+            <Elem>VSTGUI_ENABLE_DEPRECATED_METHODS=0</Elem>
+          </preprocessorList>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+          <architecture>1</architecture>
+        </asmTool>
+        <archiverTool>
+        </archiverTool>
+      </compileType>
+      <item path="pluginterfaces/vst2.x/aeffect.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst2.x/aeffectx.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst2.x/vstfxstore.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/aeffeditor.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffect.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffect.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffectx.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffectx.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/vstplugmain.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/aeffguieditor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/aeffguieditor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cdatabrowser.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cdatabrowser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cfileselector.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cfileselector.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cscrollview.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cscrollview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctabview.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctabview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctooltipsupport.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctooltipsupport.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cvstguitimer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cvstguitimer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/plugguieditor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/plugguieditor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstcontrols.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstcontrols.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstgui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstgui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstguidebug.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstguidebug.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstkeycode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/winfileselector.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+    </conf>
+    <conf name="Debug_x64_VST2_GUI3.6" type="3">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>MinGW+w64|MinGW</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <architecture>2</architecture>
+          <incDir>
+            <pElem>.</pElem>
+            <pElem>public.sdk/source/vst2.x</pElem>
+            <pElem>vstgui.sf</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>DEVELOPMENT=1</Elem>
+            <Elem>VSTGUI_ENABLE_DEPRECATED_METHODS=0</Elem>
+            <Elem>_DEBUG</Elem>
+          </preprocessorList>
+        </ccTool>
+        <asmTool>
+          <architecture>2</architecture>
+        </asmTool>
+        <archiverTool>
+        </archiverTool>
+      </compileType>
+      <item path="pluginterfaces/vst2.x/aeffect.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst2.x/aeffectx.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst2.x/vstfxstore.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/aeffeditor.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffect.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffect.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffectx.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffectx.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/vstplugmain.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/aeffguieditor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/aeffguieditor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cdatabrowser.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cdatabrowser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cfileselector.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cfileselector.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cscrollview.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cscrollview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctabview.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctabview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctooltipsupport.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctooltipsupport.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cvstguitimer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cvstguitimer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/plugguieditor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/plugguieditor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstcontrols.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstcontrols.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstgui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstgui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstguidebug.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstguidebug.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstkeycode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/winfileselector.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release_x64_VST2_GUI3.6" type="3">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>MinGW+w64|MinGW</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+          <stripSymbols>true</stripSymbols>
+          <architecture>2</architecture>
+          <incDir>
+            <pElem>.</pElem>
+            <pElem>public.sdk/source/vst2.x</pElem>
+            <pElem>vstgui.sf</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>RELEASE=1</Elem>
+            <Elem>VSTGUI_ENABLE_DEPRECATED_METHODS=0</Elem>
+          </preprocessorList>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+          <architecture>2</architecture>
+        </asmTool>
+        <archiverTool>
+        </archiverTool>
+      </compileType>
+      <item path="pluginterfaces/vst2.x/aeffect.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst2.x/aeffectx.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst2.x/vstfxstore.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/aeffeditor.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffect.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffect.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffectx.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffectx.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/vstplugmain.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/aeffguieditor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/aeffguieditor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cdatabrowser.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cdatabrowser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cfileselector.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cfileselector.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cscrollview.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cscrollview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctabview.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctabview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctooltipsupport.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctooltipsupport.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cvstguitimer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cvstguitimer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/plugguieditor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/plugguieditor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstcontrols.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstcontrols.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstgui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstgui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstguidebug.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstguidebug.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstkeycode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/winfileselector.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+    </conf>
+    <conf name="Debug_VST2WRAP_GUI3.6" type="3">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>MinGW+|MinGW</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <architecture>1</architecture>
+          <incDir>
+            <pElem>.</pElem>
+            <pElem>public.sdk/source/vst</pElem>
+            <pElem>vstgui.sf</pElem>
+          </incDir>
+          <commandLine>-fpermissive</commandLine>
+          <preprocessorList>
+            <Elem>DEVELOPMENT=1</Elem>
+            <Elem>VSTGUI_ENABLE_DEPRECATED_METHODS=1</Elem>
+            <Elem>_DEBUG</Elem>
+          </preprocessorList>
+        </ccTool>
+        <asmTool>
+          <architecture>1</architecture>
+        </asmTool>
+        <archiverTool>
+        </archiverTool>
+      </compileType>
+      <item path="base/source/fatomic.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fatomic.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fcleanup.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fcriticalperformance.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="base/source/fcriticalperformance.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fdebug.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fdebug.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fdynlib.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fdynlib.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fmemory.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fmemory.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fobject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fobject.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fstreamer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fstreamer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fstring.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fstring.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fthread.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fthread.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/tarray.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/tcontainer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/timer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/timer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/conststringtable.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/conststringtable.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/fplatform.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/fstrdefs.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/ftypes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/funknown.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/funknown.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/futils.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/ibstream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/ipersistent.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/ipluginbase.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/istringresult.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/iupdatehandler.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/keycodes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/gui/iplugview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstattributes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstaudioprocessor.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstcomponent.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstcontextmenu.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivsteditcontroller.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstevents.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivsthostapplication.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstinterappaudio.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstmessage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstmidicontrollers.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstnoteexpression.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstparameterchanges.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstplugview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstprocesscontext.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstrepresentation.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstunits.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/vstpresetkeys.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/vstpshpack4.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/vsttypes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="public.sdk/source/common/memorystream.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/common/memorystream.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/common/pluginview.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/common/pluginview.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/eventlist.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/eventlist.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/hostclasses.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/hostclasses.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/parameterchanges.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/parameterchanges.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/processdata.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/processdata.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/vst2wrapper/vst2wrapper.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/vst2wrapper/vst2wrapper.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/aeffeditor.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffect.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffect.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffectx.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffectx.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/vstplugmain.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/aeffguieditor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/aeffguieditor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cdatabrowser.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cdatabrowser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cfileselector.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cfileselector.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cscrollview.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cscrollview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctabview.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctabview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctooltipsupport.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctooltipsupport.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cvstguitimer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cvstguitimer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/plugguieditor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/plugguieditor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstcontrols.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstcontrols.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstgui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstgui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstguidebug.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstguidebug.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstkeycode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/winfileselector.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release_VST2WRAP_GUI3.6" type="3">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>MinGW+|MinGW</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+          <stripSymbols>true</stripSymbols>
+          <architecture>1</architecture>
+          <incDir>
+            <pElem>.</pElem>
+            <pElem>public.sdk/source/vst</pElem>
+            <pElem>vstgui.sf</pElem>
+          </incDir>
+          <commandLine>-fpermissive</commandLine>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>RELEASE=1</Elem>
+            <Elem>VSTGUI_ENABLE_DEPRECATED_METHODS=1</Elem>
+          </preprocessorList>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+          <architecture>1</architecture>
+        </asmTool>
+        <archiverTool>
+        </archiverTool>
+      </compileType>
+      <item path="base/source/fatomic.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fatomic.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fcleanup.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fcriticalperformance.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="base/source/fcriticalperformance.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fdebug.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fdebug.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fdynlib.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fdynlib.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fmemory.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fmemory.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fobject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fobject.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fstreamer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fstreamer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fstring.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fstring.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fthread.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fthread.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/tarray.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/tcontainer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/timer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/timer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/conststringtable.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/conststringtable.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/fplatform.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/fstrdefs.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/ftypes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/funknown.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/funknown.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/futils.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/ibstream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/ipersistent.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/ipluginbase.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/istringresult.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/iupdatehandler.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/keycodes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/gui/iplugview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstattributes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstaudioprocessor.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstcomponent.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstcontextmenu.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivsteditcontroller.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstevents.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivsthostapplication.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstinterappaudio.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstmessage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstmidicontrollers.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstnoteexpression.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstparameterchanges.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstplugview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstprocesscontext.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstrepresentation.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstunits.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/vstpresetkeys.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/vstpshpack4.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/vsttypes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="public.sdk/source/common/memorystream.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/common/memorystream.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/common/pluginview.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/common/pluginview.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/eventlist.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/eventlist.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/hostclasses.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/hostclasses.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/parameterchanges.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/parameterchanges.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/processdata.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/processdata.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/vst2wrapper/vst2wrapper.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/vst2wrapper/vst2wrapper.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/aeffeditor.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffect.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffect.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffectx.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffectx.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/vstplugmain.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/aeffguieditor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/aeffguieditor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cdatabrowser.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cdatabrowser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cfileselector.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cfileselector.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cscrollview.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cscrollview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctabview.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctabview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctooltipsupport.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctooltipsupport.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cvstguitimer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cvstguitimer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/plugguieditor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/plugguieditor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstcontrols.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstcontrols.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstgui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstgui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstguidebug.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstguidebug.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstkeycode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/winfileselector.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+    </conf>
+    <conf name="Debug_x64_VST2WRAP_GUI3.6" type="3">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>MinGW+w64|MinGW</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <architecture>2</architecture>
+          <incDir>
+            <pElem>.</pElem>
+            <pElem>public.sdk/source/vst</pElem>
+            <pElem>vstgui.sf</pElem>
+          </incDir>
+          <commandLine>-fpermissive</commandLine>
+          <preprocessorList>
+            <Elem>DEVELOPMENT=1</Elem>
+            <Elem>VSTGUI_ENABLE_DEPRECATED_METHODS=1</Elem>
+            <Elem>_DEBUG</Elem>
+          </preprocessorList>
+        </ccTool>
+        <asmTool>
+          <architecture>2</architecture>
+        </asmTool>
+        <archiverTool>
+        </archiverTool>
+      </compileType>
+      <item path="base/source/fatomic.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fatomic.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fcleanup.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fcriticalperformance.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="base/source/fcriticalperformance.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fdebug.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fdebug.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fdynlib.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fdynlib.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fmemory.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fmemory.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fobject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fobject.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fstreamer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fstreamer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fstring.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fstring.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fthread.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fthread.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/tarray.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/tcontainer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/timer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/timer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/conststringtable.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/conststringtable.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/fplatform.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/fstrdefs.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/ftypes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/funknown.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/funknown.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/futils.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/ibstream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/ipersistent.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/ipluginbase.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/istringresult.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/iupdatehandler.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/keycodes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/gui/iplugview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstattributes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstaudioprocessor.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstcomponent.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstcontextmenu.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivsteditcontroller.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstevents.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivsthostapplication.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstinterappaudio.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstmessage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstmidicontrollers.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstnoteexpression.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstparameterchanges.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstplugview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstprocesscontext.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstrepresentation.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstunits.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/vstpresetkeys.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/vstpshpack4.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/vsttypes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="public.sdk/source/common/memorystream.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/common/memorystream.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/common/pluginview.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/common/pluginview.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/eventlist.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/eventlist.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/hostclasses.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/hostclasses.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/parameterchanges.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/parameterchanges.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/processdata.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/processdata.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/vst2wrapper/vst2wrapper.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/vst2wrapper/vst2wrapper.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/aeffeditor.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffect.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffect.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffectx.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffectx.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/vstplugmain.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/aeffguieditor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/aeffguieditor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cdatabrowser.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cdatabrowser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cfileselector.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cfileselector.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cscrollview.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cscrollview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctabview.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctabview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctooltipsupport.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/ctooltipsupport.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cvstguitimer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cvstguitimer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/plugguieditor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/plugguieditor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstcontrols.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstcontrols.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstgui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstgui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstguidebug.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstguidebug.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/vstkeycode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/winfileselector.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release_x64_VST2WRAP_GUI3.6" type="3">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>MinGW+w64|MinGW</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+          <stripSymbols>true</stripSymbols>
+          <architecture>2</architecture>
+          <incDir>
+            <pElem>.</pElem>
+            <pElem>public.sdk/source/vst</pElem>
+            <pElem>vstgui.sf</pElem>
+          </incDir>
+          <commandLine>-fpermissive</commandLine>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>RELEASE=1</Elem>
+            <Elem>VSTGUI_ENABLE_DEPRECATED_METHODS=1</Elem>
+          </preprocessorList>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+          <architecture>2</architecture>
+        </asmTool>
+        <archiverTool>
+        </archiverTool>
+      </compileType>
+      <item path="base/source/fatomic.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fatomic.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fcleanup.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fcriticalperformance.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="base/source/fcriticalperformance.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fdebug.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fdebug.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fdynlib.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fdynlib.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fmemory.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fmemory.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fobject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fobject.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fstreamer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fstreamer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fstring.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fstring.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/fthread.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/fthread.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/tarray.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/tcontainer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="base/source/timer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="base/source/timer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/conststringtable.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/conststringtable.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/fplatform.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/fstrdefs.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/ftypes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/funknown.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/funknown.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/futils.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/ibstream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/ipersistent.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/ipluginbase.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/istringresult.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/iupdatehandler.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/base/keycodes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/gui/iplugview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstattributes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstaudioprocessor.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstcomponent.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstcontextmenu.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivsteditcontroller.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstevents.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivsthostapplication.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstinterappaudio.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstmessage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstmidicontrollers.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstnoteexpression.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstparameterchanges.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstplugview.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstprocesscontext.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstrepresentation.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/ivstunits.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/vstpresetkeys.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/vstpshpack4.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst/vsttypes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="public.sdk/source/common/memorystream.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/common/memorystream.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/common/pluginview.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/common/pluginview.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/eventlist.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/eventlist.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/hostclasses.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/hostclasses.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/parameterchanges.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/parameterchanges.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/processdata.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/hosting/processdata.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/vst2wrapper/vst2wrapper.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst/vst2wrapper/vst2wrapper.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/aeffeditor.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffect.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffect.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffectx.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffectx.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/vstplugmain.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/aeffguieditor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/aeffguieditor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cdatabrowser.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cdatabrowser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cfileselector.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="vstgui.sf/vstgui/cfileselector.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="vstgui.sf/vstgui/cscrollview.cpp" ex="false" tool="1" flavor2="0">
       </item>

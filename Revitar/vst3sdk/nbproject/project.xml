@@ -12,19 +12,51 @@
             <sourceRootList/>
             <confList>
                 <confElem>
-                    <name>Debug</name>
+                    <name>Debug_VST3_GUI3.6</name>
                     <type>3</type>
                 </confElem>
                 <confElem>
-                    <name>Release</name>
+                    <name>Release_VST3_GUI3.6</name>
                     <type>3</type>
                 </confElem>
                 <confElem>
-                    <name>Debug_x64</name>
+                    <name>Debug_x64_VST3_GUI3.6</name>
                     <type>3</type>
                 </confElem>
                 <confElem>
-                    <name>Release_x64</name>
+                    <name>Release_x64_VST3_GUI3.6</name>
+                    <type>3</type>
+                </confElem>
+                <confElem>
+                    <name>Debug_VST2_GUI3.6</name>
+                    <type>3</type>
+                </confElem>
+                <confElem>
+                    <name>Release_VST2_GUI3.6</name>
+                    <type>3</type>
+                </confElem>
+                <confElem>
+                    <name>Debug_x64_VST2_GUI3.6</name>
+                    <type>3</type>
+                </confElem>
+                <confElem>
+                    <name>Release_x64_VST2_GUI3.6</name>
+                    <type>3</type>
+                </confElem>
+                <confElem>
+                    <name>Debug_VST2WRAP_GUI3.6</name>
+                    <type>3</type>
+                </confElem>
+                <confElem>
+                    <name>Release_VST2WRAP_GUI3.6</name>
+                    <type>3</type>
+                </confElem>
+                <confElem>
+                    <name>Debug_x64_VST2WRAP_GUI3.6</name>
+                    <type>3</type>
+                </confElem>
+                <confElem>
+                    <name>Release_x64_VST2WRAP_GUI3.6</name>
                     <type>3</type>
                 </confElem>
             </confList>

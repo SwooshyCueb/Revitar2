@@ -17,27 +17,35 @@
             </sourceRootList>
             <confList>
                 <confElem>
-                    <name>Debug</name>
+                    <name>Debug_VSTGUI3.0</name>
                     <type>2</type>
                 </confElem>
                 <confElem>
-                    <name>Release</name>
+                    <name>Release_VSTGUI3.0</name>
                     <type>2</type>
                 </confElem>
                 <confElem>
-                    <name>Debug_x64</name>
+                    <name>Debug_x64_VSTGUI3.0</name>
                     <type>2</type>
                 </confElem>
                 <confElem>
-                    <name>Release_x64</name>
+                    <name>Release_x64_VSTGUI3.0</name>
                     <type>2</type>
                 </confElem>
                 <confElem>
-                    <name>Debug_VST3</name>
+                    <name>Debug_VSTGUI3.6</name>
                     <type>2</type>
                 </confElem>
                 <confElem>
-                    <name>Release_VST3</name>
+                    <name>Release_VSTGUI3.6</name>
+                    <type>2</type>
+                </confElem>
+                <confElem>
+                    <name>Debug_x64_VSTGUI3.6</name>
+                    <type>2</type>
+                </confElem>
+                <confElem>
+                    <name>Release_x64_VSTGUI3.6</name>
                     <type>2</type>
                 </confElem>
             </confList>

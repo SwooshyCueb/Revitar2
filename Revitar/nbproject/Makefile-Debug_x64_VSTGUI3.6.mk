@@ -21,9 +21,9 @@ FC=gfortran
 AS=as
 
 # Macros
-CND_PLATFORM=MinGW+-Windows
+CND_PLATFORM=MinGW+w64-Windows
 CND_DLIB_EXT=dll
-CND_CONF=Debug
+CND_CONF=Debug_x64_VSTGUI3.6
 CND_DISTDIR=dist
 CND_BUILDDIR=build
 
@@ -42,26 +42,26 @@ OBJECTFILES= \
 
 
 # C Compiler Flags
-CFLAGS=-fpermissive
+CFLAGS=
 
 # CC Compiler Flags
-CCFLAGS=-fpermissive
-CXXFLAGS=-fpermissive
+CCFLAGS=-m64 -fpermissive
+CXXFLAGS=-m64 -fpermissive
 
 # Fortran Compiler Flags
 FFLAGS=
 
 # Assembler Flags
-ASFLAGS=--32
+ASFLAGS=--64
 
 # Link Libraries and Options
-LDLIBSOPTIONS=vstsdk2.4/dist/Debug/MinGW+-Windows/libvstsdk2.4.a rcf.o -mwindows
+LDLIBSOPTIONS=vst3sdk/dist/Release_x64_VST2_GUI3.6/MinGW+w64-Windows/libvst3sdk.a rcf.o -mwindows
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libRevitar.${CND_DLIB_EXT}
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libRevitar.${CND_DLIB_EXT}: vstsdk2.4/dist/Debug/MinGW+-Windows/libvstsdk2.4.a
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libRevitar.${CND_DLIB_EXT}: vst3sdk/dist/Release_x64_VST2_GUI3.6/MinGW+w64-Windows/libvst3sdk.a
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libRevitar.${CND_DLIB_EXT}: rcf.o
 
@@ -72,27 +72,27 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libRevitar.${CND_DLIB_EXT}: ${OBJECTF
 ${OBJECTDIR}/RevEditor.o: RevEditor.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -w -DBOOST_THREAD_USE_LIB -DREVITAR_2_01_EXPORTS -DUSE_LIBPNG=0 -DVSTi -DWIN32 -DWINDOWS=1 -D_CRT_SECURE_NO_WARNINGS -D_USRDLL -D_WINDOWS -DVST2 -D_DEBUG -Ivstsdk2.4 -Ivstsdk2.4/public.sdk/source/vst2.x -fpermissive  -MMD -MP -MF $@.d -o ${OBJECTDIR}/RevEditor.o RevEditor.cpp
+	$(COMPILE.cc) -g -w -DBOOST_THREAD_USE_LIB -D_DEBUG -DREVITAR_2_01_EXPORTS -DUSE_LIBPNG=0 -DVST3_2 -DVSTi -DWIN32 -DWINDOWS=1 -D_CRT_SECURE_NO_WARNINGS -D_USRDLL -D_WINDOWS -Ivst3sdk -Ivst3sdk/public.sdk/source/vst2.x -fpermissive  -MMD -MP -MF $@.d -o ${OBJECTDIR}/RevEditor.o RevEditor.cpp
 
 ${OBJECTDIR}/Revitar.o: Revitar.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -w -DBOOST_THREAD_USE_LIB -DREVITAR_2_01_EXPORTS -DUSE_LIBPNG=0 -DVSTi -DWIN32 -DWINDOWS=1 -D_CRT_SECURE_NO_WARNINGS -D_USRDLL -D_WINDOWS -DVST2 -D_DEBUG -Ivstsdk2.4 -Ivstsdk2.4/public.sdk/source/vst2.x -fpermissive  -MMD -MP -MF $@.d -o ${OBJECTDIR}/Revitar.o Revitar.cpp
+	$(COMPILE.cc) -g -w -DBOOST_THREAD_USE_LIB -D_DEBUG -DREVITAR_2_01_EXPORTS -DUSE_LIBPNG=0 -DVST3_2 -DVSTi -DWIN32 -DWINDOWS=1 -D_CRT_SECURE_NO_WARNINGS -D_USRDLL -D_WINDOWS -Ivst3sdk -Ivst3sdk/public.sdk/source/vst2.x -fpermissive  -MMD -MP -MF $@.d -o ${OBJECTDIR}/Revitar.o Revitar.cpp
 
 ${OBJECTDIR}/displayScreen.o: displayScreen.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -w -DBOOST_THREAD_USE_LIB -DREVITAR_2_01_EXPORTS -DUSE_LIBPNG=0 -DVSTi -DWIN32 -DWINDOWS=1 -D_CRT_SECURE_NO_WARNINGS -D_USRDLL -D_WINDOWS -DVST2 -D_DEBUG -Ivstsdk2.4 -Ivstsdk2.4/public.sdk/source/vst2.x -fpermissive  -MMD -MP -MF $@.d -o ${OBJECTDIR}/displayScreen.o displayScreen.cpp
+	$(COMPILE.cc) -g -w -DBOOST_THREAD_USE_LIB -D_DEBUG -DREVITAR_2_01_EXPORTS -DUSE_LIBPNG=0 -DVST3_2 -DVSTi -DWIN32 -DWINDOWS=1 -D_CRT_SECURE_NO_WARNINGS -D_USRDLL -D_WINDOWS -Ivst3sdk -Ivst3sdk/public.sdk/source/vst2.x -fpermissive  -MMD -MP -MF $@.d -o ${OBJECTDIR}/displayScreen.o displayScreen.cpp
 
 ${OBJECTDIR}/presets.o: presets.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -w -DBOOST_THREAD_USE_LIB -DREVITAR_2_01_EXPORTS -DUSE_LIBPNG=0 -DVSTi -DWIN32 -DWINDOWS=1 -D_CRT_SECURE_NO_WARNINGS -D_USRDLL -D_WINDOWS -DVST2 -D_DEBUG -Ivstsdk2.4 -Ivstsdk2.4/public.sdk/source/vst2.x -fpermissive  -MMD -MP -MF $@.d -o ${OBJECTDIR}/presets.o presets.cpp
+	$(COMPILE.cc) -g -w -DBOOST_THREAD_USE_LIB -D_DEBUG -DREVITAR_2_01_EXPORTS -DUSE_LIBPNG=0 -DVST3_2 -DVSTi -DWIN32 -DWINDOWS=1 -D_CRT_SECURE_NO_WARNINGS -D_USRDLL -D_WINDOWS -Ivst3sdk -Ivst3sdk/public.sdk/source/vst2.x -fpermissive  -MMD -MP -MF $@.d -o ${OBJECTDIR}/presets.o presets.cpp
 
 # Subprojects
 .build-subprojects:
-	cd vstsdk2.4 && ${MAKE}  -f Makefile CONF=Debug
-	cd vstsdk2.4 && ${MAKE}  -f Makefile CONF=Debug
+	cd vst3sdk && ${MAKE}  -f Makefile CONF=Release_x64_VST2_GUI3.6
+	cd vst3sdk && ${MAKE}  -f Makefile CONF=Release_x64_VST2_GUI3.6
 
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
@@ -101,8 +101,8 @@ ${OBJECTDIR}/presets.o: presets.cpp
 
 # Subprojects
 .clean-subprojects:
-	cd vstsdk2.4 && ${MAKE}  -f Makefile CONF=Debug clean
-	cd vstsdk2.4 && ${MAKE}  -f Makefile CONF=Debug clean
+	cd vst3sdk && ${MAKE}  -f Makefile CONF=Release_x64_VST2_GUI3.6 clean
+	cd vst3sdk && ${MAKE}  -f Makefile CONF=Release_x64_VST2_GUI3.6 clean
 
 # Enable dependency checking
 .dep.inc: .depcheck-impl

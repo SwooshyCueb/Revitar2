@@ -7,7 +7,7 @@
 # Macros
 TOP=`pwd`
 CND_PLATFORM=MinGW+-Windows
-CND_CONF=Debug_VST3
+CND_CONF=Debug_VSTGUI3.0
 CND_DISTDIR=dist
 CND_BUILDDIR=build
 CND_DLIB_EXT=dll

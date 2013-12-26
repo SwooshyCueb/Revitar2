@@ -23,7 +23,7 @@ AS=as
 # Macros
 CND_PLATFORM=MinGW+w64-Windows
 CND_DLIB_EXT=dll
-CND_CONF=Debug_x64
+CND_CONF=Release_x64_VST3_GUI3.6
 CND_DISTDIR=dist
 CND_BUILDDIR=build
 
@@ -47,9 +47,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/public.sdk/source/vst/vstpresetfile.o \
 	${OBJECTDIR}/public.sdk/source/vst/vstrepresentation.o \
 	${OBJECTDIR}/public.sdk/source/vst/vstsinglecomponenteffect.o \
-	${OBJECTDIR}/vstgui.sf/vstgui/aeffguieditor.o \
 	${OBJECTDIR}/vstgui.sf/vstgui/cdatabrowser.o \
-	${OBJECTDIR}/vstgui.sf/vstgui/cfileselector.o \
 	${OBJECTDIR}/vstgui.sf/vstgui/cscrollview.o \
 	${OBJECTDIR}/vstgui.sf/vstgui/ctabview.o \
 	${OBJECTDIR}/vstgui.sf/vstgui/ctooltipsupport.o \
@@ -65,14 +63,14 @@ OBJECTFILES= \
 CFLAGS=
 
 # CC Compiler Flags
-CCFLAGS=
-CXXFLAGS=
+CCFLAGS=-m64
+CXXFLAGS=-m64
 
 # Fortran Compiler Flags
 FFLAGS=
 
 # Assembler Flags
-ASFLAGS=
+ASFLAGS=--64
 
 # Link Libraries and Options
 LDLIBSOPTIONS=
@@ -90,122 +88,112 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvst3sdk.a: ${OBJECTFILES}
 ${OBJECTDIR}/public.sdk/source/vst/vstaudioeffect.o: public.sdk/source/vst/vstaudioeffect.cpp 
 	${MKDIR} -p ${OBJECTDIR}/public.sdk/source/vst
 	${RM} $@.d
-	$(COMPILE.cc) -g -D_DEBUG -DDEVELOPMENT=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst/vstaudioeffect.o public.sdk/source/vst/vstaudioeffect.cpp
+	$(COMPILE.cc) -O2 -s -DNDEBUG -DRELEASE=1 -DVSTGUI_ENABLE_DEPRECATED_METHODS=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst/vstaudioeffect.o public.sdk/source/vst/vstaudioeffect.cpp
 
 ${OBJECTDIR}/public.sdk/source/vst/vstbus.o: public.sdk/source/vst/vstbus.cpp 
 	${MKDIR} -p ${OBJECTDIR}/public.sdk/source/vst
 	${RM} $@.d
-	$(COMPILE.cc) -g -D_DEBUG -DDEVELOPMENT=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst/vstbus.o public.sdk/source/vst/vstbus.cpp
+	$(COMPILE.cc) -O2 -s -DNDEBUG -DRELEASE=1 -DVSTGUI_ENABLE_DEPRECATED_METHODS=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst/vstbus.o public.sdk/source/vst/vstbus.cpp
 
 ${OBJECTDIR}/public.sdk/source/vst/vstcomponent.o: public.sdk/source/vst/vstcomponent.cpp 
 	${MKDIR} -p ${OBJECTDIR}/public.sdk/source/vst
 	${RM} $@.d
-	$(COMPILE.cc) -g -D_DEBUG -DDEVELOPMENT=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst/vstcomponent.o public.sdk/source/vst/vstcomponent.cpp
+	$(COMPILE.cc) -O2 -s -DNDEBUG -DRELEASE=1 -DVSTGUI_ENABLE_DEPRECATED_METHODS=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst/vstcomponent.o public.sdk/source/vst/vstcomponent.cpp
 
 ${OBJECTDIR}/public.sdk/source/vst/vstcomponentbase.o: public.sdk/source/vst/vstcomponentbase.cpp 
 	${MKDIR} -p ${OBJECTDIR}/public.sdk/source/vst
 	${RM} $@.d
-	$(COMPILE.cc) -g -D_DEBUG -DDEVELOPMENT=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst/vstcomponentbase.o public.sdk/source/vst/vstcomponentbase.cpp
+	$(COMPILE.cc) -O2 -s -DNDEBUG -DRELEASE=1 -DVSTGUI_ENABLE_DEPRECATED_METHODS=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst/vstcomponentbase.o public.sdk/source/vst/vstcomponentbase.cpp
 
 ${OBJECTDIR}/public.sdk/source/vst/vsteditcontroller.o: public.sdk/source/vst/vsteditcontroller.cpp 
 	${MKDIR} -p ${OBJECTDIR}/public.sdk/source/vst
 	${RM} $@.d
-	$(COMPILE.cc) -g -D_DEBUG -DDEVELOPMENT=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst/vsteditcontroller.o public.sdk/source/vst/vsteditcontroller.cpp
+	$(COMPILE.cc) -O2 -s -DNDEBUG -DRELEASE=1 -DVSTGUI_ENABLE_DEPRECATED_METHODS=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst/vsteditcontroller.o public.sdk/source/vst/vsteditcontroller.cpp
 
 ${OBJECTDIR}/public.sdk/source/vst/vstguieditor.o: public.sdk/source/vst/vstguieditor.cpp 
 	${MKDIR} -p ${OBJECTDIR}/public.sdk/source/vst
 	${RM} $@.d
-	$(COMPILE.cc) -g -D_DEBUG -DDEVELOPMENT=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst/vstguieditor.o public.sdk/source/vst/vstguieditor.cpp
+	$(COMPILE.cc) -O2 -s -DNDEBUG -DRELEASE=1 -DVSTGUI_ENABLE_DEPRECATED_METHODS=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst/vstguieditor.o public.sdk/source/vst/vstguieditor.cpp
 
 ${OBJECTDIR}/public.sdk/source/vst/vstinitiids.o: public.sdk/source/vst/vstinitiids.cpp 
 	${MKDIR} -p ${OBJECTDIR}/public.sdk/source/vst
 	${RM} $@.d
-	$(COMPILE.cc) -g -D_DEBUG -DDEVELOPMENT=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst/vstinitiids.o public.sdk/source/vst/vstinitiids.cpp
+	$(COMPILE.cc) -O2 -s -DNDEBUG -DRELEASE=1 -DVSTGUI_ENABLE_DEPRECATED_METHODS=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst/vstinitiids.o public.sdk/source/vst/vstinitiids.cpp
 
 ${OBJECTDIR}/public.sdk/source/vst/vstnoteexpressiontypes.o: public.sdk/source/vst/vstnoteexpressiontypes.cpp 
 	${MKDIR} -p ${OBJECTDIR}/public.sdk/source/vst
 	${RM} $@.d
-	$(COMPILE.cc) -g -D_DEBUG -DDEVELOPMENT=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst/vstnoteexpressiontypes.o public.sdk/source/vst/vstnoteexpressiontypes.cpp
+	$(COMPILE.cc) -O2 -s -DNDEBUG -DRELEASE=1 -DVSTGUI_ENABLE_DEPRECATED_METHODS=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst/vstnoteexpressiontypes.o public.sdk/source/vst/vstnoteexpressiontypes.cpp
 
 ${OBJECTDIR}/public.sdk/source/vst/vstparameters.o: public.sdk/source/vst/vstparameters.cpp 
 	${MKDIR} -p ${OBJECTDIR}/public.sdk/source/vst
 	${RM} $@.d
-	$(COMPILE.cc) -g -D_DEBUG -DDEVELOPMENT=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst/vstparameters.o public.sdk/source/vst/vstparameters.cpp
+	$(COMPILE.cc) -O2 -s -DNDEBUG -DRELEASE=1 -DVSTGUI_ENABLE_DEPRECATED_METHODS=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst/vstparameters.o public.sdk/source/vst/vstparameters.cpp
 
 ${OBJECTDIR}/public.sdk/source/vst/vstpresetfile.o: public.sdk/source/vst/vstpresetfile.cpp 
 	${MKDIR} -p ${OBJECTDIR}/public.sdk/source/vst
 	${RM} $@.d
-	$(COMPILE.cc) -g -D_DEBUG -DDEVELOPMENT=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst/vstpresetfile.o public.sdk/source/vst/vstpresetfile.cpp
+	$(COMPILE.cc) -O2 -s -DNDEBUG -DRELEASE=1 -DVSTGUI_ENABLE_DEPRECATED_METHODS=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst/vstpresetfile.o public.sdk/source/vst/vstpresetfile.cpp
 
 ${OBJECTDIR}/public.sdk/source/vst/vstrepresentation.o: public.sdk/source/vst/vstrepresentation.cpp 
 	${MKDIR} -p ${OBJECTDIR}/public.sdk/source/vst
 	${RM} $@.d
-	$(COMPILE.cc) -g -D_DEBUG -DDEVELOPMENT=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst/vstrepresentation.o public.sdk/source/vst/vstrepresentation.cpp
+	$(COMPILE.cc) -O2 -s -DNDEBUG -DRELEASE=1 -DVSTGUI_ENABLE_DEPRECATED_METHODS=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst/vstrepresentation.o public.sdk/source/vst/vstrepresentation.cpp
 
 ${OBJECTDIR}/public.sdk/source/vst/vstsinglecomponenteffect.o: public.sdk/source/vst/vstsinglecomponenteffect.cpp 
 	${MKDIR} -p ${OBJECTDIR}/public.sdk/source/vst
 	${RM} $@.d
-	$(COMPILE.cc) -g -D_DEBUG -DDEVELOPMENT=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst/vstsinglecomponenteffect.o public.sdk/source/vst/vstsinglecomponenteffect.cpp
-
-${OBJECTDIR}/vstgui.sf/vstgui/aeffguieditor.o: vstgui.sf/vstgui/aeffguieditor.cpp 
-	${MKDIR} -p ${OBJECTDIR}/vstgui.sf/vstgui
-	${RM} $@.d
-	$(COMPILE.cc) -g -D_DEBUG -DDEVELOPMENT=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/aeffguieditor.o vstgui.sf/vstgui/aeffguieditor.cpp
+	$(COMPILE.cc) -O2 -s -DNDEBUG -DRELEASE=1 -DVSTGUI_ENABLE_DEPRECATED_METHODS=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst/vstsinglecomponenteffect.o public.sdk/source/vst/vstsinglecomponenteffect.cpp
 
 ${OBJECTDIR}/vstgui.sf/vstgui/cdatabrowser.o: vstgui.sf/vstgui/cdatabrowser.cpp 
 	${MKDIR} -p ${OBJECTDIR}/vstgui.sf/vstgui
 	${RM} $@.d
-	$(COMPILE.cc) -g -D_DEBUG -DDEVELOPMENT=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/cdatabrowser.o vstgui.sf/vstgui/cdatabrowser.cpp
-
-${OBJECTDIR}/vstgui.sf/vstgui/cfileselector.o: vstgui.sf/vstgui/cfileselector.cpp 
-	${MKDIR} -p ${OBJECTDIR}/vstgui.sf/vstgui
-	${RM} $@.d
-	$(COMPILE.cc) -g -D_DEBUG -DDEVELOPMENT=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/cfileselector.o vstgui.sf/vstgui/cfileselector.cpp
+	$(COMPILE.cc) -O2 -s -DNDEBUG -DRELEASE=1 -DVSTGUI_ENABLE_DEPRECATED_METHODS=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/cdatabrowser.o vstgui.sf/vstgui/cdatabrowser.cpp
 
 ${OBJECTDIR}/vstgui.sf/vstgui/cscrollview.o: vstgui.sf/vstgui/cscrollview.cpp 
 	${MKDIR} -p ${OBJECTDIR}/vstgui.sf/vstgui
 	${RM} $@.d
-	$(COMPILE.cc) -g -D_DEBUG -DDEVELOPMENT=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/cscrollview.o vstgui.sf/vstgui/cscrollview.cpp
+	$(COMPILE.cc) -O2 -s -DNDEBUG -DRELEASE=1 -DVSTGUI_ENABLE_DEPRECATED_METHODS=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/cscrollview.o vstgui.sf/vstgui/cscrollview.cpp
 
 ${OBJECTDIR}/vstgui.sf/vstgui/ctabview.o: vstgui.sf/vstgui/ctabview.cpp 
 	${MKDIR} -p ${OBJECTDIR}/vstgui.sf/vstgui
 	${RM} $@.d
-	$(COMPILE.cc) -g -D_DEBUG -DDEVELOPMENT=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/ctabview.o vstgui.sf/vstgui/ctabview.cpp
+	$(COMPILE.cc) -O2 -s -DNDEBUG -DRELEASE=1 -DVSTGUI_ENABLE_DEPRECATED_METHODS=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/ctabview.o vstgui.sf/vstgui/ctabview.cpp
 
 ${OBJECTDIR}/vstgui.sf/vstgui/ctooltipsupport.o: vstgui.sf/vstgui/ctooltipsupport.cpp 
 	${MKDIR} -p ${OBJECTDIR}/vstgui.sf/vstgui
 	${RM} $@.d
-	$(COMPILE.cc) -g -D_DEBUG -DDEVELOPMENT=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/ctooltipsupport.o vstgui.sf/vstgui/ctooltipsupport.cpp
+	$(COMPILE.cc) -O2 -s -DNDEBUG -DRELEASE=1 -DVSTGUI_ENABLE_DEPRECATED_METHODS=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/ctooltipsupport.o vstgui.sf/vstgui/ctooltipsupport.cpp
 
 ${OBJECTDIR}/vstgui.sf/vstgui/cvstguitimer.o: vstgui.sf/vstgui/cvstguitimer.cpp 
 	${MKDIR} -p ${OBJECTDIR}/vstgui.sf/vstgui
 	${RM} $@.d
-	$(COMPILE.cc) -g -D_DEBUG -DDEVELOPMENT=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/cvstguitimer.o vstgui.sf/vstgui/cvstguitimer.cpp
+	$(COMPILE.cc) -O2 -s -DNDEBUG -DRELEASE=1 -DVSTGUI_ENABLE_DEPRECATED_METHODS=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/cvstguitimer.o vstgui.sf/vstgui/cvstguitimer.cpp
 
 ${OBJECTDIR}/vstgui.sf/vstgui/plugguieditor.o: vstgui.sf/vstgui/plugguieditor.cpp 
 	${MKDIR} -p ${OBJECTDIR}/vstgui.sf/vstgui
 	${RM} $@.d
-	$(COMPILE.cc) -g -D_DEBUG -DDEVELOPMENT=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/plugguieditor.o vstgui.sf/vstgui/plugguieditor.cpp
+	$(COMPILE.cc) -O2 -s -DNDEBUG -DRELEASE=1 -DVSTGUI_ENABLE_DEPRECATED_METHODS=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/plugguieditor.o vstgui.sf/vstgui/plugguieditor.cpp
 
 ${OBJECTDIR}/vstgui.sf/vstgui/vstcontrols.o: vstgui.sf/vstgui/vstcontrols.cpp 
 	${MKDIR} -p ${OBJECTDIR}/vstgui.sf/vstgui
 	${RM} $@.d
-	$(COMPILE.cc) -g -D_DEBUG -DDEVELOPMENT=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/vstcontrols.o vstgui.sf/vstgui/vstcontrols.cpp
+	$(COMPILE.cc) -O2 -s -DNDEBUG -DRELEASE=1 -DVSTGUI_ENABLE_DEPRECATED_METHODS=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/vstcontrols.o vstgui.sf/vstgui/vstcontrols.cpp
 
 ${OBJECTDIR}/vstgui.sf/vstgui/vstgui.o: vstgui.sf/vstgui/vstgui.cpp 
 	${MKDIR} -p ${OBJECTDIR}/vstgui.sf/vstgui
 	${RM} $@.d
-	$(COMPILE.cc) -g -D_DEBUG -DDEVELOPMENT=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/vstgui.o vstgui.sf/vstgui/vstgui.cpp
+	$(COMPILE.cc) -O2 -s -DNDEBUG -DRELEASE=1 -DVSTGUI_ENABLE_DEPRECATED_METHODS=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/vstgui.o vstgui.sf/vstgui/vstgui.cpp
 
 ${OBJECTDIR}/vstgui.sf/vstgui/vstguidebug.o: vstgui.sf/vstgui/vstguidebug.cpp 
 	${MKDIR} -p ${OBJECTDIR}/vstgui.sf/vstgui
 	${RM} $@.d
-	$(COMPILE.cc) -g -D_DEBUG -DDEVELOPMENT=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/vstguidebug.o vstgui.sf/vstgui/vstguidebug.cpp
+	$(COMPILE.cc) -O2 -s -DNDEBUG -DRELEASE=1 -DVSTGUI_ENABLE_DEPRECATED_METHODS=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/vstguidebug.o vstgui.sf/vstgui/vstguidebug.cpp
 
 ${OBJECTDIR}/vstgui.sf/vstgui/winfileselector.o: vstgui.sf/vstgui/winfileselector.cpp 
 	${MKDIR} -p ${OBJECTDIR}/vstgui.sf/vstgui
 	${RM} $@.d
-	$(COMPILE.cc) -g -D_DEBUG -DDEVELOPMENT=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/winfileselector.o vstgui.sf/vstgui/winfileselector.cpp
+	$(COMPILE.cc) -O2 -s -DNDEBUG -DRELEASE=1 -DVSTGUI_ENABLE_DEPRECATED_METHODS=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/winfileselector.o vstgui.sf/vstgui/winfileselector.cpp
 
 # Subprojects
 .build-subprojects:

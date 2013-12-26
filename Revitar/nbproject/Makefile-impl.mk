@@ -27,11 +27,11 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 PROJECTNAME=Revitar
 
 # Active Configuration
-DEFAULTCONF=Debug
+DEFAULTCONF=Debug_VSTGUI3.0
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=Debug Release Debug_x64 Release_x64 Debug_VST3 Release_VST3 
+ALLCONFS=Debug_VSTGUI3.0 Release_VSTGUI3.0 Debug_x64_VSTGUI3.0 Release_x64_VSTGUI3.0 Debug_VSTGUI3.6 Release_VSTGUI3.6 Debug_x64_VSTGUI3.6 Release_x64_VSTGUI3.6 
 
 
 # build
