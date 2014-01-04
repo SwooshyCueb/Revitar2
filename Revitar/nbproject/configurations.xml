@@ -60,6 +60,7 @@
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
       <itemPath>../README.md</itemPath>
+      <itemPath>TODO</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
