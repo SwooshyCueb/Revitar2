@@ -835,6 +835,7 @@ void convertParams2(float value, char *string, void *userdata) {
         case kChordOnOff:
         case kSustain:
             sprintf(string, (value > 0.f) ? " On " : " Off ");
+            break;
         case kPickNoise:
             sprintf(string, (value > 0.5f) ? " Full " : " Reduced ");
             break;
