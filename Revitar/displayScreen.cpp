@@ -426,9 +426,160 @@ void CDisplayScreen::mouse(CDrawContext *pContext, CPoint &where, long button) {
 
 } // mouse
 #else
+//I have no idea what I'm doing here.
+/*****************************************************************************/
 
-CMouseEventResult onMouseDown(CPoint &where, const long &buttons) {
-    Not yet implemented.
+/* onMouseDown : called when a mouse down event occurs
+/*****************************************************************************/
+CMouseEventResult CDisplayScreen::onMouseDown(CPoint &where, const long &buttons) {
+    if (!bMouseEnabled)
+        return kMouseEventNotHandled;
+    //may not even need to perform that check?
+
+    if (!(buttons & kLButton) && !(buttons & kRButton && buttons & kControl)) {
+        return kMouseEventNotHandled;
+    }
+
+    // begin of edit parameter
+
+    beginEdit();
+    return onMouseMoved(where, buttons);
+
+
+
+    // end of edit parameter
+
+}
+
+CMouseEventResult CDisplayScreen::onMouseMoved(CPoint& where, const long& buttons) {
+
+    int pickh = (int) (m_fPickPosition * 107.f) + 150;
+
+    if (m_ChordPressed == NO_INFORMATION) {
+        if (m_fPickPosition || m_PickUpPressed || (where.h > 150 && where.h < 150 + 107)) {
+            if (m_PickPressed ||
+                    (!m_PickUpPressed && where.h > pickh - 12 && where.h < pickh + 12 && where.v < 100)) {
+                if (buttons & kLButton && buttons & kControl) {
+                    ((RevEditor*) listener)->updateMIDICC(kPickPosition);
+                    m_PickPressed = false;
+                    return;
+                }
+
+                if (buttons & kRButton && buttons & kControl) {
+                    ((RevEditor*) listener)->removeMIDICC(kPickPosition);
+                    m_PickPressed = false;
+                    return;
+                }
+
+                m_fPickPosition = (float) (where.h - 150) / 107.f;
+
+                if (m_fPickPosition < 0.0)
+                    m_fPickPosition = 0.0;
+                if (m_fPickPosition > 1.0)
+                    m_fPickPosition = 1.0;
+
+                m_PickPressed = true;
+                //	m_BodyChanged = true;
+                setDirty(true);
+            } else {
+                int pickuph = (int) (m_fPickUp * 110.f) + 145;
+
+                if (m_PickUpPressed || (where.h > pickuph - 8 && where.h < pickuph + 8)) {
+                    if (buttons & kLButton && buttons & kControl) {
+                        ((RevEditor*) listener)->updateMIDICC(kPickUp);
+                        m_PickUpPressed = false;
+                        return;
+                    }
+
+                    if (buttons & kRButton && buttons & kControl) {
+                        ((RevEditor*) listener)->removeMIDICC(kPickUp);
+                        m_PickPressed = false;
+                        return;
+                    }
+
+                    m_fPickUp = (float) (where.h - 145) / 110.f;
+
+                    if (m_fPickUp < 0.0)
+                        m_fPickUp = 0.0;
+                    if (m_fPickUp > 1.0)
+                        m_fPickUp = 1.0;
+
+                    m_PickUpPressed = true;
+                    m_BodyChanged = true;
+                    setDirty(true);
+                }
+
+            }
+        }
+    }
+
+    if (m_ChordOn == 1.0 && !m_PickPressed && !m_PickUpPressed) {
+        if (m_ChordPressed != NO_INFORMATION) {
+            int note = 19 - (where.h - 266) / 16;
+
+            if (note != m_FirstNote) {
+                m_iChordNotes[m_ChordPressed] = note;
+                if (m_iChordNotes[m_ChordPressed] < 0)
+                    m_iChordNotes[m_ChordPressed] = 0;
+                if (m_iChordNotes[m_ChordPressed] > 19)
+                    m_iChordNotes[m_ChordPressed] = 19;
+
+                m_FirstNote = NO_INFORMATION;
+
+                m_BodyChanged = true;
+                setDirty(true);
+            }
+        } else {
+            if (where.h >= 266 && where.h <= 586 && where.v >= 80 && where.v <= 140) {
+                m_ChordPressed = (where.v - 80) / 10;
+                if (m_ChordPressed < 0)
+                    m_ChordPressed = 0;
+                if (m_ChordPressed > 5)
+                    m_ChordPressed = 5;
+
+                m_FirstNote = 19 - (where.h - 266) / 16;
+                if (m_iChordNotes[m_ChordPressed] == m_FirstNote) {
+                    m_iChordNotes[m_ChordPressed] = NO_INFORMATION;
+                } else {
+                    m_iChordNotes[m_ChordPressed] = m_FirstNote;
+                    if (m_iChordNotes[m_ChordPressed] < 0)
+                        m_iChordNotes[m_ChordPressed] = 0;
+                    if (m_iChordNotes[m_ChordPressed] > 19)
+                        m_iChordNotes[m_ChordPressed] = 19;
+                }
+
+                m_BodyChanged = true;
+                setDirty(true);
+            }
+        }
+    }
+
+    if (isDirty() && listener)
+        listener->valueChanged(this);
+
+    if (m_BodyChanged == true) {
+        setDirty(true);
+    }
+
+    //pContext->getMouseLocation(where);
+    getFrame()->getCurrentMouseLocation(where);
+
+
+
+    //doIdleStuff();
+
+
+
+}
+
+CMouseEventResult CDisplayScreen::onMouseUp(CPoint& where, const long& buttons) {
+
+    m_PickPressed = false;
+    m_PickUpPressed = false;
+    m_ChordPressed = NO_INFORMATION;
+    m_FirstNote = NO_INFORMATION;
+    endEdit();
+    return kMouseEventHandled;
 }
 #endif
 

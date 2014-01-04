@@ -176,6 +176,8 @@ public:
     virtual void mouse(CDrawContext *pContext, CPoint &where, long buttons = -1);
 #else
     virtual CMouseEventResult onMouseDown(CPoint &where, const long &buttons);
+    virtual CMouseEventResult onMouseMoved(CPoint &where, const long &buttons);
+    virtual CMouseEventResult onMouseUp(CPoint &where, const long &buttons);
 #endif
 
     void setChordOnValue(float value);
