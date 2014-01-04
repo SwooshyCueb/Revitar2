@@ -31,7 +31,6 @@
       <itemPath>res/pickType3.bmp</itemPath>
       <itemPath>res/pickup1.bmp</itemPath>
       <itemPath>res/preset.fxb</itemPath>
-      <itemPath>res/registerButton1.bmp</itemPath>
       <itemPath>res/rockerSwitch4.bmp</itemPath>
       <itemPath>res/roundSwitch0.bmp</itemPath>
       <itemPath>res/squareSwitch0.bmp</itemPath>
@@ -39,7 +38,6 @@
       <itemPath>res/stringBackground-new.bmp</itemPath>
       <itemPath>res/tuneKnob0.bmp</itemPath>
       <itemPath>res/vuMeterCircle0.bmp</itemPath>
-      <itemPath>res/welcome0.bmp</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -61,6 +59,7 @@
                    projectFiles="false"
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
+      <itemPath>../README.md</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -68,10 +67,10 @@
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
-    <conf name="Debug" type="2">
+    <conf name="Debug_VSTGUI3.0" type="2">
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
-        <compilerSet>MinGW|MinGW</compilerSet>
+        <compilerSet>MinGW+|MinGW</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
@@ -92,50 +91,61 @@
           <warningLevel>0</warningLevel>
         </cTool>
         <ccTool>
+          <architecture>1</architecture>
+          <incDir>
+            <pElem>vstsdk2.4</pElem>
+            <pElem>vstsdk2.4/public.sdk/source/vst2.x</pElem>
+          </incDir>
           <commandLine>-fpermissive</commandLine>
           <preprocessorList>
             <Elem>BOOST_THREAD_USE_LIB</Elem>
             <Elem>REVITAR_2_01_EXPORTS</Elem>
             <Elem>USE_LIBPNG=0</Elem>
+            <Elem>VST2</Elem>
             <Elem>VSTi</Elem>
             <Elem>WIN32</Elem>
             <Elem>WINDOWS=1</Elem>
             <Elem>_CRT_SECURE_NO_WARNINGS</Elem>
+            <Elem>_DEBUG</Elem>
             <Elem>_USRDLL</Elem>
             <Elem>_WINDOWS</Elem>
           </preprocessorList>
           <warningLevel>0</warningLevel>
         </ccTool>
+        <asmTool>
+          <architecture>1</architecture>
+        </asmTool>
         <linkerTool>
           <linkerLibItems>
             <linkerLibProjectItem>
-              <makeArtifact PL="../vstsdk2.4.2"
+              <makeArtifact PL="vstsdk2.4"
                             CT="3"
-                            CN="Release"
+                            CN="Debug"
                             AC="true"
                             BL="true"
-                            WD="../vstsdk2.4.2"
-                            BC="${MAKE}  -f Makefile CONF=Release"
-                            CC="${MAKE}  -f Makefile CONF=Release clean"
-                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstsdk2.4.2.a">
+                            WD="vstsdk2.4"
+                            BC="${MAKE}  -f Makefile CONF=Debug"
+                            CC="${MAKE}  -f Makefile CONF=Debug clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstsdk2.4.a">
               </makeArtifact>
             </linkerLibProjectItem>
-            <linkerLibProjectItem>
-              <makeArtifact PL="../vstgui"
-                            CT="3"
-                            CN="Release"
-                            AC="true"
-                            BL="true"
-                            WD="../vstgui"
-                            BC="${MAKE}  -f Makefile CONF=Release"
-                            CC="${MAKE}  -f Makefile CONF=Release clean"
-                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstgui.a">
-              </makeArtifact>
-            </linkerLibProjectItem>
+            <linkerLibFileItem>rcf.o</linkerLibFileItem>
             <linkerOptionItem>-mwindows</linkerOptionItem>
           </linkerLibItems>
           <commandLine>-lole32 -lkernel32 -lgdi32 -luuid -luser32 --def Revitar.def</commandLine>
         </linkerTool>
+        <requiredProjects>
+          <makeArtifact PL="vstsdk2.4"
+                        CT="3"
+                        CN="Debug"
+                        AC="false"
+                        BL="true"
+                        WD="vstsdk2.4"
+                        BC="${MAKE}  -f Makefile CONF=Debug"
+                        CC="${MAKE}  -f Makefile CONF=Debug clean"
+                        OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstsdk2.4.a">
+          </makeArtifact>
+        </requiredProjects>
       </compileType>
       <item path="RevEditor.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -193,8 +203,6 @@
       </item>
       <item path="res/preset.fxb" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="res/registerButton1.bmp" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="res/rockerSwitch4.bmp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="res/roundSwitch0.bmp" ex="false" tool="3" flavor2="0">
@@ -209,15 +217,13 @@
       </item>
       <item path="res/vuMeterCircle0.bmp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="res/welcome0.bmp" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="resource.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
-    <conf name="Release" type="2">
+    <conf name="Release_VSTGUI3.0" type="2">
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
-        <compilerSet>default</compilerSet>
+        <compilerSet>MinGW+|MinGW</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
@@ -227,11 +233,19 @@
         </cTool>
         <ccTool>
           <developmentMode>5</developmentMode>
+          <stripSymbols>true</stripSymbols>
           <architecture>1</architecture>
+          <incDir>
+            <pElem>vstsdk2.4</pElem>
+            <pElem>vstsdk2.4/public.sdk/source/vst2.x</pElem>
+          </incDir>
+          <commandLine>-fpermissive</commandLine>
           <preprocessorList>
             <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>NDEBUG</Elem>
             <Elem>REVITAR_2_01_EXPORTS</Elem>
             <Elem>USE_LIBPNG=0</Elem>
+            <Elem>VST2</Elem>
             <Elem>VSTi</Elem>
             <Elem>WIN32</Elem>
             <Elem>WINDOWS=1</Elem>
@@ -246,32 +260,22 @@
         </fortranCompilerTool>
         <asmTool>
           <developmentMode>5</developmentMode>
+          <architecture>1</architecture>
         </asmTool>
         <linkerTool>
-          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/Revitar2.${CND_DLIB_EXT}</output>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/Revitar2_x86.${CND_DLIB_EXT}</output>
+          <stripSymbols>true</stripSymbols>
           <linkerLibItems>
             <linkerLibProjectItem>
-              <makeArtifact PL="../../../../vstsdk2.4.2"
+              <makeArtifact PL="vstsdk2.4"
                             CT="3"
                             CN="Release"
                             AC="true"
                             BL="true"
-                            WD="../../../../vstsdk2.4.2"
+                            WD="vstsdk2.4"
                             BC="${MAKE}  -f Makefile CONF=Release"
                             CC="${MAKE}  -f Makefile CONF=Release clean"
-                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstsdk2.4.2.a">
-              </makeArtifact>
-            </linkerLibProjectItem>
-            <linkerLibProjectItem>
-              <makeArtifact PL="../../../../vstgui"
-                            CT="3"
-                            CN="Release"
-                            AC="true"
-                            BL="true"
-                            WD="../../../../vstgui"
-                            BC="${MAKE}  -f Makefile CONF=Release"
-                            CC="${MAKE}  -f Makefile CONF=Release clean"
-                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstgui.a">
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstsdk2.4.a">
               </makeArtifact>
             </linkerLibProjectItem>
             <linkerLibFileItem>rcf.o</linkerLibFileItem>
@@ -279,6 +283,18 @@
           </linkerLibItems>
           <commandLine>-lole32 -lkernel32 -lgdi32 -luuid -luser32 --def Revitar.def -static-libstdc++ -static-libgcc</commandLine>
         </linkerTool>
+        <requiredProjects>
+          <makeArtifact PL="vstsdk2.4"
+                        CT="3"
+                        CN="Release"
+                        AC="true"
+                        BL="true"
+                        WD="vstsdk2.4"
+                        BC="${MAKE}  -f Makefile CONF=Release"
+                        CC="${MAKE}  -f Makefile CONF=Release clean"
+                        OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstsdk2.4.a">
+          </makeArtifact>
+        </requiredProjects>
       </compileType>
       <item path="RevEditor.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -336,7 +352,158 @@
       </item>
       <item path="res/preset.fxb" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="res/registerButton1.bmp" ex="false" tool="3" flavor2="0">
+      <item path="res/rockerSwitch4.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/roundSwitch0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/squareSwitch0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/stopSwitch.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/stringBackground-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/tuneKnob0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/vuMeterCircle0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resource.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Debug_x64_VSTGUI3.0" type="2">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>MinGW+w64|MinGW</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <commandLine>-fpermissive</commandLine>
+          <preprocessorList>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>REVITAR_2_01_EXPORTS</Elem>
+            <Elem>USE_LIBPNG=0</Elem>
+            <Elem>VSTi</Elem>
+            <Elem>WIN32</Elem>
+            <Elem>WINDOWS=1</Elem>
+            <Elem>_CRT_SECURE_NO_WARNINGS</Elem>
+            <Elem>_USRDLL</Elem>
+            <Elem>_WINDOWS</Elem>
+          </preprocessorList>
+          <warningLevel>0</warningLevel>
+        </cTool>
+        <ccTool>
+          <architecture>2</architecture>
+          <incDir>
+            <pElem>vstsdk2.4</pElem>
+            <pElem>vstsdk2.4/public.sdk/source/vst2.x</pElem>
+          </incDir>
+          <commandLine>-fpermissive</commandLine>
+          <preprocessorList>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>REVITAR_2_01_EXPORTS</Elem>
+            <Elem>USE_LIBPNG=0</Elem>
+            <Elem>VST2</Elem>
+            <Elem>VSTi</Elem>
+            <Elem>WIN32</Elem>
+            <Elem>WINDOWS=1</Elem>
+            <Elem>_CRT_SECURE_NO_WARNINGS</Elem>
+            <Elem>_DEBUG</Elem>
+            <Elem>_USRDLL</Elem>
+            <Elem>_WINDOWS</Elem>
+          </preprocessorList>
+          <warningLevel>0</warningLevel>
+        </ccTool>
+        <asmTool>
+          <architecture>2</architecture>
+        </asmTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibProjectItem>
+              <makeArtifact PL="vstsdk2.4"
+                            CT="3"
+                            CN="Debug_x64"
+                            AC="false"
+                            BL="true"
+                            WD="vstsdk2.4"
+                            BC="${MAKE}  -f Makefile CONF=Debug_x64"
+                            CC="${MAKE}  -f Makefile CONF=Debug_x64 clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstsdk2.4.a">
+              </makeArtifact>
+            </linkerLibProjectItem>
+            <linkerLibFileItem>rcf.o</linkerLibFileItem>
+            <linkerOptionItem>-mwindows</linkerOptionItem>
+          </linkerLibItems>
+          <commandLine>-lole32 -lkernel32 -lgdi32 -luuid -luser32 --def Revitar.def</commandLine>
+        </linkerTool>
+        <requiredProjects>
+          <makeArtifact PL="vstsdk2.4"
+                        CT="3"
+                        CN="Debug_x64"
+                        AC="false"
+                        BL="true"
+                        WD="vstsdk2.4"
+                        BC="${MAKE}  -f Makefile CONF=Debug_x64"
+                        CC="${MAKE}  -f Makefile CONF=Debug_x64 clean"
+                        OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstsdk2.4.a">
+          </makeArtifact>
+        </requiredProjects>
+      </compileType>
+      <item path="RevEditor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="RevEditor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Revitar.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Revitar.def" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Revitar.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Revitar.rc" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="displayScreen.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="presets.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="res/About0-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/All8Beta4-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/ChordNote0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/PalmSliderBackground0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/PalmSliderHandle1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/background0-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/bodies4-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/bodySelector0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/bodySelector1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/chordDirection1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/chordOn0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/chromeKnob3Shadow-1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/chromeKnob3Shadow-Slide0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/guitarBottom3-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/guitarTop3-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/librevitar.vstxml" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/pickPosition1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/pickType3.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/pickup1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/preset.fxb" ex="false" tool="3" flavor2="0">
       </item>
       <item path="res/rockerSwitch4.bmp" ex="false" tool="3" flavor2="0">
       </item>
@@ -352,7 +519,730 @@
       </item>
       <item path="res/vuMeterCircle0.bmp" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="res/welcome0.bmp" ex="false" tool="3" flavor2="0">
+      <item path="resource.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release_x64_VSTGUI3.0" type="2">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>MinGW+w64|MinGW</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+          <stripSymbols>true</stripSymbols>
+          <architecture>2</architecture>
+          <incDir>
+            <pElem>vstsdk2.4</pElem>
+            <pElem>vstsdk2.4/public.sdk/source/vst2.x</pElem>
+          </incDir>
+          <commandLine>-fpermissive</commandLine>
+          <preprocessorList>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>NDEBUG</Elem>
+            <Elem>REVITAR_2_01_EXPORTS</Elem>
+            <Elem>USE_LIBPNG=0</Elem>
+            <Elem>VST2</Elem>
+            <Elem>VSTi</Elem>
+            <Elem>WIN32</Elem>
+            <Elem>WINDOWS=1</Elem>
+            <Elem>_CRT_SECURE_NO_WARNINGS</Elem>
+            <Elem>_USRDLL</Elem>
+            <Elem>_WINDOWS</Elem>
+          </preprocessorList>
+          <warningLevel>0</warningLevel>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+          <architecture>2</architecture>
+        </asmTool>
+        <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/Revitar2_x64.${CND_DLIB_EXT}</output>
+          <stripSymbols>true</stripSymbols>
+          <linkerLibItems>
+            <linkerLibProjectItem>
+              <makeArtifact PL="vstsdk2.4"
+                            CT="3"
+                            CN="Release_x64"
+                            AC="false"
+                            BL="true"
+                            WD="vstsdk2.4"
+                            BC="${MAKE}  -f Makefile CONF=Release_x64"
+                            CC="${MAKE}  -f Makefile CONF=Release_x64 clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstsdk2.4.a">
+              </makeArtifact>
+            </linkerLibProjectItem>
+            <linkerLibFileItem>rcf.o</linkerLibFileItem>
+            <linkerOptionItem>-mwindows</linkerOptionItem>
+          </linkerLibItems>
+          <commandLine>-lole32 -lkernel32 -lgdi32 -luuid -luser32 --def Revitar.def -static-libstdc++ -static-libgcc</commandLine>
+        </linkerTool>
+        <requiredProjects>
+          <makeArtifact PL="vstsdk2.4"
+                        CT="3"
+                        CN="Release_x64"
+                        AC="false"
+                        BL="true"
+                        WD="vstsdk2.4"
+                        BC="${MAKE}  -f Makefile CONF=Release_x64"
+                        CC="${MAKE}  -f Makefile CONF=Release_x64 clean"
+                        OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstsdk2.4.a">
+          </makeArtifact>
+        </requiredProjects>
+      </compileType>
+      <item path="RevEditor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="RevEditor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Revitar.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Revitar.def" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Revitar.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Revitar.rc" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="displayScreen.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="presets.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="res/About0-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/All8Beta4-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/ChordNote0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/PalmSliderBackground0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/PalmSliderHandle1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/background0-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/bodies4-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/bodySelector0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/bodySelector1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/chordDirection1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/chordOn0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/chromeKnob3Shadow-1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/chromeKnob3Shadow-Slide0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/guitarBottom3-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/guitarTop3-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/librevitar.vstxml" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/pickPosition1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/pickType3.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/pickup1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/preset.fxb" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/rockerSwitch4.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/roundSwitch0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/squareSwitch0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/stopSwitch.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/stringBackground-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/tuneKnob0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/vuMeterCircle0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resource.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Debug_VSTGUI3.6" type="2">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>MinGW+|MinGW</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <architecture>1</architecture>
+          <incDir>
+            <pElem>vst3sdk</pElem>
+            <pElem>vst3sdk/public.sdk/source/vst2.x</pElem>
+          </incDir>
+          <commandLine>-fpermissive</commandLine>
+          <preprocessorList>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>REVITAR_2_01_EXPORTS</Elem>
+            <Elem>USE_LIBPNG=0</Elem>
+            <Elem>VST3_2</Elem>
+            <Elem>VSTi</Elem>
+            <Elem>WIN32</Elem>
+            <Elem>WINDOWS=1</Elem>
+            <Elem>_CRT_SECURE_NO_WARNINGS</Elem>
+            <Elem>_DEBUG</Elem>
+            <Elem>_USRDLL</Elem>
+            <Elem>_WINDOWS</Elem>
+          </preprocessorList>
+          <warningLevel>0</warningLevel>
+        </ccTool>
+        <asmTool>
+          <architecture>1</architecture>
+        </asmTool>
+        <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libRevitar.${CND_DLIB_EXT}</output>
+          <linkerLibItems>
+            <linkerLibProjectItem>
+              <makeArtifact PL="vst3sdk"
+                            CT="3"
+                            CN="Debug_VST2_GUI3.6"
+                            AC="false"
+                            BL="true"
+                            WD="vst3sdk"
+                            BC="${MAKE}  -f Makefile CONF=Debug_VST2_GUI3.6"
+                            CC="${MAKE}  -f Makefile CONF=Debug_VST2_GUI3.6 clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvst3sdk.a">
+              </makeArtifact>
+            </linkerLibProjectItem>
+            <linkerLibFileItem>rcf.o</linkerLibFileItem>
+            <linkerOptionItem>-mwindows</linkerOptionItem>
+          </linkerLibItems>
+          <commandLine>-lole32 -lkernel32 -lgdi32 -lgdiplus -luuid -luser32 --def Revitar.def</commandLine>
+        </linkerTool>
+        <requiredProjects>
+          <makeArtifact PL="vst3sdk"
+                        CT="3"
+                        CN="Debug_VST2_GUI3.6"
+                        AC="false"
+                        BL="true"
+                        WD="vst3sdk"
+                        BC="${MAKE}  -f Makefile CONF=Debug_VST2_GUI3.6"
+                        CC="${MAKE}  -f Makefile CONF=Debug_VST2_GUI3.6 clean"
+                        OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvst3sdk.a">
+          </makeArtifact>
+        </requiredProjects>
+      </compileType>
+      <item path="RevEditor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="RevEditor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Revitar.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Revitar.def" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Revitar.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Revitar.rc" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="displayScreen.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="presets.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="res/About0-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/All8Beta4-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/ChordNote0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/PalmSliderBackground0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/PalmSliderHandle1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/background0-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/bodies4-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/bodySelector0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/bodySelector1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/chordDirection1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/chordOn0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/chromeKnob3Shadow-1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/chromeKnob3Shadow-Slide0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/guitarBottom3-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/guitarTop3-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/librevitar.vstxml" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/pickPosition1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/pickType3.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/pickup1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/preset.fxb" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/rockerSwitch4.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/roundSwitch0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/squareSwitch0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/stopSwitch.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/stringBackground-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/tuneKnob0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/vuMeterCircle0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resource.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release_VSTGUI3.6" type="2">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>MinGW+|MinGW</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+          <stripSymbols>true</stripSymbols>
+          <architecture>1</architecture>
+          <incDir>
+            <pElem>vst3sdk</pElem>
+            <pElem>vst3sdk/public.sdk/source/vst2.x</pElem>
+          </incDir>
+          <commandLine>-fpermissive</commandLine>
+          <preprocessorList>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>NDEBUG</Elem>
+            <Elem>REVITAR_2_01_EXPORTS</Elem>
+            <Elem>USE_LIBPNG=0</Elem>
+            <Elem>VST3_2</Elem>
+            <Elem>VSTi</Elem>
+            <Elem>WIN32</Elem>
+            <Elem>WINDOWS=1</Elem>
+            <Elem>_CRT_SECURE_NO_WARNINGS</Elem>
+            <Elem>_USRDLL</Elem>
+            <Elem>_WINDOWS</Elem>
+          </preprocessorList>
+          <warningLevel>0</warningLevel>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+          <architecture>1</architecture>
+        </asmTool>
+        <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/Revitar2_x86.${CND_DLIB_EXT}</output>
+          <stripSymbols>true</stripSymbols>
+          <linkerLibItems>
+            <linkerLibProjectItem>
+              <makeArtifact PL="vst3sdk"
+                            CT="3"
+                            CN="Release_VST2_GUI3.6"
+                            AC="false"
+                            BL="true"
+                            WD="vst3sdk"
+                            BC="${MAKE}  -f Makefile CONF=Release_VST2_GUI3.6"
+                            CC="${MAKE}  -f Makefile CONF=Release_VST2_GUI3.6 clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvst3sdk.a">
+              </makeArtifact>
+            </linkerLibProjectItem>
+            <linkerLibFileItem>rcf.o</linkerLibFileItem>
+            <linkerOptionItem>-mwindows</linkerOptionItem>
+          </linkerLibItems>
+          <commandLine>-lole32 -lkernel32 -lgdi32 -lgdiplus -luuid -luser32 --def Revitar.def -static-libstdc++ -static-libgcc</commandLine>
+        </linkerTool>
+        <requiredProjects>
+          <makeArtifact PL="vst3sdk"
+                        CT="3"
+                        CN="Release_VST2_GUI3.6"
+                        AC="false"
+                        BL="true"
+                        WD="vst3sdk"
+                        BC="${MAKE}  -f Makefile CONF=Release_VST2_GUI3.6"
+                        CC="${MAKE}  -f Makefile CONF=Release_VST2_GUI3.6 clean"
+                        OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvst3sdk.a">
+          </makeArtifact>
+        </requiredProjects>
+      </compileType>
+      <item path="RevEditor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="RevEditor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Revitar.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Revitar.def" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Revitar.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Revitar.rc" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="displayScreen.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="presets.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="res/About0-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/All8Beta4-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/ChordNote0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/PalmSliderBackground0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/PalmSliderHandle1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/background0-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/bodies4-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/bodySelector0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/bodySelector1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/chordDirection1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/chordOn0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/chromeKnob3Shadow-1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/chromeKnob3Shadow-Slide0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/guitarBottom3-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/guitarTop3-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/librevitar.vstxml" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/pickPosition1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/pickType3.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/pickup1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/preset.fxb" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/rockerSwitch4.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/roundSwitch0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/squareSwitch0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/stopSwitch.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/stringBackground-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/tuneKnob0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/vuMeterCircle0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resource.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Debug_x64_VSTGUI3.6" type="2">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>MinGW+w64|MinGW</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <architecture>2</architecture>
+          <incDir>
+            <pElem>vst3sdk</pElem>
+            <pElem>vst3sdk/public.sdk/source/vst2.x</pElem>
+          </incDir>
+          <commandLine>-fpermissive</commandLine>
+          <preprocessorList>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>REVITAR_2_01_EXPORTS</Elem>
+            <Elem>USE_LIBPNG=0</Elem>
+            <Elem>VST3_2</Elem>
+            <Elem>VSTi</Elem>
+            <Elem>WIN32</Elem>
+            <Elem>WINDOWS=1</Elem>
+            <Elem>_CRT_SECURE_NO_WARNINGS</Elem>
+            <Elem>_DEBUG</Elem>
+            <Elem>_USRDLL</Elem>
+            <Elem>_WINDOWS</Elem>
+          </preprocessorList>
+          <warningLevel>0</warningLevel>
+        </ccTool>
+        <asmTool>
+          <architecture>2</architecture>
+        </asmTool>
+        <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libRevitar.${CND_DLIB_EXT}</output>
+          <linkerLibItems>
+            <linkerLibProjectItem>
+              <makeArtifact PL="vst3sdk"
+                            CT="3"
+                            CN="Debug_x64_VST2_GUI3.6"
+                            AC="false"
+                            BL="true"
+                            WD="vst3sdk"
+                            BC="${MAKE}  -f Makefile CONF=Debug_x64_VST2_GUI3.6"
+                            CC="${MAKE}  -f Makefile CONF=Debug_x64_VST2_GUI3.6 clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvst3sdk.a">
+              </makeArtifact>
+            </linkerLibProjectItem>
+            <linkerLibFileItem>rcf.o</linkerLibFileItem>
+            <linkerOptionItem>-mwindows</linkerOptionItem>
+          </linkerLibItems>
+          <commandLine>-lole32 -lkernel32 -lgdi32 -lgdiplus -luuid -luser32 --def Revitar.def</commandLine>
+        </linkerTool>
+        <requiredProjects>
+          <makeArtifact PL="vst3sdk"
+                        CT="3"
+                        CN="Debug_x64_VST2_GUI3.6"
+                        AC="false"
+                        BL="true"
+                        WD="vst3sdk"
+                        BC="${MAKE}  -f Makefile CONF=Debug_x64_VST2_GUI3.6"
+                        CC="${MAKE}  -f Makefile CONF=Debug_x64_VST2_GUI3.6 clean"
+                        OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvst3sdk.a">
+          </makeArtifact>
+        </requiredProjects>
+      </compileType>
+      <item path="RevEditor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="RevEditor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Revitar.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Revitar.def" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Revitar.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Revitar.rc" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="displayScreen.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="presets.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="res/About0-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/All8Beta4-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/ChordNote0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/PalmSliderBackground0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/PalmSliderHandle1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/background0-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/bodies4-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/bodySelector0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/bodySelector1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/chordDirection1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/chordOn0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/chromeKnob3Shadow-1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/chromeKnob3Shadow-Slide0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/guitarBottom3-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/guitarTop3-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/librevitar.vstxml" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/pickPosition1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/pickType3.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/pickup1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/preset.fxb" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/rockerSwitch4.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/roundSwitch0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/squareSwitch0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/stopSwitch.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/stringBackground-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/tuneKnob0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/vuMeterCircle0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resource.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release_x64_VSTGUI3.6" type="2">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>MinGW+w64|MinGW</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+          <stripSymbols>true</stripSymbols>
+          <architecture>2</architecture>
+          <incDir>
+            <pElem>vst3sdk</pElem>
+            <pElem>vst3sdk/public.sdk/source/vst2.x</pElem>
+          </incDir>
+          <commandLine>-fpermissive</commandLine>
+          <preprocessorList>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>NDEBUG</Elem>
+            <Elem>REVITAR_2_01_EXPORTS</Elem>
+            <Elem>USE_LIBPNG=0</Elem>
+            <Elem>VST3_2</Elem>
+            <Elem>VSTi</Elem>
+            <Elem>WIN32</Elem>
+            <Elem>WINDOWS=1</Elem>
+            <Elem>_CRT_SECURE_NO_WARNINGS</Elem>
+            <Elem>_USRDLL</Elem>
+            <Elem>_WINDOWS</Elem>
+          </preprocessorList>
+          <warningLevel>0</warningLevel>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+          <architecture>2</architecture>
+        </asmTool>
+        <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/Revitar2_x64.${CND_DLIB_EXT}</output>
+          <stripSymbols>true</stripSymbols>
+          <linkerLibItems>
+            <linkerLibProjectItem>
+              <makeArtifact PL="vst3sdk"
+                            CT="3"
+                            CN="Release_x64_VST2_GUI3.6"
+                            AC="false"
+                            BL="true"
+                            WD="vst3sdk"
+                            BC="${MAKE}  -f Makefile CONF=Release_x64_VST2_GUI3.6"
+                            CC="${MAKE}  -f Makefile CONF=Release_x64_VST2_GUI3.6 clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvst3sdk.a">
+              </makeArtifact>
+            </linkerLibProjectItem>
+            <linkerLibFileItem>rcf.o</linkerLibFileItem>
+            <linkerOptionItem>-mwindows</linkerOptionItem>
+          </linkerLibItems>
+          <commandLine>-lole32 -lkernel32 -lgdi32 -lgdiplus -luuid -luser32 --def Revitar.def -static-libstdc++ -static-libgcc</commandLine>
+        </linkerTool>
+        <requiredProjects>
+          <makeArtifact PL="vst3sdk"
+                        CT="3"
+                        CN="Release_x64_VST2_GUI3.6"
+                        AC="true"
+                        BL="true"
+                        WD="vst3sdk"
+                        BC="${MAKE}  -f Makefile CONF=Release_x64_VST2_GUI3.6"
+                        CC="${MAKE}  -f Makefile CONF=Release_x64_VST2_GUI3.6 clean"
+                        OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvst3sdk.a">
+          </makeArtifact>
+        </requiredProjects>
+      </compileType>
+      <item path="RevEditor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="RevEditor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Revitar.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Revitar.def" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Revitar.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Revitar.rc" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="displayScreen.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="presets.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="res/About0-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/All8Beta4-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/ChordNote0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/PalmSliderBackground0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/PalmSliderHandle1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/background0-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/bodies4-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/bodySelector0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/bodySelector1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/chordDirection1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/chordOn0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/chromeKnob3Shadow-1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/chromeKnob3Shadow-Slide0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/guitarBottom3-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/guitarTop3-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/librevitar.vstxml" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/pickPosition1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/pickType3.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/pickup1.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/preset.fxb" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/rockerSwitch4.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/roundSwitch0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/squareSwitch0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/stopSwitch.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/stringBackground-new.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/tuneKnob0.bmp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="res/vuMeterCircle0.bmp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="resource.h" ex="false" tool="3" flavor2="0">
       </item>

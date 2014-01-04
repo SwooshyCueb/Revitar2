@@ -55,19 +55,19 @@ FFLAGS=
 ASFLAGS=--32
 
 # Link Libraries and Options
-LDLIBSOPTIONS=vst3sdk/dist/Release_x64_VST2_GUI3.6/MinGW+w64-Windows/libvst3sdk.a rcf.o -mwindows
+LDLIBSOPTIONS=vst3sdk/dist/Release_VST2_GUI3.6/MinGW+-Windows/libvst3sdk.a rcf.o -mwindows
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/Revitar2_x86.${CND_DLIB_EXT}
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/Revitar2_x86.${CND_DLIB_EXT}: vst3sdk/dist/Release_x64_VST2_GUI3.6/MinGW+w64-Windows/libvst3sdk.a
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/Revitar2_x86.${CND_DLIB_EXT}: vst3sdk/dist/Release_VST2_GUI3.6/MinGW+-Windows/libvst3sdk.a
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/Revitar2_x86.${CND_DLIB_EXT}: rcf.o
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/Revitar2_x86.${CND_DLIB_EXT}: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/Revitar2_x86.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -lole32 -lkernel32 -lgdi32 -luuid -luser32 --def Revitar.def -static-libstdc++ -static-libgcc -shared -s
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/Revitar2_x86.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -lole32 -lkernel32 -lgdi32 -lgdiplus -luuid -luser32 --def Revitar.def -static-libstdc++ -static-libgcc -shared -s
 
 ${OBJECTDIR}/RevEditor.o: RevEditor.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -91,8 +91,8 @@ ${OBJECTDIR}/presets.o: presets.cpp
 
 # Subprojects
 .build-subprojects:
-	cd vst3sdk && ${MAKE}  -f Makefile CONF=Release_x64_VST2_GUI3.6
-	cd vst3sdk && ${MAKE}  -f Makefile CONF=Release_x64_VST2_GUI3.6
+	cd vst3sdk && ${MAKE}  -f Makefile CONF=Release_VST2_GUI3.6
+	cd vst3sdk && ${MAKE}  -f Makefile CONF=Release_VST2_GUI3.6
 
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
@@ -101,8 +101,8 @@ ${OBJECTDIR}/presets.o: presets.cpp
 
 # Subprojects
 .clean-subprojects:
-	cd vst3sdk && ${MAKE}  -f Makefile CONF=Release_x64_VST2_GUI3.6 clean
-	cd vst3sdk && ${MAKE}  -f Makefile CONF=Release_x64_VST2_GUI3.6 clean
+	cd vst3sdk && ${MAKE}  -f Makefile CONF=Release_VST2_GUI3.6 clean
+	cd vst3sdk && ${MAKE}  -f Makefile CONF=Release_VST2_GUI3.6 clean
 
 # Enable dependency checking
 .dep.inc: .depcheck-impl

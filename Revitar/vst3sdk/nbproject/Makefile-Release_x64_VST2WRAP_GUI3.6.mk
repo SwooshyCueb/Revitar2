@@ -255,7 +255,7 @@ ${OBJECTDIR}/vstgui.sf/vstgui/vstcontrols.o: vstgui.sf/vstgui/vstcontrols.cpp
 ${OBJECTDIR}/vstgui.sf/vstgui/vstgui.o: vstgui.sf/vstgui/vstgui.cpp 
 	${MKDIR} -p ${OBJECTDIR}/vstgui.sf/vstgui
 	${RM} $@.d
-	$(COMPILE.cc) -g -DNDEBUG -DRELEASE=1 -DVSTGUI_ENABLE_DEPRECATED_METHODS=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -fpermissive -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/vstgui.o vstgui.sf/vstgui/vstgui.cpp
+	$(COMPILE.cc) -O2 -s -DNDEBUG -DRELEASE=1 -DVSTGUI_ENABLE_DEPRECATED_METHODS=1 -I. -Ipublic.sdk/source/vst -Ivstgui.sf -fpermissive -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/vstgui.o vstgui.sf/vstgui/vstgui.cpp
 
 ${OBJECTDIR}/vstgui.sf/vstgui/vstguidebug.o: vstgui.sf/vstgui/vstguidebug.cpp 
 	${MKDIR} -p ${OBJECTDIR}/vstgui.sf/vstgui

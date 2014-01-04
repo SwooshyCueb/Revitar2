@@ -67,7 +67,7 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/Revitar2_x64.${CND_DLIB_EXT}: rcf.o
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/Revitar2_x64.${CND_DLIB_EXT}: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/Revitar2_x64.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -lole32 -lkernel32 -lgdi32 -luuid -luser32 --def Revitar.def -static-libstdc++ -static-libgcc -shared -s
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/Revitar2_x64.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -lole32 -lkernel32 -lgdi32 -lgdiplus -luuid -luser32 --def Revitar.def -static-libstdc++ -static-libgcc -shared -s
 
 ${OBJECTDIR}/RevEditor.o: RevEditor.cpp 
 	${MKDIR} -p ${OBJECTDIR}
