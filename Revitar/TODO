@@ -1,0 +1,19 @@
+Finish VSTGUI 3.6 support
+Finish modification to pick attack
+Optimizations? Code cleanup?
+Add knob for pitch bend range
+More chord types?
+Autoconf/Automake stuff
+VST3?
+VST2Wrapper?
+
+
+Notes for myself re: autoconf and such follow
+Needs to build makefile for VSTSDKs
+Needs to be able to make multiple versions of the VST
+Needs to be able to link to prebuilt VST libraries
+Needs to be able to build without statically linked gcc and such
+Needs to be able to accept custom paths for VSTSDK
+Needs to be able to build VSTGUI seperately from the rest of the SDK (and all this implies)
+Needs to be able to build VSTSDK dynamically.
+Needs to be able to install VSTSDK to --prefix (because why not)

@@ -463,10 +463,10 @@
       </toolsSet>
       <compileType>
         <cTool>
-          <developmentMode>5</developmentMode>
+          <developmentMode>6</developmentMode>
         </cTool>
         <ccTool>
-          <developmentMode>5</developmentMode>
+          <developmentMode>6</developmentMode>
           <stripSymbols>true</stripSymbols>
           <architecture>1</architecture>
           <incDir>
@@ -481,10 +481,10 @@
           </preprocessorList>
         </ccTool>
         <fortranCompilerTool>
-          <developmentMode>5</developmentMode>
+          <developmentMode>6</developmentMode>
         </fortranCompilerTool>
         <asmTool>
-          <developmentMode>5</developmentMode>
+          <developmentMode>6</developmentMode>
           <architecture>1</architecture>
         </asmTool>
         <archiverTool>
@@ -980,10 +980,10 @@
       </toolsSet>
       <compileType>
         <cTool>
-          <developmentMode>5</developmentMode>
+          <developmentMode>6</developmentMode>
         </cTool>
         <ccTool>
-          <developmentMode>5</developmentMode>
+          <developmentMode>6</developmentMode>
           <stripSymbols>true</stripSymbols>
           <architecture>2</architecture>
           <incDir>
@@ -998,10 +998,10 @@
           </preprocessorList>
         </ccTool>
         <fortranCompilerTool>
-          <developmentMode>5</developmentMode>
+          <developmentMode>6</developmentMode>
         </fortranCompilerTool>
         <asmTool>
-          <developmentMode>5</developmentMode>
+          <developmentMode>6</developmentMode>
           <architecture>2</architecture>
         </asmTool>
         <archiverTool>
@@ -1361,10 +1361,10 @@
       </toolsSet>
       <compileType>
         <cTool>
-          <developmentMode>5</developmentMode>
+          <developmentMode>6</developmentMode>
         </cTool>
         <ccTool>
-          <developmentMode>5</developmentMode>
+          <developmentMode>6</developmentMode>
           <stripSymbols>true</stripSymbols>
           <architecture>1</architecture>
           <incDir>
@@ -1379,10 +1379,10 @@
           </preprocessorList>
         </ccTool>
         <fortranCompilerTool>
-          <developmentMode>5</developmentMode>
+          <developmentMode>6</developmentMode>
         </fortranCompilerTool>
         <asmTool>
-          <developmentMode>5</developmentMode>
+          <developmentMode>6</developmentMode>
           <architecture>1</architecture>
         </asmTool>
         <archiverTool>
@@ -1606,10 +1606,10 @@
       </toolsSet>
       <compileType>
         <cTool>
-          <developmentMode>5</developmentMode>
+          <developmentMode>6</developmentMode>
         </cTool>
         <ccTool>
-          <developmentMode>5</developmentMode>
+          <developmentMode>6</developmentMode>
           <stripSymbols>true</stripSymbols>
           <architecture>2</architecture>
           <incDir>
@@ -1624,10 +1624,10 @@
           </preprocessorList>
         </ccTool>
         <fortranCompilerTool>
-          <developmentMode>5</developmentMode>
+          <developmentMode>6</developmentMode>
         </fortranCompilerTool>
         <asmTool>
-          <developmentMode>5</developmentMode>
+          <developmentMode>6</developmentMode>
           <architecture>2</architecture>
         </asmTool>
         <archiverTool>
@@ -2078,10 +2078,10 @@
       </toolsSet>
       <compileType>
         <cTool>
-          <developmentMode>5</developmentMode>
+          <developmentMode>6</developmentMode>
         </cTool>
         <ccTool>
-          <developmentMode>5</developmentMode>
+          <developmentMode>6</developmentMode>
           <stripSymbols>true</stripSymbols>
           <architecture>1</architecture>
           <incDir>
@@ -2097,10 +2097,10 @@
           </preprocessorList>
         </ccTool>
         <fortranCompilerTool>
-          <developmentMode>5</developmentMode>
+          <developmentMode>6</developmentMode>
         </fortranCompilerTool>
         <asmTool>
-          <developmentMode>5</developmentMode>
+          <developmentMode>6</developmentMode>
           <architecture>1</architecture>
         </asmTool>
         <archiverTool>
@@ -2777,10 +2777,10 @@
       </toolsSet>
       <compileType>
         <cTool>
-          <developmentMode>5</developmentMode>
+          <developmentMode>6</developmentMode>
         </cTool>
         <ccTool>
-          <developmentMode>5</developmentMode>
+          <developmentMode>6</developmentMode>
           <stripSymbols>true</stripSymbols>
           <architecture>2</architecture>
           <incDir>
@@ -2796,10 +2796,10 @@
           </preprocessorList>
         </ccTool>
         <fortranCompilerTool>
-          <developmentMode>5</developmentMode>
+          <developmentMode>6</developmentMode>
         </fortranCompilerTool>
         <asmTool>
-          <developmentMode>5</developmentMode>
+          <developmentMode>6</developmentMode>
           <architecture>2</architecture>
         </asmTool>
         <archiverTool>

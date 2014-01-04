@@ -72,22 +72,22 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/Revitar2_x64.${CND_DLIB_EXT}: ${OBJEC
 ${OBJECTDIR}/RevEditor.o: RevEditor.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -w -s -DBOOST_THREAD_USE_LIB -DNDEBUG -DREVITAR_2_01_EXPORTS -DUSE_LIBPNG=0 -DVST2 -DVSTi -DWIN32 -DWINDOWS=1 -D_CRT_SECURE_NO_WARNINGS -D_USRDLL -D_WINDOWS -Ivstsdk2.4 -Ivstsdk2.4/public.sdk/source/vst2.x -fpermissive  -MMD -MP -MF $@.d -o ${OBJECTDIR}/RevEditor.o RevEditor.cpp
+	$(COMPILE.cc) -O3 -w -s -DBOOST_THREAD_USE_LIB -DNDEBUG -DREVITAR_2_01_EXPORTS -DUSE_LIBPNG=0 -DVST2 -DVSTi -DWIN32 -DWINDOWS=1 -D_CRT_SECURE_NO_WARNINGS -D_USRDLL -D_WINDOWS -Ivstsdk2.4 -Ivstsdk2.4/public.sdk/source/vst2.x -fpermissive  -MMD -MP -MF $@.d -o ${OBJECTDIR}/RevEditor.o RevEditor.cpp
 
 ${OBJECTDIR}/Revitar.o: Revitar.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -w -s -DBOOST_THREAD_USE_LIB -DNDEBUG -DREVITAR_2_01_EXPORTS -DUSE_LIBPNG=0 -DVST2 -DVSTi -DWIN32 -DWINDOWS=1 -D_CRT_SECURE_NO_WARNINGS -D_USRDLL -D_WINDOWS -Ivstsdk2.4 -Ivstsdk2.4/public.sdk/source/vst2.x -fpermissive  -MMD -MP -MF $@.d -o ${OBJECTDIR}/Revitar.o Revitar.cpp
+	$(COMPILE.cc) -O3 -w -s -DBOOST_THREAD_USE_LIB -DNDEBUG -DREVITAR_2_01_EXPORTS -DUSE_LIBPNG=0 -DVST2 -DVSTi -DWIN32 -DWINDOWS=1 -D_CRT_SECURE_NO_WARNINGS -D_USRDLL -D_WINDOWS -Ivstsdk2.4 -Ivstsdk2.4/public.sdk/source/vst2.x -fpermissive  -MMD -MP -MF $@.d -o ${OBJECTDIR}/Revitar.o Revitar.cpp
 
 ${OBJECTDIR}/displayScreen.o: displayScreen.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -w -s -DBOOST_THREAD_USE_LIB -DNDEBUG -DREVITAR_2_01_EXPORTS -DUSE_LIBPNG=0 -DVST2 -DVSTi -DWIN32 -DWINDOWS=1 -D_CRT_SECURE_NO_WARNINGS -D_USRDLL -D_WINDOWS -Ivstsdk2.4 -Ivstsdk2.4/public.sdk/source/vst2.x -fpermissive  -MMD -MP -MF $@.d -o ${OBJECTDIR}/displayScreen.o displayScreen.cpp
+	$(COMPILE.cc) -O3 -w -s -DBOOST_THREAD_USE_LIB -DNDEBUG -DREVITAR_2_01_EXPORTS -DUSE_LIBPNG=0 -DVST2 -DVSTi -DWIN32 -DWINDOWS=1 -D_CRT_SECURE_NO_WARNINGS -D_USRDLL -D_WINDOWS -Ivstsdk2.4 -Ivstsdk2.4/public.sdk/source/vst2.x -fpermissive  -MMD -MP -MF $@.d -o ${OBJECTDIR}/displayScreen.o displayScreen.cpp
 
 ${OBJECTDIR}/presets.o: presets.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -w -s -DBOOST_THREAD_USE_LIB -DNDEBUG -DREVITAR_2_01_EXPORTS -DUSE_LIBPNG=0 -DVST2 -DVSTi -DWIN32 -DWINDOWS=1 -D_CRT_SECURE_NO_WARNINGS -D_USRDLL -D_WINDOWS -Ivstsdk2.4 -Ivstsdk2.4/public.sdk/source/vst2.x -fpermissive  -MMD -MP -MF $@.d -o ${OBJECTDIR}/presets.o presets.cpp
+	$(COMPILE.cc) -O3 -w -s -DBOOST_THREAD_USE_LIB -DNDEBUG -DREVITAR_2_01_EXPORTS -DUSE_LIBPNG=0 -DVST2 -DVSTi -DWIN32 -DWINDOWS=1 -D_CRT_SECURE_NO_WARNINGS -D_USRDLL -D_WINDOWS -Ivstsdk2.4 -Ivstsdk2.4/public.sdk/source/vst2.x -fpermissive  -MMD -MP -MF $@.d -o ${OBJECTDIR}/presets.o presets.cpp
 
 # Subprojects
 .build-subprojects:

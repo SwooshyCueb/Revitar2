@@ -75,47 +75,47 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstsdk2.4.a: ${OBJECTFILES}
 ${OBJECTDIR}/public.sdk/source/vst2.x/audioeffect.o: public.sdk/source/vst2.x/audioeffect.cpp 
 	${MKDIR} -p ${OBJECTDIR}/public.sdk/source/vst2.x
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -s -DNDEBUG -I. -Ipublic.sdk/source/vst2.x -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst2.x/audioeffect.o public.sdk/source/vst2.x/audioeffect.cpp
+	$(COMPILE.cc) -O3 -s -DNDEBUG -I. -Ipublic.sdk/source/vst2.x -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst2.x/audioeffect.o public.sdk/source/vst2.x/audioeffect.cpp
 
 ${OBJECTDIR}/public.sdk/source/vst2.x/audioeffectx.o: public.sdk/source/vst2.x/audioeffectx.cpp 
 	${MKDIR} -p ${OBJECTDIR}/public.sdk/source/vst2.x
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -s -DNDEBUG -I. -Ipublic.sdk/source/vst2.x -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst2.x/audioeffectx.o public.sdk/source/vst2.x/audioeffectx.cpp
+	$(COMPILE.cc) -O3 -s -DNDEBUG -I. -Ipublic.sdk/source/vst2.x -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst2.x/audioeffectx.o public.sdk/source/vst2.x/audioeffectx.cpp
 
 ${OBJECTDIR}/public.sdk/source/vst2.x/vstplugmain.o: public.sdk/source/vst2.x/vstplugmain.cpp 
 	${MKDIR} -p ${OBJECTDIR}/public.sdk/source/vst2.x
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -s -DNDEBUG -I. -Ipublic.sdk/source/vst2.x -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst2.x/vstplugmain.o public.sdk/source/vst2.x/vstplugmain.cpp
+	$(COMPILE.cc) -O3 -s -DNDEBUG -I. -Ipublic.sdk/source/vst2.x -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst2.x/vstplugmain.o public.sdk/source/vst2.x/vstplugmain.cpp
 
 ${OBJECTDIR}/vstgui.sf/vstgui/aeffguieditor.o: vstgui.sf/vstgui/aeffguieditor.cpp 
 	${MKDIR} -p ${OBJECTDIR}/vstgui.sf/vstgui
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -s -DNDEBUG -I. -Ipublic.sdk/source/vst2.x -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/aeffguieditor.o vstgui.sf/vstgui/aeffguieditor.cpp
+	$(COMPILE.cc) -O3 -s -DNDEBUG -I. -Ipublic.sdk/source/vst2.x -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/aeffguieditor.o vstgui.sf/vstgui/aeffguieditor.cpp
 
 ${OBJECTDIR}/vstgui.sf/vstgui/cfileselector.o: vstgui.sf/vstgui/cfileselector.cpp 
 	${MKDIR} -p ${OBJECTDIR}/vstgui.sf/vstgui
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -s -DNDEBUG -I. -Ipublic.sdk/source/vst2.x -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/cfileselector.o vstgui.sf/vstgui/cfileselector.cpp
+	$(COMPILE.cc) -O3 -s -DNDEBUG -I. -Ipublic.sdk/source/vst2.x -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/cfileselector.o vstgui.sf/vstgui/cfileselector.cpp
 
 ${OBJECTDIR}/vstgui.sf/vstgui/cscrollview.o: vstgui.sf/vstgui/cscrollview.cpp 
 	${MKDIR} -p ${OBJECTDIR}/vstgui.sf/vstgui
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -s -DNDEBUG -I. -Ipublic.sdk/source/vst2.x -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/cscrollview.o vstgui.sf/vstgui/cscrollview.cpp
+	$(COMPILE.cc) -O3 -s -DNDEBUG -I. -Ipublic.sdk/source/vst2.x -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/cscrollview.o vstgui.sf/vstgui/cscrollview.cpp
 
 ${OBJECTDIR}/vstgui.sf/vstgui/ctabview.o: vstgui.sf/vstgui/ctabview.cpp 
 	${MKDIR} -p ${OBJECTDIR}/vstgui.sf/vstgui
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -s -DNDEBUG -I. -Ipublic.sdk/source/vst2.x -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/ctabview.o vstgui.sf/vstgui/ctabview.cpp
+	$(COMPILE.cc) -O3 -s -DNDEBUG -I. -Ipublic.sdk/source/vst2.x -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/ctabview.o vstgui.sf/vstgui/ctabview.cpp
 
 ${OBJECTDIR}/vstgui.sf/vstgui/vstcontrols.o: vstgui.sf/vstgui/vstcontrols.cpp 
 	${MKDIR} -p ${OBJECTDIR}/vstgui.sf/vstgui
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -s -DNDEBUG -I. -Ipublic.sdk/source/vst2.x -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/vstcontrols.o vstgui.sf/vstgui/vstcontrols.cpp
+	$(COMPILE.cc) -O3 -s -DNDEBUG -I. -Ipublic.sdk/source/vst2.x -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/vstcontrols.o vstgui.sf/vstgui/vstcontrols.cpp
 
 ${OBJECTDIR}/vstgui.sf/vstgui/vstgui.o: vstgui.sf/vstgui/vstgui.cpp 
 	${MKDIR} -p ${OBJECTDIR}/vstgui.sf/vstgui
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -s -DNDEBUG -I. -Ipublic.sdk/source/vst2.x -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/vstgui.o vstgui.sf/vstgui/vstgui.cpp
+	$(COMPILE.cc) -O3 -s -DNDEBUG -I. -Ipublic.sdk/source/vst2.x -MMD -MP -MF $@.d -o ${OBJECTDIR}/vstgui.sf/vstgui/vstgui.o vstgui.sf/vstgui/vstgui.cpp
 
 # Subprojects
 .build-subprojects:
