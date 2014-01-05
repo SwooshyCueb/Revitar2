@@ -127,7 +127,19 @@
                             WD="vstsdk2.4"
                             BC="${MAKE}  -f Makefile CONF=Debug"
                             CC="${MAKE}  -f Makefile CONF=Debug clean"
-                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstsdk2.4.a">
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvst-2.4.2.a">
+              </makeArtifact>
+            </linkerLibProjectItem>
+            <linkerLibProjectItem>
+              <makeArtifact PL="vstsdk2.4/vstgui.sf"
+                            CT="3"
+                            CN="Debug"
+                            AC="true"
+                            BL="true"
+                            WD="vstsdk2.4/vstgui.sf"
+                            BC="${MAKE}  -f Makefile CONF=Debug"
+                            CC="${MAKE}  -f Makefile CONF=Debug clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstgui-3.0.a">
               </makeArtifact>
             </linkerLibProjectItem>
             <linkerLibFileItem>rcf.o</linkerLibFileItem>
@@ -135,18 +147,6 @@
           </linkerLibItems>
           <commandLine>-lole32 -lkernel32 -lgdi32 -luuid -luser32 --def Revitar.def</commandLine>
         </linkerTool>
-        <requiredProjects>
-          <makeArtifact PL="vstsdk2.4"
-                        CT="3"
-                        CN="Debug"
-                        AC="false"
-                        BL="true"
-                        WD="vstsdk2.4"
-                        BC="${MAKE}  -f Makefile CONF=Debug"
-                        CC="${MAKE}  -f Makefile CONF=Debug clean"
-                        OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstsdk2.4.a">
-          </makeArtifact>
-        </requiredProjects>
       </compileType>
       <item path="RevEditor.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -271,12 +271,24 @@
               <makeArtifact PL="vstsdk2.4"
                             CT="3"
                             CN="Release"
-                            AC="true"
+                            AC="false"
                             BL="true"
                             WD="vstsdk2.4"
                             BC="${MAKE}  -f Makefile CONF=Release"
                             CC="${MAKE}  -f Makefile CONF=Release clean"
-                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstsdk2.4.a">
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvst-2.4.2.a">
+              </makeArtifact>
+            </linkerLibProjectItem>
+            <linkerLibProjectItem>
+              <makeArtifact PL="vstsdk2.4/vstgui.sf"
+                            CT="3"
+                            CN="Release"
+                            AC="false"
+                            BL="true"
+                            WD="vstsdk2.4/vstgui.sf"
+                            BC="${MAKE}  -f Makefile CONF=Release"
+                            CC="${MAKE}  -f Makefile CONF=Release clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstgui-3.0.a">
               </makeArtifact>
             </linkerLibProjectItem>
             <linkerLibFileItem>rcf.o</linkerLibFileItem>
@@ -284,18 +296,6 @@
           </linkerLibItems>
           <commandLine>-lole32 -lkernel32 -lgdi32 -luuid -luser32 --def Revitar.def -static-libstdc++ -static-libgcc</commandLine>
         </linkerTool>
-        <requiredProjects>
-          <makeArtifact PL="vstsdk2.4"
-                        CT="3"
-                        CN="Release"
-                        AC="true"
-                        BL="true"
-                        WD="vstsdk2.4"
-                        BC="${MAKE}  -f Makefile CONF=Release"
-                        CC="${MAKE}  -f Makefile CONF=Release clean"
-                        OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstsdk2.4.a">
-          </makeArtifact>
-        </requiredProjects>
       </compileType>
       <item path="RevEditor.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -429,7 +429,19 @@
                             WD="vstsdk2.4"
                             BC="${MAKE}  -f Makefile CONF=Debug_x64"
                             CC="${MAKE}  -f Makefile CONF=Debug_x64 clean"
-                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstsdk2.4.a">
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvst-2.4.2.a">
+              </makeArtifact>
+            </linkerLibProjectItem>
+            <linkerLibProjectItem>
+              <makeArtifact PL="vstsdk2.4/vstgui.sf"
+                            CT="3"
+                            CN="Debug_x64"
+                            AC="false"
+                            BL="true"
+                            WD="vstsdk2.4/vstgui.sf"
+                            BC="${MAKE}  -f Makefile CONF=Debug_x64"
+                            CC="${MAKE}  -f Makefile CONF=Debug_x64 clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstgui-3.0.a">
               </makeArtifact>
             </linkerLibProjectItem>
             <linkerLibFileItem>rcf.o</linkerLibFileItem>
@@ -437,18 +449,6 @@
           </linkerLibItems>
           <commandLine>-lole32 -lkernel32 -lgdi32 -luuid -luser32 --def Revitar.def</commandLine>
         </linkerTool>
-        <requiredProjects>
-          <makeArtifact PL="vstsdk2.4"
-                        CT="3"
-                        CN="Debug_x64"
-                        AC="false"
-                        BL="true"
-                        WD="vstsdk2.4"
-                        BC="${MAKE}  -f Makefile CONF=Debug_x64"
-                        CC="${MAKE}  -f Makefile CONF=Debug_x64 clean"
-                        OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstsdk2.4.a">
-          </makeArtifact>
-        </requiredProjects>
       </compileType>
       <item path="RevEditor.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -578,7 +578,19 @@
                             WD="vstsdk2.4"
                             BC="${MAKE}  -f Makefile CONF=Release_x64"
                             CC="${MAKE}  -f Makefile CONF=Release_x64 clean"
-                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstsdk2.4.a">
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvst-2.4.2.a">
+              </makeArtifact>
+            </linkerLibProjectItem>
+            <linkerLibProjectItem>
+              <makeArtifact PL="vstsdk2.4/vstgui.sf"
+                            CT="3"
+                            CN="Release_x64"
+                            AC="false"
+                            BL="true"
+                            WD="vstsdk2.4/vstgui.sf"
+                            BC="${MAKE}  -f Makefile CONF=Release_x64"
+                            CC="${MAKE}  -f Makefile CONF=Release_x64 clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstgui-3.0.a">
               </makeArtifact>
             </linkerLibProjectItem>
             <linkerLibFileItem>rcf.o</linkerLibFileItem>
@@ -586,18 +598,6 @@
           </linkerLibItems>
           <commandLine>-lole32 -lkernel32 -lgdi32 -luuid -luser32 --def Revitar.def -static-libstdc++ -static-libgcc</commandLine>
         </linkerTool>
-        <requiredProjects>
-          <makeArtifact PL="vstsdk2.4"
-                        CT="3"
-                        CN="Release_x64"
-                        AC="false"
-                        BL="true"
-                        WD="vstsdk2.4"
-                        BC="${MAKE}  -f Makefile CONF=Release_x64"
-                        CC="${MAKE}  -f Makefile CONF=Release_x64 clean"
-                        OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstsdk2.4.a">
-          </makeArtifact>
-        </requiredProjects>
       </compileType>
       <item path="RevEditor.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -711,13 +711,25 @@
             <linkerLibProjectItem>
               <makeArtifact PL="vst3sdk"
                             CT="3"
-                            CN="Debug_VST2_GUI3.6"
-                            AC="false"
+                            CN="Debug_VST2"
+                            AC="true"
                             BL="true"
                             WD="vst3sdk"
-                            BC="${MAKE}  -f Makefile CONF=Debug_VST2_GUI3.6"
-                            CC="${MAKE}  -f Makefile CONF=Debug_VST2_GUI3.6 clean"
-                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvst3sdk.a">
+                            BC="${MAKE}  -f Makefile CONF=Debug_VST2"
+                            CC="${MAKE}  -f Makefile CONF=Debug_VST2 clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvst-2.4.3.a">
+              </makeArtifact>
+            </linkerLibProjectItem>
+            <linkerLibProjectItem>
+              <makeArtifact PL="vst3sdk/vstgui.sf"
+                            CT="3"
+                            CN="Debug"
+                            AC="true"
+                            BL="true"
+                            WD="vst3sdk/vstgui.sf"
+                            BC="${MAKE}  -f Makefile CONF=Debug"
+                            CC="${MAKE}  -f Makefile CONF=Debug clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstgui-3.6.a">
               </makeArtifact>
             </linkerLibProjectItem>
             <linkerLibFileItem>rcf.o</linkerLibFileItem>
@@ -725,18 +737,6 @@
           </linkerLibItems>
           <commandLine>-lole32 -lkernel32 -lgdi32 -lgdiplus -luuid -luser32 --def Revitar.def</commandLine>
         </linkerTool>
-        <requiredProjects>
-          <makeArtifact PL="vst3sdk"
-                        CT="3"
-                        CN="Debug_VST2_GUI3.6"
-                        AC="false"
-                        BL="true"
-                        WD="vst3sdk"
-                        BC="${MAKE}  -f Makefile CONF=Debug_VST2_GUI3.6"
-                        CC="${MAKE}  -f Makefile CONF=Debug_VST2_GUI3.6 clean"
-                        OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvst3sdk.a">
-          </makeArtifact>
-        </requiredProjects>
       </compileType>
       <item path="RevEditor.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -860,13 +860,25 @@
             <linkerLibProjectItem>
               <makeArtifact PL="vst3sdk"
                             CT="3"
-                            CN="Release_VST2_GUI3.6"
+                            CN="Release_VST2"
                             AC="false"
                             BL="true"
                             WD="vst3sdk"
-                            BC="${MAKE}  -f Makefile CONF=Release_VST2_GUI3.6"
-                            CC="${MAKE}  -f Makefile CONF=Release_VST2_GUI3.6 clean"
-                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvst3sdk.a">
+                            BC="${MAKE}  -f Makefile CONF=Release_VST2"
+                            CC="${MAKE}  -f Makefile CONF=Release_VST2 clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvst-2.4.3.a">
+              </makeArtifact>
+            </linkerLibProjectItem>
+            <linkerLibProjectItem>
+              <makeArtifact PL="vst3sdk/vstgui.sf"
+                            CT="3"
+                            CN="Release"
+                            AC="false"
+                            BL="true"
+                            WD="vst3sdk/vstgui.sf"
+                            BC="${MAKE}  -f Makefile CONF=Release"
+                            CC="${MAKE}  -f Makefile CONF=Release clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstgui-3.6.a">
               </makeArtifact>
             </linkerLibProjectItem>
             <linkerLibFileItem>rcf.o</linkerLibFileItem>
@@ -874,18 +886,6 @@
           </linkerLibItems>
           <commandLine>-lole32 -lkernel32 -lgdi32 -lgdiplus -luuid -luser32 --def Revitar.def -static-libstdc++ -static-libgcc</commandLine>
         </linkerTool>
-        <requiredProjects>
-          <makeArtifact PL="vst3sdk"
-                        CT="3"
-                        CN="Release_VST2_GUI3.6"
-                        AC="false"
-                        BL="true"
-                        WD="vst3sdk"
-                        BC="${MAKE}  -f Makefile CONF=Release_VST2_GUI3.6"
-                        CC="${MAKE}  -f Makefile CONF=Release_VST2_GUI3.6 clean"
-                        OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvst3sdk.a">
-          </makeArtifact>
-        </requiredProjects>
       </compileType>
       <item path="RevEditor.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -999,13 +999,25 @@
             <linkerLibProjectItem>
               <makeArtifact PL="vst3sdk"
                             CT="3"
-                            CN="Debug_x64_VST2_GUI3.6"
+                            CN="Debug_x64_VST2"
                             AC="false"
                             BL="true"
                             WD="vst3sdk"
-                            BC="${MAKE}  -f Makefile CONF=Debug_x64_VST2_GUI3.6"
-                            CC="${MAKE}  -f Makefile CONF=Debug_x64_VST2_GUI3.6 clean"
-                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvst3sdk.a">
+                            BC="${MAKE}  -f Makefile CONF=Debug_x64_VST2"
+                            CC="${MAKE}  -f Makefile CONF=Debug_x64_VST2 clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvst-2.4.3.a">
+              </makeArtifact>
+            </linkerLibProjectItem>
+            <linkerLibProjectItem>
+              <makeArtifact PL="vst3sdk/vstgui.sf"
+                            CT="3"
+                            CN="Debug_x64"
+                            AC="false"
+                            BL="true"
+                            WD="vst3sdk/vstgui.sf"
+                            BC="${MAKE}  -f Makefile CONF=Debug_x64"
+                            CC="${MAKE}  -f Makefile CONF=Debug_x64 clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstgui-3.6.a">
               </makeArtifact>
             </linkerLibProjectItem>
             <linkerLibFileItem>rcf.o</linkerLibFileItem>
@@ -1013,18 +1025,6 @@
           </linkerLibItems>
           <commandLine>-lole32 -lkernel32 -lgdi32 -lgdiplus -luuid -luser32 --def Revitar.def</commandLine>
         </linkerTool>
-        <requiredProjects>
-          <makeArtifact PL="vst3sdk"
-                        CT="3"
-                        CN="Debug_x64_VST2_GUI3.6"
-                        AC="false"
-                        BL="true"
-                        WD="vst3sdk"
-                        BC="${MAKE}  -f Makefile CONF=Debug_x64_VST2_GUI3.6"
-                        CC="${MAKE}  -f Makefile CONF=Debug_x64_VST2_GUI3.6 clean"
-                        OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvst3sdk.a">
-          </makeArtifact>
-        </requiredProjects>
       </compileType>
       <item path="RevEditor.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1148,13 +1148,25 @@
             <linkerLibProjectItem>
               <makeArtifact PL="vst3sdk"
                             CT="3"
-                            CN="Release_x64_VST2_GUI3.6"
+                            CN="Release_x64_VST2"
                             AC="false"
                             BL="true"
                             WD="vst3sdk"
-                            BC="${MAKE}  -f Makefile CONF=Release_x64_VST2_GUI3.6"
-                            CC="${MAKE}  -f Makefile CONF=Release_x64_VST2_GUI3.6 clean"
-                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvst3sdk.a">
+                            BC="${MAKE}  -f Makefile CONF=Release_x64_VST2"
+                            CC="${MAKE}  -f Makefile CONF=Release_x64_VST2 clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvst-2.4.3.a">
+              </makeArtifact>
+            </linkerLibProjectItem>
+            <linkerLibProjectItem>
+              <makeArtifact PL="vst3sdk/vstgui.sf"
+                            CT="3"
+                            CN="Release_x64"
+                            AC="false"
+                            BL="true"
+                            WD="vst3sdk/vstgui.sf"
+                            BC="${MAKE}  -f Makefile CONF=Release_x64"
+                            CC="${MAKE}  -f Makefile CONF=Release_x64 clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvstgui-3.6.a">
               </makeArtifact>
             </linkerLibProjectItem>
             <linkerLibFileItem>rcf.o</linkerLibFileItem>
@@ -1162,18 +1174,6 @@
           </linkerLibItems>
           <commandLine>-lole32 -lkernel32 -lgdi32 -lgdiplus -luuid -luser32 --def Revitar.def -static-libstdc++ -static-libgcc</commandLine>
         </linkerTool>
-        <requiredProjects>
-          <makeArtifact PL="vst3sdk"
-                        CT="3"
-                        CN="Release_x64_VST2_GUI3.6"
-                        AC="true"
-                        BL="true"
-                        WD="vst3sdk"
-                        BC="${MAKE}  -f Makefile CONF=Release_x64_VST2_GUI3.6"
-                        CC="${MAKE}  -f Makefile CONF=Release_x64_VST2_GUI3.6 clean"
-                        OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvst3sdk.a">
-          </makeArtifact>
-        </requiredProjects>
       </compileType>
       <item path="RevEditor.cpp" ex="false" tool="1" flavor2="0">
       </item>

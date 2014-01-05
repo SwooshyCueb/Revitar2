@@ -97,20 +97,6 @@
           <itemPath>public.sdk/source/vst/vstsinglecomponenteffect.h</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="f3" displayName="vstgui" projectFiles="true">
-        <itemPath>vstgui.sf/vstgui/aeffguieditor.h</itemPath>
-        <itemPath>vstgui.sf/vstgui/cdatabrowser.h</itemPath>
-        <itemPath>vstgui.sf/vstgui/cfileselector.h</itemPath>
-        <itemPath>vstgui.sf/vstgui/cscrollview.h</itemPath>
-        <itemPath>vstgui.sf/vstgui/ctabview.h</itemPath>
-        <itemPath>vstgui.sf/vstgui/ctooltipsupport.h</itemPath>
-        <itemPath>vstgui.sf/vstgui/cvstguitimer.h</itemPath>
-        <itemPath>vstgui.sf/vstgui/plugguieditor.h</itemPath>
-        <itemPath>vstgui.sf/vstgui/vstcontrols.h</itemPath>
-        <itemPath>vstgui.sf/vstgui/vstgui.h</itemPath>
-        <itemPath>vstgui.sf/vstgui/vstguidebug.h</itemPath>
-        <itemPath>vstgui.sf/vstgui/vstkeycode.h</itemPath>
-      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -171,20 +157,6 @@
           <itemPath>public.sdk/source/vst/vstsinglecomponenteffect.cpp</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="f3" displayName="vstgui" projectFiles="true">
-        <itemPath>vstgui.sf/vstgui/aeffguieditor.cpp</itemPath>
-        <itemPath>vstgui.sf/vstgui/cdatabrowser.cpp</itemPath>
-        <itemPath>vstgui.sf/vstgui/cfileselector.cpp</itemPath>
-        <itemPath>vstgui.sf/vstgui/cscrollview.cpp</itemPath>
-        <itemPath>vstgui.sf/vstgui/ctabview.cpp</itemPath>
-        <itemPath>vstgui.sf/vstgui/ctooltipsupport.cpp</itemPath>
-        <itemPath>vstgui.sf/vstgui/cvstguitimer.cpp</itemPath>
-        <itemPath>vstgui.sf/vstgui/plugguieditor.cpp</itemPath>
-        <itemPath>vstgui.sf/vstgui/vstcontrols.cpp</itemPath>
-        <itemPath>vstgui.sf/vstgui/vstgui.cpp</itemPath>
-        <itemPath>vstgui.sf/vstgui/vstguidebug.cpp</itemPath>
-        <itemPath>vstgui.sf/vstgui/winfileselector.cpp</itemPath>
-      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -200,7 +172,7 @@
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
-    <conf name="Debug_VST3_GUI3.6" type="3">
+    <conf name="Debug_VST3" type="3">
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>MinGW+|MinGW</compilerSet>
@@ -407,54 +379,8 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="vstgui.sf/vstgui/cdatabrowser.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cdatabrowser.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cscrollview.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cscrollview.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctabview.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctabview.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctooltipsupport.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctooltipsupport.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cvstguitimer.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cvstguitimer.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/plugguieditor.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/plugguieditor.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstcontrols.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstcontrols.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstgui.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstgui.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstguidebug.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstguidebug.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstkeycode.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/winfileselector.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
     </conf>
-    <conf name="Release_VST3_GUI3.6" type="3">
+    <conf name="Release_VST3" type="3">
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>MinGW+|MinGW</compilerSet>
@@ -670,54 +596,8 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="vstgui.sf/vstgui/cdatabrowser.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cdatabrowser.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cscrollview.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cscrollview.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctabview.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctabview.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctooltipsupport.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctooltipsupport.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cvstguitimer.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cvstguitimer.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/plugguieditor.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/plugguieditor.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstcontrols.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstcontrols.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstgui.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstgui.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstguidebug.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstguidebug.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstkeycode.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/winfileselector.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
     </conf>
-    <conf name="Debug_x64_VST3_GUI3.6" type="3">
+    <conf name="Debug_x64_VST3" type="3">
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>MinGW+w64|MinGW</compilerSet>
@@ -924,54 +804,8 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="vstgui.sf/vstgui/cdatabrowser.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cdatabrowser.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cscrollview.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cscrollview.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctabview.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctabview.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctooltipsupport.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctooltipsupport.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cvstguitimer.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cvstguitimer.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/plugguieditor.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/plugguieditor.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstcontrols.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstcontrols.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstgui.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstgui.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstguidebug.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstguidebug.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstkeycode.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/winfileselector.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
     </conf>
-    <conf name="Release_x64_VST3_GUI3.6" type="3">
+    <conf name="Release_x64_VST3" type="3">
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>MinGW+w64|MinGW</compilerSet>
@@ -1187,544 +1021,8 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="vstgui.sf/vstgui/cdatabrowser.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cdatabrowser.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cscrollview.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cscrollview.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctabview.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctabview.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctooltipsupport.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctooltipsupport.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cvstguitimer.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cvstguitimer.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/plugguieditor.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/plugguieditor.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstcontrols.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstcontrols.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstgui.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstgui.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstguidebug.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstguidebug.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstkeycode.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/winfileselector.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
     </conf>
-    <conf name="Debug_VST2_GUI3.6" type="3">
-      <toolsSet>
-        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
-        <compilerSet>MinGW+|MinGW</compilerSet>
-        <dependencyChecking>true</dependencyChecking>
-        <rebuildPropChanged>false</rebuildPropChanged>
-      </toolsSet>
-      <compileType>
-        <ccTool>
-          <architecture>1</architecture>
-          <incDir>
-            <pElem>.</pElem>
-            <pElem>public.sdk/source/vst2.x</pElem>
-            <pElem>vstgui.sf</pElem>
-          </incDir>
-          <preprocessorList>
-            <Elem>DEVELOPMENT=1</Elem>
-            <Elem>VSTGUI_ENABLE_DEPRECATED_METHODS=0</Elem>
-            <Elem>_DEBUG</Elem>
-          </preprocessorList>
-        </ccTool>
-        <asmTool>
-          <architecture>1</architecture>
-        </asmTool>
-        <archiverTool>
-        </archiverTool>
-      </compileType>
-      <item path="pluginterfaces/vst2.x/aeffect.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="pluginterfaces/vst2.x/aeffectx.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="pluginterfaces/vst2.x/vstfxstore.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="public.sdk/source/vst2.x/aeffeditor.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="public.sdk/source/vst2.x/audioeffect.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="public.sdk/source/vst2.x/audioeffect.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="public.sdk/source/vst2.x/audioeffectx.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="public.sdk/source/vst2.x/audioeffectx.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="public.sdk/source/vst2.x/vstplugmain.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/aeffguieditor.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/aeffguieditor.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cdatabrowser.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cdatabrowser.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cfileselector.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cfileselector.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cscrollview.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cscrollview.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctabview.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctabview.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctooltipsupport.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctooltipsupport.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cvstguitimer.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cvstguitimer.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/plugguieditor.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/plugguieditor.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstcontrols.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstcontrols.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstgui.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstgui.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstguidebug.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstguidebug.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstkeycode.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/winfileselector.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-    </conf>
-    <conf name="Release_VST2_GUI3.6" type="3">
-      <toolsSet>
-        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
-        <compilerSet>MinGW+|MinGW</compilerSet>
-        <dependencyChecking>true</dependencyChecking>
-        <rebuildPropChanged>false</rebuildPropChanged>
-      </toolsSet>
-      <compileType>
-        <cTool>
-          <developmentMode>6</developmentMode>
-        </cTool>
-        <ccTool>
-          <developmentMode>6</developmentMode>
-          <stripSymbols>true</stripSymbols>
-          <architecture>1</architecture>
-          <incDir>
-            <pElem>.</pElem>
-            <pElem>public.sdk/source/vst2.x</pElem>
-            <pElem>vstgui.sf</pElem>
-          </incDir>
-          <preprocessorList>
-            <Elem>NDEBUG</Elem>
-            <Elem>RELEASE=1</Elem>
-            <Elem>VSTGUI_ENABLE_DEPRECATED_METHODS=0</Elem>
-          </preprocessorList>
-        </ccTool>
-        <fortranCompilerTool>
-          <developmentMode>6</developmentMode>
-        </fortranCompilerTool>
-        <asmTool>
-          <developmentMode>6</developmentMode>
-          <architecture>1</architecture>
-        </asmTool>
-        <archiverTool>
-        </archiverTool>
-      </compileType>
-      <item path="pluginterfaces/vst2.x/aeffect.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="pluginterfaces/vst2.x/aeffectx.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="pluginterfaces/vst2.x/vstfxstore.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="public.sdk/source/vst2.x/aeffeditor.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="public.sdk/source/vst2.x/audioeffect.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="public.sdk/source/vst2.x/audioeffect.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="public.sdk/source/vst2.x/audioeffectx.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="public.sdk/source/vst2.x/audioeffectx.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="public.sdk/source/vst2.x/vstplugmain.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/aeffguieditor.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/aeffguieditor.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cdatabrowser.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cdatabrowser.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cfileselector.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cfileselector.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cscrollview.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cscrollview.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctabview.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctabview.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctooltipsupport.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctooltipsupport.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cvstguitimer.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cvstguitimer.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/plugguieditor.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/plugguieditor.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstcontrols.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstcontrols.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstgui.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstgui.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstguidebug.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstguidebug.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstkeycode.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/winfileselector.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-    </conf>
-    <conf name="Debug_x64_VST2_GUI3.6" type="3">
-      <toolsSet>
-        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
-        <compilerSet>MinGW+w64|MinGW</compilerSet>
-        <dependencyChecking>true</dependencyChecking>
-        <rebuildPropChanged>false</rebuildPropChanged>
-      </toolsSet>
-      <compileType>
-        <ccTool>
-          <architecture>2</architecture>
-          <incDir>
-            <pElem>.</pElem>
-            <pElem>public.sdk/source/vst2.x</pElem>
-            <pElem>vstgui.sf</pElem>
-          </incDir>
-          <preprocessorList>
-            <Elem>DEVELOPMENT=1</Elem>
-            <Elem>VSTGUI_ENABLE_DEPRECATED_METHODS=0</Elem>
-            <Elem>_DEBUG</Elem>
-          </preprocessorList>
-        </ccTool>
-        <asmTool>
-          <architecture>2</architecture>
-        </asmTool>
-        <archiverTool>
-        </archiverTool>
-      </compileType>
-      <item path="pluginterfaces/vst2.x/aeffect.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="pluginterfaces/vst2.x/aeffectx.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="pluginterfaces/vst2.x/vstfxstore.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="public.sdk/source/vst2.x/aeffeditor.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="public.sdk/source/vst2.x/audioeffect.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="public.sdk/source/vst2.x/audioeffect.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="public.sdk/source/vst2.x/audioeffectx.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="public.sdk/source/vst2.x/audioeffectx.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="public.sdk/source/vst2.x/vstplugmain.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/aeffguieditor.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/aeffguieditor.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cdatabrowser.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cdatabrowser.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cfileselector.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cfileselector.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cscrollview.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cscrollview.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctabview.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctabview.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctooltipsupport.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctooltipsupport.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cvstguitimer.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cvstguitimer.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/plugguieditor.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/plugguieditor.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstcontrols.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstcontrols.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstgui.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstgui.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstguidebug.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstguidebug.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstkeycode.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/winfileselector.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-    </conf>
-    <conf name="Release_x64_VST2_GUI3.6" type="3">
-      <toolsSet>
-        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
-        <compilerSet>MinGW+w64|MinGW</compilerSet>
-        <dependencyChecking>true</dependencyChecking>
-        <rebuildPropChanged>false</rebuildPropChanged>
-      </toolsSet>
-      <compileType>
-        <cTool>
-          <developmentMode>6</developmentMode>
-        </cTool>
-        <ccTool>
-          <developmentMode>6</developmentMode>
-          <stripSymbols>true</stripSymbols>
-          <architecture>2</architecture>
-          <incDir>
-            <pElem>.</pElem>
-            <pElem>public.sdk/source/vst2.x</pElem>
-            <pElem>vstgui.sf</pElem>
-          </incDir>
-          <preprocessorList>
-            <Elem>NDEBUG</Elem>
-            <Elem>RELEASE=1</Elem>
-            <Elem>VSTGUI_ENABLE_DEPRECATED_METHODS=0</Elem>
-          </preprocessorList>
-        </ccTool>
-        <fortranCompilerTool>
-          <developmentMode>6</developmentMode>
-        </fortranCompilerTool>
-        <asmTool>
-          <developmentMode>6</developmentMode>
-          <architecture>2</architecture>
-        </asmTool>
-        <archiverTool>
-        </archiverTool>
-      </compileType>
-      <item path="pluginterfaces/vst2.x/aeffect.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="pluginterfaces/vst2.x/aeffectx.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="pluginterfaces/vst2.x/vstfxstore.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="public.sdk/source/vst2.x/aeffeditor.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="public.sdk/source/vst2.x/audioeffect.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="public.sdk/source/vst2.x/audioeffect.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="public.sdk/source/vst2.x/audioeffectx.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="public.sdk/source/vst2.x/audioeffectx.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="public.sdk/source/vst2.x/vstplugmain.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/aeffguieditor.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/aeffguieditor.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cdatabrowser.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cdatabrowser.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cfileselector.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cfileselector.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cscrollview.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cscrollview.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctabview.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctabview.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctooltipsupport.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctooltipsupport.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cvstguitimer.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cvstguitimer.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/plugguieditor.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/plugguieditor.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstcontrols.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstcontrols.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstgui.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstgui.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstguidebug.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstguidebug.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstkeycode.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/winfileselector.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-    </conf>
-    <conf name="Debug_VST2WRAP_GUI3.6" type="3">
+    <conf name="Debug_VST2WRAP" type="3">
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>MinGW+|MinGW</compilerSet>
@@ -2014,62 +1312,8 @@
             tool="1"
             flavor2="0">
       </item>
-      <item path="vstgui.sf/vstgui/aeffguieditor.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/aeffguieditor.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cdatabrowser.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cdatabrowser.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cfileselector.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cfileselector.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cscrollview.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cscrollview.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctabview.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctabview.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctooltipsupport.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctooltipsupport.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cvstguitimer.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cvstguitimer.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/plugguieditor.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/plugguieditor.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstcontrols.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstcontrols.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstgui.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstgui.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstguidebug.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstguidebug.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstkeycode.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/winfileselector.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
     </conf>
-    <conf name="Release_VST2WRAP_GUI3.6" type="3">
+    <conf name="Release_VST2WRAP" type="3">
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>MinGW+|MinGW</compilerSet>
@@ -2368,62 +1612,8 @@
             tool="1"
             flavor2="0">
       </item>
-      <item path="vstgui.sf/vstgui/aeffguieditor.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/aeffguieditor.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cdatabrowser.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cdatabrowser.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cfileselector.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cfileselector.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cscrollview.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cscrollview.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctabview.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctabview.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctooltipsupport.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctooltipsupport.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cvstguitimer.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cvstguitimer.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/plugguieditor.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/plugguieditor.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstcontrols.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstcontrols.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstgui.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstgui.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstguidebug.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstguidebug.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstkeycode.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/winfileselector.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
     </conf>
-    <conf name="Debug_x64_VST2WRAP_GUI3.6" type="3">
+    <conf name="Debug_x64_VST2WRAP" type="3">
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>MinGW+w64|MinGW</compilerSet>
@@ -2713,62 +1903,8 @@
             tool="1"
             flavor2="0">
       </item>
-      <item path="vstgui.sf/vstgui/aeffguieditor.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/aeffguieditor.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cdatabrowser.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cdatabrowser.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cfileselector.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cfileselector.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cscrollview.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cscrollview.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctabview.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctabview.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctooltipsupport.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctooltipsupport.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cvstguitimer.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cvstguitimer.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/plugguieditor.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/plugguieditor.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstcontrols.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstcontrols.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstgui.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstgui.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstguidebug.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstguidebug.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/vstkeycode.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/winfileselector.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
     </conf>
-    <conf name="Release_x64_VST2WRAP_GUI3.6" type="3">
+    <conf name="Release_x64_VST2WRAP" type="3">
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>MinGW+w64|MinGW</compilerSet>
@@ -3067,56 +2203,276 @@
             tool="1"
             flavor2="0">
       </item>
-      <item path="vstgui.sf/vstgui/aeffguieditor.cpp" ex="false" tool="1" flavor2="0">
+    </conf>
+    <conf name="Debug_VST2" type="3">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>MinGW+|MinGW</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <architecture>1</architecture>
+          <incDir>
+            <pElem>.</pElem>
+            <pElem>public.sdk/source/vst2.x</pElem>
+            <pElem>vstgui.sf</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>DEVELOPMENT=1</Elem>
+            <Elem>_DEBUG</Elem>
+          </preprocessorList>
+        </ccTool>
+        <asmTool>
+          <architecture>1</architecture>
+        </asmTool>
+        <archiverTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvst-2.4.3.a</output>
+        </archiverTool>
+      </compileType>
+      <item path="pluginterfaces/vst2.x/aeffect.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="vstgui.sf/vstgui/aeffguieditor.h" ex="false" tool="3" flavor2="0">
+      <item path="pluginterfaces/vst2.x/aeffectx.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="vstgui.sf/vstgui/cdatabrowser.cpp" ex="false" tool="1" flavor2="0">
+      <item path="pluginterfaces/vst2.x/vstfxstore.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="vstgui.sf/vstgui/cdatabrowser.h" ex="false" tool="3" flavor2="0">
+      <item path="public.sdk/source/vst2.x/aeffeditor.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="vstgui.sf/vstgui/cfileselector.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cfileselector.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cscrollview.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/cscrollview.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctabview.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctabview.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vstgui.sf/vstgui/ctooltipsupport.cpp"
+      <item path="public.sdk/source/vst2.x/audioeffect.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="vstgui.sf/vstgui/ctooltipsupport.h" ex="false" tool="3" flavor2="0">
+      <item path="public.sdk/source/vst2.x/audioeffect.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="vstgui.sf/vstgui/cvstguitimer.cpp" ex="false" tool="1" flavor2="0">
+      <item path="public.sdk/source/vst2.x/audioeffectx.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="vstgui.sf/vstgui/cvstguitimer.h" ex="false" tool="3" flavor2="0">
+      <item path="public.sdk/source/vst2.x/audioeffectx.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="vstgui.sf/vstgui/plugguieditor.cpp" ex="false" tool="1" flavor2="0">
+      <item path="public.sdk/source/vst2.x/vstplugmain.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="vstgui.sf/vstgui/plugguieditor.h" ex="false" tool="3" flavor2="0">
+    </conf>
+    <conf name="Release_VST2" type="3">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>MinGW+|MinGW</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>6</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>6</developmentMode>
+          <stripSymbols>true</stripSymbols>
+          <architecture>1</architecture>
+          <incDir>
+            <pElem>.</pElem>
+            <pElem>public.sdk/source/vst2.x</pElem>
+            <pElem>vstgui.sf</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>RELEASE=1</Elem>
+          </preprocessorList>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>6</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>6</developmentMode>
+          <architecture>1</architecture>
+        </asmTool>
+        <archiverTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvst-2.4.3.a</output>
+        </archiverTool>
+      </compileType>
+      <item path="pluginterfaces/vst2.x/aeffect.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="vstgui.sf/vstgui/vstcontrols.cpp" ex="false" tool="1" flavor2="0">
+      <item path="pluginterfaces/vst2.x/aeffectx.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="vstgui.sf/vstgui/vstcontrols.h" ex="false" tool="3" flavor2="0">
+      <item path="pluginterfaces/vst2.x/vstfxstore.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="vstgui.sf/vstgui/vstgui.cpp" ex="false" tool="1" flavor2="0">
+      <item path="public.sdk/source/vst2.x/aeffeditor.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="vstgui.sf/vstgui/vstgui.h" ex="false" tool="3" flavor2="0">
+      <item path="public.sdk/source/vst2.x/audioeffect.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="vstgui.sf/vstgui/vstguidebug.cpp" ex="false" tool="1" flavor2="0">
+      <item path="public.sdk/source/vst2.x/audioeffect.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="vstgui.sf/vstgui/vstguidebug.h" ex="false" tool="3" flavor2="0">
+      <item path="public.sdk/source/vst2.x/audioeffectx.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="vstgui.sf/vstgui/vstkeycode.h" ex="false" tool="3" flavor2="0">
+      <item path="public.sdk/source/vst2.x/audioeffectx.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="vstgui.sf/vstgui/winfileselector.cpp"
+      <item path="public.sdk/source/vst2.x/vstplugmain.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+    </conf>
+    <conf name="Debug_x64_VST2" type="3">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>MinGW+w64|MinGW</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <architecture>2</architecture>
+          <incDir>
+            <pElem>.</pElem>
+            <pElem>public.sdk/source/vst2.x</pElem>
+            <pElem>vstgui.sf</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>DEVELOPMENT=1</Elem>
+            <Elem>_DEBUG</Elem>
+          </preprocessorList>
+        </ccTool>
+        <asmTool>
+          <architecture>2</architecture>
+        </asmTool>
+        <archiverTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvst-2.4.3.a</output>
+        </archiverTool>
+      </compileType>
+      <item path="pluginterfaces/vst2.x/aeffect.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst2.x/aeffectx.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst2.x/vstfxstore.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/aeffeditor.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffect.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffect.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffectx.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffectx.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/vstplugmain.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release_x64_VST2" type="3">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>MinGW+w64|MinGW</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>6</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>6</developmentMode>
+          <stripSymbols>true</stripSymbols>
+          <architecture>2</architecture>
+          <incDir>
+            <pElem>.</pElem>
+            <pElem>public.sdk/source/vst2.x</pElem>
+            <pElem>vstgui.sf</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NDEBUG</Elem>
+            <Elem>RELEASE=1</Elem>
+          </preprocessorList>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>6</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>6</developmentMode>
+          <architecture>2</architecture>
+        </asmTool>
+        <archiverTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvst-2.4.3.a</output>
+        </archiverTool>
+      </compileType>
+      <item path="pluginterfaces/vst2.x/aeffect.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst2.x/aeffectx.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pluginterfaces/vst2.x/vstfxstore.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/aeffeditor.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffect.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffect.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffectx.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/audioeffectx.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="public.sdk/source/vst2.x/vstplugmain.cpp"
             ex="false"
             tool="1"
             flavor2="0">

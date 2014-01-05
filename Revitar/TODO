@@ -1,4 +1,5 @@
 Finish VSTGUI 3.6 support
+Make project directory for netbeans projects
 Touch up UI
 Finish modification to pick attack
  - incorporate into existing settings somehow and use toggle to switch between
@@ -18,7 +19,7 @@ Needs to be able to make multiple versions of the VST
 Needs to be able to link to prebuilt VST libraries
 Needs to be able to build without statically linked gcc and such
 Needs to be able to accept custom paths for VSTSDK
-Needs to be able to build VSTGUI seperately from the rest of the SDK (and all
-  this implies)
+Needs to be able to build VSTGUI with the rest of the SDK (and all this implies)
 Needs to be able to build VSTSDK dynamically.
 Needs to be able to install VSTSDK to --prefix (because why not)
+Needs to be able to build documentation (not a high priority, though)

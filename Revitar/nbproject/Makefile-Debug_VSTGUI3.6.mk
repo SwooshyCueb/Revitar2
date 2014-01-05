@@ -55,13 +55,15 @@ FFLAGS=
 ASFLAGS=--32
 
 # Link Libraries and Options
-LDLIBSOPTIONS=vst3sdk/dist/Debug_VST2_GUI3.6/MinGW+-Windows/libvst3sdk.a rcf.o -mwindows
+LDLIBSOPTIONS=vst3sdk/dist/Debug_VST2/MinGW+-Windows/libvst-2.4.3.a vst3sdk/vstgui.sf/dist/Debug/MinGW+-Windows/libvstgui-3.6.a rcf.o -mwindows
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libRevitar.${CND_DLIB_EXT}
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libRevitar.${CND_DLIB_EXT}: vst3sdk/dist/Debug_VST2_GUI3.6/MinGW+-Windows/libvst3sdk.a
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libRevitar.${CND_DLIB_EXT}: vst3sdk/dist/Debug_VST2/MinGW+-Windows/libvst-2.4.3.a
+
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libRevitar.${CND_DLIB_EXT}: vst3sdk/vstgui.sf/dist/Debug/MinGW+-Windows/libvstgui-3.6.a
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libRevitar.${CND_DLIB_EXT}: rcf.o
 
@@ -91,8 +93,8 @@ ${OBJECTDIR}/presets.o: presets.cpp
 
 # Subprojects
 .build-subprojects:
-	cd vst3sdk && ${MAKE}  -f Makefile CONF=Debug_VST2_GUI3.6
-	cd vst3sdk && ${MAKE}  -f Makefile CONF=Debug_VST2_GUI3.6
+	cd vst3sdk && ${MAKE}  -f Makefile CONF=Debug_VST2
+	cd vst3sdk/vstgui.sf && ${MAKE}  -f Makefile CONF=Debug
 
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
@@ -101,8 +103,8 @@ ${OBJECTDIR}/presets.o: presets.cpp
 
 # Subprojects
 .clean-subprojects:
-	cd vst3sdk && ${MAKE}  -f Makefile CONF=Debug_VST2_GUI3.6 clean
-	cd vst3sdk && ${MAKE}  -f Makefile CONF=Debug_VST2_GUI3.6 clean
+	cd vst3sdk && ${MAKE}  -f Makefile CONF=Debug_VST2 clean
+	cd vst3sdk/vstgui.sf && ${MAKE}  -f Makefile CONF=Debug clean
 
 # Enable dependency checking
 .dep.inc: .depcheck-impl

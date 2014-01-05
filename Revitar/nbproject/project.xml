@@ -11,6 +11,8 @@
             <make-dep-projects>
                 <make-dep-project>vst3sdk</make-dep-project>
                 <make-dep-project>vstsdk2.4</make-dep-project>
+                <make-dep-project>vstsdk2.4/vstgui.sf</make-dep-project>
+                <make-dep-project>vst3sdk/vstgui.sf</make-dep-project>
             </make-dep-projects>
             <sourceRootList>
                 <sourceRootElem>.</sourceRootElem>
