@@ -68,18 +68,18 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libvst-2.4.3.a: ${OBJECTFILES}
 
 ${OBJECTDIR}/public.sdk/source/vst2.x/audioeffect.o: public.sdk/source/vst2.x/audioeffect.cpp 
 	${MKDIR} -p ${OBJECTDIR}/public.sdk/source/vst2.x
-	${RM} $@.d
-	$(COMPILE.cc) -g -DDEVELOPMENT=1 -D_DEBUG -I. -Ipublic.sdk/source/vst2.x -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst2.x/audioeffect.o public.sdk/source/vst2.x/audioeffect.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -DDEVELOPMENT=1 -D_DEBUG -I. -Ipublic.sdk/source/vst2.x -Ivstgui.sf -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/public.sdk/source/vst2.x/audioeffect.o public.sdk/source/vst2.x/audioeffect.cpp
 
 ${OBJECTDIR}/public.sdk/source/vst2.x/audioeffectx.o: public.sdk/source/vst2.x/audioeffectx.cpp 
 	${MKDIR} -p ${OBJECTDIR}/public.sdk/source/vst2.x
-	${RM} $@.d
-	$(COMPILE.cc) -g -DDEVELOPMENT=1 -D_DEBUG -I. -Ipublic.sdk/source/vst2.x -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst2.x/audioeffectx.o public.sdk/source/vst2.x/audioeffectx.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -DDEVELOPMENT=1 -D_DEBUG -I. -Ipublic.sdk/source/vst2.x -Ivstgui.sf -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/public.sdk/source/vst2.x/audioeffectx.o public.sdk/source/vst2.x/audioeffectx.cpp
 
 ${OBJECTDIR}/public.sdk/source/vst2.x/vstplugmain.o: public.sdk/source/vst2.x/vstplugmain.cpp 
 	${MKDIR} -p ${OBJECTDIR}/public.sdk/source/vst2.x
-	${RM} $@.d
-	$(COMPILE.cc) -g -DDEVELOPMENT=1 -D_DEBUG -I. -Ipublic.sdk/source/vst2.x -Ivstgui.sf -MMD -MP -MF $@.d -o ${OBJECTDIR}/public.sdk/source/vst2.x/vstplugmain.o public.sdk/source/vst2.x/vstplugmain.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -DDEVELOPMENT=1 -D_DEBUG -I. -Ipublic.sdk/source/vst2.x -Ivstgui.sf -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/public.sdk/source/vst2.x/vstplugmain.o public.sdk/source/vst2.x/vstplugmain.cpp
 
 # Subprojects
 .build-subprojects:

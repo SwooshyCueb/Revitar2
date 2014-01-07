@@ -5,7 +5,7 @@
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
             <name>vstgui.sf</name>
             <c-extensions/>
-            <cpp-extensions>cpp</cpp-extensions>
+            <cpp-extensions>cpp,mm</cpp-extensions>
             <header-extensions>h</header-extensions>
             <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects/>
@@ -30,6 +30,9 @@
                     <type>3</type>
                 </confElem>
             </confList>
+            <formatting>
+                <project-formatting-style>false</project-formatting-style>
+            </formatting>
         </data>
     </configuration>
 </project>
