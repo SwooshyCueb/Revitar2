@@ -1,131 +1,94 @@
-#
-#  There exist several targets which are by default empty and which can be 
-#  used for execution of your targets. These targets are usually executed 
-#  before and after some main targets. They are: 
-#
-#     .build-pre:              called before 'build' target
-#     .build-post:             called after 'build' target
-#     .clean-pre:              called before 'clean' target
-#     .clean-post:             called after 'clean' target
-#     .clobber-pre:            called before 'clobber' target
-#     .clobber-post:           called after 'clobber' target
-#     .all-pre:                called before 'all' target
-#     .all-post:               called after 'all' target
-#     .help-pre:               called before 'help' target
-#     .help-post:              called after 'help' target
-#
-#  Targets beginning with '.' are not intended to be called on their own.
-#
-#  Main targets can be executed directly, and they are:
-#  
-#     build                    build a specific configuration
-#     clean                    remove built files from a configuration
-#     clobber                  remove all built files
-#     all                      build all configurations
-#     help                     print help mesage
-#  
-#  Targets .build-impl, .clean-impl, .clobber-impl, .all-impl, and
-#  .help-impl are implemented in nbproject/makefile-impl.mk.
-#
-#  Available make variables:
-#
-#     CND_BASEDIR                base directory for relative paths
-#     CND_DISTDIR                default top distribution directory (build artifacts)
-#     CND_BUILDDIR               default top build directory (object files, ...)
-#     CONF                       name of current configuration
-#     CND_PLATFORM_${CONF}       platform name (current configuration)
-#     CND_ARTIFACT_DIR_${CONF}   directory of build artifact (current configuration)
-#     CND_ARTIFACT_NAME_${CONF}  name of build artifact (current configuration)
-#     CND_ARTIFACT_PATH_${CONF}  path to build artifact (current configuration)
-#     CND_PACKAGE_DIR_${CONF}    directory of package (current configuration)
-#     CND_PACKAGE_NAME_${CONF}   name of package (current configuration)
-#     CND_PACKAGE_PATH_${CONF}   path to package (current configuration)
-#
-# NOCDDL
+## -*- Makefile -*-
+##
+## Copyright (C) 2015 Markus Kitsinger (SwooshyCueb) <root@swooshalicio.us>
+##
+## This Source Code Form is subject to the terms of the Mozilla Public
+## License, v. 2.0. If a copy of the MPL was not distributed with this
+## file, You can obtain one at http://mozilla.org/MPL/2.0/.
+##
 
-
-# Environment 
+CXX=g++
+WINDRES=windres
 MKDIR=mkdir
 CP=cp
-CCADMIN=CCadmin
-VSTPLUGINS = "C:/VST/"
-VSTSDKDIR = ../vstsdk2.4
+GREP=grep
+SED=sed
+LD=ld
 
+CXXFLAGS= -O2 -fpermissive
 
-# build
-build: .build-post
+INCLUDEDIRS= \
+	"$(VSTSDK)\public.sdk\source\vst2.x" \
+	"$(VSTSDK)"
 
-.build-pre:
-# Add your pre 'build' code here...
-	windres -o rcf.o Revitar.rc
+LD_LIBDIRS=
+LD_LIBS= \
+	gdi32 \
+	gdiplus \
+	ole32 \
+	uuid
+LDFLAGS= -static-libstdc++ -static-libgcc -shared
 
-.build-post: .build-impl
-# Add your post 'build' code here...
+TRIPLET=$(shell $(CXX) -v 2>&1 | $(GREP) Target | $(SED) 's/.* //')
 
+OBJDIR=obj/$(TRIPLET)
+BUILDDIR=build/$(TRIPLET)
+VSTSDK=vstsdk2.4
+VSTOBJDIR=$(OBJDIR)/VSTSDK
 
-# clean
-clean: .clean-post
+# By default, build using the VST3 SDK
+all: $(BUILDDIR)/Revitar2.dll
 
-.clean-pre:
-# Add your pre 'clean' code here...
+print:
+	@echo CXX = $(CXX)
+	@echo CXXFLAGS = $(CXXFLAGS)
 
-.clean-post: .clean-impl
-# Add your post 'clean' code here...
+CXXOBJS = \
+	$(OBJDIR)/RevEditor.o \
+	$(OBJDIR)/Revitar.o \
+	$(OBJDIR)/displayScreen.o \
+	$(OBJDIR)/presets.o
 
+VST2OBJS= \
+	$(VSTOBJDIR)/audioeffect.o \
+	$(VSTOBJDIR)/audioeffectx.o \
+	$(VSTOBJDIR)/vstplugmain.o
 
-# clobber
-clobber: .clobber-post
+VSTGUIOBJS= \
+	$(VSTOBJDIR)/aeffguieditor.o \
+	$(VSTOBJDIR)/vstcontrols.o \
+	$(VSTOBJDIR)/vstgui.o
 
-.clobber-pre:
-# Add your pre 'clobber' code here...
+RESOBJS= \
+	$(OBJDIR)/resources.o
 
-.clobber-post: .clobber-impl
-# Add your post 'clobber' code here...
+OBJS= \
+	$(CXXOBJS) \
+	$(VST2OBJS) \
+	$(VSTGUIOBJS) \
+	$(RESOBJS)
 
+$(BUILDDIR)/Revitar2.dll: $(OBJS) $(BUILDDIR)
+	$(CXX) -o $@ $(OBJS) $(foreach d, $(LD_LIBDIRS), -L$d) $(foreach l, $(LD_LIBS), -l$l) $(LDFLAGS)
 
-# all
-all: .all-post
+$(CXXOBJS): $(OBJDIR)/%.o: %.cpp $(OBJDIR)
+	$(CXX) -c -o $@ $< $(CXXFLAGS) $(foreach d, $(INCLUDEDIRS), -I$d)
 
-.all-pre:
-# Add your pre 'all' code here...
+$(OBJDIR)/resources.o: Revitar.rc $(OBJDIR)
+	$(WINDRES) -o $@ $< $(foreach d, $(INCLUDEDIRS), -I$d)
 
-.all-post: .all-impl
-# Add your post 'all' code here...
+$(VST2OBJS): $(VSTOBJDIR)/%.o: $(VSTSDK)/public.sdk/source/vst2.x/%.cpp $(VSTOBJDIR)
+	$(CXX) -c -o $@ $< $(CXXFLAGS) $(foreach d, $(INCLUDEDIRS), -I$d)
 
+$(VSTGUIOBJS): $(VSTOBJDIR)/%.o: $(VSTSDK)/vstgui.sf/vstgui/%.cpp $(VSTOBJDIR)
+	$(CXX) -c -o $@ $< $(CXXFLAGS) $(foreach d, $(INCLUDEDIRS), -I$d)
 
-# build tests
-build-tests: .build-tests-post
+$(OBJDIR):
+	$(MKDIR) -p $@
 
-.build-tests-pre:
-# Add your pre 'build-tests' code here...
+$(VSTOBJDIR):
+	$(MKDIR) -p $@
 
-.build-tests-post: .build-tests-impl
-# Add your post 'build-tests' code here...
+$(BUILDDIR):
+	$(MKDIR) -p $@
 
-
-# run tests
-test: .test-post
-
-.test-pre: build-tests
-# Add your pre 'test' code here...
-
-.test-post: .test-impl
-# Add your post 'test' code here...
-
-
-# help
-help: .help-post
-
-.help-pre:
-# Add your pre 'help' code here...
-
-.help-post: .help-impl
-# Add your post 'help' code here...
-
-
-
-# include project implementation makefile
-include nbproject/Makefile-impl.mk
-
-# include project make variables
-include nbproject/Makefile-variables.mk
