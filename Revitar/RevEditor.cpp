@@ -1720,7 +1720,7 @@ else
 void RevEditor::updateChordMenu() {
     // this should be changed to allow editing of the chord names,
     // since changes to the chords are already saved with the programs.
-    static char *ChordNames[] = {
+    static const char *ChordNames[] = {
         "Major",
         "Minor",
         "Power F",
@@ -1746,7 +1746,7 @@ void RevEditor::updateChordMenu() {
         "Slash C/D",
         "Slash C/G",
     };
-    static char *AbsChordNames[] = {
+    static const char *AbsChordNames[] = {
         "C",
         "D Minor",
         "D",
