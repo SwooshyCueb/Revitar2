@@ -15,7 +15,10 @@ GREP=grep
 SED=sed
 LD=ld
 
-CXXFLAGS= -O2 -fpermissive
+CXXFLAGS= -O2
+REVITAR_CXXFLAGS= -fpermissive
+VSTSDK_CXXFLAGS= -Wno-write-strings
+VSTGUI_CXXFLAGS= -Wno-write-strings
 
 INCLUDEDIRS= \
 	"$(VSTSDK)\public.sdk\source\vst2.x" \
@@ -72,16 +75,16 @@ $(BUILDDIR)/Revitar2.dll: $(OBJS) $(BUILDDIR)
 	$(CXX) -o $@ $(OBJS) $(foreach d, $(LD_LIBDIRS), -L$d) $(foreach l, $(LD_LIBS), -l$l) $(LDFLAGS)
 
 $(CXXOBJS): $(OBJDIR)/%.o: %.cpp $(OBJDIR)
-	$(CXX) -c -o $@ $< $(CXXFLAGS) $(foreach d, $(INCLUDEDIRS), -I$d)
+	$(CXX) -c -o $@ $< $(CXXFLAGS) $(REVITAR_CXXFLAGS) $(foreach d, $(INCLUDEDIRS), -I$d)
 
 $(OBJDIR)/resources.o: Revitar.rc $(OBJDIR)
 	$(WINDRES) -o $@ $< $(foreach d, $(INCLUDEDIRS), -I$d)
 
 $(VST2OBJS): $(VSTOBJDIR)/%.o: $(VSTSDK)/public.sdk/source/vst2.x/%.cpp $(VSTOBJDIR)
-	$(CXX) -c -o $@ $< $(CXXFLAGS) $(foreach d, $(INCLUDEDIRS), -I$d)
+	$(CXX) -c -o $@ $< $(CXXFLAGS) $(VSTSDK_CXXFLAGS) $(foreach d, $(INCLUDEDIRS), -I$d)
 
 $(VSTGUIOBJS): $(VSTOBJDIR)/%.o: $(VSTSDK)/vstgui.sf/vstgui/%.cpp $(VSTOBJDIR)
-	$(CXX) -c -o $@ $< $(CXXFLAGS) $(foreach d, $(INCLUDEDIRS), -I$d)
+	$(CXX) -c -o $@ $< $(CXXFLAGS) $(VSTGUI_CXXFLAGS) $(foreach d, $(INCLUDEDIRS), -I$d)
 
 $(OBJDIR):
 	$(MKDIR) -p $@
