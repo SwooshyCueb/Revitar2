@@ -964,8 +964,8 @@ bool RevEditor::open(void *ptr) {
     displayScreen0->m_ChordDisplay = (((Revitar*) effect)->m_ChordDisplay);
     displayScreen0->setChordOnValue(effect->getParameter(kChordOnOff));
     displayScreen0->setBodyValue(effect->getParameter(kBodySwitch));
-    displayScreen0->m_fPickUp = (effect->getParameter(kPickupPos));
-    displayScreen0->m_fPickPosition = (effect->getParameter(kPickPos));
+    displayScreen0->m_fPickupPos = (effect->getParameter(kPickupPos));
+    displayScreen0->m_fPickPos = (effect->getParameter(kPickPos));
     displayScreen0->m_iChordNotes[0] = (int) floor(24.f * effect->getParameter(kChordNote0) + 0.0001f);
     displayScreen0->m_iChordNotes[1] = (int) floor(24.f * effect->getParameter(kChordNote1) + 0.0001f);
     displayScreen0->m_iChordNotes[2] = (int) floor(24.f * effect->getParameter(kChordNote2) + 0.0001f);
@@ -1352,7 +1352,7 @@ void RevEditor::setParameter(VstInt32 index, float value) {
 
         case kPickPos:
             if (displayScreen0)
-                displayScreen0->m_fPickPosition = (effect->getParameter(index));
+                displayScreen0->m_fPickPos = (effect->getParameter(index));
             if (paramDisplay)
                 paramDisplay->setValue(effect->getParameter(index));
             if (paramDisplay2)
@@ -1363,7 +1363,7 @@ void RevEditor::setParameter(VstInt32 index, float value) {
 
         case kPickupPos:
             if (displayScreen0)
-                displayScreen0->m_fPickUp = (effect->getParameter(index));
+                displayScreen0->m_fPickupPos = (effect->getParameter(index));
             if (paramDisplay)
                 paramDisplay->setValue(effect->getParameter(index));
             if (paramDisplay2)
@@ -1623,12 +1623,12 @@ else
             break;
 
         case kDS0:
-            if (displayScreen0->m_PickUpPressed == true) {
-                effect->setParameterAutomated(kPickupPos, displayScreen0->m_fPickUp);
+            if (displayScreen0->m_PickupPressed == true) {
+                effect->setParameterAutomated(kPickupPos, displayScreen0->m_fPickupPos);
             }
 
             if (displayScreen0->m_PickPressed == true) {
-                effect->setParameterAutomated(kPickPos, displayScreen0->m_fPickPosition);
+                effect->setParameterAutomated(kPickPos, displayScreen0->m_fPickPos);
             }
 
             if ((displayScreen0->m_ChordPressed >= 0) &&

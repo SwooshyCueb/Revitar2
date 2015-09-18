@@ -29,7 +29,7 @@ void CDisplayScreen::drawDisplay() {
                     m_BMBody + m_iBodyType * DISPLAY_WIDTH * DISPLAY_HEIGHT * m_BPP,
                     DISPLAY_WIDTH * DISPLAY_HEIGHT * m_BPP * sizeof (char));
 
-            colDel = 135 + (int) (m_fPickUp * 110.0f);
+            colDel = 135 + (int) (m_fPickupPos * 110.0f);
             rowDel = 1;
 
             for (row = 0; row < PICKUP_HEIGHT; row++) {
@@ -132,7 +132,7 @@ void CDisplayScreen::drawDisplay() {
             }
         }
 
-        colDel = 135 + (int) (m_fPickPosition * 107.0f);
+        colDel = 135 + (int) (m_fPickPos * 107.0f);
         rowDel = 4;
 
         for (row = 0; row < PICK_HEIGHT; row++) {
@@ -154,7 +154,7 @@ void CDisplayScreen::drawDisplay() {
             memcpy(m_BMBackground, m_BMBody + m_iBodyType * DISPLAY_WIDTH * DISPLAY_HEIGHT * m_BPP,
                     DISPLAY_WIDTH * DISPLAY_HEIGHT * m_BPP * sizeof (char));
 
-            colDel = 135 + (int) (m_fPickUp * 110.0f);
+            colDel = 135 + (int) (m_fPickupPos * 110.0f);
             rowDel = 1;
 
             for (row = 0; row < PICKUP_HEIGHT; row++) {
@@ -240,7 +240,7 @@ void CDisplayScreen::drawDisplay() {
             }
         }
 
-        colDel = 135 + (int) (m_fPickPosition * 107.0f);
+        colDel = 135 + (int) (m_fPickPos * 107.0f);
         rowDel = 4;
 
         for (row = 0; row < PICK_HEIGHT; row++) {
@@ -299,58 +299,58 @@ void CDisplayScreen::mouse(CDrawContext *pContext, CPoint &where, long button) {
     beginEdit();
 
     do {
-        int pickh = (int) (m_fPickPosition * 107.f) + 150;
+        int pickh = (int) (m_fPickPos * 107.f) + 150;
 
         if (m_ChordPressed == NO_INFORMATION) {
-            if (m_fPickPosition || m_PickUpPressed || (where.h > 150 && where.h < 150 + 107)) {
+            if (m_fPickPos || m_PickupPressed || (where.h > 150 && where.h < 150 + 107)) {
                 if (m_PickPressed ||
-                        (!m_PickUpPressed && where.h > pickh - 12 && where.h < pickh + 12 && where.v < 100)) {
+                        (!m_PickupPressed && where.h > pickh - 12 && where.h < pickh + 12 && where.v < 100)) {
                     if (button & kLButton && button & kControl) {
-                        ((RevEditor*) listener)->updateMIDICC(kPickPosition);
+                        ((RevEditor*) listener)->updateMIDICC(kPickPos);
                         m_PickPressed = false;
                         return;
                     }
 
                     if (button & kRButton && button & kControl) {
-                        ((RevEditor*) listener)->removeMIDICC(kPickPosition);
+                        ((RevEditor*) listener)->removeMIDICC(kPickPos);
                         m_PickPressed = false;
                         return;
                     }
 
-                    m_fPickPosition = (float) (where.h - 150) / 107.f;
+                    m_fPickPos = (float) (where.h - 150) / 107.f;
 
-                    if (m_fPickPosition < 0.0)
-                        m_fPickPosition = 0.0;
-                    if (m_fPickPosition > 1.0)
-                        m_fPickPosition = 1.0;
+                    if (m_fPickPos < 0.0)
+                        m_fPickPos = 0.0;
+                    if (m_fPickPos > 1.0)
+                        m_fPickPos = 1.0;
 
                     m_PickPressed = true;
                     //	m_BodyChanged = true;
                     setDirty(true);
                 } else {
-                    int pickuph = (int) (m_fPickUp * 110.f) + 145;
+                    int pickuph = (int) (m_fPickupPos * 110.f) + 145;
 
-                    if (m_PickUpPressed || (where.h > pickuph - 8 && where.h < pickuph + 8)) {
+                    if (m_PickupPressed || (where.h > pickuph - 8 && where.h < pickuph + 8)) {
                         if (button & kLButton && button & kControl) {
-                            ((RevEditor*) listener)->updateMIDICC(kPickUp);
-                            m_PickUpPressed = false;
+                            ((RevEditor*) listener)->updateMIDICC(kPickupPos);
+                            m_PickupPressed = false;
                             return;
                         }
 
                         if (button & kRButton && button & kControl) {
-                            ((RevEditor*) listener)->removeMIDICC(kPickUp);
+                            ((RevEditor*) listener)->removeMIDICC(kPickPos);
                             m_PickPressed = false;
                             return;
                         }
 
-                        m_fPickUp = (float) (where.h - 145) / 110.f;
+                        m_fPickupPos = (float) (where.h - 145) / 110.f;
 
-                        if (m_fPickUp < 0.0)
-                            m_fPickUp = 0.0;
-                        if (m_fPickUp > 1.0)
-                            m_fPickUp = 1.0;
+                        if (m_fPickupPos < 0.0)
+                            m_fPickupPos = 0.0;
+                        if (m_fPickupPos > 1.0)
+                            m_fPickupPos = 1.0;
 
-                        m_PickUpPressed = true;
+                        m_PickupPressed = true;
                         m_BodyChanged = true;
                         setDirty(true);
                     }
@@ -359,7 +359,7 @@ void CDisplayScreen::mouse(CDrawContext *pContext, CPoint &where, long button) {
             }
         }
 
-        if (m_ChordOn == 1.0 && !m_PickPressed && !m_PickUpPressed) {
+        if (m_ChordOn == 1.0 && !m_PickPressed && !m_PickupPressed) {
             if (m_ChordPressed != NO_INFORMATION) {
                 int note = 19 - (where.h - 266) / 16;
 
@@ -416,7 +416,7 @@ void CDisplayScreen::mouse(CDrawContext *pContext, CPoint &where, long button) {
     } while (pContext->getMouseButtons() == button);
 
     m_PickPressed = false;
-    m_PickUpPressed = false;
+    m_PickupPressed = false;
     m_ChordPressed = NO_INFORMATION;
     m_FirstNote = NO_INFORMATION;
 
@@ -454,58 +454,58 @@ CMouseEventResult CDisplayScreen::onMouseDown(CPoint &where, const long &buttons
 
 CMouseEventResult CDisplayScreen::onMouseMoved(CPoint& where, const long& buttons) {
 
-    int pickh = (int) (m_fPickPosition * 107.f) + 150;
+    int pickh = (int) (m_fPickPos * 107.f) + 150;
 
     if (m_ChordPressed == NO_INFORMATION) {
-        if (m_fPickPosition || m_PickUpPressed || (where.h > 150 && where.h < 150 + 107)) {
+        if (m_fPickPos || m_PickupPressed || (where.h > 150 && where.h < 150 + 107)) {
             if (m_PickPressed ||
-                    (!m_PickUpPressed && where.h > pickh - 12 && where.h < pickh + 12 && where.v < 100)) {
+                    (!m_PickupPressed && where.h > pickh - 12 && where.h < pickh + 12 && where.v < 100)) {
                 if (buttons & kLButton && buttons & kControl) {
-                    ((RevEditor*) listener)->updateMIDICC(kPickPosition);
+                    ((RevEditor*) listener)->updateMIDICC(kPickPos);
                     m_PickPressed = false;
                     return;
                 }
 
                 if (buttons & kRButton && buttons & kControl) {
-                    ((RevEditor*) listener)->removeMIDICC(kPickPosition);
+                    ((RevEditor*) listener)->removeMIDICC(kPickPos);
                     m_PickPressed = false;
                     return;
                 }
 
-                m_fPickPosition = (float) (where.h - 150) / 107.f;
+                m_fPickPos = (float) (where.h - 150) / 107.f;
 
-                if (m_fPickPosition < 0.0)
-                    m_fPickPosition = 0.0;
-                if (m_fPickPosition > 1.0)
-                    m_fPickPosition = 1.0;
+                if (m_fPickPos < 0.0)
+                    m_fPickPos = 0.0;
+                if (m_fPickPos > 1.0)
+                    m_fPickPos = 1.0;
 
                 m_PickPressed = true;
                 //	m_BodyChanged = true;
                 setDirty(true);
             } else {
-                int pickuph = (int) (m_fPickUp * 110.f) + 145;
+                int pickuph = (int) (m_fPickupPos * 110.f) + 145;
 
-                if (m_PickUpPressed || (where.h > pickuph - 8 && where.h < pickuph + 8)) {
+                if (m_PickupPressed || (where.h > pickuph - 8 && where.h < pickuph + 8)) {
                     if (buttons & kLButton && buttons & kControl) {
-                        ((RevEditor*) listener)->updateMIDICC(kPickUp);
-                        m_PickUpPressed = false;
+                        ((RevEditor*) listener)->updateMIDICC(kPickupPos);
+                        m_PickupPressed = false;
                         return;
                     }
 
                     if (buttons & kRButton && buttons & kControl) {
-                        ((RevEditor*) listener)->removeMIDICC(kPickUp);
+                        ((RevEditor*) listener)->removeMIDICC(kPickupPos);
                         m_PickPressed = false;
                         return;
                     }
 
-                    m_fPickUp = (float) (where.h - 145) / 110.f;
+                    m_fPickupPos = (float) (where.h - 145) / 110.f;
 
-                    if (m_fPickUp < 0.0)
-                        m_fPickUp = 0.0;
-                    if (m_fPickUp > 1.0)
-                        m_fPickUp = 1.0;
+                    if (m_fPickupPos < 0.0)
+                        m_fPickupPos = 0.0;
+                    if (m_fPickupPos > 1.0)
+                        m_fPickupPos = 1.0;
 
-                    m_PickUpPressed = true;
+                    m_PickupPressed = true;
                     m_BodyChanged = true;
                     setDirty(true);
                 }
@@ -514,7 +514,7 @@ CMouseEventResult CDisplayScreen::onMouseMoved(CPoint& where, const long& button
         }
     }
 
-    if (m_ChordOn == 1.0 && !m_PickPressed && !m_PickUpPressed) {
+    if (m_ChordOn == 1.0 && !m_PickPressed && !m_PickupPressed) {
         if (m_ChordPressed != NO_INFORMATION) {
             int note = 19 - (where.h - 266) / 16;
 
@@ -576,7 +576,7 @@ CMouseEventResult CDisplayScreen::onMouseMoved(CPoint& where, const long& button
 CMouseEventResult CDisplayScreen::onMouseUp(CPoint& where, const long& buttons) {
 
     m_PickPressed = false;
-    m_PickUpPressed = false;
+    m_PickupPressed = false;
     m_ChordPressed = NO_INFORMATION;
     m_FirstNote = NO_INFORMATION;
     endEdit();

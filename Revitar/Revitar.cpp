@@ -643,7 +643,7 @@ void Revitar::initProcess() {
             m_PullCt[idx][i][1] = 0;
         }
 
-        m_PickUp[idx] = m_NumPoints[idx] - ((int) ((float) ((m_NumPoints[idx] - 4) / 2) * prog.fPickUp) + 2);
+        m_PickUp[idx] = m_NumPoints[idx] - ((int) ((float) ((m_NumPoints[idx] - 4) / 2) * prog.fPickupPos) + 2);
         m_DampBridge[idx] = prog.fKnob[kBridgeDamping] * 0.2f + 0.1f;
         m_DampBridge[idx] = (float) (m_DampBridge[idx] * m_DampBridge[idx]);
         m_DampBridge[idx] *= (float) m_NumPoints[idx] / NUM_POINTS;
@@ -891,9 +891,9 @@ void Revitar::setParameter(VstInt32 index, float value) {
                     audioMaster(&cEffect, audioMasterAutomate, chordIdx, 0, 0, value);
             }
             break;
-        case kPickPos: prog.fPickPosition = ap->fPickPosition = value;
+        case kPickPos: prog.fPickPos = ap->fPickPos = value;
             break;
-        case kPickupPos: prog.fPickUp = ap->fPickUp = value;
+        case kPickupPos: prog.fPickupPos = ap->fPickupPos = value;
             break;
         case kPickStiffness: prog.fPickStiffness = ap->fPickStiffness = value;
             break;
@@ -1019,9 +1019,9 @@ float Revitar::getParameter(VstInt32 index) {
             else
                 v = prog.fChordAbsNote[chordIdx][index - kChordNote0];
             break;
-        case kPickPos: v = prog.fPickPosition;
+        case kPickPos: v = prog.fPickPos;
             break;
-        case kPickupPos: v = prog.fPickUp;
+        case kPickupPos: v = prog.fPickupPos;
             break;
         case kPickWidth: v = prog.fPickWidth;
             break;
@@ -1209,9 +1209,9 @@ void Revitar::getParameterDisplay(VstInt32 index, char *text) {
 
         case kPalmPos: float2string(prog.fPalmSlider, text, kVstMaxParamStrLen);
             break;
-        case kPickPos: float2string(prog.fPickPosition, text, kVstMaxParamStrLen);
+        case kPickPos: float2string(prog.fPickPos, text, kVstMaxParamStrLen);
             break;
-        case kPickupPos: float2string(prog.fPickUp, text, kVstMaxParamStrLen);
+        case kPickupPos: float2string(prog.fPickupPos, text, kVstMaxParamStrLen);
             break;
         case kPickWidth: float2string(prog.fPickWidth, text, kVstMaxParamStrLen);
             break;
@@ -2067,7 +2067,7 @@ void Revitar::updateNewNotes(int polyIdx) {
         m_RightCt[polyIdx] = -100;
         m_LeftCt[polyIdx] = -100;
 
-        m_Pluck[polyIdx] = m_NumPoints[polyIdx] - ((int) ((float) ((m_NumPoints[polyIdx] - 10) / 2) * prog.fPickPosition) + 5);
+        m_Pluck[polyIdx] = m_NumPoints[polyIdx] - ((int) ((float) ((m_NumPoints[polyIdx] - 10) / 2) * prog.fPickPos) + 5);
         if (m_Random[m_RandomCt] > 0.0)
             m_Pluck[polyIdx]++;
 
@@ -2079,7 +2079,7 @@ void Revitar::updateNewNotes(int polyIdx) {
         m_PickUpDiff[polyIdx][1] += 0.5f * m_ObjectPos[polyIdx][m_PickUp[polyIdx]];
         m_PickUpDiff[polyIdx][1] += 0.5f * m_ObjectPos[polyIdx][m_PickUp[polyIdx] + 2];
 
-        m_PickUp[polyIdx] = ((int) ((float) ((m_NumPoints[polyIdx] - 6) / 2) * prog.fPickUp) + 3);
+        m_PickUp[polyIdx] = ((int) ((float) ((m_NumPoints[polyIdx] - 6) / 2) * prog.fPickupPos) + 3);
 
         m_PickUpDiff[polyIdx][0] -= m_ObjectPos[polyIdx][m_PickUp[polyIdx]];
         m_PickUpDiff[polyIdx][0] -= 0.5f * m_ObjectPos[polyIdx][m_PickUp[polyIdx] - 1];

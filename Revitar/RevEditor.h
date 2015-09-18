@@ -114,8 +114,8 @@ public:
     float (*m_ChordDisplay)[NUM_POINTS][CHORD_DISPLAY_HEIGHT];
     float (*m_ChordDisplayCurrent)[NUM_POINTS][CHORD_DISPLAY_HEIGHT];
     int m_BPP;
-    int kPickPosition;
-    int kPickUp;
+    int kPickPos;
+    int kPickupPos;
 
     // display screen variables
     char *m_BMDisplay;
@@ -166,8 +166,8 @@ public:
     , m_ChordDisplay(c.m_ChordDisplay)
     , m_ChordDisplayCurrent(c.m_ChordDisplayCurrent)
     , m_BPP(c.m_BPP)
-    , kPickPosition(c.kPickPosition)
-    , kPickUp(c.kPickUp) {
+    , kPickPos(c.kPickPos)
+    , kPickupPos(c.kPickupPos) {
     }
 #endif
 
