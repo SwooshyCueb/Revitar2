@@ -7,8 +7,6 @@
  * Copyright (C) 2015 Markus Kitsinger (SwooshyCueb) <root@swooshalicio.us>
  */
 
-//{{NO_DEPENDENCIES}}
-// Microsoft Developer Studio generated include file.
 // Used by Revitar.rc
 //
 #define RC_VSTXML                       1
@@ -99,14 +97,3 @@
 #define ABOUT_0                         191
 #define WELCOME_0                       193
 #define IDR_PRESETBANK                  207
-
-// Next default values for new objects
-// 
-#ifdef APSTUDIO_INVOKED
-#ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        208
-#define _APS_NEXT_COMMAND_VALUE         40001
-#define _APS_NEXT_CONTROL_VALUE         1000
-#define _APS_NEXT_SYMED_VALUE           101
-#endif
-#endif
