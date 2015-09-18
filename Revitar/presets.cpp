@@ -4,6 +4,7 @@
  * 
  * Copyright (C) 2004 C. Lawrence Zitnick III <larryz@microsoft.com>
  * Copyright (C) 2010 Hermann Seib <him@hermannseib.com>
+ * Copyright (C) 2014 Asseca <http://www.asseca.org/revitar.html>
  * Copyright (C) 2015 Markus Kitsinger (SwooshyCueb) <root@swooshalicio.us>
  */
 
@@ -268,21 +269,21 @@ bool Revitar::LoadBank(void *data, size_t lSize) {
         memcpy(programs[i].name, program->prgName, sizeof (program->prgName));
         programs[i].name[sizeof (program->prgName)] = '\0';
 
-        programs[i].fKnob[kKnobGain] = program->content.params[kKnobGain];
-        programs[i].fKnob[kKnobBodyGain] = program->content.params[kKnobBodyGain];
-        programs[i].fKnob[kKnobPickVolume] = program->content.params[kKnobPickVolume];
-        programs[i].fKnob[kKnobTuning] = program->content.params[kKnobTuning];
-        programs[i].fKnob[kKnobBridgeDamping] = program->content.params[kKnobBridgeDamping];
-        programs[i].fKnob[kKnobStringDamping] = program->content.params[kKnobStringDamping];
-        programs[i].fKnob[kKnobVibratoAmplit] = program->content.params[kKnobVibratoAmplit];
-        programs[i].fKnob[kKnobVibratoRate] = program->content.params[kKnobVibratoRate];
-        programs[i].fKnob[kKnobSympathetic] = program->content.params[kKnobSympathetic];
-        programs[i].fKnob[kKnobSlap] = program->content.params[kKnobSlap];
-        programs[i].fKnob[kKnobPickSpeed] = program->content.params[kKnobPickSpeed];
-        programs[i].fKnob[kKnobChordRate] = program->content.params[kKnobChordRate];
-        programs[i].fKnob[kKnobStringType] = program->content.params[kKnobStringType];
-        programs[i].fKnob[kKnobPalmDamp] = program->content.params[kKnobPalmDamp];
-        programs[i].fKnob[kKnobSlideRate] = program->content.params[kKnobSlideRate];
+        programs[i].fKnob[kGain] = program->content.params[kGain];
+        programs[i].fKnob[kBodyGain] = program->content.params[kBodyGain];
+        programs[i].fKnob[kPickVolume] = program->content.params[kPickVolume];
+        programs[i].fKnob[kTuning] = program->content.params[kTuning];
+        programs[i].fKnob[kBridgeDamping] = program->content.params[kBridgeDamping];
+        programs[i].fKnob[kStringDamping] = program->content.params[kStringDamping];
+        programs[i].fKnob[kVibratoAmplit] = program->content.params[kVibratoAmplit];
+        programs[i].fKnob[kVibratoRate] = program->content.params[kVibratoRate];
+        programs[i].fKnob[kSympathetic] = program->content.params[kSympathetic];
+        programs[i].fKnob[kSlap] = program->content.params[kSlap];
+        programs[i].fKnob[kPickSpeed] = program->content.params[kPickSpeed];
+        programs[i].fKnob[kChordRate] = program->content.params[kChordRate];
+        programs[i].fKnob[kStringType] = program->content.params[kStringType];
+        programs[i].fKnob[kPalmDamp] = program->content.params[kPalmDamp];
+        programs[i].fKnob[kSlideRate] = program->content.params[kSlideRate];
 
         programs[i].fChordOnOff = program->content.params[kChordOnOff];
         programs[i].fSustain = program->content.params[kSustain];
@@ -293,11 +294,11 @@ bool Revitar::LoadBank(void *data, size_t lSize) {
         programs[i].fChordAbsIdx = program->content.params[kChordAbs];
         programs[i].fChordSwitch = program->content.params[kChordSwitch];
         programs[i].fBodySwitch = program->content.params[kBodySwitch];
-        programs[i].fPickPosition = program->content.params[kPickPosition];
-        programs[i].fPickUp = program->content.params[kPickUp];
+        programs[i].fPickPos = program->content.params[kPickPos];
+        programs[i].fPickupPos = program->content.params[kPickupPos];
         programs[i].fPickWidth = program->content.params[kPickWidth];
         programs[i].fPickStiffness = program->content.params[kPickStiffness];
-        programs[i].fPalmSlider = program->content.params[kPalmSlider];
+        programs[i].fPalmSlider = program->content.params[kPalmPos];
         programs[i].fStopSwitch = program->content.params[kStopSwitch];
 
         int curparm = kChordNotes;
@@ -408,8 +409,8 @@ RevitarProgram::RevitarProgram() {
     fKnob[12] = 0.50000f;
     fKnob[13] = 0.000000f;
     fKnob[14] = 0.500000f;
-    fPickPosition = 0.156778f;
-    fPickUp = 0.40f;
+    fPickPos = 0.156778f;
+    fPickupPos = 0.40f;
     fPickStiffness = 0.5f;
     fPickWidth = 0.5f;
     fMono = 0.000000f;

@@ -4,6 +4,7 @@
  * 
  * Copyright (C) 2004 C. Lawrence Zitnick III <larryz@microsoft.com>
  * Copyright (C) 2010 Hermann Seib <him@hermannseib.com>
+ * Copyright (C) 2014 Asseca <http://www.asseca.org/revitar.html>
  * Copyright (C) 2015 Markus Kitsinger (SwooshyCueb) <root@swooshalicio.us>
  */
 
@@ -100,12 +101,12 @@ public:
     CBitmap *pHandle;
     CBitmap *pDisplay;
 
-    float m_fPickUp;
-    float m_fPickPosition;
+    float m_fPickupPos;
+    float m_fPickPos;
     int m_iBodyType;
     int m_iChordNotes[NUM_CHORD_NOTES];
     bool m_BodyChanged;
-    bool m_PickUpPressed;
+    bool m_PickupPressed;
     bool m_PickPressed;
     int m_ChordPressed;
     int m_FirstNote;
@@ -129,11 +130,11 @@ public:
             CBitmap *background)
     : CControl(size, listener, tag, background) {
         pHandle = 0;
-        m_fPickUp = 0.1f;
-        m_fPickPosition = 0.25;
+        m_fPickupPos = 0.1f;
+        m_fPickPos = 0.25;
         m_iBodyType = 0;
         m_PickPressed = false;
-        m_PickUpPressed = false;
+        m_PickupPressed = false;
         m_ChordPressed = NO_INFORMATION;
         m_ChordOn = 0.0;
 
@@ -153,11 +154,11 @@ public:
     , offset(c.offset)
     , pHandle(c.pHandle)
     , pDisplay(c.pDisplay)
-    , m_fPickUp(c.m_fPickUp)
-    , m_fPickPosition(c.m_fPickPosition)
+    , m_fPickupPos(c.m_fPickupPos)
+    , m_fPickPos(c.m_fPickPos)
     , m_iBodyType(c.m_iBodyType)
     , m_BodyChanged(c.m_BodyChanged)
-    , m_PickUpPressed(c.m_PickUpPressed)
+    , m_PickupPressed(c.m_PickupPressed)
     , m_PickPressed(c.m_PickPressed)
     , m_ChordPressed(c.m_ChordPressed)
     , m_FirstNote(c.m_FirstNote)

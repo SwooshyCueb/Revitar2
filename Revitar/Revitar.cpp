@@ -4,6 +4,7 @@
  * 
  * Copyright (C) 2004 C. Lawrence Zitnick III <larryz@microsoft.com>
  * Copyright (C) 2010 Hermann Seib <him@hermannseib.com>
+ * Copyright (C) 2014 Asseca <http://www.asseca.org/revitar.html>
  * Copyright (C) 2015 Markus Kitsinger (SwooshyCueb) <root@swooshalicio.us>
  */
 
@@ -123,27 +124,27 @@ Revitar::Revitar(audioMasterCallback audioMaster)
 
     if (dwDummy == REG_CREATED_NEW_KEY) {
         m_MIDIControl[ 0] = NO_INFORMATION;
-        m_MIDIControl[ 1] = kKnobPalmDamp;
-        m_MIDIControl[ 2] = kKnobSlideRate;
-        m_MIDIControl[ 3] = kKnobVibratoRate;
-        m_MIDIControl[ 4] = kKnobVibratoAmplit;
-        m_MIDIControl[ 5] = kPickPosition;
-        m_MIDIControl[ 6] = kPickUp;
-        m_MIDIControl[ 7] = kKnobBridgeDamping;
-        m_MIDIControl[ 8] = kKnobStringDamping;
-        m_MIDIControl[ 9] = kKnobSlap;
+        m_MIDIControl[ 1] = kPalmDamp;
+        m_MIDIControl[ 2] = kSlideRate;
+        m_MIDIControl[ 3] = kVibratoRate;
+        m_MIDIControl[ 4] = kVibratoAmplit;
+        m_MIDIControl[ 5] = kPickPos;
+        m_MIDIControl[ 6] = kPickupPos;
+        m_MIDIControl[ 7] = kBridgeDamping;
+        m_MIDIControl[ 8] = kStringDamping;
+        m_MIDIControl[ 9] = kSlap;
         m_MIDIControl[10] = NO_INFORMATION;
-        m_MIDIControl[11] = kKnobPickSpeed;
-        m_MIDIControl[12] = kKnobStringType;
-        m_MIDIControl[13] = kKnobTuning;
-        m_MIDIControl[14] = kKnobBodyGain;
-        m_MIDIControl[15] = kKnobPickVolume;
-        m_MIDIControl[16] = kKnobGain;
-        m_MIDIControl[17] = kKnobChordRate;
-        m_MIDIControl[18] = kPalmSlider;
+        m_MIDIControl[11] = kPickSpeed;
+        m_MIDIControl[12] = kStringType;
+        m_MIDIControl[13] = kTuning;
+        m_MIDIControl[14] = kBodyGain;
+        m_MIDIControl[15] = kPickVolume;
+        m_MIDIControl[16] = kGain;
+        m_MIDIControl[17] = kChordRate;
+        m_MIDIControl[18] = kPalmPos;
         m_MIDIControl[19] = kPickStiffness;
         m_MIDIControl[20] = kPickWidth;
-        m_MIDIControl[21] = kKnobSympathetic;
+        m_MIDIControl[21] = kSympathetic;
         m_MIDIControl[22] = kBodySwitch;
         for (i = 23; i < NUM_MIDI_CC; i++)
             m_MIDIControl[i] = NO_INFORMATION;
@@ -650,7 +651,7 @@ void Revitar::initProcess() {
         }
 
         m_PickUp[idx] = m_NumPoints[idx] - ((int) ((float) ((m_NumPoints[idx] - 4) / 2) * prog.fPickUp) + 2);
-        m_DampBridge[idx] = prog.fKnob[kKnobBridgeDamping] * 0.2f + 0.1f;
+        m_DampBridge[idx] = prog.fKnob[kBridgeDamping] * 0.2f + 0.1f;
         m_DampBridge[idx] = (float) (m_DampBridge[idx] * m_DampBridge[idx]);
         m_DampBridge[idx] *= (float) m_NumPoints[idx] / NUM_POINTS;
     }
@@ -736,7 +737,7 @@ void Revitar::setProgram(VstInt32 program) {
     turnOff(0);
 
     if (editor) {
-        for (VstInt32 i = kKnobGain; i < kChordNotes; i++)
+        for (VstInt32 i = kGain; i < kChordNotes; i++)
             ((AEffGUIEditor*) editor)->setParameter(i, getParameter(i));
     }
 
@@ -834,21 +835,21 @@ void Revitar::setParameter(VstInt32 index, float value) {
     int chordIdx = (int) (bAbsRel ? prog.fChordIdx : prog.fChordAbsIdx);
 
     switch (index) {
-        case kKnobGain:
-        case kKnobBodyGain:
-        case kKnobPickVolume:
-        case kKnobTuning:
-        case kKnobBridgeDamping:
-        case kKnobStringDamping:
-        case kKnobVibratoAmplit:
-        case kKnobVibratoRate:
-        case kKnobSympathetic:
-        case kKnobSlap:
-        case kKnobPickSpeed:
-        case kKnobChordRate:
-        case kKnobStringType:
-        case kKnobPalmDamp:
-        case kKnobSlideRate:
+        case kGain:
+        case kBodyGain:
+        case kPickVolume:
+        case kTuning:
+        case kBridgeDamping:
+        case kStringDamping:
+        case kVibratoAmplit:
+        case kVibratoRate:
+        case kSympathetic:
+        case kSlap:
+        case kPickSpeed:
+        case kChordRate:
+        case kStringType:
+        case kPalmDamp:
+        case kSlideRate:
             prog.fKnob[index] = ap->fKnob[index] = value;
             break;
 
@@ -905,15 +906,15 @@ void Revitar::setParameter(VstInt32 index, float value) {
                     audioMaster(&cEffect, audioMasterAutomate, chordIdx, 0, 0, value);
             }
             break;
-        case kPickPosition: prog.fPickPosition = ap->fPickPosition = value;
+        case kPickPos: prog.fPickPosition = ap->fPickPosition = value;
             break;
-        case kPickUp: prog.fPickUp = ap->fPickUp = value;
+        case kPickupPos: prog.fPickUp = ap->fPickUp = value;
             break;
         case kPickStiffness: prog.fPickStiffness = ap->fPickStiffness = value;
             break;
         case kPickWidth: prog.fPickWidth = ap->fPickWidth = value;
             break;
-        case kPalmSlider: prog.fPalmSlider = ap->fPalmSlider = value;
+        case kPalmPos: prog.fPalmSlider = ap->fPalmSlider = value;
             break;
         case kAbsRel: prog.fAbsRel = ap->fAbsRel = value;
             break;
@@ -990,21 +991,21 @@ float Revitar::getParameter(VstInt32 index) {
     int chordIdx = (int) (bAbsRel ? prog.fChordIdx : prog.fChordAbsIdx);
 
     switch (index) {
-        case kKnobGain:
-        case kKnobBodyGain:
-        case kKnobPickVolume:
-        case kKnobTuning:
-        case kKnobBridgeDamping:
-        case kKnobStringDamping:
-        case kKnobVibratoAmplit:
-        case kKnobVibratoRate:
-        case kKnobSympathetic:
-        case kKnobSlap:
-        case kKnobPickSpeed:
-        case kKnobChordRate:
-        case kKnobStringType:
-        case kKnobPalmDamp:
-        case kKnobSlideRate:
+        case kGain:
+        case kBodyGain:
+        case kPickVolume:
+        case kTuning:
+        case kBridgeDamping:
+        case kStringDamping:
+        case kVibratoAmplit:
+        case kVibratoRate:
+        case kSympathetic:
+        case kSlap:
+        case kPickSpeed:
+        case kChordRate:
+        case kStringType:
+        case kPalmDamp:
+        case kSlideRate:
             v = prog.fKnob[index];
             break;
         case kMono: v = prog.fMono;
@@ -1034,15 +1035,15 @@ float Revitar::getParameter(VstInt32 index) {
             else
                 v = prog.fChordAbsNote[chordIdx][index - kChordNote0];
             break;
-        case kPickPosition: v = prog.fPickPosition;
+        case kPickPos: v = prog.fPickPosition;
             break;
-        case kPickUp: v = prog.fPickUp;
+        case kPickupPos: v = prog.fPickUp;
             break;
         case kPickWidth: v = prog.fPickWidth;
             break;
         case kPickStiffness: v = prog.fPickStiffness;
             break;
-        case kPalmSlider: v = prog.fPalmSlider;
+        case kPalmPos: v = prog.fPalmSlider;
             break;
         case kAbsRel: v = prog.fAbsRel;
             break;
@@ -1074,35 +1075,35 @@ float Revitar::getParameter(VstInt32 index) {
 
 void Revitar::getParameterName(VstInt32 index, char *label) {
     switch (index) {
-        case kKnobGain: strcpy(label, " Gain ");
+        case kGain: strcpy(label, " Gain ");
             break;
-        case kKnobBodyGain: strcpy(label, " Body Gain ");
+        case kBodyGain: strcpy(label, " Body Gain ");
             break;
-        case kKnobPickVolume: strcpy(label, " Pick Volume ");
+        case kPickVolume: strcpy(label, " Pick Volume ");
             break;
-        case kKnobTuning: strcpy(label, " Tune ");
+        case kTuning: strcpy(label, " Tune ");
             break;
-        case kKnobBridgeDamping: strcpy(label, " Bridge Damp ");
+        case kBridgeDamping: strcpy(label, " Bridge Damp ");
             break;
-        case kKnobStringDamping: strcpy(label, " String Damp ");
+        case kStringDamping: strcpy(label, " String Damp ");
             break;
-        case kKnobVibratoAmplit: strcpy(label, " Vibrato Amp ");
+        case kVibratoAmplit: strcpy(label, " Vibrato Amp ");
             break;
-        case kKnobVibratoRate: strcpy(label, " Vibrato Rate ");
+        case kVibratoRate: strcpy(label, " Vibrato Rate ");
             break;
-        case kKnobSympathetic: strcpy(label, " Sympathetic ");
+        case kSympathetic: strcpy(label, " Sympathetic ");
             break;
-        case kKnobSlap: strcpy(label, " Slap ");
+        case kSlap: strcpy(label, " Slap ");
             break;
-        case kKnobPickSpeed: strcpy(label, " Pick Speed ");
+        case kPickSpeed: strcpy(label, " Pick Speed ");
             break;
-        case kKnobChordRate: strcpy(label, " Chord Rate ");
+        case kChordRate: strcpy(label, " Chord Rate ");
             break;
-        case kKnobStringType: strcpy(label, " String Type ");
+        case kStringType: strcpy(label, " String Type ");
             break;
-        case kKnobPalmDamp: strcpy(label, " Palm Damp ");
+        case kPalmDamp: strcpy(label, " Palm Damp ");
             break;
-        case kKnobSlideRate: strcpy(label, " Slide Rate ");
+        case kSlideRate: strcpy(label, " Slide Rate ");
             break;
 
         case kMono: strcpy(label, " Mono ");
@@ -1129,11 +1130,11 @@ void Revitar::getParameterName(VstInt32 index, char *label) {
         case kChordNote5: sprintf(label, " Chord Note %d ", index - kChordNote0);
             break;
 
-        case kPalmSlider: strcpy(label, " Palm Position ");
+        case kPalmPos: strcpy(label, " Palm Position ");
             break;
-        case kPickPosition: strcpy(label, " Pick Position ");
+        case kPickPos: strcpy(label, " Pick Position ");
             break;
-        case kPickUp: strcpy(label, " Pick Up Position ");
+        case kPickupPos: strcpy(label, " Pick Up Position ");
             break;
         case kPickWidth: strcpy(label, " Pick Width ");
             break;
@@ -1169,21 +1170,21 @@ void Revitar::getParameterName(VstInt32 index, char *label) {
 
 void Revitar::getParameterDisplay(VstInt32 index, char *text) {
     switch (index) {
-        case kKnobGain:
-        case kKnobBodyGain:
-        case kKnobPickVolume:
-        case kKnobTuning:
-        case kKnobBridgeDamping:
-        case kKnobStringDamping:
-        case kKnobVibratoAmplit:
-        case kKnobVibratoRate:
-        case kKnobSympathetic:
-        case kKnobSlap:
-        case kKnobPickSpeed:
-        case kKnobChordRate:
-        case kKnobStringType:
-        case kKnobPalmDamp:
-        case kKnobSlideRate:
+        case kGain:
+        case kBodyGain:
+        case kPickVolume:
+        case kTuning:
+        case kBridgeDamping:
+        case kStringDamping:
+        case kVibratoAmplit:
+        case kVibratoRate:
+        case kSympathetic:
+        case kSlap:
+        case kPickSpeed:
+        case kChordRate:
+        case kStringType:
+        case kPalmDamp:
+        case kSlideRate:
             float2string(prog.fKnob[index], text, kVstMaxParamStrLen);
             break;
 
@@ -1224,11 +1225,11 @@ void Revitar::getParameterDisplay(VstInt32 index, char *text) {
         }
             break;
 
-        case kPalmSlider: float2string(prog.fPalmSlider, text, kVstMaxParamStrLen);
+        case kPalmPos: float2string(prog.fPalmSlider, text, kVstMaxParamStrLen);
             break;
-        case kPickPosition: float2string(prog.fPickPosition, text, kVstMaxParamStrLen);
+        case kPickPos: float2string(prog.fPickPosition, text, kVstMaxParamStrLen);
             break;
-        case kPickUp: float2string(prog.fPickUp, text, kVstMaxParamStrLen);
+        case kPickupPos: float2string(prog.fPickUp, text, kVstMaxParamStrLen);
             break;
         case kPickWidth: float2string(prog.fPickWidth, text, kVstMaxParamStrLen);
             break;
@@ -1272,35 +1273,35 @@ void Revitar::getParameterDisplay(VstInt32 index, char *text) {
 
 void Revitar::getParameterLabel(VstInt32 index, char *label) {
     switch (index) {
-        case kKnobGain: strcpy(label, " Gain ");
+        case kGain: strcpy(label, " Gain ");
             break;
-        case kKnobBodyGain: strcpy(label, " Body Gain ");
+        case kBodyGain: strcpy(label, " Body Gain ");
             break;
-        case kKnobPickVolume: strcpy(label, " Pick Volume ");
+        case kPickVolume: strcpy(label, " Pick Volume ");
             break;
-        case kKnobTuning: strcpy(label, " Tune ");
+        case kTuning: strcpy(label, " Tune ");
             break;
-        case kKnobBridgeDamping: strcpy(label, " Bridge Damp ");
+        case kBridgeDamping: strcpy(label, " Bridge Damp ");
             break;
-        case kKnobStringDamping: strcpy(label, " String Damp ");
+        case kStringDamping: strcpy(label, " String Damp ");
             break;
-        case kKnobVibratoAmplit: strcpy(label, " Vibrato Amp ");
+        case kVibratoAmplit: strcpy(label, " Vibrato Amp ");
             break;
-        case kKnobVibratoRate: strcpy(label, " Vibrato Rate ");
+        case kVibratoRate: strcpy(label, " Vibrato Rate ");
             break;
-        case kKnobSympathetic: strcpy(label, " Sympathetic ");
+        case kSympathetic: strcpy(label, " Sympathetic ");
             break;
-        case kKnobSlap: strcpy(label, " Slap ");
+        case kSlap: strcpy(label, " Slap ");
             break;
-        case kKnobPickSpeed: strcpy(label, " Pick Speed ");
+        case kPickSpeed: strcpy(label, " Pick Speed ");
             break;
-        case kKnobChordRate: strcpy(label, " Chord Rate ");
+        case kChordRate: strcpy(label, " Chord Rate ");
             break;
-        case kKnobStringType: strcpy(label, " String Type ");
+        case kStringType: strcpy(label, " String Type ");
             break;
-        case kKnobPalmDamp: strcpy(label, " Palm Damp ");
+        case kPalmDamp: strcpy(label, " Palm Damp ");
             break;
-        case kKnobSlideRate: strcpy(label, " Slide Rate ");
+        case kSlideRate: strcpy(label, " Slide Rate ");
             break;
 
         case kMono: strcpy(label, " Mono/Poly ");
@@ -1326,11 +1327,11 @@ void Revitar::getParameterLabel(VstInt32 index, char *label) {
         case kChordNote4:
         case kChordNote5: strcpy(label, (prog.fAbsRel > 0.f) ? " Fret# ": " Note ");
             break;
-        case kPalmSlider: strcpy(label, " Palm Position ");
+        case kPalmPos: strcpy(label, " Palm Position ");
             break;
-        case kPickPosition: strcpy(label, " Pick Position ");
+        case kPickPos: strcpy(label, " Pick Position ");
             break;
-        case kPickUp: strcpy(label, " Pick Up Position ");
+        case kPickupPos: strcpy(label, " Pick Up Position ");
             break;
         case kPickWidth: strcpy(label, " Pick Width ");
             break;
@@ -1468,28 +1469,28 @@ void Revitar::process(float **inputs, float **outputs, VstInt32 sampleframes) {
     vol = 0.7f * fKnobLast[0];
     amountVol = fKnobLast[1];
 
-    volAdd = 0.7f * prog.fKnob[kKnobGain];
-    amountVolAdd = prog.fKnob[kKnobBodyGain];
+    volAdd = 0.7f * prog.fKnob[kGain];
+    amountVolAdd = prog.fKnob[kBodyGain];
 
     volAdd = (volAdd - vol) / (float) (std::max(1, sampleTemp));
     amountVolAdd = (amountVolAdd - amountVol) / (float) (std::max(1, sampleTemp));
 
-    if (!prog.fKnob[kKnobSlap])
+    if (!prog.fKnob[kSlap])
         m_Slap = -5.0f;
     else
-        m_Slap = -2.5f * (1.0f - prog.fKnob[kKnobSlap] + 0.1f);
+        m_Slap = -2.5f * (1.0f - prog.fKnob[kSlap] + 0.1f);
 
     for (polyIdx = 0; polyIdx < m_NumPoly; polyIdx++)
         m_DampPalm[polyIdx] = 0.1f *
-            prog.fKnob[kKnobPalmDamp] *
-            prog.fKnob[kKnobPalmDamp] *
-            prog.fKnob[kKnobPalmDamp] *
-            prog.fKnob[kKnobPalmDamp];
+            prog.fKnob[kPalmDamp] *
+            prog.fKnob[kPalmDamp] *
+            prog.fKnob[kPalmDamp] *
+            prog.fKnob[kPalmDamp];
 
     m_DampString = 0.00035f *
-            prog.fKnob[kKnobStringDamping] *
-            prog.fKnob[kKnobStringDamping] *
-            prog.fKnob[kKnobStringDamping] +
+            prog.fKnob[kStringDamping] *
+            prog.fKnob[kStringDamping] *
+            prog.fKnob[kStringDamping] +
             0.0000001f;
     float minDampString = 0.00045f + 0.0000001f;
 
@@ -1522,8 +1523,8 @@ void Revitar::process(float **inputs, float **outputs, VstInt32 sampleframes) {
         m_VibratoCt++;
         if (m_VibratoCt >= 500) {
             m_VibratoCt = 0;
-            m_VibratoCtAll += (0.3f * prog.fKnob[kKnobVibratoRate] + 0.4f) *
-                    (0.3f * prog.fKnob[kKnobVibratoRate] + 0.4f) +
+            m_VibratoCtAll += (0.3f * prog.fKnob[kVibratoRate] + 0.4f) *
+                    (0.3f * prog.fKnob[kVibratoRate] + 0.4f) +
                     0.001f;
             vibrato = (float) cos(m_VibratoCtAll + 3.14);
             vibrato += 1.0;
@@ -1535,8 +1536,8 @@ void Revitar::process(float **inputs, float **outputs, VstInt32 sampleframes) {
             //      vibrato = (float) sqrt(vibrato);
 
             vibrato *= 0.059463094359f *
-                    prog.fKnob[kKnobVibratoAmplit] *
-                    prog.fKnob[kKnobVibratoAmplit];
+                    prog.fKnob[kVibratoAmplit] *
+                    prog.fKnob[kVibratoAmplit];
 
             m_VibratoAdd = (vibrato - m_VibratoPos) / 500.0f;
         }
@@ -1719,7 +1720,7 @@ void Revitar::process(float **inputs, float **outputs, VstInt32 sampleframes) {
                         m_Note[polyIdx] = m_SlideNote[polyIdx][noteIdx];
 
                         m_Rate[polyIdx] = m_RateReal[polyIdx] =
-                                computeRate(polyIdx, m_Note[polyIdx], prog.fKnob[kKnobTuning]);
+                                computeRate(polyIdx, m_Note[polyIdx], prog.fKnob[kTuning]);
 
                         m_CurrentSlideNoteCt[polyIdx]++;
                     }
@@ -1788,7 +1789,7 @@ void Revitar::process(float **inputs, float **outputs, VstInt32 sampleframes) {
                 else if (resRate < 0.0f)
                     resRate = 0.0f;
 
-                float resRateDel = 4.0f * (prog.fKnob[kKnobBodyGain] - 0.5f) + 1.0f;
+                float resRateDel = 4.0f * (prog.fKnob[kBodyGain] - 0.5f) + 1.0f;
                 if (resRateDel < 0.0f)
                     resRateDel = 0.0f;
 
@@ -1844,7 +1845,7 @@ void Revitar::process(float **inputs, float **outputs, VstInt32 sampleframes) {
             // to talk to each other - provides richer sound.
             for (i = 0; i < m_NumPoly; i++) {
                 m_ObjectPos[i][0] = 0.6f *
-                        prog.fKnob[kKnobSympathetic] *
+                        prog.fKnob[kSympathetic] *
                         (outPrior - m_ObjectPos[i][1]) / (float) m_NumPoly;
             }
 
@@ -1903,7 +1904,7 @@ void Revitar::doPluck(int polyIdx) {
                 }
 
                 if (m_PullCt[polyIdx][i][0] >
-                        m_TypeOffsetPull[polyIdx] + (int) (50.0f * (1.0f - prog.fKnob[kKnobPickSpeed]))) {
+                        m_TypeOffsetPull[polyIdx] + (int) (50.0f * (1.0f - prog.fKnob[kPickSpeed]))) {
                     m_TypeOffsetPull[polyIdx] +=
                             m_TypeOffset[polyIdx] +
                             (int) (0.4f * m_TypeOffset[polyIdx] * m_Random[m_RandomCt]);
@@ -1931,7 +1932,7 @@ void Revitar::doPluck(int polyIdx) {
                 m_PickNoiseRate *= (0.2f + std::max(0.0f, 0.9f * (prog.fPickStiffness + 0.2f) - 0.5f * (1.0f - prog.fPickWidth))) * (prog.fPickNoise > 0.5f);
                 //m_PickNoiseRate = 0.0;
                 m_PickAmp = ((0.3f + 2.5f * m_Random[m_RandomCt] * m_Random[m_RandomCt]) *
-                        prog.fKnob[kKnobPickVolume] *
+                        prog.fKnob[kPickVolume] *
                         m_Velocity[polyIdx] *
                         m_Velocity[polyIdx]) * (prog.fPickNoise > 0.5f);
                 //m_PickAmp = 0.0;
@@ -1988,7 +1989,7 @@ void Revitar::updateNewNotes(int polyIdx) {
     {
         m_MIDINote[polyIdx] = m_NoteQueue[polyIdx][0][1];
 
-        int maxSlide = (int) ((prog.fKnob[kKnobSlideRate] - 0.2f) *
+        int maxSlide = (int) ((prog.fKnob[kSlideRate] - 0.2f) *
                 (float) SLIDE_LENGTH *
                 (1.0f + 0.5f * m_Random[m_RandomCt]));
         if (maxSlide < 0)
@@ -2039,7 +2040,7 @@ void Revitar::updateNewNotes(int polyIdx) {
         m_NoteQueue[polyIdx][0][0] = totalLength;
 
         if ((prog.fMono == 0.f && prog.fChordOnOff == 0.f) ||
-                (prog.fKnob[kKnobSlideRate] < 0.2)) {
+                (prog.fKnob[kSlideRate] < 0.2)) {
             m_NoteQueue[polyIdx][0][0] = 0;
             m_SlideNoteCt[polyIdx] = 0;
         }
@@ -2054,7 +2055,7 @@ void Revitar::updateNewNotes(int polyIdx) {
         m_SlideFinished[polyIdx] = false;
         m_ForceOff = false;
 
-        m_RateReal[polyIdx] = computeRate(polyIdx, m_Note[polyIdx], prog.fKnob[kKnobTuning]);
+        m_RateReal[polyIdx] = computeRate(polyIdx, m_Note[polyIdx], prog.fKnob[kTuning]);
         m_RateReal[polyIdx] *= 1.0f + 0.0001f * m_Random[m_RandomCt];
 
         m_RandomCt++;
@@ -2113,9 +2114,9 @@ void Revitar::updateNewNotes(int polyIdx) {
         m_PickUpDiff[polyIdx][1] -= 0.5f * m_ObjectPos[polyIdx][m_PickUp[polyIdx] + 2];
 
         int length = (int) ((500.0f +
-                (1.0f - (0.5f * prog.fKnob[kKnobPickSpeed] + 0.5f)) *
-                (1.0f - (0.5f * prog.fKnob[kKnobPickSpeed] + 0.5f)) *
-                (1.0f - (0.5f * prog.fKnob[kKnobPickSpeed] + 0.5f)) *
+                (1.0f - (0.5f * prog.fKnob[kPickSpeed] + 0.5f)) *
+                (1.0f - (0.5f * prog.fKnob[kPickSpeed] + 0.5f)) *
+                (1.0f - (0.5f * prog.fKnob[kPickSpeed] + 0.5f)) *
                 20000.0f) * (prog.fPickNoise > 0.5f));
         length += (int) ((1.0f - m_Velocity[polyIdx]) * 2000.0f); // + (50.0f * ((prog.fPickNoise > 0.5f) - 1.0f));
         length += (int) (((float) length * (0.5f * m_Random[m_RandomCt]))); // * (prog.fPickNoise > 0.5f));
@@ -2124,8 +2125,8 @@ void Revitar::updateNewNotes(int polyIdx) {
             m_RandomCt = 0;
 
         m_TypeOffset[polyIdx] = (int) (length *
-                (0.6f * prog.fKnob[kKnobStringType] + 0.2f) *
-                (0.6f * prog.fKnob[kKnobStringType] + 0.2f));
+                (0.6f * prog.fKnob[kStringType] + 0.2f) *
+                (0.6f * prog.fKnob[kStringType] + 0.2f));
 
         m_PullCt[polyIdx][m_Pluck[polyIdx]][0] = 0;
         m_PullCt[polyIdx][m_Pluck[polyIdx]][1] = length;
@@ -2138,7 +2139,7 @@ void Revitar::updateNewNotes(int polyIdx) {
         m_PickPos[polyIdx] = -1.0f;
         m_PickAdd[polyIdx] = (1.0f + m_Velocity[polyIdx]*2.0f) / (float) length;
 
-        m_DampBridge[polyIdx] = prog.fKnob[kKnobBridgeDamping] * 0.2f + 0.1f;
+        m_DampBridge[polyIdx] = prog.fKnob[kBridgeDamping] * 0.2f + 0.1f;
         m_DampBridge[polyIdx] = (float) (m_DampBridge[polyIdx] * m_DampBridge[polyIdx]);
         m_DampBridge[polyIdx] *= (float) m_NumPoints[polyIdx] / NUM_POINTS;
 
@@ -2172,7 +2173,7 @@ float Revitar::computeBodyResonance(float resPickUp) {
     }
 
     float resDrag = 0.0015f * resonDrag[m_BodyIdx];
-    float delKnob1 = std::max(0.0f, prog.fKnob[kKnobBodyGain] - 0.6f);
+    float delKnob1 = std::max(0.0f, prog.fKnob[kBodyGain] - 0.6f);
     float maxIn = 0.8f - delKnob1;
     float acc = (std::max(-maxIn, std::min(maxIn, (resPickUp))) - resTotalPos);
     //  float acc = (resPickUp) - resTotalPos;
@@ -2680,9 +2681,9 @@ void Revitar::handleMIDINoteOn(int channel, int note, int velocity) {
         if (noteAdded == false) {
             if ((prog.fMono > 0.f) &&
                     m_MonoNote != NO_INFORMATION &&
-                    prog.fKnob[kKnobSlideRate] < 0.2) {
+                    prog.fKnob[kSlideRate] < 0.2) {
                 noteOn(note,
-                        (long) (2.5f * (0.2f - prog.fKnob[kKnobSlideRate])*(float) velocity),
+                        (long) (2.5f * (0.2f - prog.fKnob[kSlideRate])*(float) velocity),
                         0, polyIdx, 1);
                 m_MIDIVelocity[0] = (float) velocity / 127.0f;
             } else {
@@ -2714,9 +2715,9 @@ void Revitar::handleMIDINoteOn(int channel, int note, int velocity) {
         float SamplesPerBeat = 60.f / m_CurrentBPM;
         // SamplesPerBeat *= 44100.f;
         SamplesPerBeat *= m_SampleRate;
-        offsetBase = (int) ((1.0f - prog.fKnob[kKnobChordRate]) *
-                (1.0f - prog.fKnob[kKnobChordRate]) *
-                (1.0f - prog.fKnob[kKnobChordRate]) *
+        offsetBase = (int) ((1.0f - prog.fKnob[kChordRate]) *
+                (1.0f - prog.fKnob[kChordRate]) *
+                (1.0f - prog.fKnob[kChordRate]) *
                 SamplesPerBeat);
         //  offsetBase *= 2;
 
@@ -2758,8 +2759,8 @@ void Revitar::handleMIDINoteOn(int channel, int note, int velocity) {
 
         if (!m_Down) {
             if (noteIdx[0] != NO_INFORMATION) {
-                if (m_FirstChordNote != NO_INFORMATION && prog.fKnob[kKnobSlideRate] < 0.2) {
-                    noteOn(noteIdx[0], (int) (2.5f * (0.2f - prog.fKnob[kKnobSlideRate]) * velocity), 0, 0, 1);
+                if (m_FirstChordNote != NO_INFORMATION && prog.fKnob[kSlideRate] < 0.2) {
+                    noteOn(noteIdx[0], (int) (2.5f * (0.2f - prog.fKnob[kSlideRate]) * velocity), 0, 0, 1);
                     m_MIDIVelocity[0] = (float) velocity / 127.0f;
                 } else
                     noteOn(noteIdx[0], velocity, 0, 0, 0);
@@ -2776,8 +2777,8 @@ void Revitar::handleMIDINoteOn(int channel, int note, int velocity) {
                 }
 
                 if (noteIdx[j] != NO_INFORMATION) {
-                    if (m_FirstChordNote != NO_INFORMATION && prog.fKnob[kKnobSlideRate] < 0.2f) {
-                        noteOn(noteIdx[j], (int) (2.5f * (0.2f - prog.fKnob[kKnobSlideRate]) * velocity), offset, j, 1);
+                    if (m_FirstChordNote != NO_INFORMATION && prog.fKnob[kSlideRate] < 0.2f) {
+                        noteOn(noteIdx[j], (int) (2.5f * (0.2f - prog.fKnob[kSlideRate]) * velocity), offset, j, 1);
                         m_MIDIVelocity[j] = (float) velocity / 127.0f;
                     } else
                         noteOn(noteIdx[j], velocity, offset, j, 0);
@@ -2785,8 +2786,8 @@ void Revitar::handleMIDINoteOn(int channel, int note, int velocity) {
             }
         } else {
             if (noteIdx[5] != NO_INFORMATION) {
-                if (m_FirstChordNote != NO_INFORMATION && prog.fKnob[kKnobSlideRate] < 0.2f) {
-                    noteOn(noteIdx[5], (int) (2.5f * (0.2f - prog.fKnob[kKnobSlideRate]) * velocity), 0, 5, 1);
+                if (m_FirstChordNote != NO_INFORMATION && prog.fKnob[kSlideRate] < 0.2f) {
+                    noteOn(noteIdx[5], (int) (2.5f * (0.2f - prog.fKnob[kSlideRate]) * velocity), 0, 5, 1);
                     m_MIDIVelocity[5] = (float) velocity / 127.0f;
                 } else
                     noteOn(noteIdx[5], velocity, 0, 5, 0);
@@ -2803,8 +2804,8 @@ void Revitar::handleMIDINoteOn(int channel, int note, int velocity) {
                 }
 
                 if (noteIdx[j] != NO_INFORMATION) {
-                    if (m_FirstChordNote != NO_INFORMATION && prog.fKnob[kKnobSlideRate] < 0.2f) {
-                        noteOn(noteIdx[j], (int) (2.5f * (0.2f - prog.fKnob[kKnobSlideRate]) * velocity), offset, j, 1);
+                    if (m_FirstChordNote != NO_INFORMATION && prog.fKnob[kSlideRate] < 0.2f) {
+                        noteOn(noteIdx[j], (int) (2.5f * (0.2f - prog.fKnob[kSlideRate]) * velocity), offset, j, 1);
                         m_MIDIVelocity[j] = (float) velocity / 127.0f;
                     } else
                         noteOn(noteIdx[j], velocity, offset, j, 0);
@@ -2866,9 +2867,9 @@ void Revitar::handleMIDINoteOff(int channel, int note, int velocity) {
 
                     if (m_FirstChordNote != NO_INFORMATION &&
                             m_FirstChordNotes[j] != NO_INFORMATION) {
-                        if (prog.fKnob[kKnobSlideRate] < 0.2f) {
+                        if (prog.fKnob[kSlideRate] < 0.2f) {
                             if (m_CurrentChordNotes[j] != NO_INFORMATION)
-                                noteOn(m_CurrentChordNotes[j], (int) (5.f * (0.2f - prog.fKnob[kKnobSlideRate])*100.f * m_MIDIVelocity[j]), 0, j, 1);
+                                noteOn(m_CurrentChordNotes[j], (int) (5.f * (0.2f - prog.fKnob[kSlideRate])*100.f * m_MIDIVelocity[j]), 0, j, 1);
                             noteOn(m_FirstChordNotes[j], velocity, 5000, j, 0);
                         } else
                             noteOn(m_FirstChordNotes[j], velocity, 0, j, 0);
@@ -2884,8 +2885,8 @@ void Revitar::handleMIDINoteOff(int channel, int note, int velocity) {
                 if (m_MonoNote != NO_INFORMATION &&
                         m_MIDINote[0] == note &&
                         (m_NoteCt[0] == 0)) {
-                    if (prog.fKnob[kKnobSlideRate] < 0.2f) {
-                        noteOn(note, (int) (5.f * (0.2f - prog.fKnob[kKnobSlideRate]) * 100.f * m_MIDIVelocity[0]), 0, 0, 1);
+                    if (prog.fKnob[kSlideRate] < 0.2f) {
+                        noteOn(note, (int) (5.f * (0.2f - prog.fKnob[kSlideRate]) * 100.f * m_MIDIVelocity[0]), 0, 0, 1);
                         noteOn(m_MonoNote, velocity, 5000, 0, 0);
                     } else
                         noteOn(m_MonoNote, velocity, 0, 0, 0);

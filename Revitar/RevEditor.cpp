@@ -4,6 +4,7 @@
  * 
  * Copyright (C) 2004 C. Lawrence Zitnick III <larryz@microsoft.com>
  * Copyright (C) 2010 Hermann Seib <him@hermannseib.com>
+ * Copyright (C) 2014 Asseca <http://www.asseca.org/revitar.html>
  * Copyright (C) 2015 Markus Kitsinger (SwooshyCueb) <root@swooshalicio.us>
  */
 
@@ -692,35 +693,35 @@ void convertParams(float value, char *string, void *userdata) {
     RevEditor *editor = (RevEditor *) userdata;
 
     switch (lastIndex) {
-        case kKnobGain: sprintf(string, " Gain ");
+        case kGain: sprintf(string, " Gain ");
             break;
-        case kKnobBodyGain: sprintf(string, " Body Gain ");
+        case kBodyGain: sprintf(string, " Body Gain ");
             break;
-        case kKnobPickVolume: sprintf(string, " Pick Volume ");
+        case kPickVolume: sprintf(string, " Pick Volume ");
             break;
-        case kKnobTuning: sprintf(string, " Tune ");
+        case kTuning: sprintf(string, " Tune ");
             break;
-        case kKnobBridgeDamping: sprintf(string, " Bridge Damping ");
+        case kBridgeDamping: sprintf(string, " Bridge Damping ");
             break;
-        case kKnobStringDamping: sprintf(string, " String Damping ");
+        case kStringDamping: sprintf(string, " String Damping ");
             break;
-        case kKnobVibratoAmplit: sprintf(string, " Vibrato Amplitude ");
+        case kVibratoAmplit: sprintf(string, " Vibrato Amplitude ");
             break;
-        case kKnobVibratoRate: sprintf(string, " Vibrato Rate ");
+        case kVibratoRate: sprintf(string, " Vibrato Rate ");
             break;
-        case kKnobSympathetic: sprintf(string, " Sympathetic ");
+        case kSympathetic: sprintf(string, " Sympathetic ");
             break;
-        case kKnobSlap: sprintf(string, " Slap ");
+        case kSlap: sprintf(string, " Slap ");
             break;
-        case kKnobPickSpeed: sprintf(string, " Pick Speed ");
+        case kPickSpeed: sprintf(string, " Pick Speed ");
             break;
-        case kKnobChordRate: sprintf(string, " Chord Rate ");
+        case kChordRate: sprintf(string, " Chord Rate ");
             break;
-        case kKnobStringType: sprintf(string, " String Type ");
+        case kStringType: sprintf(string, " String Type ");
             break;
-        case kKnobPalmDamp: sprintf(string, " Palm Damping ");
+        case kPalmDamp: sprintf(string, " Palm Damping ");
             break;
-        case kKnobSlideRate: sprintf(string, (value > 0.2) ? " Slide Rate ": " Hammer / Pull ");
+        case kSlideRate: sprintf(string, (value > 0.2) ? " Slide Rate ": " Hammer / Pull ");
             break;
         case kMono: sprintf(string, (value < 0.5f) ? " Polyphonic ": " Monophonic ");
             break;
@@ -740,9 +741,9 @@ void convertParams(float value, char *string, void *userdata) {
             break;
         case kPickSwitch: sprintf(string, " Pick Width ");
             break;
-        case kPickUp: sprintf(string, " Pick Up Position ");
+        case kPickupPos: sprintf(string, " Pick Up Position ");
             break;
-        case kPickPosition: sprintf(string, " Pick Position ");
+        case kPickPos: sprintf(string, " Pick Position ");
             break;
         case kChordNote0: sprintf(string, " Chord Note 0 ");
             break;
@@ -756,7 +757,7 @@ void convertParams(float value, char *string, void *userdata) {
             break;
         case kChordNote5: sprintf(string, " Chord Note 5 ");
             break;
-        case kPalmSlider: sprintf(string, " Palm Position ");
+        case kPalmPos: sprintf(string, " Palm Position ");
             break;
         default: strcpy(string, "  ");
             break;
@@ -770,41 +771,41 @@ void convertParams2(float value, char *string, void *userdata) {
     Revitar *effect = (Revitar *) editor->getEffect();
 
     switch (lastIndex) {
-        case kKnobGain: sprintf(string, " %1.2f ", value);
+        case kGain: sprintf(string, " %1.2f ", value);
             break;
-        case kKnobBodyGain: sprintf(string, " %1.2f ", value);
+        case kBodyGain: sprintf(string, " %1.2f ", value);
             break;
-        case kKnobPickVolume: sprintf(string, " %1.2f ", value);
+        case kPickVolume: sprintf(string, " %1.2f ", value);
             break;
-        case kKnobTuning: sprintf(string, " %d cents ", (int) (200.0 * value - 100.0));
+        case kTuning: sprintf(string, " %d cents ", (int) (200.0 * value - 100.0));
             break;
-        case kKnobBridgeDamping: sprintf(string, " %1.2f ", value);
+        case kBridgeDamping: sprintf(string, " %1.2f ", value);
             break;
-        case kKnobStringDamping: sprintf(string, " %1.2f ", value);
+        case kStringDamping: sprintf(string, " %1.2f ", value);
             break;
-        case kKnobVibratoAmplit: sprintf(string, " %1.2f ", value);
+        case kVibratoAmplit: sprintf(string, " %1.2f ", value);
             break;
-        case kKnobVibratoRate: sprintf(string, " %1.2f ", value);
+        case kVibratoRate: sprintf(string, " %1.2f ", value);
             break;
-        case kKnobSympathetic: sprintf(string, " %1.2f ", value);
+        case kSympathetic: sprintf(string, " %1.2f ", value);
             break;
-        case kKnobSlap: sprintf(string, " %1.2f ", value);
+        case kSlap: sprintf(string, " %1.2f ", value);
             break;
-        case kKnobPickSpeed: sprintf(string, " %1.2f ", value);
+        case kPickSpeed: sprintf(string, " %1.2f ", value);
             break;
-        case kKnobChordRate: sprintf(string, " %1.2f ", value);
+        case kChordRate: sprintf(string, " %1.2f ", value);
             break;
-        case kKnobStringType: sprintf(string, " %1.2f ", value);
+        case kStringType: sprintf(string, " %1.2f ", value);
             break;
-        case kKnobPalmDamp: sprintf(string, " %1.2f ", value);
+        case kPalmDamp: sprintf(string, " %1.2f ", value);
             break;
-        case kKnobSlideRate: sprintf(string, " %1.2f ", (value > 0.2f) ? (value - 0.2f) / 0.8f: 5.0f * (0.2f - value));
+        case kSlideRate: sprintf(string, " %1.2f ", (value > 0.2f) ? (value - 0.2f) / 0.8f: 5.0f * (0.2f - value));
             break;
-        case kPalmSlider: sprintf(string, " %1.2f ", value);
+        case kPalmPos: sprintf(string, " %1.2f ", value);
             break;
-        case kPickPosition: sprintf(string, " %1.2f ", value);
+        case kPickPos: sprintf(string, " %1.2f ", value);
             break;
-        case kPickUp: sprintf(string, " %1.2f ", value);
+        case kPickupPos: sprintf(string, " %1.2f ", value);
             break;
         case kPickSwitch: sprintf(string, " and Stiffness ");
             break;
@@ -964,16 +965,16 @@ bool RevEditor::open(void *ptr) {
     displayScreen0->m_ChordDisplay = (((Revitar*) effect)->m_ChordDisplay);
     displayScreen0->setChordOnValue(effect->getParameter(kChordOnOff));
     displayScreen0->setBodyValue(effect->getParameter(kBodySwitch));
-    displayScreen0->m_fPickUp = (effect->getParameter(kPickUp));
-    displayScreen0->m_fPickPosition = (effect->getParameter(kPickPosition));
+    displayScreen0->m_fPickUp = (effect->getParameter(kPickupPos));
+    displayScreen0->m_fPickPosition = (effect->getParameter(kPickPos));
     displayScreen0->m_iChordNotes[0] = (int) floor(24.f * effect->getParameter(kChordNote0) + 0.0001f);
     displayScreen0->m_iChordNotes[1] = (int) floor(24.f * effect->getParameter(kChordNote1) + 0.0001f);
     displayScreen0->m_iChordNotes[2] = (int) floor(24.f * effect->getParameter(kChordNote2) + 0.0001f);
     displayScreen0->m_iChordNotes[3] = (int) floor(24.f * effect->getParameter(kChordNote3) + 0.0001f);
     displayScreen0->m_iChordNotes[4] = (int) floor(24.f * effect->getParameter(kChordNote4) + 0.0001f);
     displayScreen0->m_iChordNotes[5] = (int) floor(24.f * effect->getParameter(kChordNote5) + 0.0001f);
-    displayScreen0->kPickPosition = kPickPosition;
-    displayScreen0->kPickUp = kPickUp;
+    displayScreen0->kPickPos = kPickPos;
+    displayScreen0->kPickupPos = kPickupPos;
 
     lFrame->addView(displayScreen0);
 
@@ -1036,9 +1037,9 @@ bool RevEditor::open(void *ptr) {
             350 + 190, 275 + 18);
     CPoint offsetPalm(0, 0);
     palmSlider = new CHorizontalSlider2(size, this,
-            kPalmSlider, 352, 431, hPalmSliderHandle,
+            kPalmPos, 352, 431, hPalmSliderHandle,
             hPalmSliderBackground, offsetPalm, kLeft);
-    palmSlider->setValue(effect->getParameter(kPalmSlider));
+    palmSlider->setValue(effect->getParameter(kPalmPos));
     lFrame->addView(palmSlider);
 
     //--init the knobs------------------------------------------------
@@ -1047,106 +1048,106 @@ bool RevEditor::open(void *ptr) {
     // Gain
     size(372, 175,
             372 + KNOB_X, 175 + KNOB_Y);
-    knob[0] = new CAnimKnobZ(size, this, kKnobGain, KNOB_POSITIONS, KNOB_Y, hKnob, point);
-    knob[0]->setValue(effect->getParameter(kKnobGain));
+    knob[0] = new CAnimKnobZ(size, this, kGain, KNOB_POSITIONS, KNOB_Y, hKnob, point);
+    knob[0]->setValue(effect->getParameter(kGain));
     lFrame->addView(knob[0]);
 
     // Body Gain
     size(27, 355,
             27 + KNOB_X, 355 + KNOB_Y);
-    knob[1] = new CAnimKnobZ(size, this, kKnobBodyGain, KNOB_POSITIONS, KNOB_Y, hKnob, point);
-    knob[1]->setValue(effect->getParameter(kKnobBodyGain));
+    knob[1] = new CAnimKnobZ(size, this, kBodyGain, KNOB_POSITIONS, KNOB_Y, hKnob, point);
+    knob[1]->setValue(effect->getParameter(kBodyGain));
     lFrame->addView(knob[1]);
 
     // Pick Volume
     size(220, 355,
             220 + KNOB_X, 355 + KNOB_Y);
-    knob[2] = new CAnimKnobZ(size, this, kKnobPickVolume, KNOB_POSITIONS, KNOB_Y, hKnob, point);
-    knob[2]->setValue(effect->getParameter(kKnobPickVolume));
+    knob[2] = new CAnimKnobZ(size, this, kPickVolume, KNOB_POSITIONS, KNOB_Y, hKnob, point);
+    knob[2]->setValue(effect->getParameter(kPickVolume));
     lFrame->addView(knob[2]);
 
     // Tune
     size(601, 64,
             601 + KNOB_X, 64 + KNOB_Y);
-    knob[3] = new CAnimKnobZ(size, this, kKnobTuning, KNOB_POSITIONS, KNOB_Y, hTuneKnob, point);
-    knob[3]->setValue(effect->getParameter(kKnobTuning));
+    knob[3] = new CAnimKnobZ(size, this, kTuning, KNOB_POSITIONS, KNOB_Y, hTuneKnob, point);
+    knob[3]->setValue(effect->getParameter(kTuning));
     lFrame->addView(knob[3]);
 
     // Bridge
     size(446, 355,
             446 + KNOB_X, 355 + KNOB_Y);
-    knob[4] = new CAnimKnobZ(size, this, kKnobBridgeDamping, KNOB_POSITIONS, KNOB_Y, hKnob, point);
-    knob[4]->setValue(effect->getParameter(kKnobBridgeDamping));
+    knob[4] = new CAnimKnobZ(size, this, kBridgeDamping, KNOB_POSITIONS, KNOB_Y, hKnob, point);
+    knob[4]->setValue(effect->getParameter(kBridgeDamping));
     lFrame->addView(knob[4]);
 
     // String
     size(495, 355,
             495 + KNOB_X, 355 + KNOB_Y);
-    knob[5] = new CAnimKnobZ(size, this, kKnobStringDamping, KNOB_POSITIONS, KNOB_Y, hKnob, point);
-    knob[5]->setValue(effect->getParameter(kKnobStringDamping));
+    knob[5] = new CAnimKnobZ(size, this, kStringDamping, KNOB_POSITIONS, KNOB_Y, hKnob, point);
+    knob[5]->setValue(effect->getParameter(kStringDamping));
     lFrame->addView(knob[5]);
 
     // Amp
     size(625, 355,
             625 + KNOB_X, 355 + KNOB_Y);
-    knob[6] = new CAnimKnobZ(size, this, kKnobVibratoAmplit, KNOB_POSITIONS, KNOB_Y, hKnob, point);
-    knob[6]->setValue(effect->getParameter(kKnobVibratoAmplit));
+    knob[6] = new CAnimKnobZ(size, this, kVibratoAmplit, KNOB_POSITIONS, KNOB_Y, hKnob, point);
+    knob[6]->setValue(effect->getParameter(kVibratoAmplit));
     lFrame->addView(knob[6]);
 
     // Rate
     size(625, 288,
             625 + KNOB_X, 288 + KNOB_Y);
-    knob[7] = new CAnimKnobZ(size, this, kKnobVibratoRate, KNOB_POSITIONS, KNOB_Y, hKnob, point);
-    knob[7]->setValue(effect->getParameter(kKnobVibratoRate));
+    knob[7] = new CAnimKnobZ(size, this, kVibratoRate, KNOB_POSITIONS, KNOB_Y, hKnob, point);
+    knob[7]->setValue(effect->getParameter(kVibratoRate));
     lFrame->addView(knob[7]);
 
     // Sympathetic
     size(81, 355,
             81 + KNOB_X, 355 + KNOB_Y);
-    knob[8] = new CAnimKnobZ(size, this, kKnobSympathetic, KNOB_POSITIONS, KNOB_Y, hKnob, point);
-    knob[8]->setValue(effect->getParameter(kKnobSympathetic));
+    knob[8] = new CAnimKnobZ(size, this, kSympathetic, KNOB_POSITIONS, KNOB_Y, hKnob, point);
+    knob[8]->setValue(effect->getParameter(kSympathetic));
     lFrame->addView(knob[8]);
 
     // Slap
     size(341, 355,
             341 + KNOB_X, 355 + KNOB_Y);
-    knob[9] = new CAnimKnobZ(size, this, kKnobSlap, KNOB_POSITIONS, KNOB_Y, hKnob, point);
-    knob[9]->setValue(effect->getParameter(kKnobSlap));
+    knob[9] = new CAnimKnobZ(size, this, kSlap, KNOB_POSITIONS, KNOB_Y, hKnob, point);
+    knob[9]->setValue(effect->getParameter(kSlap));
     lFrame->addView(knob[9]);
 
     // Speed 
     size(161, 355,
             161 + KNOB_X, 355 + KNOB_Y);
-    knob[10] = new CAnimKnobZ(size, this, kKnobPickSpeed, KNOB_POSITIONS, KNOB_Y, hKnob, point);
-    knob[10]->setValue(effect->getParameter(kKnobPickSpeed));
+    knob[10] = new CAnimKnobZ(size, this, kPickSpeed, KNOB_POSITIONS, KNOB_Y, hKnob, point);
+    knob[10]->setValue(effect->getParameter(kPickSpeed));
     lFrame->addView(knob[10]);
 
     // Chord Rate
     size(625, 175,
             625 + KNOB_X, 175 + KNOB_Y);
-    knob[11] = new CAnimKnobZ(size, this, kKnobChordRate, KNOB_POSITIONS, KNOB_Y, hKnob, point);
-    knob[11]->setValue(effect->getParameter(kKnobChordRate));
+    knob[11] = new CAnimKnobZ(size, this, kChordRate, KNOB_POSITIONS, KNOB_Y, hKnob, point);
+    knob[11]->setValue(effect->getParameter(kChordRate));
     lFrame->addView(knob[11]);
 
     // Type
     size(293, 355,
             293 + KNOB_X, 355 + KNOB_Y);
-    knob[12] = new CAnimKnobZ(size, this, kKnobStringType, KNOB_POSITIONS, KNOB_Y, hKnob, point);
-    knob[12]->setValue(effect->getParameter(kKnobStringType));
+    knob[12] = new CAnimKnobZ(size, this, kStringType, KNOB_POSITIONS, KNOB_Y, hKnob, point);
+    knob[12]->setValue(effect->getParameter(kStringType));
     lFrame->addView(knob[12]);
 
     // Palm
     size(398, 355,
             398 + KNOB_X, 355 + KNOB_Y);
-    knob[13] = new CAnimKnobZ(size, this, kKnobPalmDamp, KNOB_POSITIONS, KNOB_Y, hKnob, point);
-    knob[13]->setValue(effect->getParameter(kKnobPalmDamp));
+    knob[13] = new CAnimKnobZ(size, this, kPalmDamp, KNOB_POSITIONS, KNOB_Y, hKnob, point);
+    knob[13]->setValue(effect->getParameter(kPalmDamp));
     lFrame->addView(knob[13]);
 
     // Slide Rate
     size(552, 355,
             552 + KNOB_X, 355 + KNOB_Y);
-    knob[14] = new CAnimKnobZ(size, this, kKnobSlideRate, KNOB_POSITIONS, KNOB_Y, hSlideKnob, point);
-    knob[14]->setValue(effect->getParameter(kKnobSlideRate));
+    knob[14] = new CAnimKnobZ(size, this, kSlideRate, KNOB_POSITIONS, KNOB_Y, hSlideKnob, point);
+    knob[14]->setValue(effect->getParameter(kSlideRate));
     lFrame->addView(knob[14]);
 
     size(506, 206,
@@ -1232,21 +1233,21 @@ void RevEditor::setParameter(VstInt32 index, float value) {
 
     // called from ADelayEdit
     switch (index) {
-        case kKnobGain:
-        case kKnobBodyGain:
-        case kKnobPickVolume:
-        case kKnobTuning:
-        case kKnobBridgeDamping:
-        case kKnobStringDamping:
-        case kKnobVibratoAmplit:
-        case kKnobVibratoRate:
-        case kKnobSympathetic:
-        case kKnobSlap:
-        case kKnobPickSpeed:
-        case kKnobChordRate:
-        case kKnobStringType:
-        case kKnobPalmDamp:
-        case kKnobSlideRate:
+        case kGain:
+        case kBodyGain:
+        case kPickVolume:
+        case kTuning:
+        case kBridgeDamping:
+        case kStringDamping:
+        case kVibratoAmplit:
+        case kVibratoRate:
+        case kSympathetic:
+        case kSlap:
+        case kPickSpeed:
+        case kChordRate:
+        case kStringType:
+        case kPalmDamp:
+        case kSlideRate:
             if (knob[index])
                 knob[index]->setValue(effect->getParameter(index));
             if (paramDisplay)
@@ -1282,7 +1283,7 @@ void RevEditor::setParameter(VstInt32 index, float value) {
                 paramDisplay2->setValue(effect->getParameter(index));
             break;
 
-        case kPalmSlider:
+        case kPalmPos:
             if (palmSlider)
                 palmSlider->setValue(effect->getParameter(index));
             if (paramDisplay)
@@ -1350,7 +1351,7 @@ void RevEditor::setParameter(VstInt32 index, float value) {
             displayScreen0->setDirty(true);
             break;
 
-        case kPickPosition:
+        case kPickPos:
             if (displayScreen0)
                 displayScreen0->m_fPickPosition = (effect->getParameter(index));
             if (paramDisplay)
@@ -1361,7 +1362,7 @@ void RevEditor::setParameter(VstInt32 index, float value) {
             displayScreen0->setDirty(true);
             break;
 
-        case kPickUp:
+        case kPickupPos:
             if (displayScreen0)
                 displayScreen0->m_fPickUp = (effect->getParameter(index));
             if (paramDisplay)
@@ -1453,25 +1454,25 @@ void RevEditor::idle() {
 }
 
 void RevEditor::removeMIDICC(int tag) {
-    if (tag == kKnobGain ||
-            tag == kKnobBodyGain ||
-            tag == kKnobPickVolume ||
-            tag == kKnobTuning ||
-            tag == kKnobBridgeDamping ||
-            tag == kKnobStringDamping ||
-            tag == kKnobVibratoAmplit ||
-            tag == kKnobVibratoRate ||
-            tag == kKnobSympathetic ||
-            tag == kKnobSlap ||
-            tag == kKnobPickSpeed ||
-            tag == kKnobChordRate ||
-            tag == kKnobStringType ||
-            tag == kKnobPalmDamp ||
-            tag == kKnobSlideRate ||
+    if (tag == kGain ||
+            tag == kBodyGain ||
+            tag == kPickVolume ||
+            tag == kTuning ||
+            tag == kBridgeDamping ||
+            tag == kStringDamping ||
+            tag == kVibratoAmplit ||
+            tag == kVibratoRate ||
+            tag == kSympathetic ||
+            tag == kSlap ||
+            tag == kPickSpeed ||
+            tag == kChordRate ||
+            tag == kStringType ||
+            tag == kPalmDamp ||
+            tag == kSlideRate ||
             tag == kBodySwitch ||
-            tag == kPickUp ||
-            tag == kPalmSlider ||
-            tag == kPickPosition) {
+            tag == kPickupPos ||
+            tag == kPalmPos ||
+            tag == kPickPos) {
         for (int i = 0; i < NUM_MIDI_CC; i++) {
             if (((Revitar*) effect)->m_MIDIControl[i] == tag) {
                 ((Revitar*) effect)->m_MIDIControl[i] = NO_INFORMATION;
@@ -1496,25 +1497,25 @@ void RevEditor::removeMIDICC(int tag) {
 
 void RevEditor::updateMIDICC(int tag) {
     if (((Revitar*) effect)->m_LastMIDICC != NO_INFORMATION) {
-        if (tag == kKnobGain ||
-                tag == kKnobBodyGain ||
-                tag == kKnobPickVolume ||
-                tag == kKnobTuning ||
-                tag == kKnobBridgeDamping ||
-                tag == kKnobStringDamping ||
-                tag == kKnobVibratoAmplit ||
-                tag == kKnobVibratoRate ||
-                tag == kKnobSympathetic ||
-                tag == kKnobSlap ||
-                tag == kKnobPickSpeed ||
-                tag == kKnobChordRate ||
-                tag == kKnobStringType ||
-                tag == kKnobPalmDamp ||
-                tag == kKnobSlideRate ||
+        if (tag == kGain ||
+                tag == kBodyGain ||
+                tag == kPickVolume ||
+                tag == kTuning ||
+                tag == kBridgeDamping ||
+                tag == kStringDamping ||
+                tag == kVibratoAmplit ||
+                tag == kVibratoRate ||
+                tag == kSympathetic ||
+                tag == kSlap ||
+                tag == kPickSpeed ||
+                tag == kChordRate ||
+                tag == kStringType ||
+                tag == kPalmDamp ||
+                tag == kSlideRate ||
                 tag == kBodySwitch ||
-                tag == kPickUp ||
-                tag == kPalmSlider ||
-                tag == kPickPosition) {
+                tag == kPickupPos ||
+                tag == kPalmPos ||
+                tag == kPickPos) {
             ((Revitar*) effect)->m_MIDIControl[((Revitar*) effect)->m_LastMIDICC] = tag;
             ((Revitar*) effect)->saveMIDIControls();
         }
@@ -1553,21 +1554,21 @@ void RevEditor::valueChanged(CControl* control)
 
     long tag = control->getTag();
     switch (tag) {
-        case kKnobGain:
-        case kKnobBodyGain:
-        case kKnobPickVolume:
-        case kKnobTuning:
-        case kKnobBridgeDamping:
-        case kKnobStringDamping:
-        case kKnobVibratoAmplit:
-        case kKnobVibratoRate:
-        case kKnobSympathetic:
-        case kKnobSlap:
-        case kKnobPickSpeed:
-        case kKnobChordRate:
-        case kKnobStringType:
-        case kKnobPalmDamp:
-        case kKnobSlideRate:
+        case kGain:
+        case kBodyGain:
+        case kPickVolume:
+        case kTuning:
+        case kBridgeDamping:
+        case kStringDamping:
+        case kVibratoAmplit:
+        case kVibratoRate:
+        case kSympathetic:
+        case kSlap:
+        case kPickSpeed:
+        case kChordRate:
+        case kStringType:
+        case kPalmDamp:
+        case kSlideRate:
         case kChordNote0:
         case kChordNote1:
         case kChordNote2:
@@ -1582,11 +1583,11 @@ void RevEditor::valueChanged(CControl* control)
         case kChordSwitch:
         case kPickSwitch:
         case kBodySwitch:
-        case kPickPosition:
-        case kPickUp:
+        case kPickPos:
+        case kPickupPos:
         case kPickWidth:
         case kPickStiffness:
-        case kPalmSlider:
+        case kPalmPos:
         case kAbsRel:
         case kStopSwitch:
 
@@ -1624,11 +1625,11 @@ else
 
         case kDS0:
             if (displayScreen0->m_PickUpPressed == true) {
-                effect->setParameterAutomated(kPickUp, displayScreen0->m_fPickUp);
+                effect->setParameterAutomated(kPickupPos, displayScreen0->m_fPickUp);
             }
 
             if (displayScreen0->m_PickPressed == true) {
-                effect->setParameterAutomated(kPickPosition, displayScreen0->m_fPickPosition);
+                effect->setParameterAutomated(kPickPos, displayScreen0->m_fPickPosition);
             }
 
             if ((displayScreen0->m_ChordPressed >= 0) &&

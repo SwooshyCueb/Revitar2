@@ -4,6 +4,7 @@
  * 
  * Copyright (C) 2004 C. Lawrence Zitnick III <larryz@microsoft.com>
  * Copyright (C) 2010 Hermann Seib <him@hermannseib.com>
+ * Copyright (C) 2014 Asseca <http://www.asseca.org/revitar.html>
  * Copyright (C) 2015 Markus Kitsinger (SwooshyCueb) <root@swooshalicio.us>
  */
 
@@ -25,21 +26,21 @@
 
 enum
 {
-	kKnobGain,
-	kKnobBodyGain,
-	kKnobPickVolume,
-	kKnobTuning,                        /* tuning (0=-100,0.5=0,1=100 cents) */
-	kKnobBridgeDamping,
-	kKnobStringDamping,
-	kKnobVibratoAmplit,
-	kKnobVibratoRate,
-	kKnobSympathetic,
-	kKnobSlap,
-	kKnobPickSpeed,
-	kKnobChordRate,
-	kKnobStringType,
-	kKnobPalmDamp,
-	kKnobSlideRate,
+	kGain,
+	kBodyGain,
+	kPickVolume,
+	kTuning,                        /* tuning (0=-100,0.5=0,1=100 cents) */
+	kBridgeDamping,
+	kStringDamping,
+	kVibratoAmplit,
+	kVibratoRate,
+	kSympathetic,
+	kSlap,
+	kPickSpeed,
+	kChordRate,
+	kStringType,
+	kPalmDamp,
+	kSlideRate,
 
 	kChordOnOff,
 	kSustain,
@@ -56,13 +57,13 @@ enum
 	kChordNote3,
 	kChordNote4,
 	kChordNote5,
-	kPickPosition,
-	kPickUp,
+	kPickPos,
+	kPickupPos,
 	kPickWidth,
 	kPickStiffness,
 	kReserved2,                         /* was kGuitarBottom                 */
 	kReserved3,                         /* was kGuitarTop                    */
-	kPalmSlider,
+	kPalmPos,
 	kAbsRel,
 	kStopSwitch,
 
@@ -108,8 +109,8 @@ private:
 	float fBodySwitch;
 	float fChordNote[NUM_CHORDS][NUM_CHORD_NOTES];
 	float fChordAbsNote[NUM_CHORDS][NUM_CHORD_NOTES];
-	float fPickUp;
-	float fPickPosition;
+	float fPickupPos;
+	float fPickPos;
 	float fGLove;
 	float fMeter;
 	float fPickWidth;
