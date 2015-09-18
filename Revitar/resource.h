@@ -2,8 +2,9 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  * 
- * Revitar originally by C. Lawrence Zitnick III
- * This fork maintained by SwooshyCueb
+ * Copyright (C) 2004 C. Lawrence Zitnick III <larryz@microsoft.com>
+ * Copyright (C) 2010 Hermann Seib <him@hermannseib.com>
+ * Copyright (C) 2015 Markus Kitsinger (SwooshyCueb) <root@swooshalicio.us>
  */
 
 //{{NO_DEPENDENCIES}}
