@@ -29,7 +29,6 @@ bool oome = false;
 
 /*****************************************************************************/
 /* createEffectInstance : creates an effect instance                         */
-
 /*****************************************************************************/
 
 AudioEffect* createEffectInstance(audioMasterCallback audioMaster) {
@@ -50,7 +49,6 @@ AudioEffect* createEffectInstance(audioMasterCallback audioMaster) {
 
 /*****************************************************************************/
 /* Revitar : constructor                                                     */
-
 /*****************************************************************************/
 
 Revitar::Revitar(audioMasterCallback audioMaster)
@@ -163,7 +161,6 @@ Revitar::Revitar(audioMasterCallback audioMaster)
 
 /*****************************************************************************/
 /* ~Revitar : destructor                                                     */
-
 /*****************************************************************************/
 
 Revitar::~Revitar() {
@@ -173,7 +170,6 @@ Revitar::~Revitar() {
 
 /*****************************************************************************/
 /* saveMIDIControls : saves the current set of MIDI controllers              */
-
 /*****************************************************************************/
 
 void Revitar::saveMIDIControls() {
@@ -194,7 +190,6 @@ void Revitar::saveMIDIControls() {
 
 /*****************************************************************************/
 /* resume : called from host when the PlugIn is put to work                  */
-
 /*****************************************************************************/
 
 void Revitar::resume() {
@@ -203,7 +198,6 @@ void Revitar::resume() {
 
 /*****************************************************************************/
 /* setResonances : sets the resonances (need a better comment :-)            */
-
 /*****************************************************************************/
 
 void Revitar::setResonances() {
@@ -545,7 +539,6 @@ void Revitar::setResonances() {
 
 /*****************************************************************************/
 /* initProcess : called to initialize the PlugIn after instantiation         */
-
 /*****************************************************************************/
 
 void Revitar::initProcess() {
@@ -723,7 +716,6 @@ void Revitar::initProcess() {
 
 /*****************************************************************************/
 /* setProgram : loads a(nother) program                                      */
-
 /*****************************************************************************/
 
 void Revitar::setProgram(VstInt32 program) {
@@ -746,7 +738,6 @@ void Revitar::setProgram(VstInt32 program) {
 
 /*****************************************************************************/
 /* setProgramName : sets the current program's name                          */
-
 /*****************************************************************************/
 
 void Revitar::setProgramName(char *name) {
@@ -756,7 +747,6 @@ void Revitar::setProgramName(char *name) {
 
 /*****************************************************************************/
 /* getProgramName : retrieves the current program's name                     */
-
 /*****************************************************************************/
 
 void Revitar::getProgramName(char *name) {
@@ -768,7 +758,6 @@ void Revitar::getProgramName(char *name) {
 
 /*****************************************************************************/
 /* suspend : called when the PlugIn is suspended from processing             */
-
 /*****************************************************************************/
 
 void Revitar::suspend() {
@@ -776,7 +765,6 @@ void Revitar::suspend() {
 
 /*****************************************************************************/
 /* getVu : returns old-style VU meter content                                */
-
 /*****************************************************************************/
 
 float Revitar::DECLARE_VST_DEPRECATED(getVu) () {
@@ -787,7 +775,6 @@ float Revitar::DECLARE_VST_DEPRECATED(getVu) () {
 
 /*****************************************************************************/
 /* setDisplayPickParameters : called from editor with new pick settings      */
-
 /*****************************************************************************/
 
 void Revitar::setDisplayPickParameters(float pickWidth, float pickStiffness) {
@@ -802,7 +789,6 @@ void Revitar::setDisplayPickParameters(float pickWidth, float pickStiffness) {
 
 /*****************************************************************************/
 /* setDisplayChordNote : called from editor with new chord note setting      */
-
 /*****************************************************************************/
 
 void Revitar::setDisplayChordNote(int nNote, int nFret) {
@@ -826,7 +812,6 @@ void Revitar::setDisplayChordNote(int nNote, int nFret) {
 
 /*****************************************************************************/
 /* setParameter : called to set one of the parameters                        */
-
 /*****************************************************************************/
 
 void Revitar::setParameter(VstInt32 index, float value) {
@@ -982,7 +967,6 @@ void Revitar::setParameter(VstInt32 index, float value) {
 
 /*****************************************************************************/
 /* getParameter : retrieves one of the VSTi parameters                       */
-
 /*****************************************************************************/
 
 float Revitar::getParameter(VstInt32 index) {
@@ -1070,7 +1054,6 @@ float Revitar::getParameter(VstInt32 index) {
 
 /*****************************************************************************/
 /* getParameterName : retrieves a parameter name                             */
-
 /*****************************************************************************/
 
 void Revitar::getParameterName(VstInt32 index, char *label) {
@@ -1165,7 +1148,6 @@ void Revitar::getParameterName(VstInt32 index, char *label) {
 
 /*****************************************************************************/
 /* getParameterDisplay : returns a parameter value in text format            */
-
 /*****************************************************************************/
 
 void Revitar::getParameterDisplay(VstInt32 index, char *text) {
@@ -1268,7 +1250,6 @@ void Revitar::getParameterDisplay(VstInt32 index, char *text) {
 
 /*****************************************************************************/
 /* getParameterLabel : returns the label for a parameter                     */
-
 /*****************************************************************************/
 
 void Revitar::getParameterLabel(VstInt32 index, char *label) {
@@ -1355,7 +1336,6 @@ void Revitar::getParameterLabel(VstInt32 index, char *label) {
 
 /*****************************************************************************/
 /* canParameterBeAutomated : returns whether a parameter can be automated    */
-
 /*****************************************************************************/
 
 bool Revitar::canParameterBeAutomated(VstInt32 index) {
@@ -1374,7 +1354,6 @@ bool Revitar::canParameterBeAutomated(VstInt32 index) {
 
 /*****************************************************************************/
 /* getParameterProperties : returns a parameter's properties                 */
-
 /*****************************************************************************/
 
 bool Revitar::getParameterProperties(VstInt32 index, VstParameterProperties* p) {
@@ -1872,7 +1851,6 @@ void Revitar::process(float **inputs, float **outputs, VstInt32 sampleframes) {
 
 /*****************************************************************************/
 /* doPluck :                                                                 */
-
 /*****************************************************************************/
 
 void Revitar::doPluck(int polyIdx) {
@@ -1952,7 +1930,6 @@ void Revitar::doPluck(int polyIdx) {
 
 /*****************************************************************************/
 /* turnOffNotes : processes turning off notes                                */
-
 /*****************************************************************************/
 
 void Revitar::turnOffNotes(int polyIdx) {
@@ -1974,7 +1951,6 @@ void Revitar::turnOffNotes(int polyIdx) {
 
 /*****************************************************************************/
 /* updateNewNotes :                                                          */
-
 /*****************************************************************************/
 
 void Revitar::updateNewNotes(int polyIdx) {
@@ -2222,7 +2198,6 @@ float Revitar::computeBodyResonance(float resPickUp) {
 
 /*****************************************************************************/
 /* processReplacing : processes a buffer, replacing buffer contents          */
-
 /*****************************************************************************/
 
 void Revitar::processReplacing(float **inputs, float **outputs, VstInt32 sampleframes) {
@@ -2249,7 +2224,6 @@ void Revitar::processReplacing(float **inputs, float **outputs, VstInt32 samplef
 
 /*****************************************************************************/
 /* processEvents : process incoming MIDI events                              */
-
 /*****************************************************************************/
 
 VstInt32 Revitar::processEvents(VstEvents* ev) {
@@ -2272,7 +2246,6 @@ VstInt32 Revitar::processEvents(VstEvents* ev) {
 
 /*****************************************************************************/
 /* turnOff : turns off all playing notes                                     */
-
 /*****************************************************************************/
 
 void Revitar::turnOff(int delta) {
@@ -2300,7 +2273,6 @@ void Revitar::turnOff(int delta) {
 
 /*****************************************************************************/
 /* computeRate :                                                             */
-
 /*****************************************************************************/
 
 float Revitar::computeRate
@@ -2353,7 +2325,6 @@ float Revitar::computeRate
 
 /*****************************************************************************/
 /* noteOn : processes note turn ons                                          */
-
 /*****************************************************************************/
 
 void Revitar::noteOn(long note, long velocity, long delta, int polyIdx, int hammer) {
@@ -2405,7 +2376,6 @@ void Revitar::noteOn(long note, long velocity, long delta, int polyIdx, int hamm
 
 /*****************************************************************************/
 /* turnOffNote : turns off a note                                            */
-
 /*****************************************************************************/
 
 void Revitar::turnOffNote(int polyIdx) {
@@ -2453,7 +2423,6 @@ void Revitar::turnOffNote(int polyIdx) {
 
 /*****************************************************************************/
 /* getOutputProperties : retrieves an output pin's properties                */
-
 /*****************************************************************************/
 
 bool Revitar::getOutputProperties(VstInt32 index, VstPinProperties* properties) {
@@ -2469,7 +2438,6 @@ bool Revitar::getOutputProperties(VstInt32 index, VstPinProperties* properties) 
 
 /*****************************************************************************/
 /* getProgramNameIndexed : retrieves the name of one of the programs         */
-
 /*****************************************************************************/
 
 bool Revitar::getProgramNameIndexed(VstInt32 category, VstInt32 index, char* text) {
@@ -2482,7 +2450,6 @@ bool Revitar::getProgramNameIndexed(VstInt32 category, VstInt32 index, char* tex
 
 /*****************************************************************************/
 /* copyProgram : copies the current program to another location              */
-
 /*****************************************************************************/
 
 bool Revitar::DECLARE_VST_DEPRECATED(copyProgram) (VstInt32 destination) {
@@ -2495,7 +2462,6 @@ bool Revitar::DECLARE_VST_DEPRECATED(copyProgram) (VstInt32 destination) {
 
 /*****************************************************************************/
 /* getEffectName : returns the PlugIn's effect name                          */
-
 /*****************************************************************************/
 
 bool Revitar::getEffectName(char* name) {
@@ -2505,7 +2471,6 @@ bool Revitar::getEffectName(char* name) {
 
 /*****************************************************************************/
 /* getVendorString : returns the vendor string                               */
-
 /*****************************************************************************/
 
 bool Revitar::getVendorString(char* text) {
@@ -2515,7 +2480,6 @@ bool Revitar::getVendorString(char* text) {
 
 /*****************************************************************************/
 /* getProductString : returns the product string                             */
-
 /*****************************************************************************/
 
 bool Revitar::getProductString(char* text) {
@@ -2525,7 +2489,6 @@ bool Revitar::getProductString(char* text) {
 
 /*****************************************************************************/
 /* canDo : returns whether the PlugIn can do a specific thing                */
-
 /*****************************************************************************/
 
 VstInt32 Revitar::canDo(char* text) {
@@ -2539,7 +2502,6 @@ VstInt32 Revitar::canDo(char* text) {
 
 /*****************************************************************************/
 /* setSampleRate : sets the sample rate                                      */
-
 /*****************************************************************************/
 
 void Revitar::setSampleRate(float sampleRate) {
@@ -2565,7 +2527,6 @@ void Revitar::setSampleRate(float sampleRate) {
 
 /*****************************************************************************/
 /* setBlockSize : sets a new maximum block size                              */
-
 /*****************************************************************************/
 
 void Revitar::setBlockSize(VstInt32 blockSize) {
@@ -2978,7 +2939,6 @@ void Revitar::handlePitchWheel(int channel, int value) {
 
 /*****************************************************************************/
 /* handleMIDIData : processes accumulated MIDI data                          */
-
 /*****************************************************************************/
 
 void Revitar::handleMIDIData() {

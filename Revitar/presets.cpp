@@ -21,7 +21,6 @@
 
 /*****************************************************************************/
 /* SwapBytes : swaps bytes between little- and big-endian order              */
-
 /*****************************************************************************/
 
 void inline SwapBytes(VstInt32 &l) {
@@ -109,7 +108,6 @@ private:
 
 /*****************************************************************************/
 /* Init : (re-)initialize configuration                                      */
-
 /*****************************************************************************/
 
 void CResource::Init() {
@@ -122,7 +120,6 @@ void CResource::Init() {
 
 /*****************************************************************************/
 /* DoCopy : copies another CResource object                                   */
-
 /*****************************************************************************/
 
 CResource &CResource::DoCopy(CResource const &org) {
@@ -134,7 +131,6 @@ CResource &CResource::DoCopy(CResource const &org) {
 
 /*****************************************************************************/
 /* LoadResource : loads in a resource                                        */
-
 /*****************************************************************************/
 
 BOOL CResource::LoadResource
@@ -172,7 +168,6 @@ BOOL CResource::LoadResource
 
 /*****************************************************************************/
 /* LoadResource : loads in a resource                                        */
-
 /*****************************************************************************/
 
 void CResource::FreeResource() {
@@ -190,7 +185,6 @@ void CResource::FreeResource() {
 
 /*****************************************************************************/
 /* LoadBank : loads a bank of presets                                        */
-
 /*****************************************************************************/
 
 
@@ -351,7 +345,6 @@ bool Revitar::LoadBank(char *name) {
 
 /*****************************************************************************/
 /* SaveBank : saves a bank of presets                                        */
-
 /*****************************************************************************/
 
 bool Revitar::SaveBank(char *name) {
@@ -360,7 +353,6 @@ bool Revitar::SaveBank(char *name) {
 
 /*****************************************************************************/
 /* setPresets : initializes the presets                                      */
-
 /*****************************************************************************/
 
 void Revitar::setPresets() {
@@ -389,7 +381,6 @@ void Revitar::setPresets() {
 
 /*****************************************************************************/
 /* RevitarProgram : constructor                                              */
-
 /*****************************************************************************/
 
 RevitarProgram::RevitarProgram() {
@@ -432,7 +423,6 @@ RevitarProgram::RevitarProgram() {
 
 /*****************************************************************************/
 /* setChord :                                                                */
-
 /*****************************************************************************/
 
 void RevitarProgram::setChord(float chordNote[NUM_CHORDS][NUM_CHORD_NOTES]) {
@@ -640,7 +630,6 @@ void RevitarProgram::setChord(float chordNote[NUM_CHORDS][NUM_CHORD_NOTES]) {
 
 /*****************************************************************************/
 /* setAbsChord :                                                             */
-
 /*****************************************************************************/
 
 void RevitarProgram::setAbsChord(float chordNote[NUM_CHORDS][NUM_CHORD_NOTES]) {

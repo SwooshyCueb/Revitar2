@@ -29,7 +29,6 @@ float noise;
 
 /*===========================================================================*/
 /* CAnimKnobZ class members                                                  */
-
 /*===========================================================================*/
 
 CAnimKnobZ::CAnimKnobZ(struct CRect& size, CControlListener *listener, int tag,
