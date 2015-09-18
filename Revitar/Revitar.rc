@@ -11,8 +11,8 @@
 /////////////////////////////////////////////////////////////////////////////
 // English (United States) resources
 
-LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
-#pragma code_page(1252)
+//LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+//#pragma code_page(1252)
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -49,6 +49,7 @@ BACKGROUND_BETA_8_3     BITMAP                  "res/All8Beta4-new.bmp"
 // Version
 //
 
+#define VS_VERSION_INFO 1
 VS_VERSION_INFO VERSIONINFO
  FILEVERSION 2,1,1,2
  PRODUCTVERSION 2,1,1,2
