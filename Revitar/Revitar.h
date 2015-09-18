@@ -71,8 +71,6 @@ enum
 	kNumParams = kChordAbsNotes + NUM_CHORDS * NUM_CHORD_NOTES,
 	
 	kMeter,
-	kTextReg,
-	kWelcome,
 	kAbout,
     kPickSwitch,
 	kDS0,
@@ -157,7 +155,6 @@ public:
 	virtual void setSampleRate(float sampleRate);
 	virtual void setBlockSize(VstInt32 blockSize);
 
-	void setRegText(char *text);
     int inline GLoveGood() { return m_GLove; }
 	void handleMIDIData();
     void handleMIDINoteOn(int channel, int note, int velocity);

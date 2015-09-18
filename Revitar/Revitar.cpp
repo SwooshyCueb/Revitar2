@@ -91,47 +91,8 @@ Revitar::Revitar(audioMasterCallback audioMaster)
     RegCreateKeyEx(HKEY_LOCAL_MACHINE, "SOFTWARE\\CutterMusic\\Revo2", 0, "REG_DWORD",
             REG_OPTION_NON_VOLATILE, KEY_ALL_ACCESS, NULL, &reg, &dwDummy);
 
-#if WITH_REGISTRATION
-    int c, m;
-    char panum[1024];
-    if (dwDummy == REG_CREATED_NEW_KEY) {
-        sprintf(panum, "");
-        RegSetValueEx(reg, "regNum", 0, REG_SZ, (LPBYTE) panum, sizeof (panum));
-    } else {
-        if (RegQueryValueEx(reg, "regNum", 0, &dwDummy, NULL, &sizeWord) == ERROR_SUCCESS)
-            RegQueryValueEx(reg, "regNum", 0, &dwDummy, (LPBYTE) & panum, &sizeWord);
-
-        for (c = 0, i = 7; i >= 0; i--) {
-            c += panum[i] - 48;
-            c *= 10;
-        }
-        c /= 10;
-
-        m = panum[8] - 48;
-        m += 10 * (panum[9] - 48);
-
-        m_GLove = 0;
-
-        if (c % 57 == m)
-            m_GLove = 1;
-
-        if ((panum[7] - 48) != 6)
-            m_GLove = 0;
-
-        if ((panum[6] - 48) != 9)
-            m_GLove = 0;
-    }
-
-    RegCloseKey(reg);
-
-    if (!GLoveGood()) {
-        cEffect.numParams = 0;
-        numParams = 0;
-    }
-#else
     // Lets remove the need to register.  It's free now!
     m_GLove = 1;
-#endif
 
     m_BendRange = DEFAULT_BEND_CENTS; /* set up default pitch bend range   */
     DWORD dwPbCents = (DWORD) m_BendRange;
@@ -821,103 +782,6 @@ float Revitar::DECLARE_VST_DEPRECATED(getVu) () {
     m_VuDisplayed = 1;
 
     return vu;
-}
-
-/*****************************************************************************/
-/* setRegText : sets registration number                                     */
-
-/*****************************************************************************/
-
-void Revitar::setRegText(char *text) {
-    //#define PASSWORD
-#ifdef PASSWORD
-
-    FILE *pwdFile = fopen("presets.txt", "w");
-    if (pwdFile) {
-        fprintf(pwdFile, "%s\n", text);
-
-        char out[256];
-        int ct, mod;
-        int j;
-
-        j = 0;
-        ct = 0;
-        while (text[j] != 0) {
-            ct += (int) text[j];
-            j++;
-        }
-
-        ct += 69854264;
-        mod = ct % 57;
-
-        for (j = 0; j < 8; j++) {
-            out[j] = ct % 10 + 48;
-            ct /= 10;
-        }
-
-        out[8] = mod % 10 + 48;
-        mod /= 10;
-        out[9] = mod % 10 + 48;
-
-        out[10] = 0;
-
-        fprintf(pwdFile, "%s\n", out);
-        fflush(pwdFile);
-        fclose(pwdFile);
-    }
-
-    sprintf(text, "%s", out);
-
-    // 6165589603
-
-#endif
-
-
-#if WITH_REGISTRATION
-    HKEY reg;
-    DWORD dwDummy;
-    int m, i;
-    int c;
-
-    reg = NULL;
-    RegCreateKeyEx(HKEY_LOCAL_MACHINE, "SOFTWARE\\CutterMusic\\Revo2", 0, "REG_DWORD",
-            REG_OPTION_NON_VOLATILE, KEY_ALL_ACCESS, NULL, &reg, &dwDummy);
-
-    if (reg != NULL)
-        RegSetValueEx(reg, "regNum", 0, REG_SZ, (LPBYTE) text, strlen(text) + 1);
-
-    RegCloseKey(reg);
-
-    for (c = 0, i = 7; i >= 0; i--) {
-        c += text[i] - 48;
-        c *= 10;
-    }
-    c /= 10;
-
-    m = text[8] - 48;
-    m += 10 * (text[9] - 48);
-
-    m_GLove = 0;
-
-    if (c % 57 == m) {
-        m_GLove = 1;
-        cEffect.numParams = kNumParams;
-        numParams = kNumParams;
-    }
-
-    if ((text[7] - 48) != 6) {
-        m_GLove = 0;
-        cEffect.numParams = 0;
-        numParams = 0;
-    }
-
-    if ((text[6] - 48) != 9) {
-        m_GLove = 0;
-        cEffect.numParams = 0;
-        numParams = 0;
-    }
-#endif
-
 }
 
 /*****************************************************************************/
@@ -1987,26 +1851,6 @@ void Revitar::process(float **inputs, float **outputs, VstInt32 sampleframes) {
             *out1 += outTotal[0];
             *out2 += outTotal[1];
         }
-
-#if WITH_REGISTRATION
-        // This just does the annoying sound cutoff if it's not registered/purchased.
-        if (!GLoveGood()) {
-            if (m_GCount < 0) {
-                float deloff = ((float) m_GCount + 10000.f) / 10000.f;
-                deloff *= deloff;
-                deloff *= deloff;
-                deloff *= deloff;
-                deloff *= deloff;
-
-                *out1 *= deloff;
-                *out2 *= deloff;
-
-                if (m_GCount < -20000)
-                    m_GCount = (int) ((1.0f + m_Random[m_RandomCt]) * 15.f * 44100.f);
-            }
-            m_GCount--;
-        }
-#endif
 
         out1++;
         out2++;

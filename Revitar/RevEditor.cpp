@@ -1163,27 +1163,6 @@ bool RevEditor::open(void *ptr) {
     about = new CSplashScreen(sizeAbout, this, kAbout, hAbout, size, point);
     lFrame->addView(about);
 
-#if WITH_REGISTRATION
-    if (!((Revitar*) effect)->GLoveGood()) {
-        CRect sizeAll(0, 0, 696, 432);
-        size(132, 115,
-                132 + 432, 115 + 202);
-
-        welcome = new CSplashScreen(sizeAll, this, kWelcome, hWelcome, size, point);
-        lFrame->addView(welcome);
-
-        //--init the text register------------------------------------------------
-
-        // Registration
-        size(480, 7,
-                480 + 124, 22);
-        textReg = new CTextEdit(size, this, kTextReg, 0, hRegButton, k3DOut);
-        textReg->setValue(0);
-        lFrame->addView(textReg);
-
-    }
-#endif
-
     size(364, 27,
             364 + 90, 27 + 15);
     //CColor background = { 186, 109, 56, 0};
@@ -1663,55 +1642,6 @@ else
 
         case kMeter:
             control->setDirty();
-            break;
-        case kTextReg:
-            char text[256];
-
-            textReg->getText(text);
-            ((Revitar*) effect)->setRegText(text);
-
-            text[0] = 0;
-            textReg->setText(text);
-            control->setDirty();
-
-#if WITH_REGISTRATION
-            if ((((Revitar*) effect)->GLoveGood()))
-#endif
-            {
-                frame->removeView(textReg);
-
-                if (welcome)
-                    frame->removeView(welcome);
-            }
-
-            break;
-        case kWelcome:
-            if (welcome->getValue() == 0.0) {
-                CPoint where;
-#if VSTGUI_VERSION_MAJOR <= 3 && VSTGUI_VERSION_MINOR < 5
-                context->getMouseLocation(where);
-#else
-                //            control->getMouseLocation(where);
-                control->getFrame()->getCurrentMouseLocation(where);
-#endif
-
-                // size (132, 115,
-                //       132 + 432, 115 + 202);
-
-                if (where.h > 121 + 132 && where.h < 243 + 132 &&
-                        where.v > 148 + 115 && where.v < 190 + 115) {
-                    char name[1024];
-                    sprintf(name, "https://www.regnow.com/softsell/nph-softsell.cgi?item=6501-3");
-#if VSTGUI_VERSION_MAJOR <= 3 && VSTGUI_VERSION_MINOR < 5
-                    ShellExecute((HWND) context->getWindow(), "open", name, NULL, NULL, SW_SHOWNORMAL);
-#else
-                    ShellExecute((HWND) control->getFrame()->getSystemWindow(), "open", name, NULL, NULL, SW_SHOWNORMAL);
-#endif
-                }
-
-
-                frame->removeView(welcome);
-            }
             break;
     }
 
