@@ -14,10 +14,6 @@
 #include "vstgui.sf/vstgui/vstgui.h"
 #include "vstgui.sf/vstgui/aeffguieditor.h"
 
-#ifndef WITH_REGISTRATION
-#define WITH_REGISTRATION 0
-#endif
-
 #ifndef NO_INFORMATION
 #define NO_INFORMATION					-1
 #endif
@@ -95,8 +91,6 @@ private:
     COnOffButtonW *sustain;
     COnOffButtonW *picknoise;
     COnOffButtonW *absRel;
-    CTextEdit *textReg;
-    CSplashScreen *welcome;
     CSplashScreen *about;
     CVuMeterCircle *meter;
     COptionMenuW *chords;
@@ -119,9 +113,7 @@ private:
     CBitmap *hSlideKnob;
     CBitmap *hRoundButton;
     CBitmap *hSquareButton;
-    CBitmap *hRegButton;
     CBitmap *hVuMeter;
-    CBitmap *hWelcome;
     CBitmap *hChordSwitch;
     CBitmap *hAbout;
     CBitmap *hDisplayBack;
