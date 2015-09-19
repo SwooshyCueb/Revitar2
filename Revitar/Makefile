@@ -49,7 +49,7 @@ print:
 CXXOBJS = \
 	$(OBJDIR)/RevEditor.o \
 	$(OBJDIR)/Revitar.o \
-	$(OBJDIR)/displayScreen.o \
+	$(OBJDIR)/controls.o \
 	$(OBJDIR)/presets.o
 
 VST2OBJS= \

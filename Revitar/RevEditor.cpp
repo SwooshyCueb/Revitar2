@@ -9,13 +9,14 @@
  */
 
 
-#include <windows.h>
+//#include <windows.h>
 #include <math.h>
 #include <stdio.h>
 
 #include "resource.h"
 #include "RevEditor.h"
 #include "Revitar.h"
+#include "controls.h"
 #define BOOST_THREAD_USE_LIB
 
 #define KNOB_X                  44
@@ -26,473 +27,6 @@
 
 int lastIndex;
 float noise;
-
-/*===========================================================================*/
-/* CAnimKnobZ class members                                                  */
-/*===========================================================================*/
-
-CAnimKnobZ::CAnimKnobZ(struct CRect& size, CControlListener *listener, int tag,
-        int subpixmaps, // number of subpixmaps 
-        int heightOfOneImage, // pixel 
-        CBitmap *handle, CPoint &offset)
-: CAnimKnob(size, listener, tag, subpixmaps, heightOfOneImage, handle, offset) {
-    zoomFactor = 10.0f;
-#if VSTGUI_VERSION_MAJOR >= 3 && VSTGUI_VERSION_MINOR >=5
-    preVal = NULL;
-#endif
-}
-
-/*****************************************************************************/
-/* mouse : called when the mouse is moved over the knob                      */
-/*****************************************************************************/
-#if VSTGUI_VERSION_MAJOR <= 3 && VSTGUI_VERSION_MINOR < 5
-
-void CAnimKnobZ::mouse(CDrawContext *pContext, CPoint &where, long button) {
-    if (!bMouseEnabled)
-        return;
-
-    if (button == -1) button = pContext->getMouseButtons();
-
-    if ((button & (kLButton | kControl)) == (kLButton | kControl)) {
-        ((RevEditor*) listener)->updateMIDICC(getTag());
-        return;
-    } else if ((button & (kRButton | kControl)) == (kRButton | kControl)) {
-        ((RevEditor*) listener)->removeMIDICC(getTag());
-        return;
-    }
-
-    // set the default value
-    if (button & kRButton) {
-        // begin of edit parameter
-        beginEdit();
-
-        value = getDefaultValue();
-
-        if (isDirty() && listener)
-#if VSTGUI_VERSION_MAJOR <= 3 && VSTGUI_VERSION_MINOR < 5        
-            listener->valueChanged(pContext, this);
-#else
-            listener->valueChanged(this);
-#endif        
-
-        // end of edit parameter
-        endEdit();
-        return;
-    }
-
-    if (!(button & kLButton))
-        return;
-
-    // for compatibility reasons, use linear mode for knobs!
-    AEffEditor *pEditor = (AEffEditor *) getEditor();
-    if (pEditor) {
-        long oldMode = getFrame()->getKnobMode();
-        pEditor->setKnobMode(kLinearMode);
-        CAnimKnob::mouse(pContext, where, button);
-        pEditor->setKnobMode(oldMode);
-    }
-}
-#else
-/*****************************************************************************/
-/* onWheel : called if a mouse wheel event is happening over this view 
-/*****************************************************************************/
-#if DEF_ONWHEEL
-
-bool CAnimKnobZ::onWheel(const CPoint &where, const float &distance, const long &buttons) {
-    if (!bMouseEnabled)
-        return false;
-
-    if (buttons & kShift)
-        value += 0.1f * distance * wheelInc;
-    else
-        value += distance * wheelInc;
-    bounceValue();
-
-    if (isDirty() && listener) {
-        // begin of edit parameter
-        beginEdit();
-
-        listener->valueChanged(this);
-
-        // end of edit parameter
-        endEdit();
-        //not sure if we should return here or not
-        return true;
-    }
-    // compatibility code from original mouse method
-    // Do we need this? If not we can probably get away with not overloading.
-    AEffEditor *pEditor = (AEffEditor *) getEditor();
-    if (pEditor) {
-        long oldMode = getFrame()->getKnobMode();
-        pEditor->setKnobMode(kLinearMode);
-        //CAnimKnob::mouse(pContext, where, button);
-        CAnimKnob::onWheel(where, distance, buttons);
-        //Maybe?
-        pEditor->setKnobMode(oldMode);
-    }
-    return true;
-}
-#endif
-/*****************************************************************************/
-/* onMouseDown : called when a mouse down event occurs
-/*****************************************************************************/
-#if 0
-
-CMouseEventResult CAnimKnobZ::onMouseDown(CPoint& where, const long& buttons) {
-    beginEdit();
-
-    if (checkDefaultValue(buttons)) {
-        endEdit();
-        return kMouseDownEventHandledButDontNeedMovedOrUpEvents;
-    }
-
-    firstPoint = where;
-    lastPoint(-1, -1);
-    startValue = oldValue;
-
-    modeLinear = false;
-    fEntryState = value;
-    range = 200.f;
-    coef = (vmax - vmin) / range;
-    oldButton = buttons;
-
-    //We always want to use linear mode.
-    long mode = kCircularMode;
-    /*long newMode = getFrame ()->getKnobMode ();
-    if (kLinearMode == newMode)
-    {
-            if (!(buttons & kAlt))
-                    mode = newMode;
-    }
-    else if (buttons & kAlt) */
-    mode = kLinearMode;
-
-    if (mode == kLinearMode && (buttons & kLButton)) {
-        if (buttons & kShift)
-            range *= zoomFactor;
-        lastPoint = where;
-        modeLinear = true;
-        coef = (vmax - vmin) / range;
-    }//handle rightclick, might wanna move this to the top of the function
-    else if (mode == kLinearMode && (buttons & kRButton)) {
-        if (value != getDefaultValue()) {
-            preVal = value;
-            value = getDefaultValue();
-        } else if (value == getDefaultValue() && preVal != NULL) {
-            value = preVal;
-        }
-        //no need to call onMouseMoved here.
-        return kMouseEventHandled;
-    } else {
-        CPoint where2(where);
-        where2.offset(-size.left, -size.top);
-        startValue = valueFromPoint(where2);
-    }
-
-    return onMouseMoved(where, buttons);
-}
-#endif
-//Let's try this agian, shall we?
-
-CMouseEventResult CAnimKnobZ::onMouseDown(CPoint& where, const long& buttons) {
-    beginEdit();
-
-    if (checkDefaultValue(buttons)) {
-        endEdit();
-        return kMouseDownEventHandledButDontNeedMovedOrUpEvents;
-    } else if ((buttons & kRButton) && not (buttons & kLButton)) {
-        if (value != getDefaultValue()) {
-            preVal = value;
-            value = getDefaultValue();
-        } else if (value == getDefaultValue() && preVal != NULL) {
-            value = preVal;
-        }
-        //no need to call onMouseMoved here.
-        return kMouseEventHandled;
-    } else {
-        return CAnimKnob::onMouseDown(where, buttons);
-    }
-}
-#endif
-
-/*===========================================================================*/
-/* CHorizontalSlider2 class members                                          */
-/*===========================================================================*/
-
-/*****************************************************************************/
-/* mouse : called when the mouse is moved over the slider                    */
-/*****************************************************************************/
-#if VSTGUI_VERSION_MAJOR <= 3 && VSTGUI_VERSION_MINOR < 5
-
-void CHorizontalSlider2::mouse(CDrawContext *pContext, CPoint &where, long button) {
-    if (!bMouseEnabled)
-        return;
-
-    if (button == -1) button = pContext->getMouseButtons();
-
-    if (button & kLButton && button & kControl) {
-        ((RevEditor*) listener)->updateMIDICC(getTag());
-        return;
-    }
-
-    if (button & kRButton && button & kControl) {
-        ((RevEditor*) listener)->removeMIDICC(getTag());
-        return;
-    }
-
-    CHorizontalSlider::mouse(pContext, where, button);
-} // mouse
-#else
-/*****************************************************************************/
-
-/* onMouseDown : called when a mouse down event occurs
-/*****************************************************************************/
-CMouseEventResult CHorizontalSlider2::onMouseDown(CPoint& where, const long& buttons) {
-    if (buttons & kLButton && buttons & kControl) {
-        ((RevEditor*) listener)->updateMIDICC(getTag());
-        return kMouseEventHandled;
-        //Or should I be returning onMouseMoved?
-    }
-
-    if (buttons & kRButton && buttons & kControl) {
-        ((RevEditor*) listener)->removeMIDICC(getTag());
-        return kMouseEventHandled;
-    }
-    return CHorizontalSlider::onMouseDown(where, buttons);
-}
-#endif
-
-/*===========================================================================*/
-/* CVerticalSwitch20 class members                                           */
-/*===========================================================================*/
-
-/*****************************************************************************/
-/* draw : draw the vertical switch                                           */
-/*****************************************************************************/
-// subclassing this method is only necessary since there's obviously a
-// difference in VST SDK 2 and 2.4 regarding the value range <sigh>
-// and we need to keep the values from Revitar 2.0 intact
-
-void CVerticalSwitch20::draw(CDrawContext *pContext) {
-
-    long lOffset = (int) ((float) (iMaxPositions - 1) * value);
-
-    if (lOffset < 0)
-        lOffset = 0;
-    if (lOffset >= iMaxPositions)
-        lOffset = iMaxPositions - 1;
-
-    if (pBackground) {
-        // source position in bitmap
-        CPoint where(0, heightOfOneImage * lOffset);
-
-        if (bTransparencyEnabled)
-            pBackground->drawTransparent(pContext, size, where);
-        else
-            pBackground->draw(pContext, size, where);
-    }
-    setDirty(false);
-}
-
-
-/*===========================================================================*/
-/* C2DSwitch class members                                                   */
-/*===========================================================================*/
-
-/*****************************************************************************/
-/* mouse : mouse is moved over the control                                   */
-/*****************************************************************************/
-#if VSTGUI_VERSION_MAJOR <= 3 && VSTGUI_VERSION_MINOR < 5
-
-void C2DSwitch::mouse(CDrawContext *pContext, CPoint &where, long button) {
-    if (!bMouseEnabled)
-        return;
-
-    if (button == -1) button = pContext->getMouseButtons();
-    if ((button & (kLButton | kControl)) == (kLButton | kControl)) {
-        ((RevEditor*) listener)->updateMIDICC(getTag());
-        return;
-    } else if ((button & (kRButton | kControl)) == (kRButton | kControl)) {
-        ((RevEditor*) listener)->removeMIDICC(getTag());
-        return;
-    }
-
-    if (!(button & kLButton))
-        return;
-
-    // set the default value
-    /*
-        if (button == (kControl|kLButton))
-        {
-            value = getDefaultValue ();
-            if (isDirty () && listener)
-                listener->valueChanged (pContext, this);
-            return;
-        }
-     */
-
-    float coefVert = (float) (size.bottom - size.top);
-    float coefHorz = (float) (size.right - size.left);
-
-    // begin of edit parameter
-
-    beginEdit();
-    do {
-        //  if(where.v >= size.top && where.v < size.bottom &&
-        //      where.h >= size.left && where.h < size.right)
-        {
-
-            m_VertVal = (float) (where.v - size.top) / coefVert;
-            m_HorzVal = (float) (where.h - size.left) / coefHorz;
-
-            if (m_VertVal > 0.99f)
-                m_VertVal = 0.99f;
-            if (m_VertVal < 0.0f)
-                m_VertVal = 0.0f;
-            if (m_HorzVal > 0.99f)
-                m_HorzVal = 0.99f;
-            if (m_HorzVal < 0.0f)
-                m_HorzVal = 0.0f;
-
-            int iVertVal = (int) (m_VertVal * (float) m_iMaxPositionsVert);
-            int iHorzVal = (int) (m_HorzVal * (float) m_iMaxPositionsHorz);
-
-            m_iSwitchVal = iVertVal * m_iMaxPositionsHorz + iHorzVal + 1;
-
-            value = (float) m_iSwitchVal / (float) iMaxPositions;
-
-            if (value > 1.f)
-                value = 1.f;
-
-            else if (value < 0.f)
-                value = 0.f;
-
-            setDirty(true);
-        }
-
-
-        if (isDirty() && listener)
-#if VSTGUI_VERSION_MAJOR <= 3 && VSTGUI_VERSION_MINOR < 5            
-            listener->valueChanged(pContext, this);
-#else
-            listener->valueChanged(this);
-#endif   
-
-        getMouseLocation(pContext, where);
-        doIdleStuff();
-    } while (pContext->getMouseButtons() == button);
-
-    // end of edit parameter
-    endEdit();
-
-}
-#else
-
-CMouseEventResult C2DSwitch::onMouseDown(CPoint& where, const long& buttons) {
-    if ((buttons & (kLButton | kControl)) == (kLButton | kControl)) {
-        ((RevEditor*) listener)->updateMIDICC(getTag());
-        return kMouseEventHandled;
-    } else if ((buttons & (kRButton | kControl)) == (kRButton | kControl)) {
-        ((RevEditor*) listener)->removeMIDICC(getTag());
-        return kMouseEventHandled;
-    }
-
-    if (!(buttons & kLButton))
-        kMouseEventNotHandled;
-
-    // set the default value
-    /*
-        if (button == (kControl|kLButton))
-        {
-            value = getDefaultValue ();
-            if (isDirty () && listener)
-                listener->valueChanged (pContext, this);
-            return;
-        }
-     */
-
-    coefVert = (float) (size.bottom - size.top);
-    coefHorz = (float) (size.right - size.left);
-
-    // begin of edit parameter
-
-    beginEdit();
-    //return CVerticalSwitch20::onMouseDown(where, buttons);
-    return onMouseMoved(where, buttons);
-}
-
-CMouseEventResult C2DSwitch::onMouseMoved(CPoint& where, const long& buttons) {
-    if (buttons & kLButton) {
-        m_VertVal = (float) (where.v - size.top) / coefVert;
-        m_HorzVal = (float) (where.h - size.left) / coefHorz;
-
-        if (m_VertVal > 0.99f)
-            m_VertVal = 0.99f;
-        if (m_VertVal < 0.0f)
-            m_VertVal = 0.0f;
-        if (m_HorzVal > 0.99f)
-            m_HorzVal = 0.99f;
-        if (m_HorzVal < 0.0f)
-            m_HorzVal = 0.0f;
-
-        int iVertVal = (int) (m_VertVal * (float) m_iMaxPositionsVert);
-        int iHorzVal = (int) (m_HorzVal * (float) m_iMaxPositionsHorz);
-
-        m_iSwitchVal = iVertVal * m_iMaxPositionsHorz + iHorzVal + 1;
-
-        value = (float) m_iSwitchVal / (float) iMaxPositions;
-
-        if (value > 1.f)
-            value = 1.f;
-
-        else if (value < 0.f)
-            value = 0.f;
-
-        setDirty(true);
-        if (isDirty() && listener)
-            listener->valueChanged(this);
-
-    }
-    //return CVerticalSwitch20::onMouseMoved(where, buttons);
-    return kMouseEventHandled;
-}
-#endif
-
-void C2DSwitch::setHorz(float v) {
-    m_HorzVal = v;
-
-    int iVertVal = (int) (m_VertVal * (float) m_iMaxPositionsVert);
-    int iHorzVal = (int) (m_HorzVal * (float) m_iMaxPositionsHorz);
-
-    m_iSwitchVal = iVertVal * m_iMaxPositionsHorz + iHorzVal + 1;
-
-    value = (float) m_iSwitchVal / (float) iMaxPositions;
-
-    if (value > 1.f)
-        value = 1.f;
-    else if (value < 0.f)
-        value = 0.f;
-
-    setDirty(true);
-}
-
-void C2DSwitch::setVert(float v) {
-    m_VertVal = v;
-
-    int iVertVal = (int) (m_VertVal * (float) m_iMaxPositionsVert);
-    int iHorzVal = (int) (m_HorzVal * (float) m_iMaxPositionsHorz);
-
-    m_iSwitchVal = iVertVal * m_iMaxPositionsHorz + iHorzVal + 1;
-
-    value = (float) m_iSwitchVal / (float) iMaxPositions;
-    if (value > 1.f)
-        value = 1.f;
-    else if (value < 0.f)
-        value = 0.f;
-
-    setDirty(true);
-}
-
 
 //-----------------------------------------------------------------------------
 // RevEditor class implementation
@@ -826,11 +360,11 @@ void convertParams2(float value, char *string, void *userdata) {
             }
             break;
         case kChordSwitch:
-            if (value >= -0.1 && value < 0.1)
+            if (value >= -0.1f && value < 0.1f)
                 sprintf(string, " Up ");
-            else if (value >= 0.4 && value < 0.6)
+            else if (value >= 0.4f && value < 0.6f)
                 sprintf(string, " Down and Up ");
-            else if (value >= 0.9 && value < 1.1)
+            else if (value >= 0.9f && value < 1.1f)
                 sprintf(string, " Down ");
             break;
         case kChordOnOff:
@@ -926,7 +460,7 @@ bool RevEditor::open(void *ptr) {
 
     size(603, 170,
             603 + 17, 170 + 62);
-    chordSwitch = new CVerticalSwitch(size, this, kChordSwitch, 3, 62, 3, hChordSwitch, point);
+    chordSwitch = new CVerticalSwitch20(size, this, kChordSwitch, 3, 62, 3, hChordSwitch, point);
     chordSwitch->setValue(effect->getParameter(kChordSwitch));
     lFrame->addView(chordSwitch);
 
@@ -950,7 +484,7 @@ bool RevEditor::open(void *ptr) {
     //--init the stop switch------------------------------------------------
     size(550, 262,
             550 + 44, 262 + 50);
-    stopSwitch = new CKickButton(size, this, kStopSwitch, 50, hStopSwitch, point);
+    stopSwitch = new CKickButton2(size, this, kStopSwitch, 50, hStopSwitch, point);
     stopSwitch->setValue(0.0f);
     lFrame->addView(stopSwitch);
 
@@ -977,59 +511,21 @@ bool RevEditor::open(void *ptr) {
 
     lFrame->addView(displayScreen0);
 
-    size(6, 7,
-            290, 72);
+    //size(6, 7, 290, 72);
+    size(6, 7, 6 + 285, 7 + 65); //285 x 65
     guitarTop = new CVerticalSwitch20(size, this, kGuitarTop, 6, 65, 6, hGuitarTop, point);
     guitarTop->setValue(effect->getParameter(kGuitarTop));
     guitarTop->setMouseEnabled(false);
     guitarTop->setValue(effect->getParameter(kBodySwitch));
     lFrame->addView(guitarTop);
 
-    size(6, 149,
-            285, 225);
+    //size(6, 149, 285, 225);
+    size(6, 149, 6 + 280, 149 + 76); //280 x 76
     guitarBottom = new CVerticalSwitch20(size, this, kGuitarBottom, 6, 76, 6, hGuitarBottom, point);
     guitarBottom->setValue(effect->getParameter(kGuitarBottom));
     guitarBottom->setMouseEnabled(false);
     guitarBottom->setValue(effect->getParameter(kBodySwitch));
     lFrame->addView(guitarBottom);
-
-
-    //--init the buttons------------------------------------------------
-
-    // Mono
-    size(343, 196,
-            343 + ROUND_BUTTON_SIZE, 196 + ROUND_BUTTON_SIZE);
-    mono = new COnOffButton(size, this, kMono, hRoundButton);
-    mono->setValue(effect->getParameter(kMono));
-    lFrame->addView(mono);
-
-    // Chord ON/Off
-    size(499, 173,
-            499 + SQUARE_BUTTON_SIZE, 173 + SQUARE_BUTTON_SIZE);
-    chordOnOff = new COnOffButton(size, this, kChordOnOff, hSquareButton);
-    chordOnOff->setValue(effect->getParameter(kChordOnOff));
-    lFrame->addView(chordOnOff);
-
-    // Sustain
-    size(303, 196,
-            303 + ROUND_BUTTON_SIZE, 196 + ROUND_BUTTON_SIZE);
-    sustain = new COnOffButton(size, this, kSustain, hRoundButton);
-    sustain->setValue(effect->getParameter(kSustain));
-    lFrame->addView(sustain);
-
-    // Pluck Noise
-    size(250, 253,
-            250 + ROUND_BUTTON_SIZE, 253 + ROUND_BUTTON_SIZE);
-    picknoise = new COnOffButton(size, this, kPickNoise, hRoundButton);
-    picknoise->setValue(effect->getParameter(kPickNoise));
-    lFrame->addView(picknoise);
-
-    // Absolute/Relative Position
-    size(576, 188,
-            576 + 21, 188 + 46);
-    absRel = new COnOffButton(size, this, kAbsRel, hAbsRel);
-    absRel->setValue(effect->getParameter(kAbsRel));
-    lFrame->addView(absRel);
 
     //--init the palm slider------------------------------------------------
     size(350, 275,
@@ -1038,8 +534,48 @@ bool RevEditor::open(void *ptr) {
     palmSlider = new CHorizontalSlider2(size, this,
             kPalmPos, 352, 431, hPalmSliderHandle,
             hPalmSliderBackground, offsetPalm, kLeft);
+    // hPalmSliderHandle -> hSliderPalmPos
+    // hPalmSliderBackground -> NULL
+    // offsetPalm -> point
     palmSlider->setValue(effect->getParameter(kPalmPos));
     lFrame->addView(palmSlider);
+
+    //--init the buttons------------------------------------------------
+
+    // Mono
+    size(343, 196,
+            343 + ROUND_BUTTON_SIZE, 196 + ROUND_BUTTON_SIZE);
+    mono = new COnOffButtonW(size, this, kMono, hRoundButton);
+    mono->setValue(effect->getParameter(kMono));
+    lFrame->addView(mono);
+
+    // Chord ON/Off
+    size(499, 173,
+            499 + SQUARE_BUTTON_SIZE, 173 + SQUARE_BUTTON_SIZE);
+    chordOnOff = new COnOffButtonW(size, this, kChordOnOff, hSquareButton);
+    chordOnOff->setValue(effect->getParameter(kChordOnOff));
+    lFrame->addView(chordOnOff);
+
+    // Sustain
+    size(303, 196,
+            303 + ROUND_BUTTON_SIZE, 196 + ROUND_BUTTON_SIZE);
+    sustain = new COnOffButtonW(size, this, kSustain, hRoundButton);
+    sustain->setValue(effect->getParameter(kSustain));
+    lFrame->addView(sustain);
+
+    // Pluck Noise
+    size(250, 253,
+            250 + ROUND_BUTTON_SIZE, 253 + ROUND_BUTTON_SIZE);
+    picknoise = new COnOffButtonW(size, this, kPickNoise, hRoundButton);
+    picknoise->setValue(effect->getParameter(kPickNoise));
+    lFrame->addView(picknoise);
+
+    // Absolute/Relative Position
+    size(576, 188,
+            576 + 21, 188 + 46);
+    absRel = new COnOffButtonW(size, this, kAbsRel, hAbsRel);
+    absRel->setValue(effect->getParameter(kAbsRel));
+    lFrame->addView(absRel);
 
     //--init the knobs------------------------------------------------
     CPoint offset(0, 0);
@@ -1151,7 +687,7 @@ bool RevEditor::open(void *ptr) {
 
     size(506, 206,
             506 + 65, 206 + 15);
-    chords = new COptionMenu(size, this, kChord, 0, 0, 0);
+    chords = new COptionMenuW(size, this, kChord, 0, 0, 0);
     updateChordMenu();
     chords->setCurrent((int) effect->getParameter(kChord));
     chords->setNbItemsPerColumn(12);
@@ -1215,6 +751,7 @@ bool RevEditor::open(void *ptr) {
 //-----------------------------------------------------------------------------
 
 void RevEditor::close() {
+    hasVstWheel = hasFocus = false;
     delete frame;
     frame = 0;
 }
@@ -1436,6 +973,24 @@ void RevEditor::setParameter(VstInt32 index, float value) {
 }
 
 void RevEditor::idle() {
+#if WINDOWS
+    HWND gtFcs = GetFocus();
+    if (wFcs == NULL) {
+        wFcs = gtFcs;
+    }
+    if (gtFcs == NULL) {
+        hasFocus = false;
+    }
+    if (!hasFocus && gtFcs != NULL && pFcs == NULL) {
+        hasFocus = true;
+        if (!hasVstWheel) {
+            SetFocus((HWND)getFrame()->getSystemWindow());
+        }
+    }
+    pFcs = gtFcs;
+#elif MAC
+    hasFocus = true;
+#endif
     float val = effect->DECLARE_VST_DEPRECATED(getVu)();
     meter->setValue(val);
     //  if(MIDIDisplay->getValue() != ((Revitar*) effect)->m_LastMIDICC)
@@ -1537,7 +1092,7 @@ void RevEditor::updateMIDICC(int tag) {
 
 
 //-----------------------------------------------------------------------------
-#if VSTGUI_VERSION_MAJOR <= 3 && VSTGUI_VERSION_MINOR < 5
+#if (VSTGUI_VERSION_MAJOR == 3 && VSTGUI_VERSION_MINOR < 6) || VSTGUI_VERSION_MAJOR < 3
 void RevEditor::valueChanged(CDrawContext* context, CControl* control)
 #else
 
@@ -1591,7 +1146,7 @@ void RevEditor::valueChanged(CControl* control)
         case kStopSwitch:
 
             if (tag == kChord)
-#if VSTGUI_VERSION_MAJOR <= 3 && VSTGUI_VERSION_MINOR < 5
+#if (VSTGUI_VERSION_MAJOR == 3 && VSTGUI_VERSION_MINOR < 6) || VSTGUI_VERSION_MAJOR < 3
                 effect->setParameter(kChord, (float) chords->getCurrent(0));
 #else
                 effect->setParameter(kChord, (float) chords->getCurrentIndex(true));
@@ -1647,6 +1202,34 @@ else
 
 }
 //#endif
+
+#if (VSTGUI_VERSION_MAJOR == 3 && VSTGUI_VERSION_MINOR > 5) || VSTGUI_VERSION_MAJOR > 3
+bool RevEditor::onWheel(float distance)
+{
+    long btns;
+    CPoint pnt;
+    bool res = false; // distance is positive or negative to indicate wheel direction
+#if WINDOWS
+    if (getFrame() == NULL) {
+        goto Q;
+    }
+    if (!getFrame()->getCurrentMouseLocation(pnt)) {
+        goto Q;
+    }
+    btns = getFrame()->getCurrentMouseButtons();
+    if (!hasVstWheel && hasFocus && wFcs != NULL) {
+        if (wFcs != NULL) {
+            SetFocus(wFcs);
+        }
+    } else {
+        res = getFrame()->onWheel(pnt, distance, btns);
+    }
+    hasVstWheel = true;
+#endif
+Q:
+    return res;
+}
+#endif
 
 void RevEditor::updateChordMenu() {
     // this should be changed to allow editing of the chord names,
