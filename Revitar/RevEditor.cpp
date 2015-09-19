@@ -48,9 +48,12 @@ RevEditor::RevEditor(AudioEffect *effect)
     meter = 0;
     chords = 0;
     chordSwitch = 0;
+    guitarMid = 0;
     guitarBottom = 0;
     guitarTop = 0;
-    palmSlider = 0;
+    sliderPalmPos = 0;
+    sliderPickPos = 0;
+    sliderPickupPos = 0;
     stopSwitch = 0;
     absRel = 0;
     MIDIDisplay = 0;
@@ -67,27 +70,23 @@ RevEditor::RevEditor(AudioEffect *effect)
     hVuMeter = 0;
     hChordDirection = 0;
     hAbout = 0;
-    hDisplayBack = 0;
-    hChordVert = 0;
     hBtnSquare = 0;
     hBtnRound = 0;
     hBodySelector = 0;
     hCtlPickType = 0;
-    hDisplayBackground = 0;
     hPickPos = 0;
     hPickupPos = 0;
     hChordNoteOn = 0;
-    hBodies = 0;
+    hGuitarMid = 0;
     hGuitarBottom = 0;
     hGuitarTop = 0;
-    hPalmSliderBackground = 0;
-    hPalmSliderHandle = 0;
+    hSliderPalmPos = 0;
     hBtnAbsRel = 0;
     hBtnStop = 0;
 
     // load the background bitmap
     // we don't need to load all bitmaps, this could be done when open is called
-    hBackground = new CBitmap(BACKGROUND_BETA_8_3);
+    hBackground = new CBitmap(BMP_BACKGROUND);
 
     // init the size of the plugin
     rect.left = 0;
@@ -133,14 +132,6 @@ RevEditor::~RevEditor() {
         hAbout->forget();
     hAbout = 0;
 
-    if (hDisplayBack)
-        hDisplayBack->forget();
-    hDisplayBack = 0;
-
-    if (hChordVert)
-        hChordVert->forget();
-    hChordVert = 0;
-
     if (hBodySelector)
         hBodySelector->forget();
     hBodySelector = 0;
@@ -148,10 +139,6 @@ RevEditor::~RevEditor() {
     if (hCtlPickType)
         hCtlPickType->forget();
     hCtlPickType = 0;
-
-    if (hDisplayBackground)
-        hDisplayBackground->forget();
-    hDisplayBackground = 0;
 
     if (hPickPos)
         hPickPos->forget();
@@ -165,9 +152,9 @@ RevEditor::~RevEditor() {
         hChordNoteOn->forget();
     hChordNoteOn = 0;
 
-    if (hBodies)
-        hBodies->forget();
-    hBodies = 0;
+    if (hGuitarMid)
+        hGuitarMid->forget();
+    hGuitarMid = 0;
 
     if (hGuitarBottom)
         hGuitarBottom->forget();
@@ -177,13 +164,9 @@ RevEditor::~RevEditor() {
         hGuitarTop->forget();
     hGuitarTop = 0;
 
-    if (hPalmSliderBackground)
-        hPalmSliderBackground->forget();
-    hPalmSliderBackground = 0;
-
-    if (hPalmSliderHandle)
-        hPalmSliderHandle->forget();
-    hPalmSliderHandle = 0;
+    if (hSliderPalmPos)
+        hSliderPalmPos->forget();
+    hSliderPalmPos = 0;
 
     if (hBtnStop)
         hBtnStop->forget();
@@ -378,51 +361,43 @@ bool RevEditor::open(void *ptr) {
 
     // load some bitmaps
     if (!hKnob)
-        hKnob = new CBitmap(KNOB_SHADOW_1);
+        hKnob = new CBitmap(BMP_KNOB_STD);
     if (!hKnobTune)
-        hKnobTune = new CBitmap(TUNE_KNOB_0);
+        hKnobTune = new CBitmap(BMP_KNOB_TUNE);
     if (!hBtnSquare)
-        hBtnSquare = new CBitmap(IDB_BITMAP39);
+        hBtnSquare = new CBitmap(BMP_BTN_STD_SQR);
     if (!hBtnRound)
-        hBtnRound = new CBitmap(IDB_BITMAP38);
+        hBtnRound = new CBitmap(BMP_BTN_STD_RND);
     if (!hAbout)
-        hAbout = new CBitmap(ABOUT_0);
+        hAbout = new CBitmap(BMP_ABOUT);
     if (!hVuMeter)
-        hVuMeter = new CBitmap(VU_METER_0);
+        hVuMeter = new CBitmap(BMP_METER_VU_CIRCLE);
     if (!hChordDirection)
-        hChordDirection = new CBitmap(CHORD_DIRECTION_1);
+        hChordDirection = new CBitmap(BMP_CHORD_DIRECTION);
     if (!hBodySelector)
-        hBodySelector = new CBitmap(BODY_SELECTOR0);
+        hBodySelector = new CBitmap(BMP_BODY_SELECTOR);
     if (!hCtlPickType)
-        hCtlPickType = new CBitmap(PICK_TYPE_3);
-    if (!hDisplayBack)
-        hDisplayBack = new CBitmap(IDB_BITMAP25);
-    if (!hChordVert)
-        hChordVert = new CBitmap(IDB_BITMAP28);
-    if (!hDisplayBackground)
-        hDisplayBackground = new CBitmap(STRING_BACKGROUND_0);
+        hCtlPickType = new CBitmap(BMP_PICK_TYPE);
     if (!hPickupPos)
-        hPickupPos = new CBitmap(PICK_UP_1);
+        hPickupPos = new CBitmap(BMP_PICKUP_POS);
     if (!hPickPos)
-        hPickPos = new CBitmap(PICK_1);
+        hPickPos = new CBitmap(BMP_PICK_POS);
     if (!hChordNoteOn)
-        hChordNoteOn = new CBitmap(CHORD_ON_0);
-    if (!hBodies)
-        hBodies = new CBitmap(BODIES_2);
+        hChordNoteOn = new CBitmap(BMP_CHORD_NOTE_ON);
+    if (!hGuitarMid)
+        hGuitarMid = new CBitmap(BMP_GUITAR_MID);
     if (!hGuitarBottom)
-        hGuitarBottom = new CBitmap(GUITAR_BOTTOM_1);
+        hGuitarBottom = new CBitmap(BMP_GUITAR_BOTTOM);
     if (!hGuitarTop)
-        hGuitarTop = new CBitmap(GUITAR_TOP_1);
-    if (!hPalmSliderBackground)
-        hPalmSliderBackground = new CBitmap(PALM_SLIDER_BACKGROUND_0);
-    if (!hPalmSliderHandle)
-        hPalmSliderHandle = new CBitmap(PALM_SLIDER_HANDLE_1);
+        hGuitarTop = new CBitmap(BMP_GUITAR_TOP);
+    if (!hSliderPalmPos)
+        hSliderPalmPos = new CBitmap(BMP_PALM_SLIDER);
     if (!hBtnStop)
-        hBtnStop = new CBitmap(STOP_SWITCH_0);
+        hBtnStop = new CBitmap(BMP_BTN_STOP);
     if (!hBtnAbsRel)
-        hBtnAbsRel = new CBitmap(ROCKER_SWITCH_4);
+        hBtnAbsRel = new CBitmap(BMP_BTN_ABS_REL);
     if (!hKnobSlide)
-        hKnobSlide = new CBitmap(KNOB_SLIDE_0);
+        hKnobSlide = new CBitmap(BMP_KNOB_SLIDE);
 
     //--init background frame-----------------------------------------------
     CRect size(0, 0, 696, 432);
@@ -475,9 +450,9 @@ bool RevEditor::open(void *ptr) {
     //--init display screen 0------------------------------------------------
     size(6, 71,
             6 + DISPLAY_WIDTH, 71 + DISPLAY_HEIGHT);
-    displayScreen0 = new CDisplayScreen(size, this, kDS0, hDisplayBackground);
-    displayScreen0->pDisplay = new CBitmap(BODIES_2); // why can't we use hBodies here?
-    displayScreen0->updateBitmaps(hBodies, hPickupPos, hPickPos, hChordNoteOn);
+    displayScreen0 = new CDisplayScreen(size, this, kDS0, 0);
+    displayScreen0->pDisplay = hGuitarMid;// was: new CBitmap(BODIES_2); // why can't we use hGuitarMid here?
+    displayScreen0->updateBitmaps(hGuitarMid, hPickupPos, hPickPos, hChordNoteOn);
     displayScreen0->m_pChordDisplayUpdate = &(((Revitar*) effect)->m_ChordDisplayUpdate);
     displayScreen0->m_ChordDisplay = (((Revitar*) effect)->m_ChordDisplay);
     displayScreen0->setChordOnValue(effect->getParameter(kChordOnOff));
@@ -495,18 +470,18 @@ bool RevEditor::open(void *ptr) {
 
     lFrame->addView(displayScreen0);
 
+    //--init the guitar top body----------------------------------------------
     //size(6, 7, 290, 72);
     size(6, 7, 6 + 285, 7 + 65); //285 x 65
     guitarTop = new CVerticalSwitch20(size, this, kGuitarTop, 6, 65, 6, hGuitarTop, point);
-    guitarTop->setValue(effect->getParameter(kGuitarTop));
     guitarTop->setMouseEnabled(false);
     guitarTop->setValue(effect->getParameter(kBodySwitch));
     lFrame->addView(guitarTop);
 
+    //--init the guitar bottom body--------------------------------------------
     //size(6, 149, 285, 225);
     size(6, 149, 6 + 280, 149 + 76); //280 x 76
     guitarBottom = new CVerticalSwitch20(size, this, kGuitarBottom, 6, 76, 6, hGuitarBottom, point);
-    guitarBottom->setValue(effect->getParameter(kGuitarBottom));
     guitarBottom->setMouseEnabled(false);
     guitarBottom->setValue(effect->getParameter(kBodySwitch));
     lFrame->addView(guitarBottom);
@@ -514,15 +489,13 @@ bool RevEditor::open(void *ptr) {
     //--init the palm slider------------------------------------------------
     size(350, 275,
             350 + 190, 275 + 18);
-    CPoint offsetPalm(0, 0);
-    palmSlider = new CHorizontalSlider2(size, this,
-            kPalmPos, 352, 431, hPalmSliderHandle,
-            hPalmSliderBackground, offsetPalm, kLeft);
-    // hPalmSliderHandle -> hSliderPalmPos
-    // hPalmSliderBackground -> NULL
+    //CPoint offsetPalm(0, 0);
+    sliderPalmPos = new CHorizontalSlider2(size, this,
+            kPalmPos, 352, 431, hSliderPalmPos,
+            NULL, point, kLeft);
     // offsetPalm -> point
-    palmSlider->setValue(effect->getParameter(kPalmPos));
-    lFrame->addView(palmSlider);
+    sliderPalmPos->setValue(effect->getParameter(kPalmPos));
+    lFrame->addView(sliderPalmPos);
 
     //--init the buttons------------------------------------------------
 
@@ -804,8 +777,8 @@ void RevEditor::setParameter(VstInt32 index, float value) {
             break;
 
         case kPalmPos:
-            if (palmSlider)
-                palmSlider->setValue(effect->getParameter(index));
+            if (sliderPalmPos)
+                sliderPalmPos->setValue(effect->getParameter(index));
             if (paramDisplay)
                 paramDisplay->setValue(effect->getParameter(index));
             if (paramDisplay2)
@@ -930,12 +903,12 @@ void RevEditor::setParameter(VstInt32 index, float value) {
             if (paramDisplay2)
                 paramDisplay2->setValue(effect->getParameter(index));
             if (displayScreen0) {
-                displayScreen0->m_iChordNotes[0] = (int) floor(24.f * (effect->getParameter(kChordNote0) + 0.0001));
-                displayScreen0->m_iChordNotes[1] = (int) floor(24.f * (effect->getParameter(kChordNote1) + 0.0001));
-                displayScreen0->m_iChordNotes[2] = (int) floor(24.f * (effect->getParameter(kChordNote2) + 0.0001));
-                displayScreen0->m_iChordNotes[3] = (int) floor(24.f * (effect->getParameter(kChordNote3) + 0.0001));
-                displayScreen0->m_iChordNotes[4] = (int) floor(24.f * (effect->getParameter(kChordNote4) + 0.0001));
-                displayScreen0->m_iChordNotes[5] = (int) floor(24.f * (effect->getParameter(kChordNote5) + 0.0001));
+                displayScreen0->m_iChordNotes[0] = (int) floor(24.f * (effect->getParameter(kChordNote0) + 0.0001f));
+                displayScreen0->m_iChordNotes[1] = (int) floor(24.f * (effect->getParameter(kChordNote1) + 0.0001f));
+                displayScreen0->m_iChordNotes[2] = (int) floor(24.f * (effect->getParameter(kChordNote2) + 0.0001f));
+                displayScreen0->m_iChordNotes[3] = (int) floor(24.f * (effect->getParameter(kChordNote3) + 0.0001f));
+                displayScreen0->m_iChordNotes[4] = (int) floor(24.f * (effect->getParameter(kChordNote4) + 0.0001f));
+                displayScreen0->m_iChordNotes[5] = (int) floor(24.f * (effect->getParameter(kChordNote5) + 0.0001f));
                 displayScreen0->m_BodyChanged = true;
                 displayScreen0->setDirty(true);
             }

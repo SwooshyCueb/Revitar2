@@ -14,6 +14,7 @@ CP=cp
 GREP=grep
 SED=sed
 LD=ld
+RM=rm
 
 CXXFLAGS= -O2
 REVITAR_CXXFLAGS= -fpermissive
@@ -36,7 +37,7 @@ TRIPLET=$(shell $(CXX) -v 2>&1 | $(GREP) Target | $(SED) 's/.* //')
 
 OBJDIR=obj/$(TRIPLET)
 BUILDDIR=build/$(TRIPLET)
-VSTSDK=vstsdk2.4
+VSTSDK=vst3sdk
 VSTOBJDIR=$(OBJDIR)/VSTSDK
 
 # By default, build using the VST3 SDK
@@ -94,4 +95,8 @@ $(VSTOBJDIR):
 
 $(BUILDDIR):
 	$(MKDIR) -p $@
+
+clean:
+	$(RM) -rf $(BUILDDIR)
+	$(RM) -rf $(OBJDIR)
 

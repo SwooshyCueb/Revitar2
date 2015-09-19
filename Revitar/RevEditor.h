@@ -102,8 +102,11 @@ private:
     CParamDisplay *MIDIDisplay;
     CDisplayScreen *displayScreen0;
     CVerticalSwitch20 *guitarTop;
+    CVerticalSwitch20 *guitarMid;
     CVerticalSwitch20 *guitarBottom;
-    CHorizontalSlider2 *palmSlider;
+    CHorizontalSlider2 *sliderPickupPos;
+    CHorizontalSlider2 *sliderPickPos;
+    CHorizontalSlider2 *sliderPalmPos;
     CKickButton2 *stopSwitch;
 
     // Bitmaps
@@ -116,19 +119,15 @@ private:
     CBitmap *hVuMeter;
     CBitmap *hChordDirection;
     CBitmap *hAbout;
-    CBitmap *hDisplayBack;
-    CBitmap *hChordVert;
     CBitmap *hBodySelector;
     CBitmap *hCtlPickType;
-    CBitmap *hDisplayBackground;
     CBitmap *hPickupPos;
     CBitmap *hPickPos;
     CBitmap *hChordNoteOn;
-    CBitmap *hBodies;
-    CBitmap *hGuitarBottom;
     CBitmap *hGuitarTop;
-    CBitmap *hPalmSliderBackground;
-    CBitmap *hPalmSliderHandle;
+    CBitmap *hGuitarMid;
+    CBitmap *hGuitarBottom;
+    CBitmap *hSliderPalmPos;
     CBitmap *hBtnStop;
     CBitmap *hBtnAbsRel;
 
