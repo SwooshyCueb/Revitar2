@@ -262,7 +262,7 @@ void convertParams(float value, char *string, void *userdata) {
             break;
         case kPickSwitch: sprintf(string, " Pick Width ");
             break;
-        case kPickupPos: sprintf(string, " Pick Up Position ");
+        case kPickupPos: sprintf(string, " Pickup Position ");
             break;
         case kPickPos: sprintf(string, " Pick Position ");
             break;
@@ -351,7 +351,7 @@ void convertParams2(float value, char *string, void *userdata) {
             if (value >= -0.1f && value < 0.1f)
                 sprintf(string, " Up ");
             else if (value >= 0.4f && value < 0.6f)
-                sprintf(string, " Down and Up ");
+                sprintf(string, " Dwn+Up ");
             else if (value >= 0.9f && value < 1.1f)
                 sprintf(string, " Down ");
             break;
