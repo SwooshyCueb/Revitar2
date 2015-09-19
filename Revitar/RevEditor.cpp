@@ -62,28 +62,28 @@ RevEditor::RevEditor(AudioEffect *effect)
     displayScreen0 = 0;
 
     hKnob = 0;
-    hTuneKnob = 0;
-    hSlideKnob = 0;
+    hKnobTune = 0;
+    hKnobSlide = 0;
     hVuMeter = 0;
-    hChordSwitch = 0;
+    hChordDirection = 0;
     hAbout = 0;
     hDisplayBack = 0;
     hChordVert = 0;
-    hSquareButton = 0;
-    hRoundButton = 0;
+    hBtnSquare = 0;
+    hBtnRound = 0;
     hBodySelector = 0;
-    hPickSwitch = 0;
+    hCtlPickType = 0;
     hDisplayBackground = 0;
-    hPickPosition = 0;
-    hPickUp = 0;
-    hChordNote = 0;
+    hPickPos = 0;
+    hPickupPos = 0;
+    hChordNoteOn = 0;
     hBodies = 0;
     hGuitarBottom = 0;
     hGuitarTop = 0;
     hPalmSliderBackground = 0;
     hPalmSliderHandle = 0;
-    hAbsRel = 0;
-    hStopSwitch = 0;
+    hBtnAbsRel = 0;
+    hBtnStop = 0;
 
     // load the background bitmap
     // we don't need to load all bitmaps, this could be done when open is called
@@ -109,25 +109,25 @@ RevEditor::~RevEditor() {
         hKnob->forget();
     hKnob = 0;
 
-    if (hTuneKnob)
-        hTuneKnob->forget();
-    hTuneKnob = 0;
+    if (hKnobTune)
+        hKnobTune->forget();
+    hKnobTune = 0;
 
-    if (hSquareButton)
-        hSquareButton->forget();
-    hSquareButton = 0;
+    if (hBtnSquare)
+        hBtnSquare->forget();
+    hBtnSquare = 0;
 
-    if (hRoundButton)
-        hRoundButton->forget();
-    hRoundButton = 0;
+    if (hBtnRound)
+        hBtnRound->forget();
+    hBtnRound = 0;
 
     if (hVuMeter)
         hVuMeter->forget();
     hVuMeter = 0;
 
-    if (hChordSwitch)
-        hChordSwitch->forget();
-    hChordSwitch = 0;
+    if (hChordDirection)
+        hChordDirection->forget();
+    hChordDirection = 0;
 
     if (hAbout)
         hAbout->forget();
@@ -145,25 +145,25 @@ RevEditor::~RevEditor() {
         hBodySelector->forget();
     hBodySelector = 0;
 
-    if (hPickSwitch)
-        hPickSwitch->forget();
-    hPickSwitch = 0;
+    if (hCtlPickType)
+        hCtlPickType->forget();
+    hCtlPickType = 0;
 
     if (hDisplayBackground)
         hDisplayBackground->forget();
     hDisplayBackground = 0;
 
-    if (hPickPosition)
-        hPickPosition->forget();
-    hPickPosition = 0;
+    if (hPickPos)
+        hPickPos->forget();
+    hPickPos = 0;
 
-    if (hPickUp)
-        hPickUp->forget();
-    hPickUp = 0;
+    if (hPickupPos)
+        hPickupPos->forget();
+    hPickupPos = 0;
 
-    if (hChordNote)
-        hChordNote->forget();
-    hChordNote = 0;
+    if (hChordNoteOn)
+        hChordNoteOn->forget();
+    hChordNoteOn = 0;
 
     if (hBodies)
         hBodies->forget();
@@ -185,17 +185,17 @@ RevEditor::~RevEditor() {
         hPalmSliderHandle->forget();
     hPalmSliderHandle = 0;
 
-    if (hStopSwitch)
-        hStopSwitch->forget();
-    hStopSwitch = 0;
+    if (hBtnStop)
+        hBtnStop->forget();
+    hBtnStop = 0;
 
-    if (hAbsRel)
-        hAbsRel->forget();
-    hAbsRel = 0;
+    if (hBtnAbsRel)
+        hBtnAbsRel->forget();
+    hBtnAbsRel = 0;
 
-    if (hSlideKnob)
-        hSlideKnob->forget();
-    hSlideKnob = 0;
+    if (hKnobSlide)
+        hKnobSlide->forget();
+    hKnobSlide = 0;
 
 }
 
@@ -379,34 +379,34 @@ bool RevEditor::open(void *ptr) {
     // load some bitmaps
     if (!hKnob)
         hKnob = new CBitmap(KNOB_SHADOW_1);
-    if (!hTuneKnob)
-        hTuneKnob = new CBitmap(TUNE_KNOB_0);
-    if (!hSquareButton)
-        hSquareButton = new CBitmap(IDB_BITMAP39);
-    if (!hRoundButton)
-        hRoundButton = new CBitmap(IDB_BITMAP38);
+    if (!hKnobTune)
+        hKnobTune = new CBitmap(TUNE_KNOB_0);
+    if (!hBtnSquare)
+        hBtnSquare = new CBitmap(IDB_BITMAP39);
+    if (!hBtnRound)
+        hBtnRound = new CBitmap(IDB_BITMAP38);
     if (!hAbout)
         hAbout = new CBitmap(ABOUT_0);
     if (!hVuMeter)
         hVuMeter = new CBitmap(VU_METER_0);
-    if (!hChordSwitch)
-        hChordSwitch = new CBitmap(CHORD_DIRECTION_1);
+    if (!hChordDirection)
+        hChordDirection = new CBitmap(CHORD_DIRECTION_1);
     if (!hBodySelector)
         hBodySelector = new CBitmap(BODY_SELECTOR0);
-    if (!hPickSwitch)
-        hPickSwitch = new CBitmap(PICK_TYPE_3);
+    if (!hCtlPickType)
+        hCtlPickType = new CBitmap(PICK_TYPE_3);
     if (!hDisplayBack)
         hDisplayBack = new CBitmap(IDB_BITMAP25);
     if (!hChordVert)
         hChordVert = new CBitmap(IDB_BITMAP28);
     if (!hDisplayBackground)
         hDisplayBackground = new CBitmap(STRING_BACKGROUND_0);
-    if (!hPickUp)
-        hPickUp = new CBitmap(PICK_UP_1);
-    if (!hPickPosition)
-        hPickPosition = new CBitmap(PICK_1);
-    if (!hChordNote)
-        hChordNote = new CBitmap(CHORD_ON_0);
+    if (!hPickupPos)
+        hPickupPos = new CBitmap(PICK_UP_1);
+    if (!hPickPos)
+        hPickPos = new CBitmap(PICK_1);
+    if (!hChordNoteOn)
+        hChordNoteOn = new CBitmap(CHORD_ON_0);
     if (!hBodies)
         hBodies = new CBitmap(BODIES_2);
     if (!hGuitarBottom)
@@ -417,12 +417,12 @@ bool RevEditor::open(void *ptr) {
         hPalmSliderBackground = new CBitmap(PALM_SLIDER_BACKGROUND_0);
     if (!hPalmSliderHandle)
         hPalmSliderHandle = new CBitmap(PALM_SLIDER_HANDLE_1);
-    if (!hStopSwitch)
-        hStopSwitch = new CBitmap(STOP_SWITCH_0);
-    if (!hAbsRel)
-        hAbsRel = new CBitmap(ROCKER_SWITCH_4);
-    if (!hSlideKnob)
-        hSlideKnob = new CBitmap(KNOB_SLIDE_0);
+    if (!hBtnStop)
+        hBtnStop = new CBitmap(STOP_SWITCH_0);
+    if (!hBtnAbsRel)
+        hBtnAbsRel = new CBitmap(ROCKER_SWITCH_4);
+    if (!hKnobSlide)
+        hKnobSlide = new CBitmap(KNOB_SLIDE_0);
 
     //--init background frame-----------------------------------------------
     CRect size(0, 0, 696, 432);
@@ -444,7 +444,7 @@ bool RevEditor::open(void *ptr) {
 
     size(603, 170,
             603 + 17, 170 + 62);
-    chordSwitch = new CVerticalSwitch20(size, this, kChordSwitch, 3, 62, 3, hChordSwitch, point);
+    chordSwitch = new CVerticalSwitch20(size, this, kChordSwitch, 3, 62, 3, hChordDirection, point);
     chordSwitch->setValue(effect->getParameter(kChordSwitch));
     lFrame->addView(chordSwitch);
 
@@ -460,7 +460,7 @@ bool RevEditor::open(void *ptr) {
 
     size(182, 288,
             182 + 60, 288 + 60);
-    pickSwitch = new C2DSwitch(size, this, kPickSwitch, 100, 60, 10, 10, hPickSwitch, point);
+    pickSwitch = new C2DSwitch(size, this, kPickSwitch, 100, 60, 10, 10, hCtlPickType, point);
     pickSwitch->setHorz(effect->getParameter(kPickStiffness));
     pickSwitch->setVert(effect->getParameter(kPickWidth));
     lFrame->addView(pickSwitch);
@@ -468,7 +468,7 @@ bool RevEditor::open(void *ptr) {
     //--init the stop switch------------------------------------------------
     size(550, 262,
             550 + 44, 262 + 50);
-    stopSwitch = new CKickButton2(size, this, kStopSwitch, 50, hStopSwitch, point);
+    stopSwitch = new CKickButton2(size, this, kStopSwitch, 50, hBtnStop, point);
     stopSwitch->setValue(0.0f);
     lFrame->addView(stopSwitch);
 
@@ -477,7 +477,7 @@ bool RevEditor::open(void *ptr) {
             6 + DISPLAY_WIDTH, 71 + DISPLAY_HEIGHT);
     displayScreen0 = new CDisplayScreen(size, this, kDS0, hDisplayBackground);
     displayScreen0->pDisplay = new CBitmap(BODIES_2); // why can't we use hBodies here?
-    displayScreen0->updateBitmaps(hBodies, hPickUp, hPickPosition, hChordNote);
+    displayScreen0->updateBitmaps(hBodies, hPickupPos, hPickPos, hChordNoteOn);
     displayScreen0->m_pChordDisplayUpdate = &(((Revitar*) effect)->m_ChordDisplayUpdate);
     displayScreen0->m_ChordDisplay = (((Revitar*) effect)->m_ChordDisplay);
     displayScreen0->setChordOnValue(effect->getParameter(kChordOnOff));
@@ -529,35 +529,35 @@ bool RevEditor::open(void *ptr) {
     // Mono
     size(343, 196,
             343 + ROUND_BUTTON_SIZE, 196 + ROUND_BUTTON_SIZE);
-    mono = new COnOffButtonW(size, this, kMono, hRoundButton);
+    mono = new COnOffButtonW(size, this, kMono, hBtnRound);
     mono->setValue(effect->getParameter(kMono));
     lFrame->addView(mono);
 
     // Chord ON/Off
     size(499, 173,
             499 + SQUARE_BUTTON_SIZE, 173 + SQUARE_BUTTON_SIZE);
-    chordOnOff = new COnOffButtonW(size, this, kChordOnOff, hSquareButton);
+    chordOnOff = new COnOffButtonW(size, this, kChordOnOff, hBtnSquare);
     chordOnOff->setValue(effect->getParameter(kChordOnOff));
     lFrame->addView(chordOnOff);
 
     // Sustain
     size(303, 196,
             303 + ROUND_BUTTON_SIZE, 196 + ROUND_BUTTON_SIZE);
-    sustain = new COnOffButtonW(size, this, kSustain, hRoundButton);
+    sustain = new COnOffButtonW(size, this, kSustain, hBtnRound);
     sustain->setValue(effect->getParameter(kSustain));
     lFrame->addView(sustain);
 
     // Pluck Noise
     size(250, 253,
             250 + ROUND_BUTTON_SIZE, 253 + ROUND_BUTTON_SIZE);
-    picknoise = new COnOffButtonW(size, this, kPickNoise, hRoundButton);
+    picknoise = new COnOffButtonW(size, this, kPickNoise, hBtnRound);
     picknoise->setValue(effect->getParameter(kPickNoise));
     lFrame->addView(picknoise);
 
     // Absolute/Relative Position
     size(576, 188,
             576 + 21, 188 + 46);
-    absRel = new COnOffButtonW(size, this, kAbsRel, hAbsRel);
+    absRel = new COnOffButtonW(size, this, kAbsRel, hBtnAbsRel);
     absRel->setValue(effect->getParameter(kAbsRel));
     lFrame->addView(absRel);
 
@@ -588,7 +588,7 @@ bool RevEditor::open(void *ptr) {
     // Tune
     size(601, 64,
             601 + KNOB_X, 64 + KNOB_Y);
-    knob[3] = new CAnimKnobZ(size, this, kTuning, KNOB_POSITIONS, KNOB_Y, hTuneKnob, point);
+    knob[3] = new CAnimKnobZ(size, this, kTuning, KNOB_POSITIONS, KNOB_Y, hKnobTune, point);
     knob[3]->setValue(effect->getParameter(kTuning));
     lFrame->addView(knob[3]);
 
@@ -665,7 +665,7 @@ bool RevEditor::open(void *ptr) {
     // Slide Rate
     size(552, 355,
             552 + KNOB_X, 355 + KNOB_Y);
-    knob[14] = new CAnimKnobZ(size, this, kSlideRate, KNOB_POSITIONS, KNOB_Y, hSlideKnob, point);
+    knob[14] = new CAnimKnobZ(size, this, kSlideRate, KNOB_POSITIONS, KNOB_Y, hKnobSlide, point);
     knob[14]->setValue(effect->getParameter(kSlideRate));
     lFrame->addView(knob[14]);
 

@@ -109,28 +109,28 @@ private:
     // Bitmaps
     CBitmap *hBackground;
     CBitmap *hKnob;
-    CBitmap *hTuneKnob;
-    CBitmap *hSlideKnob;
-    CBitmap *hRoundButton;
-    CBitmap *hSquareButton;
+    CBitmap *hKnobTune;
+    CBitmap *hKnobSlide;
+    CBitmap *hBtnRound;
+    CBitmap *hBtnSquare;
     CBitmap *hVuMeter;
-    CBitmap *hChordSwitch;
+    CBitmap *hChordDirection;
     CBitmap *hAbout;
     CBitmap *hDisplayBack;
     CBitmap *hChordVert;
     CBitmap *hBodySelector;
-    CBitmap *hPickSwitch;
+    CBitmap *hCtlPickType;
     CBitmap *hDisplayBackground;
-    CBitmap *hPickUp;
-    CBitmap *hPickPosition;
-    CBitmap *hChordNote;
+    CBitmap *hPickupPos;
+    CBitmap *hPickPos;
+    CBitmap *hChordNoteOn;
     CBitmap *hBodies;
     CBitmap *hGuitarBottom;
     CBitmap *hGuitarTop;
     CBitmap *hPalmSliderBackground;
     CBitmap *hPalmSliderHandle;
-    CBitmap *hStopSwitch;
-    CBitmap *hAbsRel;
+    CBitmap *hBtnStop;
+    CBitmap *hBtnAbsRel;
 
     // Misc
     bool hasVstWheel;
