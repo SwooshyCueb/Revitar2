@@ -155,6 +155,7 @@ public:
 	virtual bool DECLARE_VST_DEPRECATED (copyProgram) (VstInt32 destination);
 	virtual void setSampleRate(float sampleRate);
 	virtual void setBlockSize(VstInt32 blockSize);
+	virtual VstIntPtr vendorSpecific(VstInt32 lArg, VstIntPtr lArg2, void *ptrArg, float floatArg);
 
 	void handleMIDIData();
     void handleMIDINoteOn(int channel, int note, int velocity);
@@ -182,7 +183,6 @@ public:
 
     short GetTune(int polyIdx) { return m_Tune[polyIdx]; }
 
-//	FILE *m_OutFile;
 	int m_MIDIControl[NUM_MIDI_CC];
     unsigned char m_MIDICtrlVal[128];
 	int m_LastMIDICC;

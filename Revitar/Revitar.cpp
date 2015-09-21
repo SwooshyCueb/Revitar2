@@ -23,8 +23,6 @@
 #include "RevEditor.h"
 #include "Revitar.h"
 
-//FILE *m_OutFile;
-
 bool oome = false;
 
 /*****************************************************************************/
@@ -89,9 +87,6 @@ Revitar::Revitar(audioMasterCallback audioMaster)
     reg = NULL;
     RegCreateKeyEx(HKEY_LOCAL_MACHINE, "SOFTWARE\\CutterMusic\\Revo2", 0, "REG_DWORD",
             REG_OPTION_NON_VOLATILE, KEY_ALL_ACCESS, NULL, &reg, &dwDummy);
-
-    // Lets remove the need to register.  It's free now!
-    m_GLove = 1;
 
     m_BendRange = DEFAULT_BEND_CENTS; /* set up default pitch bend range   */
     DWORD dwPbCents = (DWORD) m_BendRange;
@@ -1123,7 +1118,7 @@ void Revitar::getParameterName(VstInt32 index, char *label) {
             break;
         case kPickStiffness: strcpy(label, " Pick Stiffness ");
             break;
-        case kAbsRel: strcpy(label, " Absolute/Relative Position ");
+        case kAbsRel: strcpy(label, " Abs/Rel Position ");
             break;
         case kStopSwitch: strcpy(label, " Stop Strings ");
             break;
@@ -1133,12 +1128,12 @@ void Revitar::getParameterName(VstInt32 index, char *label) {
                 int i = index - kChordNotes;
                 int chordIdx = i / NUM_CHORD_NOTES;
                 i = i % NUM_CHORD_NOTES;
-                sprintf(label, " Chord %d Note %d ", chordIdx, i);
+                sprintf(label, " RelChord %d Fret %d ", chordIdx, i);
             } else if ((index >= kChordAbsNotes) && (index < kNumParams)) {
                 int i = index - kChordAbsNotes;
                 int chordIdx = i / NUM_CHORD_NOTES;
                 i = i % NUM_CHORD_NOTES;
-                sprintf(label, " Abs Chord %d Note %d ", chordIdx, i);
+                sprintf(label, " AbsChord %d Note %d ", chordIdx, i);
             } else
                 sprintf(label, "#%d", index);
             break;
@@ -2485,6 +2480,20 @@ bool Revitar::getVendorString(char* text) {
 bool Revitar::getProductString(char* text) {
     strcpy(text, "Guitar Synth");
     return true;
+}
+
+/*****************************************************************************/
+/* vendorSpecific : Honestly, I have no idea. Added in Asseca 2.13           */
+/*****************************************************************************/
+
+VstIntPtr Revitar::vendorSpecific(VstInt32 lArg, VstIntPtr lArg2, void *ptrArg,
+        float floatArg)
+{
+    if (editor && lArg == 'stCA' && lArg2 == 'Whee') {
+        return ((AEffGUIEditor *)editor)->onWheel(floatArg) == true ? 1 : 0;
+    } else {
+        return AudioEffectX::vendorSpecific(lArg, lArg2, ptrArg, floatArg);
+    }
 }
 
 /*****************************************************************************/
