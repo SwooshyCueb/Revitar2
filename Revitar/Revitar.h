@@ -156,7 +156,6 @@ public:
 	virtual void setSampleRate(float sampleRate);
 	virtual void setBlockSize(VstInt32 blockSize);
 
-    int inline GLoveGood() { return m_GLove; }
 	void handleMIDIData();
     void handleMIDINoteOn(int channel, int note, int velocity);
     void handleMIDINoteOff(int channel, int note, int velocity);
