@@ -1058,30 +1058,15 @@ void C2DSwitch::mouse(CDrawContext *pContext, CPoint &where, long button) {
         //      where.h >= size.left && where.h < size.right)
         {
 
-            m_VertVal = (float) (where.v - size.top) / coefVert;
-            m_HorzVal = (float) (where.h - size.left) / coefHorz;
+            m_HorzVal = minmax((float)(where.h - size.left) / coefHorz, 0.f, 1.f);  //.99f);
+            m_VertVal = minmax((float)(where.v - size.top)  / coefVert, 0.f, 1.f);  //.99f);
 
-            if (m_VertVal > 0.99f)
-                m_VertVal = 0.99f;
-            if (m_VertVal < 0.0f)
-                m_VertVal = 0.0f;
-            if (m_HorzVal > 0.99f)
-                m_HorzVal = 0.99f;
-            if (m_HorzVal < 0.0f)
-                m_HorzVal = 0.0f;
+            int iHorzVal = round(m_HorzVal * (float)(m_iMaxPositionsHorz - 1));
+            int iVertVal = round(m_VertVal * (float)(m_iMaxPositionsVert - 1));
 
-            int iVertVal = (int) (m_VertVal * (float) m_iMaxPositionsVert);
-            int iHorzVal = (int) (m_HorzVal * (float) m_iMaxPositionsHorz);
+            m_iSwitchVal = iVertVal * m_iMaxPositionsHorz + iHorzVal;// + 1;
 
-            m_iSwitchVal = iVertVal * m_iMaxPositionsHorz + iHorzVal + 1;
-
-            value = (float) m_iSwitchVal / (float) iMaxPositions;
-
-            if (value > 1.f)
-                value = 1.f;
-
-            else if (value < 0.f)
-                value = 0.f;
+            value = minmax((float)(m_iSwitchVal) / (float)(iMaxPositions - 1), 0.f, 1.f);
 
             setDirty(true);
         }
