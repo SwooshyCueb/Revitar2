@@ -55,81 +55,88 @@ CDisplayScreen::~CDisplayScreen()
 inline void CDisplayScreen::drawfunc()
 {
     int rowDel, colDel, row, col, k;
-    if (m_BPP == 3 || m_BPP == 4) { //is 24-bit or 32-bit .BMP
-        if (m_BodyChanged) {
-            m_BodyChanged = false;
+    if (m_BodyChanged) {
+        m_BodyChanged = false;
+        //draw GuitarMidBody
+        memcpy(m_BMBackground,
+                m_BMBody + m_iBodyType * DISPLAY_WIDTH * DISPLAY_HEIGHT * m_BPP,
+                DISPLAY_WIDTH * DISPLAY_HEIGHT * m_BPP * sizeof (char));
 
-            memcpy(m_BMBackground,
-                    m_BMBody + m_iBodyType * DISPLAY_WIDTH * DISPLAY_HEIGHT * m_BPP,
-                    DISPLAY_WIDTH * DISPLAY_HEIGHT * m_BPP * sizeof (char));
+        colDel = 135 + (int) (m_fPickupPos * 110.0f);
+        rowDel = 1;
 
-            colDel = 135 + (int) (m_fPickupPos * 110.0f);
-            rowDel = 1;
+        for (row = 0; row < PICKUP_HEIGHT; row++) {
+            //draw Pickup
+            int offsetTmp0 = row * PICKUP_WIDTH * m_BPP;
+            int offsetTmp1 = (row + rowDel) * DISPLAY_WIDTH * m_BPP;
 
-            for (row = 0; row < PICKUP_HEIGHT; row++) {
-                int offsetTmp0 = row * PICKUP_WIDTH * m_BPP;
-                int offsetTmp1 = (row + rowDel) * DISPLAY_WIDTH * m_BPP;
+            for (col = 0; col < PICKUP_WIDTH; col++) {
+                int offset1 = offsetTmp0 + col * m_BPP;
 
-                for (col = 0; col < PICKUP_WIDTH; col++) {
-                    int offset1 = offsetTmp0 + col * m_BPP;
-
-                    if (m_BMPickUp[offset1 + 2] != -1) {
-                        int offset = offsetTmp1 + (col + colDel) * m_BPP;
-                        m_BMBackground[offset + 0] = m_BMPickUp[offset1 + 0];
-                        m_BMBackground[offset + 1] = m_BMPickUp[offset1 + 1];
+                if (m_BMPickUp[offset1 + 2] != -1) {
+                    int offset = offsetTmp1 + (col + colDel) * m_BPP;
+                    m_BMBackground[offset + 0] = m_BMPickUp[offset1 + 0];
+                    m_BMBackground[offset + 1] = m_BMPickUp[offset1 + 1];
+                    if (m_BPP != 2)
                         m_BMBackground[offset + 2] = m_BMPickUp[offset1 + 2];
-                    }
                 }
             }
+        }
 
-            if (m_ChordOn > 0.f) {
-                int i;
+        if (m_ChordOn > 0.f) {
+            //draw ChordNote-LEDs
+            int i;
 
-                for (i = 0; i < 6; i++) {
-                    int note = m_iChordNotes[i];
+            for (i = 0; i < 6; i++) {
+                int note = m_iChordNotes[i];
 
-                    if (note >= 0) {
-                        rowDel = 11 + i * 10;
-                        colDel = DISPLAY_WIDTH - 13 - 16 * note;
+                if (note >= 0) {
+                    rowDel = 11 + i * 10;
+                    colDel = DISPLAY_WIDTH - 13 - 16 * note;
 
-                        for (row = 0; row < CHORDNOTE_HEIGHT; row++) {
-                            if (row == 0 || row == CHORDNOTE_HEIGHT - 1) {
-                                for (col = 1; col < CHORDNOTE_WIDTH - 1; col++) {
-                                    int offset1 = (row) * CHORDNOTE_WIDTH * m_BPP + col * m_BPP;
-                                    int offset = (row + rowDel) * DISPLAY_WIDTH * m_BPP + (col + colDel) * m_BPP;
-                                    m_BMBackground[offset + 0] = m_BMChordNote[offset1 + 0];
-                                    m_BMBackground[offset + 1] = m_BMChordNote[offset1 + 1];
+                    for (row = 0; row < CHORDNOTE_HEIGHT; row++) {
+                        if (row == 0 || row == CHORDNOTE_HEIGHT - 1) {
+                            for (col = 1; col < CHORDNOTE_WIDTH - 1; col++) {
+                                int offset1 = (row) * CHORDNOTE_WIDTH * m_BPP + col * m_BPP;
+                                int offset = (row + rowDel) * DISPLAY_WIDTH * m_BPP + (col + colDel) * m_BPP;
+                                m_BMBackground[offset + 0] = m_BMChordNote[offset1 + 0];
+                                m_BMBackground[offset + 1] = m_BMChordNote[offset1 + 1];
+                                if (m_BPP != 2)
                                     m_BMBackground[offset + 2] = m_BMChordNote[offset1 + 2];
-                                }
-                            } else {
-                                for (col = 0; col < CHORDNOTE_WIDTH; col++) {
-                                    int offset1 = (row) * CHORDNOTE_WIDTH * m_BPP + col*m_BPP;
-                                    int offset = (row + rowDel) * DISPLAY_WIDTH * m_BPP + (col + colDel) * m_BPP;
-                                    m_BMBackground[offset + 0] = m_BMChordNote[offset1 + 0];
-                                    m_BMBackground[offset + 1] = m_BMChordNote[offset1 + 1];
+                            }
+                        } else {
+                            for (col = 0; col < CHORDNOTE_WIDTH; col++) {
+                                int offset1 = (row) * CHORDNOTE_WIDTH * m_BPP + col * m_BPP;
+                                int offset = (row + rowDel) * DISPLAY_WIDTH * m_BPP + (col + colDel) * m_BPP;
+                                m_BMBackground[offset + 0] = m_BMChordNote[offset1 + 0];
+                                m_BMBackground[offset + 1] = m_BMChordNote[offset1 + 1];
+                                if (m_BPP != 2)
                                     m_BMBackground[offset + 2] = m_BMChordNote[offset1 + 2];
-                                }
                             }
                         }
                     }
                 }
             }
-
-            for (k = 0; k < MAX_NUM_POLY; k++) {
-                for (col = 442; col < 453; col++) {
-                    int ofsetTmp0 = (k * CHORD_DISPLAY_HEIGHT + 9) * DISPLAY_WIDTH + (col + 126);
-                    int offset = (CHORD_DISPLAY_HEIGHT / 2) * DISPLAY_WIDTH + ofsetTmp0;
-                    offset *= m_BPP;
-
-                    m_BMBackground[offset + 0] = (BYTE) 255;
-                    m_BMBackground[offset + 1] = (BYTE) 255;
-                    m_BMBackground[offset + 2] = (BYTE) 255;
-                }
-            }
-
         }
 
-        if (*m_pChordDisplayUpdate >= 200.0f) {
+        for (k = 0; k < MAX_NUM_POLY; k++) {
+            //draw static strings for right-most LEDs
+            for (col = 442; col < 453; col++) {
+                int ofsetTmp0 = (k * CHORD_DISPLAY_HEIGHT + 9) * DISPLAY_WIDTH + (col + 126);
+                int offset = (CHORD_DISPLAY_HEIGHT / 2) * DISPLAY_WIDTH + ofsetTmp0;
+                offset *= m_BPP;
+
+                m_BMBackground[offset + 0] = (BYTE) 255;
+                m_BMBackground[offset + 1] = (BYTE) 255;
+                if (m_BPP != 2)
+                    m_BMBackground[offset + 2] = (BYTE) 255;
+            }
+        }
+
+    }
+
+    if (*m_pChordDisplayUpdate >= 200.0f) {
+        if (m_BPP != 2) {
             memcpy(m_ChordDisplayCurrent, m_ChordDisplay,
                     MAX_NUM_POLY * NUM_POINTS * CHORD_DISPLAY_HEIGHT * sizeof (float));
 
@@ -139,22 +146,28 @@ inline void CDisplayScreen::drawfunc()
                 for (col = 0; col < NUM_POINTS; col++)
                     for (row = 0; row < CHORD_DISPLAY_HEIGHT; row++)
                         m_ChordDisplayCurrent[k][col][row] /= val0;
-
-            *m_pChordDisplayUpdate = 0.0;
-            memset(m_ChordDisplay, 0, MAX_NUM_POLY * NUM_POINTS * CHORD_DISPLAY_HEIGHT * sizeof (float));
         }
+        *m_pChordDisplayUpdate = 0.0;
+        memset(m_ChordDisplay, 0, MAX_NUM_POLY * NUM_POINTS * CHORD_DISPLAY_HEIGHT * sizeof (float));
+    }
 
-        memcpy(m_BMDisplay, m_BMBackground, DISPLAY_WIDTH * DISPLAY_HEIGHT * m_BPP * sizeof (char));
+    memcpy(m_BMDisplay, m_BMBackground, DISPLAY_WIDTH * DISPLAY_HEIGHT * m_BPP * sizeof (char));
 
-        for (k = 0; k < MAX_NUM_POLY; k++) {
-            for (col = 0; col < 442; col++) {
-                int idx = (int) ((NUM_POINTS - 1) * col / 451);
-                int ofsetTmp0 = (k * CHORD_DISPLAY_HEIGHT + 9) * DISPLAY_WIDTH * m_BPP + (col + 126) * m_BPP;
+    for (k = 0; k < MAX_NUM_POLY; k++) {
+        //draw static/vibrating strings
+        for (col = 0; col < 442; col++) {
+            int idx = (int) ((NUM_POINTS - 1) * col / 451);
+            int ofsetTmp0 = (k * CHORD_DISPLAY_HEIGHT + 9) * DISPLAY_WIDTH * m_BPP + (col + 126) * m_BPP;
 
-                for (row = 0; row < CHORD_DISPLAY_HEIGHT; row++) {
-                    float del = m_ChordDisplayCurrent[k][idx][row];
-                    if (del > 0.01f) {
-                        int offset = (row) * DISPLAY_WIDTH * m_BPP + ofsetTmp0;
+            for (row = 0; row < CHORD_DISPLAY_HEIGHT; row++) {
+                float del = m_ChordDisplayCurrent[k][idx][row];
+                if (del > 0.01f) {
+                    int offset = (row) * DISPLAY_WIDTH * m_BPP + ofsetTmp0;
+                    if (m_BPP == 2)
+                    {
+                        m_BMDisplay[offset + 0] = (BYTE) 255;
+                        m_BMDisplay[offset + 1] = (BYTE) 255;
+                    } else {
                         char val = (char) (250.0f * del);
                         del = 1.0f - del;
 
@@ -165,128 +178,25 @@ inline void CDisplayScreen::drawfunc()
                 }
             }
         }
+    }
 
-        colDel = 135 + (int) (m_fPickPos * 107.0f);
-        rowDel = 4;
+    colDel = 135 + (int) (m_fPickPos * 107.0f);
+    rowDel = 4;
 
-        for (row = 0; row < PICK_HEIGHT; row++) {
-            for (col = 0; col < PICK_WIDTH; col++) {
-                int offset1 = row * PICK_WIDTH * m_BPP + col * m_BPP;
+    for (row = 0; row < PICK_HEIGHT; row++) {
+        //draw Pick
+        for (col = 0; col < PICK_WIDTH; col++) {
+            int offset1 = row * PICK_WIDTH * m_BPP + col * m_BPP;
 
-                if (m_BMPick[offset1 + 2] != -1) {
-                    int offset = (row + rowDel) * DISPLAY_WIDTH * m_BPP + (col + colDel) * m_BPP;
-                    m_BMDisplay[offset + 0] = m_BMPick[offset1 + 0];
-                    m_BMDisplay[offset + 1] = m_BMPick[offset1 + 1];
-                    m_BMDisplay[offset + 2] = m_BMPick[offset1 + 2];
-                }
-            }
-        }
-    } else if (m_BPP == 2) { // is 16-bit .BMP
-        if (m_BodyChanged) {
-            m_BodyChanged = false;
-
-            memcpy(m_BMBackground, m_BMBody + m_iBodyType * DISPLAY_WIDTH * DISPLAY_HEIGHT * m_BPP,
-                    DISPLAY_WIDTH * DISPLAY_HEIGHT * m_BPP * sizeof (char));
-
-            colDel = 135 + (int) (m_fPickupPos * 110.0f);
-            rowDel = 1;
-
-            for (row = 0; row < PICKUP_HEIGHT; row++) {
-                int offsetTmp0 = row * PICKUP_WIDTH * m_BPP;
-                int offsetTmp1 = (row + rowDel) * DISPLAY_WIDTH * m_BPP;
-
-                for (col = 0; col < PICKUP_WIDTH; col++) {
-                    int offset1 = offsetTmp0 + col * m_BPP;
-                    int offset = offsetTmp1 + (col + colDel) * m_BPP;
-
-                    if (m_BMPickUp[offset1 + 0] != -1) {
-                        m_BMBackground[offset + 0] = m_BMPickUp[offset1 + 0];
-                        m_BMBackground[offset + 1] = m_BMPickUp[offset1 + 1];
-                    }
-                }
-            }
-
-            //if (m_ChordOn == 1.0f) {
-            if (m_ChordOn > 0.0f) {
-                int i;
-
-                for (i = 0; i < 6; i++) {
-                    int note = m_iChordNotes[i];
-
-                    if (note >= 0) {
-                        rowDel = 11 + i * 10;
-                        colDel = DISPLAY_WIDTH - 13 - 16 * note;
-
-                        for (row = 0; row < CHORDNOTE_HEIGHT; row++) {
-                            if (row == 0 || row == CHORDNOTE_HEIGHT - 1) {
-                                for (col = 1; col < CHORDNOTE_WIDTH - 1; col++) {
-                                    int offset1 = (row) * CHORDNOTE_WIDTH * m_BPP + col * m_BPP;
-                                    int offset = (row + rowDel) * DISPLAY_WIDTH * m_BPP + (col + colDel) * m_BPP;
-                                    m_BMBackground[offset + 0] = m_BMChordNote[offset1 + 0];
-                                    m_BMBackground[offset + 1] = m_BMChordNote[offset1 + 1];
-                                }
-                            } else {
-                                for (col = 0; col < CHORDNOTE_WIDTH; col++) {
-                                    int offset1 = (row) * CHORDNOTE_WIDTH * m_BPP + col * m_BPP;
-                                    int offset = (row + rowDel) * DISPLAY_WIDTH * m_BPP + (col + colDel) * m_BPP;
-                                    m_BMBackground[offset + 0] = m_BMChordNote[offset1 + 0];
-                                    m_BMBackground[offset + 1] = m_BMChordNote[offset1 + 1];
-                                }
-                            }
-                        }
-
-                    }
-                }
-            }
-
-            for (k = 0; k < MAX_NUM_POLY; k++) {
-                for (col = 442; col < 453; col++) {
-                    int ofsetTmp0 = (k * CHORD_DISPLAY_HEIGHT + 9) * DISPLAY_WIDTH + (col + 126);
-                    int offset = (CHORD_DISPLAY_HEIGHT / 2) * DISPLAY_WIDTH + ofsetTmp0;
-                    offset *= m_BPP;
-
-                    m_BMBackground[offset + 0] = (BYTE) 255;
-                    m_BMBackground[offset + 1] = (BYTE) 255;
-                }
-            }
-        }
-
-        if (*m_pChordDisplayUpdate >= 200.0f) {
-            *m_pChordDisplayUpdate = 0.0f;
-            memset(m_ChordDisplay, 0, MAX_NUM_POLY * NUM_POINTS * CHORD_DISPLAY_HEIGHT * sizeof (float));
-        }
-
-        memcpy(m_BMDisplay, m_BMBackground, DISPLAY_WIDTH * DISPLAY_HEIGHT * m_BPP * sizeof (char));
-
-        for (k = 0; k < MAX_NUM_POLY; k++) {
-            for (col = 0; col < 442; col++) {
-                int idx = (int) ((NUM_POINTS - 1) * col / 451);
-                int ofsetTmp0 = (k * CHORD_DISPLAY_HEIGHT + 9) * DISPLAY_WIDTH * m_BPP + (col + 126) * m_BPP;
-
-                for (row = 0; row < CHORD_DISPLAY_HEIGHT; row++) {
-                    float del = m_ChordDisplayCurrent[k][idx][row];
-                    if (del > 0.01f) {
-                        int offset = (row) * DISPLAY_WIDTH * m_BPP + ofsetTmp0;
-
-                        m_BMDisplay[offset + 0] = (BYTE) 255;
-                        m_BMDisplay[offset + 1] = (BYTE) 255;
-                    }
-                }
-            }
-        }
-
-        colDel = 135 + (int) (m_fPickPos * 107.0f);
-        rowDel = 4;
-
-        for (row = 0; row < PICK_HEIGHT; row++) {
-            for (col = 0; col < PICK_WIDTH; col++) {
-                int offset1 = row * PICK_WIDTH * m_BPP + col * m_BPP;
+            if ((m_BMPick[offset1 + 0] != -1) && (m_BPP ==2)) {
                 int offset = (row + rowDel) * DISPLAY_WIDTH * m_BPP + (col + colDel) * m_BPP;
-
-                if (m_BMPick[offset1 + 0] != -1) {
-                    m_BMDisplay[offset + 0] = m_BMPick[offset1 + 0];
-                    m_BMDisplay[offset + 1] = m_BMPick[offset1 + 1];
-                }
+                m_BMDisplay[offset + 0] = m_BMPick[offset1 + 0];
+                m_BMDisplay[offset + 1] = m_BMPick[offset1 + 1];
+            } else if ((m_BMPick[offset1 + 2] != -1) && (m_BPP !=2)) {
+                int offset = (row + rowDel) * DISPLAY_WIDTH * m_BPP + (col + colDel) * m_BPP;
+                m_BMDisplay[offset + 0] = m_BMPick[offset1 + 0];
+                m_BMDisplay[offset + 1] = m_BMPick[offset1 + 1];
+                m_BMDisplay[offset + 2] = m_BMPick[offset1 + 2];
             }
         }
     }
