@@ -267,9 +267,9 @@ bool Revitar::LoadBank(void *data, size_t lSize) {
         programs[i].fKnob[kBodyGain] = program->content.params[kBodyGain];
         programs[i].fKnob[kPickVolume] = program->content.params[kPickVolume];
         programs[i].fKnob[kTuning] = program->content.params[kTuning];
-        programs[i].fKnob[kBridgeDamping] = program->content.params[kBridgeDamping];
-        programs[i].fKnob[kStringDamping] = program->content.params[kStringDamping];
-        programs[i].fKnob[kVibratoAmplit] = program->content.params[kVibratoAmplit];
+        programs[i].fKnob[kBridgeDamp] = program->content.params[kBridgeDamp];
+        programs[i].fKnob[kStringDamp] = program->content.params[kStringDamp];
+        programs[i].fKnob[kVibratoAmpl] = program->content.params[kVibratoAmpl];
         programs[i].fKnob[kVibratoRate] = program->content.params[kVibratoRate];
         programs[i].fKnob[kSympathetic] = program->content.params[kSympathetic];
         programs[i].fKnob[kSlap] = program->content.params[kSlap];

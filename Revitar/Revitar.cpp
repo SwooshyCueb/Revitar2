@@ -14,16 +14,27 @@
 #include <math.h>
 #include <stdlib.h>
 #include <float.h>
-#include <windows.h>
-#include <winreg.h>
+#if WINDOWS
+ #include <windows.h>
+ #include <winreg.h>
+#endif
 
 #include "public.sdk/source/vst2.x/aeffeditor.h"
-
 
 #include "RevEditor.h"
 #include "Revitar.h"
 
-bool oome = false;
+bool oome = false; // Removed in Asseca 2.15? What is this, anyway?
+
+#if WINDOWS
+extern void *hInstance;  // instance handle for the DLL
+
+inline HINSTANCE GetInstance()
+{
+    return (HINSTANCE)hInstance;
+}
+#endif
+
 
 /*****************************************************************************/
 /* createEffectInstance : creates an effect instance                         */
@@ -51,8 +62,6 @@ AudioEffect* createEffectInstance(audioMasterCallback audioMaster) {
 
 Revitar::Revitar(audioMasterCallback audioMaster)
 : AudioEffectX(audioMaster, kNumPrograms, kNumParams) {
-    //  m_OutFile = NULL;
-    //  m_OutFile = fopen("outTune.txt", "w");
 
     setUniqueID('cmr2');
     cEffect.version = kVersion;
@@ -71,6 +80,7 @@ Revitar::Revitar(audioMasterCallback audioMaster)
         oome = true;
     if (audioMaster) {
         editor = new RevEditor(this);
+        setEditor(editor);
         if (!editor)
             oome = true;
     }
@@ -120,11 +130,11 @@ Revitar::Revitar(audioMasterCallback audioMaster)
         m_MIDIControl[ 1] = kPalmDamp;
         m_MIDIControl[ 2] = kSlideRate;
         m_MIDIControl[ 3] = kVibratoRate;
-        m_MIDIControl[ 4] = kVibratoAmplit;
+        m_MIDIControl[ 4] = kVibratoAmpl;
         m_MIDIControl[ 5] = kPickPos;
         m_MIDIControl[ 6] = kPickupPos;
-        m_MIDIControl[ 7] = kBridgeDamping;
-        m_MIDIControl[ 8] = kStringDamping;
+        m_MIDIControl[ 7] = kBridgeDamp;
+        m_MIDIControl[ 8] = kStringDamp;
         m_MIDIControl[ 9] = kSlap;
         m_MIDIControl[10] = NO_INFORMATION;
         m_MIDIControl[11] = kPickSpeed;
@@ -639,7 +649,7 @@ void Revitar::initProcess() {
         }
 
         m_PickUp[idx] = m_NumPoints[idx] - ((int) ((float) ((m_NumPoints[idx] - 4) / 2) * prog.fPickupPos) + 2);
-        m_DampBridge[idx] = prog.fKnob[kBridgeDamping] * 0.2f + 0.1f;
+        m_DampBridge[idx] = prog.fKnob[kBridgeDamp] * 0.2f + 0.1f;
         m_DampBridge[idx] = (float) (m_DampBridge[idx] * m_DampBridge[idx]);
         m_DampBridge[idx] *= (float) m_NumPoints[idx] / NUM_POINTS;
     }
@@ -819,9 +829,9 @@ void Revitar::setParameter(VstInt32 index, float value) {
         case kBodyGain:
         case kPickVolume:
         case kTuning:
-        case kBridgeDamping:
-        case kStringDamping:
-        case kVibratoAmplit:
+        case kBridgeDamp:
+        case kStringDamp:
+        case kVibratoAmpl:
         case kVibratoRate:
         case kSympathetic:
         case kSlap:
@@ -974,9 +984,9 @@ float Revitar::getParameter(VstInt32 index) {
         case kBodyGain:
         case kPickVolume:
         case kTuning:
-        case kBridgeDamping:
-        case kStringDamping:
-        case kVibratoAmplit:
+        case kBridgeDamp:
+        case kStringDamp:
+        case kVibratoAmpl:
         case kVibratoRate:
         case kSympathetic:
         case kSlap:
@@ -1061,11 +1071,11 @@ void Revitar::getParameterName(VstInt32 index, char *label) {
             break;
         case kTuning: strcpy(label, " Tune ");
             break;
-        case kBridgeDamping: strcpy(label, " Bridge Damp ");
+        case kBridgeDamp: strcpy(label, " Bridge Damp ");
             break;
-        case kStringDamping: strcpy(label, " String Damp ");
+        case kStringDamp: strcpy(label, " String Damp ");
             break;
-        case kVibratoAmplit: strcpy(label, " Vibrato Amp ");
+        case kVibratoAmpl: strcpy(label, " Vibrato Amp ");
             break;
         case kVibratoRate: strcpy(label, " Vibrato Rate ");
             break;
@@ -1151,9 +1161,9 @@ void Revitar::getParameterDisplay(VstInt32 index, char *text) {
         case kBodyGain:
         case kPickVolume:
         case kTuning:
-        case kBridgeDamping:
-        case kStringDamping:
-        case kVibratoAmplit:
+        case kBridgeDamp:
+        case kStringDamp:
+        case kVibratoAmpl:
         case kVibratoRate:
         case kSympathetic:
         case kSlap:
@@ -1257,11 +1267,11 @@ void Revitar::getParameterLabel(VstInt32 index, char *label) {
             break;
         case kTuning: strcpy(label, " Tune ");
             break;
-        case kBridgeDamping: strcpy(label, " Bridge Damp ");
+        case kBridgeDamp: strcpy(label, " Bridge Damp ");
             break;
-        case kStringDamping: strcpy(label, " String Damp ");
+        case kStringDamp: strcpy(label, " String Damp ");
             break;
-        case kVibratoAmplit: strcpy(label, " Vibrato Amp ");
+        case kVibratoAmpl: strcpy(label, " Vibrato Amp ");
             break;
         case kVibratoRate: strcpy(label, " Vibrato Rate ");
             break;
@@ -1462,9 +1472,9 @@ void Revitar::process(float **inputs, float **outputs, VstInt32 sampleframes) {
             prog.fKnob[kPalmDamp];
 
     m_DampString = 0.00035f *
-            prog.fKnob[kStringDamping] *
-            prog.fKnob[kStringDamping] *
-            prog.fKnob[kStringDamping] +
+            prog.fKnob[kStringDamp] *
+            prog.fKnob[kStringDamp] *
+            prog.fKnob[kStringDamp] +
             0.0000001f;
     float minDampString = 0.00045f + 0.0000001f;
 
@@ -1510,8 +1520,8 @@ void Revitar::process(float **inputs, float **outputs, VstInt32 sampleframes) {
             //      vibrato = (float) sqrt(vibrato);
 
             vibrato *= 0.059463094359f *
-                    prog.fKnob[kVibratoAmplit] *
-                    prog.fKnob[kVibratoAmplit];
+                    prog.fKnob[kVibratoAmpl] *
+                    prog.fKnob[kVibratoAmpl];
 
             m_VibratoAdd = (vibrato - m_VibratoPos) / 500.0f;
         }
@@ -2110,7 +2120,7 @@ void Revitar::updateNewNotes(int polyIdx) {
         m_PickPos[polyIdx] = -1.0f;
         m_PickAdd[polyIdx] = (1.0f + m_Velocity[polyIdx]*2.0f) / (float) length;
 
-        m_DampBridge[polyIdx] = prog.fKnob[kBridgeDamping] * 0.2f + 0.1f;
+        m_DampBridge[polyIdx] = prog.fKnob[kBridgeDamp] * 0.2f + 0.1f;
         m_DampBridge[polyIdx] = (float) (m_DampBridge[polyIdx] * m_DampBridge[polyIdx]);
         m_DampBridge[polyIdx] *= (float) m_NumPoints[polyIdx] / NUM_POINTS;
 

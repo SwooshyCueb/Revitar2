@@ -205,11 +205,11 @@ void convertParams(float value, char *string, void *userdata) {
             break;
         case kTuning: sprintf(string, " Tune ");
             break;
-        case kBridgeDamping: sprintf(string, " Bridge Damping ");
+        case kBridgeDamp: sprintf(string, " Bridge Damping ");
             break;
-        case kStringDamping: sprintf(string, " String Damping ");
+        case kStringDamp: sprintf(string, " String Damping ");
             break;
-        case kVibratoAmplit: sprintf(string, " Vibrato Amplitude ");
+        case kVibratoAmpl: sprintf(string, " Vibrato Amplitude ");
             break;
         case kVibratoRate: sprintf(string, " Vibrato Rate ");
             break;
@@ -283,11 +283,11 @@ void convertParams2(float value, char *string, void *userdata) {
             break;
         case kTuning: sprintf(string, " %d cents ", (int) (200.0 * value - 100.0));
             break;
-        case kBridgeDamping: sprintf(string, " %1.2f ", value);
+        case kBridgeDamp: sprintf(string, " %1.2f ", value);
             break;
-        case kStringDamping: sprintf(string, " %1.2f ", value);
+        case kStringDamp: sprintf(string, " %1.2f ", value);
             break;
-        case kVibratoAmplit: sprintf(string, " %1.2f ", value);
+        case kVibratoAmpl: sprintf(string, " %1.2f ", value);
             break;
         case kVibratoRate: sprintf(string, " %1.2f ", value);
             break;
@@ -568,22 +568,22 @@ bool RevEditor::open(void *ptr) {
     // Bridge
     size(446, 355,
             446 + KNOB_X, 355 + KNOB_Y);
-    knob[4] = new CAnimKnobZ(size, this, kBridgeDamping, KNOB_POSITIONS, KNOB_Y, hKnob, point);
-    knob[4]->setValue(effect->getParameter(kBridgeDamping));
+    knob[4] = new CAnimKnobZ(size, this, kBridgeDamp, KNOB_POSITIONS, KNOB_Y, hKnob, point);
+    knob[4]->setValue(effect->getParameter(kBridgeDamp));
     lFrame->addView(knob[4]);
 
     // String
     size(495, 355,
             495 + KNOB_X, 355 + KNOB_Y);
-    knob[5] = new CAnimKnobZ(size, this, kStringDamping, KNOB_POSITIONS, KNOB_Y, hKnob, point);
-    knob[5]->setValue(effect->getParameter(kStringDamping));
+    knob[5] = new CAnimKnobZ(size, this, kStringDamp, KNOB_POSITIONS, KNOB_Y, hKnob, point);
+    knob[5]->setValue(effect->getParameter(kStringDamp));
     lFrame->addView(knob[5]);
 
     // Amp
     size(625, 355,
             625 + KNOB_X, 355 + KNOB_Y);
-    knob[6] = new CAnimKnobZ(size, this, kVibratoAmplit, KNOB_POSITIONS, KNOB_Y, hKnob, point);
-    knob[6]->setValue(effect->getParameter(kVibratoAmplit));
+    knob[6] = new CAnimKnobZ(size, this, kVibratoAmpl, KNOB_POSITIONS, KNOB_Y, hKnob, point);
+    knob[6]->setValue(effect->getParameter(kVibratoAmpl));
     lFrame->addView(knob[6]);
 
     // Rate
@@ -730,9 +730,9 @@ void RevEditor::setParameter(VstInt32 index, float value) {
         case kBodyGain:
         case kPickVolume:
         case kTuning:
-        case kBridgeDamping:
-        case kStringDamping:
-        case kVibratoAmplit:
+        case kBridgeDamp:
+        case kStringDamp:
+        case kVibratoAmpl:
         case kVibratoRate:
         case kSympathetic:
         case kSlap:
@@ -969,9 +969,9 @@ void RevEditor::removeMIDICC(int tag) {
             tag == kBodyGain ||
             tag == kPickVolume ||
             tag == kTuning ||
-            tag == kBridgeDamping ||
-            tag == kStringDamping ||
-            tag == kVibratoAmplit ||
+            tag == kBridgeDamp ||
+            tag == kStringDamp ||
+            tag == kVibratoAmpl ||
             tag == kVibratoRate ||
             tag == kSympathetic ||
             tag == kSlap ||
@@ -1012,9 +1012,9 @@ void RevEditor::updateMIDICC(int tag) {
                 tag == kBodyGain ||
                 tag == kPickVolume ||
                 tag == kTuning ||
-                tag == kBridgeDamping ||
-                tag == kStringDamping ||
-                tag == kVibratoAmplit ||
+                tag == kBridgeDamp ||
+                tag == kStringDamp ||
+                tag == kVibratoAmpl ||
                 tag == kVibratoRate ||
                 tag == kSympathetic ||
                 tag == kSlap ||
@@ -1069,9 +1069,9 @@ void RevEditor::valueChanged(CControl* control)
         case kBodyGain:
         case kPickVolume:
         case kTuning:
-        case kBridgeDamping:
-        case kStringDamping:
-        case kVibratoAmplit:
+        case kBridgeDamp:
+        case kStringDamp:
+        case kVibratoAmpl:
         case kVibratoRate:
         case kSympathetic:
         case kSlap:

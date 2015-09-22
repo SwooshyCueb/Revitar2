@@ -30,9 +30,9 @@ enum
 	kBodyGain,
 	kPickVolume,
 	kTuning,                        /* tuning (0=-100,0.5=0,1=100 cents) */
-	kBridgeDamping,
-	kStringDamping,
-	kVibratoAmplit,
+	kBridgeDamp,
+	kStringDamp,
+	kVibratoAmpl,
 	kVibratoRate,
 	kSympathetic,
 	kSlap,
